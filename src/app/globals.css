@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text-main: #011737;
+  --text-main-color: #0455ce;
+  --body-color: #f3f4f6;
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-main);
+}
+
+.bg-main-color {
+  background-color: var(--text-main-color);
+}
+
+.text-main-color {
+  color: var(--text-main-color);
+}
+
+.flex-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-s {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-e {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex-b {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
