@@ -41,10 +41,10 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (e: MouseEvent) => {
       const nav = document.getElementById("mobile-nav");
 
-      if (nav && !nav.contains(event.target) && showMenu) {
+      if (nav && !nav.contains(e.target as Node) && showMenu) {
         // Kliknięto poza nawigacją, gdy jest otwarta
         setShowMenu(false);
       }
