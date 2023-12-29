@@ -2,6 +2,8 @@
 import { inter } from "@/src/ui/fonts";
 import { BurgerMenu } from "@/src/ui/header/BurgerMenu";
 import { DesctopNavLinks, MobileNavLinks } from "@/src/ui/header/NavLinks";
+import "@/src/ui/header/header.css";
+import "aos/dist/aos.css";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,6 +17,12 @@ export default function Header() {
 
   function handleMenu() {
     setShowMenu(!showMenu);
+  }
+
+  if (showMenu) {
+    document.body.classList.add("overflow-hidden");
+  } else {
+    document.body.classList.remove("overflow-hidden");
   }
 
   useEffect(() => {
@@ -31,23 +39,38 @@ export default function Header() {
       window.removeEventListener("scroll", handleScrollListener);
     };
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const nav = document.getElementById("mobile-nav");
+
+      if (nav && !nav.contains(event.target) && showMenu) {
+        // Kliknięto poza nawigacją, gdy jest otwarta
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [showMenu]);
   return (
     <header
-      className={clsx(`flex-b z-50 w-full border-b bg-white px-4 py-3`, {
-        "fixed top-0 bg-white/90 ": scrollListenerHeader,
+      className={clsx(`flex-b z-[999] w-full border-b bg-white px-4 py-3`, {
+        "slide-bottom fixed top-0 z-[999] bg-white/90 ": scrollListenerHeader,
       })}
     >
-      <Link href="/" aria-label="Logo" className="flex-c z-50">
+      <Link href="/" aria-label="Logo" className="flex-c z-[999]">
         <Image
           src="/seovileo.svg"
-          height={40}
-          width={40}
+          height={35}
+          width={35}
           priority
           alt="seovileo logo"
         />
-        <p className={`ml-1 text-lg font-semibold ${inter.className}`}>
-          Seovileo
-        </p>
+        <p className={`ml-1 font-semibold ${inter.className}`}>Seovileo</p>
       </Link>
       <nav>
         <DesctopNavLinks pathname={pathname} showMenu={showMenu} />

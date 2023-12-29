@@ -19,9 +19,10 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#F3F4F6" />
       </head>
-      <body className={inter.className}>
+      <body id="mobileNav" className={inter.className}>
         <Header />
         <main className="min-h-screen">{children}</main>
+        <div className="h-[200vh]" />
         <Footer />
       </body>
     </html>

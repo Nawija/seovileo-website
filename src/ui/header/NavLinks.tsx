@@ -43,7 +43,7 @@ export function DesctopNavLinks({ pathname }: NavLinkType) {
           {index < navLinks.length - 1 ? (
             <Link
               className={clsx(
-                `relative overflow-hidden p-3`,
+                `p-3`,
                 {
                   "text-[#2755c1]": pathname === l.href,
                 },
@@ -68,13 +68,19 @@ export function DesctopNavLinks({ pathname }: NavLinkType) {
 export function MobileNavLinks({ pathname, showMenu }: NavLinkType) {
   return (
     <ul
-      className={`absolute left-0 top-0 flex h-screen flex-col items-center justify-center space-y-12 border-r bg-white px-20 font-medium drop-shadow-2xl transition-transform md:hidden 
+      id="mobile-nav"
+      className={`absolute left-0 top-0 z-[50] flex h-screen flex-col items-center justify-center space-y-12 border-r bg-white px-20 font-medium drop-shadow-2xl transition-transform md:hidden 
       ${showMenu ? "translate-x-0" : "-translate-x-full"}`}
     >
       {navLinks.map((l, index) => (
         <li key={index}>
           {index < navLinks.length - 1 ? (
-            <Link className="p-3" href={l.href}>
+            <Link
+              className={clsx(`p-3`, {
+                "text-[#2755c1]": pathname === l.href,
+              })}
+              href={l.href}
+            >
               {l.label}
             </Link>
           ) : (
