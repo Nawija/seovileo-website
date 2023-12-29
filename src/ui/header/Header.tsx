@@ -35,11 +35,13 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+
     if (showMenu) {
       document.body.classList.add("overflow-hidden");
     } else {
       document.body.classList.remove("overflow-hidden");
     }
+    
     const handleClickOutside = (e: MouseEvent) => {
       const nav = document.getElementById("mobile-nav");
 

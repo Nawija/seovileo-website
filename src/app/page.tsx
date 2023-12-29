@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="flex-c px-3 py-12 text-center flex items-center justify-center flex-col max-w-screen-md mx-auto">
+    <div className="anim-opacity flex-c mx-auto flex max-w-screen-md flex-col items-center justify-center px-3 py-12 text-center">
       <p>WEB DEVELOPMENT</p>
       <h1 className="mx-auto max-w-screen-lg text-3xl font-medium lg:text-5xl">
         Strony Internetowe Oparte Na{" "}
