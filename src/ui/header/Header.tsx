@@ -19,12 +19,6 @@ export default function Header() {
     setShowMenu(!showMenu);
   }
 
-  if (showMenu) {
-    document.body.classList.add("overflow-hidden");
-  } else {
-    document.body.classList.remove("overflow-hidden");
-  }
-
   useEffect(() => {
     const handleScrollListener = () => {
       if (window.scrollY > 450) {
@@ -41,6 +35,11 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    if (showMenu) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
     const handleClickOutside = (e: MouseEvent) => {
       const nav = document.getElementById("mobile-nav");
 
