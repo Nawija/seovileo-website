@@ -35,13 +35,12 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-
     if (showMenu) {
       document.body.classList.add("overflow-hidden");
     } else {
       document.body.classList.remove("overflow-hidden");
     }
-    
+
     const handleClickOutside = (e: MouseEvent) => {
       const nav = document.getElementById("mobile-nav");
 
@@ -60,7 +59,7 @@ export default function Header() {
   return (
     <header
       className={clsx(`flex-b z-[999] w-full border-b bg-white px-4 py-3`, {
-        "slide-bottom fixed top-0 z-[999] bg-white/90 ": scrollListenerHeader,
+        "slide-bottom sticky top-0 z-[999] bg-white/90 ": scrollListenerHeader,
       })}
     >
       <Link href="/" aria-label="Logo" className="flex-c z-[999]">
@@ -75,7 +74,11 @@ export default function Header() {
       </Link>
       <nav>
         <DesctopNavLinks pathname={pathname} showMenu={showMenu} />
-        <MobileNavLinks pathname={pathname} showMenu={showMenu} />
+        <MobileNavLinks
+          pathname={pathname}
+          showMenu={showMenu}
+          handleMenu={handleMenu}
+        />
       </nav>
       <BurgerMenu handleMenu={handleMenu} showMenu={showMenu} />
     </header>

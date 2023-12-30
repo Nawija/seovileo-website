@@ -33,6 +33,7 @@ const navLinks = [
 type NavLinkType = {
   pathname: string;
   showMenu: boolean;
+  handleMenu: () => void;
 };
 
 export function DesctopNavLinks({ pathname }: NavLinkType) {
@@ -65,17 +66,22 @@ export function DesctopNavLinks({ pathname }: NavLinkType) {
     </ul>
   );
 }
-export function MobileNavLinks({ pathname, showMenu }: NavLinkType) {
+export function MobileNavLinks({
+  pathname,
+  showMenu,
+  handleMenu,
+}: NavLinkType) {
   return (
     <ul
       id="mobile-nav"
-      className={`absolute left-0 top-0 z-[50] flex h-screen flex-col items-center justify-center space-y-12 border-r bg-white px-20 font-medium drop-shadow-2xl transition-transform md:hidden 
+      className={`absolute left-0 top-0 z-[50] flex h-screen flex-col items-center justify-center space-y-12 border-r bg-white px-20 font-medium drop-shadow-2xl transition-transform duration-300 md:hidden 
       ${showMenu ? "translate-x-0" : "-translate-x-full"}`}
     >
       {navLinks.map((l, index) => (
         <li key={index}>
           {index < navLinks.length - 1 ? (
             <Link
+              onClick={handleMenu}
               className={clsx(`p-3`, {
                 "text-[#2755c1]": pathname === l.href,
               })}
