@@ -4,7 +4,7 @@
 
 :root {
   --text-main: #011737;
-  --text-main-color: #0455ce;
+  --text-main-color: #1063df;
   --body-color: #f3f4f6;
 }
 
@@ -43,13 +43,13 @@ body {
 }
 
 .anim-opacity {
-	animation: anim-opacity 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: anim-opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
- @keyframes anim-opacity {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+@keyframes anim-opacity {
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,4 +1,5 @@
 "use client";
+
 import { inter } from "@/src/ui/fonts";
 import { BurgerMenu } from "@/src/ui/header/BurgerMenu";
 import { DesctopNavLinks, MobileNavLinks } from "@/src/ui/header/NavLinks";

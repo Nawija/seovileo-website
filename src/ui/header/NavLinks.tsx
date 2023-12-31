@@ -1,4 +1,5 @@
 "use client";
+
 import { MainBtn } from "@/src/ui/buttons/MainBtn";
 import clsx from "clsx";
 import Link from "next/link";
@@ -78,23 +79,25 @@ export function MobileNavLinks({
   return (
     <ul
       id="mobile-nav"
-      className={`absolute left-0 top-0 z-[50] flex h-screen flex-col items-center justify-center space-y-12 border-r bg-white px-20 font-medium drop-shadow-2xl transition-transform duration-300 md:hidden 
+      className={`absolute left-0 top-0 z-[50] flex h-screen flex-col items-center justify-center space-y-12 border-r bg-white px-20 font-medium drop-shadow-2xl transition-transform duration-200 md:hidden 
       ${showMenu ? "translate-x-0" : "-translate-x-full"}`}
     >
       {navLinks.map((l, index) => (
         <li key={index}>
           {index < navLinks.length - 1 ? (
             <Link
+              href={l.href}
               onClick={handleMenu}
               className={clsx(`p-3`, {
                 "text-[#2755c1]": pathname === l.href,
               })}
-              href={l.href}
             >
               {l.label}
             </Link>
           ) : (
-            <MainBtn>{l.label}</MainBtn>
+            <Link href={l.href} onClick={handleMenu}>
+              <MainBtn>{l.label}</MainBtn>
+            </Link>
           )}
         </li>
       ))}
