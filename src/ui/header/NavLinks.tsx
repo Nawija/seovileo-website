@@ -30,13 +30,17 @@ const navLinks = [
   },
 ];
 
-type NavLinkType = {
+type DesctopNavLinksType = {
+  pathname: string;
+  showMenu: boolean;
+};
+type MobileNavLinksType = {
   pathname: string;
   showMenu: boolean;
   handleMenu: () => void;
 };
 
-export function DesctopNavLinks({ pathname }: NavLinkType) {
+export function DesctopNavLinks({ pathname }: DesctopNavLinksType) {
   return (
     <ul className="hidden items-center justify-center space-x-6 text-[15px] font-medium md:flex">
       {navLinks.map((l, index) => (
@@ -70,7 +74,7 @@ export function MobileNavLinks({
   pathname,
   showMenu,
   handleMenu,
-}: NavLinkType) {
+}: MobileNavLinksType) {
   return (
     <ul
       id="mobile-nav"
