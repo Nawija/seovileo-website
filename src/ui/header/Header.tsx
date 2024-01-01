@@ -22,7 +22,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScrollListener = () => {
-      if (window.scrollY > 450) {
+      if (window.scrollY > 450 || scrollListenerHeader) {
         setScrollListenerHeader(true);
       } else {
         setScrollListenerHeader(false);
