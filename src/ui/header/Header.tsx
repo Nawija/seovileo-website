@@ -4,17 +4,17 @@ import { inter } from "@/src/ui/fonts";
 import { BurgerMenu } from "@/src/ui/header/BurgerMenu";
 import { DesctopNavLinks, MobileNavLinks } from "@/src/ui/header/NavLinks";
 import "@/src/ui/header/header.css";
-import "aos/dist/aos.css";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Header() {
   const pathname = usePathname();
   const [showMenu, setShowMenu] = useState(false);
   const [scrollListenerHeader, setScrollListenerHeader] = useState(false);
+  const navRef = useRef<HTMLDivElement | null>(null);
 
   function handleMenu() {
     setShowMenu(!showMenu);
@@ -22,18 +22,14 @@ export default function Header() {
 
   useEffect(() => {
     const handleScrollListener = () => {
-      if (window.scrollY > 450 || scrollListenerHeader) {
-        setScrollListenerHeader(true);
-      } else {
-        setScrollListenerHeader(false);
-      }
+      setScrollListenerHeader(window.scrollY > 450 || scrollListenerHeader);
     };
 
     window.addEventListener("scroll", handleScrollListener);
     return () => {
       window.removeEventListener("scroll", handleScrollListener);
     };
-  }, []);
+  }, [scrollListenerHeader]);
 
   useEffect(() => {
     if (showMenu) {
@@ -43,10 +39,7 @@ export default function Header() {
     }
 
     const handleClickOutside = (e: MouseEvent) => {
-      const nav = document.getElementById("mobile-nav");
-
-      if (nav && !nav.contains(e.target as Node) && showMenu) {
-        // Kliknięto poza nawigacją, gdy jest otwarta
+      if (navRef.current && !navRef.current.contains(e.target as Node) && showMenu) {
         setShowMenu(false);
       }
     };
@@ -57,6 +50,7 @@ export default function Header() {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [showMenu]);
+
   return (
     <header
       className={clsx(`flex-b z-[999] w-full border-b bg-white px-4 py-3`, {
@@ -73,7 +67,7 @@ export default function Header() {
         />
         <p className={`ml-1 font-semibold ${inter.className}`}>Seovileo</p>
       </Link>
-      <nav>
+      <nav ref={navRef}>
         <DesctopNavLinks pathname={pathname} showMenu={showMenu} />
         <MobileNavLinks
           pathname={pathname}
