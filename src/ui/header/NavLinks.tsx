@@ -49,7 +49,7 @@ export function DesctopNavLinks({ pathname }: DesctopNavLinksType) {
           {index < navLinks.length - 1 ? (
             <Link
               className={clsx(
-                `p-3`,
+                `p-3 relative`,
                 {
                   "text-[#2755c1]": pathname === l.href,
                 },
@@ -60,6 +60,11 @@ export function DesctopNavLinks({ pathname }: DesctopNavLinksType) {
               href={l.href}
             >
               {l.label}
+              <div
+                className={clsx(`absolute h-1.5 w-1.5 rounded-full top-1/2 left-0 -translate-x-1/2 -translate-y-1/2`, {
+                  "bg-[#2755c1] ": pathname === l.href,
+                })}
+              />
             </Link>
           ) : (
             <Link href={l.href}>

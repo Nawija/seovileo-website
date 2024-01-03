@@ -53,8 +53,8 @@ export default function Header() {
 
   return (
     <header
-      className={clsx(`flex-b z-[999] w-full border-b bg-white px-4 py-3`, {
-        "slide-bottom sticky top-0 z-[999] bg-white/90 ": scrollListenerHeader,
+      className={clsx(`flex-b z-[999] w-full border-b bg-[rgba(255,255,255,0.96)] px-4 py-2.5`, {
+        "slide-bottom sticky top-0 z-[999] ": scrollListenerHeader,
       })}
     >
       <Link href="/" aria-label="Logo" className="flex-c z-[999]">
