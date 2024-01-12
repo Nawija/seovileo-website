@@ -6,20 +6,20 @@ export default function Home() {
     <div className="anim-opacity mx-auto max-w-screen-2xl">
       <Image
         src={seoBg}
-        height={1300}
-        width={1300}
+        height={1100}
+        width={1100}
         priority
+        quality={10}
         className="absolute left-1/2 top-0 -z-10 -translate-x-1/2"
         alt="seo tło"
       />
       <div className="px-3 py-10 text-center md:py-20">
-        <div className="via-emeralnd-500 mx-auto mb-4 w-max rounded-3xl bg-gradient-to-r from-yellow-500 to-orange-400 p-0.5">
-          <div className=" bg-main flex items-center justify-center rounded-3xl px-5 py-1">
+        <div className="mx-auto mb-4 w-max rounded-3xl bg-gradient-to-r from-[#a63a45]  to-[#b35701] p-0.5">
+          <div className=" flex items-center justify-center rounded-3xl bg-[#101017e8] px-5 py-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 24 24"
-              strokeWidth={1.5}
               className="text-second mr-2 h-5 w-5"
             >
               <path
@@ -43,14 +43,17 @@ export default function Home() {
           placeholder text commonly used in the graphic, print, and publishing
           industries for previewing layouts and visual mockups.
         </p>
-        <Image
-          src="/browser.svg"
-          height={1300}
-          width={1300}
-          priority
-          className="mx-auto mt-20"
-          alt="przegladarka seovileo"
-        />
+        <div className="relative">
+          <Image
+            src="/browser.svg"
+            height={1300}
+            width={1300}
+            priority
+            className="mx-auto mt-20"
+            alt="przegladarka seovileo"
+          />
+          <div className="absolute left-1/3 top-1/3 h-80 w-80"></div>
+        </div>
       </div>
     </div>
   );

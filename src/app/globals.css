@@ -8,15 +8,13 @@
   --text-paragraf: #b8b8b8;
   --body-color: #101017;
   --border-color: #424040;
-  --scrollbar-thumb: #db8234;
-  --scrollbar-track: #424040;
 }
 
 body {
   background-color: var(--body-color);
-  color: var(--text-main);
+  color: var(--text-paragraf);
   scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-color: var(--text-second) var(--border-color);
 }
 
 body::-webkit-scrollbar {
@@ -24,11 +22,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb);
+  background-color: var(--text-second);
 }
 
 body::-webkit-scrollbar-track {
-  background-color: var(--scrollbar-track);
+  background-color: var(--border-color);
 }
 
 .bg-main {
