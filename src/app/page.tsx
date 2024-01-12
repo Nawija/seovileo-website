@@ -52,7 +52,7 @@ export default function Home() {
             className="mx-auto mt-20"
             alt="przegladarka seovileo"
           />
-          <div className="absolute left-1/3 top-1/3 h-80 w-80"></div>
+          {/* <div className="bg-gradient blur-[123px] absolute bottom-2 left-1/2 -z-10 h-12 w-3/4 -translate-x-1/2"></div> */}
         </div>
       </div>
     </div>

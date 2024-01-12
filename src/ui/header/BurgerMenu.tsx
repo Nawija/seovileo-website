@@ -12,17 +12,17 @@ export function BurgerMenu({
       onClick={handleMenu}
     >
       <div
-        className={`bg-second h-0.5 rounded-lg transition-all duration-300 ${
+        className={`bg-[#b8b8b8] h-0.5 rounded-lg transition-all duration-300 ${
           showMenu ? "w-4 -rotate-45 scale-110" : "m-1 w-4"
         }`}
       />
       <div
-        className={`bg-second h-0.5 rounded-lg transition-all duration-300 ${
+        className={`bg-[#b8b8b8] h-0.5 rounded-lg transition-all duration-300 ${
           showMenu ? "scale-0" : "m-1 w-3"
         }`}
       />
       <div
-        className={` bg-second h-0.5 rounded-lg transition-all duration-300 ${
+        className={` bg-[#b8b8b8] h-0.5 rounded-lg transition-all duration-300 ${
           showMenu ? "w-4 -translate-y-1 rotate-45 scale-110" : "m-1 w-4"
         }`}
       />
