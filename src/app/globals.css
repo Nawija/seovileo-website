@@ -29,6 +29,10 @@ body {
 .text-second {
   color: var(--text-second);
 }
+
+.bg-gradient {
+  background: linear-gradient(to top right, #fb7d00, #c8b806);
+}
 .text-p {
   color: var(--text-paragraf);
 }

@@ -10,7 +10,7 @@ export default function ScrollUp() {
     const handleScrollListener = () => {
       const scrollPosition = window.scrollY;
 
-      if (scrollPosition > 800) {
+      if (scrollPosition > 1300) {
         setScrollUp(true);
       } else {
         setScrollUp(false);
@@ -31,7 +31,7 @@ export default function ScrollUp() {
 
   return (
     <button
-      className={`fixed bottom-3 right-3 rounded-xl bg-orange-400 p-2 text-white lg:p-3 ${
+      className={`fixed bottom-3 right-3 rounded-xl bg-gradient p-2 text-white lg:p-3 ${
         scrollUp ? "slide-left" : "hidden"
       }`}
       onClick={scrollToTop}

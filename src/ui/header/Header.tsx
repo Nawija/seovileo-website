@@ -35,7 +35,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScrollListener = () => {
-      setScrollListenerHeader(window.scrollY > 450 || scrollListenerHeader);
+      setScrollListenerHeader(window.scrollY > 750 || scrollListenerHeader);
     };
 
     window.addEventListener("scroll", handleScrollListener);
