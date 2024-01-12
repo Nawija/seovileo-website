@@ -31,7 +31,7 @@ export default function ScrollUp() {
 
   return (
     <button
-      className={`fixed bottom-3 right-3 rounded-xl bg-gradient p-2 text-white lg:p-3 ${
+      className={`fixed bottom-3 right-3 rounded-3xl bg-gradient p-1.5 text-white lg:p-2.5 ${
         scrollUp ? "slide-left" : "hidden"
       }`}
       onClick={scrollToTop}
@@ -40,9 +40,9 @@ export default function ScrollUp() {
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        strokeWidth={1.5}
+        strokeWidth={1.8}
         stroke="currentColor"
-        className="h-6 w-6"
+        className="h-5 w-5"
       >
         <path
           strokeLinecap="round"

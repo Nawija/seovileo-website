@@ -5,14 +5,30 @@
 :root {
   --text-main: #ffffff;
   --text-second: #ff9500;
-  --text-paragraf: #B8B8B8;
+  --text-paragraf: #b8b8b8;
   --body-color: #101017;
   --border-color: #424040;
+  --scrollbar-thumb: #db8234;
+  --scrollbar-track: #424040;
 }
 
 body {
   background-color: var(--body-color);
   color: var(--text-main);
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
 }
 
 .bg-main {

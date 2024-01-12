@@ -1,9 +1,11 @@
+import seoBg from "@/public/seo-tlo.png";
 import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="anim-opacity mx-auto max-w-screen-2xl">
       <Image
-        src="/halftone.svg"
+        src={seoBg}
         height={1300}
         width={1300}
         priority
