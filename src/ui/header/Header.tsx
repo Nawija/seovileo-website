@@ -9,6 +9,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { MainBtn } from "../buttons/MainBtn";
+import { SecondBtn } from "../buttons/SecondBtn";
+
+const navButtons = [
+  {
+    href: "/uslugi",
+    label: "Usługi",
+  },
+  {
+    href: "/darmowa-wycena",
+    label: "Wycena",
+  },
+];
 
 export default function Header() {
   const pathname = usePathname();
@@ -39,7 +52,11 @@ export default function Header() {
     }
 
     const handleClickOutside = (e: MouseEvent) => {
-      if (navRef.current && !navRef.current.contains(e.target as Node) && showMenu) {
+      if (
+        navRef.current &&
+        !navRef.current.contains(e.target as Node) &&
+        showMenu
+      ) {
         setShowMenu(false);
       }
     };
@@ -53,29 +70,47 @@ export default function Header() {
 
   return (
     <header
-      className={clsx(`flex-b z-[999] w-full border-b bg-[rgba(255,255,255,0.96)] px-4 py-2.5`, {
-        "slide-bottom sticky top-0 z-[999] ": scrollListenerHeader,
-      })}
+      className={clsx(
+        `flex-b border-main z-[999] w-full border-b px-4 py-2.5`,
+        {
+          "slide-bottom sticky bg-main top-0 z-[999] ": scrollListenerHeader,
+        },
+      )}
     >
-      <Link href="/" aria-label="Logo" className="flex-c z-[999]">
-        <Image
-          src="/seovileo.svg"
-          height={35}
-          width={35}
-          priority
-          alt="seovileo logo"
-        />
-        <p className={`ml-1 font-semibold ${inter.className}`}>Seovileo</p>
-      </Link>
-      <nav ref={navRef}>
-        <DesctopNavLinks pathname={pathname} showMenu={showMenu} />
-        <MobileNavLinks
-          pathname={pathname}
-          showMenu={showMenu}
-          handleMenu={handleMenu}
-        />
-      </nav>
-      <BurgerMenu handleMenu={handleMenu} showMenu={showMenu} />
+      <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between">
+        <Link href="/" aria-label="Logo" className="flex-c z-[999]">
+          <Image
+            src="/seovileo.svg"
+            height={30}
+            width={30}
+            priority
+            alt="seovileo logo"
+          />
+          <p
+            className={`ml-1 text-sm font-medium md:text-base ${inter.className}`}
+          >
+            Seovileo
+          </p>
+        </Link>
+        <nav ref={navRef}>
+          <DesctopNavLinks pathname={pathname} showMenu={showMenu} />
+          <MobileNavLinks
+            pathname={pathname}
+            showMenu={showMenu}
+            handleMenu={handleMenu}
+          />
+        </nav>
+        <div className="hidden items-center justify-center space-x-3 md:flex">
+          {navButtons.map((button, index) =>
+            index % 2 === 0 ? (
+              <SecondBtn key={index}>{button.label}</SecondBtn>
+            ) : (
+              <MainBtn key={index}>{button.label}</MainBtn>
+            ),
+          )}
+        </div>
+        <BurgerMenu handleMenu={handleMenu} showMenu={showMenu} />
+      </div>
     </header>
   );
 }

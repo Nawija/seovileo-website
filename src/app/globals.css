@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --text-main: #011737;
-  --text-main-color: #1063df;
-  --body-color: #f3f4f6;
+  --text-main: #ffffff;
+  --text-second: #ff9500;
+  --text-paragraf: #B8B8B8;
+  --body-color: #101017;
+  --border-color: #424040;
 }
 
 body {
@@ -13,12 +15,25 @@ body {
   color: var(--text-main);
 }
 
-.bg-main-color {
-  background-color: var(--text-main-color);
+.bg-main {
+  background-color: var(--body-color);
+}
+.bg-second {
+  background-color: var(--text-main);
 }
 
-.text-main-color {
-  color: var(--text-main-color);
+.text-main {
+  color: var(--text-main);
+}
+
+.text-second {
+  color: var(--text-second);
+}
+.text-p {
+  color: var(--text-paragraf);
+}
+.border-main {
+  border-color: var(--border-color);
 }
 
 .flex-c {

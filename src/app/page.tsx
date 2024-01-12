@@ -1,49 +1,55 @@
-"use client";
-
-import CircleBlur from "@/src/ui/background/CircleBlur";
-import Test from "./Test";
-
-// import { LottieRefCurrentProps } from "lottie-react";
-// import { useRef } from "react";
-
+import Image from "next/image";
 export default function Home() {
-  // const lottieHeroAnimRef = useRef<LottieRefCurrentProps>(null);
-
   return (
-    <div className="anim-opacity">
-      <div className="relative px-3 py-12 text-white md:py-24">
-        <CircleBlur />
-        <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-center text-center ">
-          <small className="mb-3 text-sm tracking-[0.4rem]">
-            WEB DEVELOPMENT
-          </small>
-          <h1 className="mx-auto max-w-screen-lg text-2xl font-medium md:text-3xl lg:text-5xl">
-            Strony Internetowe Oparte Na{" "}
-            <span className="text-main-color">Najnowszych Trendach</span>{" "}
-            Technologicznych
-          </h1>
-          <p className="mt-12 max-w-screen-sm text-sm font-medium opacity-80">
-            Witaj na mojej stronie internetowej, gdzie jako jednoosobowy
-            developer stawiam na najnowsze trendy technologiczne. Jako pasjonat
-            programowania i projektowania, dedykuję się tworzeniu stron
-            internetowych, które nie tylko odzwierciedlają moje umiejętności,
-            ale również są zgodne z najnowszymi osiągnięciami w dziedzinie
-            technologii internetowej.
-          </p>
+    <div className="anim-opacity mx-auto max-w-screen-2xl">
+      <Image
+        src="/halftone.svg"
+        height={1300}
+        width={1300}
+        priority
+        className="absolute left-1/2 top-0 -z-10 -translate-x-1/2"
+        alt="seo tło"
+      />
+      <div className="px-3 py-10 text-center md:py-20">
+        <div className="via-emeralnd-500 mx-auto mb-4 w-max rounded-3xl bg-gradient-to-r from-yellow-500 to-orange-400 p-0.5">
+          <div className=" bg-main flex items-center justify-center rounded-3xl px-5 py-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              className="text-second mr-2 h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+              />
+            </svg>
+            <p className="text-xs sm:text-sm">Lorem ipsum dolor sit amet</p>
+          </div>
         </div>
+        <h1 className="text-2xl font-semibold sm:text-3xl md:text-5xl lg:text-6xl">
+          Lorem ipsum is placeholder <br />
+          <span className="w-max bg-gradient-to-tr from-orange-500 to-yellow-400 bg-clip-text text-transparent">
+            Strony Internetowe
+          </span>
+        </h1>
+        <p className="text-p mx-auto mt-12 max-w-screen-md">
+          Lorem ipsum is placeholder text commonly used in the graphic, print,
+          and publishing industries for previewing layouts and visuals
+          placeholder text commonly used in the graphic, print, and publishing
+          industries for previewing layouts and visual mockups.
+        </p>
+        <Image
+          src="/browser.svg"
+          height={1300}
+          width={1300}
+          priority
+          className="mx-auto mt-20"
+          alt="przegladarka seovileo"
+        />
       </div>
-      {/* <div className="flex-c relative w-full border bg-white">
-        <div className="relative h-80 w-full">
-          <Lottie
-            style={{ height: "500" }}
-            lottieRef={lottieHeroAnimRef}
-            animationData={HeroAnim}
-            interactivity={interactivity}
-          />
-        </div>
-      </div> */}
-
-      <Test />
     </div>
   );
 }

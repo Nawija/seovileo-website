@@ -10,8 +10,8 @@ const navLinks = [
     label: "Home",
   },
   {
-    href: "/uslugi",
-    label: "Usługi",
+    href: "/portfolio",
+    label: "Portfolio",
   },
   {
     href: "/galeria",
@@ -25,11 +25,9 @@ const navLinks = [
     href: "/kontakt",
     label: "Kontakt",
   },
-  {
-    href: "/darmowa-wycena",
-    label: "Darmowa Wycena",
-  },
 ];
+
+
 
 type DesctopNavLinksType = {
   pathname: string;
@@ -43,39 +41,31 @@ type MobileNavLinksType = {
 
 export function DesctopNavLinks({ pathname }: DesctopNavLinksType) {
   return (
-    <ul className="hidden items-center justify-center space-x-6 text-[15px] font-medium md:flex">
-      {navLinks.map((l, index) => (
-        <li className="flex-c" key={index}>
-          {index < navLinks.length - 1 ? (
+    <>
+      <ul className="text-p ml-24 hidden items-center justify-center space-x-6 text-[15px] font-medium md:flex">
+        {navLinks.map((l, index) => (
+          <li className="flex-c" key={index}>
             <Link
               className={clsx(
-                `p-3 relative`,
+                `relative p-3`,
                 {
-                  "text-[#2755c1]": pathname === l.href,
+                  "text-second": pathname === l.href,
                 },
                 {
-                  "transition-colors hover:text-[#2755c1]": pathname !== l.href,
+                  "transition-colors hover:text-white": pathname !== l.href,
                 },
               )}
               href={l.href}
             >
               {l.label}
-              <div
-                className={clsx(`absolute h-1.5 w-1.5 rounded-full top-1/2 left-0 -translate-x-1/2 -translate-y-1/2`, {
-                  "bg-[#2755c1] ": pathname === l.href,
-                })}
-              />
             </Link>
-          ) : (
-            <Link href={l.href}>
-              <MainBtn>{l.label}</MainBtn>
-            </Link>
-          )}
-        </li>
-      ))}
-    </ul>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
+
 export function MobileNavLinks({
   pathname,
   showMenu,
@@ -84,7 +74,7 @@ export function MobileNavLinks({
   return (
     <ul
       id="mobile-nav"
-      className={`absolute left-0 top-0 z-[50] flex h-screen flex-col items-center justify-center space-y-12 border-r bg-white px-20 font-medium drop-shadow-2xl transition-transform duration-200 md:hidden 
+      className={`border-main bg-main text-p hover:text-main absolute left-0 top-0 z-[50] flex h-screen flex-col items-center justify-center space-y-9 border-r px-24 text-[15px] font-medium drop-shadow-2xl transition-transform duration-200 md:hidden 
       ${showMenu ? "translate-x-0" : "-translate-x-full"}`}
     >
       {navLinks.map((l, index) => (
@@ -94,14 +84,14 @@ export function MobileNavLinks({
               href={l.href}
               onClick={handleMenu}
               className={clsx(`p-3`, {
-                "text-[#2755c1]": pathname === l.href,
+                "text-second": pathname === l.href,
               })}
             >
               {l.label}
             </Link>
           ) : (
             <Link href={l.href} onClick={handleMenu}>
-              <MainBtn>{l.label}</MainBtn>
+              <MainBtn className="w-max">{l.label}</MainBtn>
             </Link>
           )}
         </li>

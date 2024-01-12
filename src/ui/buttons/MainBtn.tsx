@@ -10,7 +10,7 @@ export function MainBtn({ children, className, ...rest }: ButtonProps) {
     <button
       {...rest}
       className={clsx(
-        "relative overflow-hidden rounded-xl border border-[#92D5FF] bg-gradient-to-bl from-[#0b7ee9] to-[#0b60e9] px-5 py-2 text-[13px] font-semibold text-white/80 shadow-xl shadow-[#0b94e96b] hover:shadow-[#0b64e96b] transition-all hover:-translate-y-[2px] duration-300 hover:bg-[#0B93E9] hover:text-white active:bg-[#0b73e9]",
+        "relative overflow-hidden rounded-xl bg-gradient-to-tr from-[#fb7d00] to-[#c8b806] px-5 py-2 text-[13px] font-semibold text-white/80 shadow-xl shadow-[#e9640b6b] hover:shadow-[#e9bd0b6b] transition-all hover:-translate-y-[2px] duration-300 hover:text-white",
         className,
       )}
     >
