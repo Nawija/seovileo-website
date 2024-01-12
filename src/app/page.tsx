@@ -8,7 +8,6 @@ export default function Home() {
         src={seoBg}
         height={1100}
         width={1100}
-        priority
         quality={10}
         className="absolute left-1/2 top-0 -z-10 -translate-x-1/2"
         alt="seo tło"
