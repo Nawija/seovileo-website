@@ -3,15 +3,17 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="anim-opacity mx-auto max-w-screen-2xl">
-      <Image
-        src={seoBg}
-        height={1100}
-        width={1100}
-        quality={10}
-        className="absolute left-1/2 top-0 -z-10 -translate-x-1/2"
-        alt="seo tło"
-      />
+    <div className="anim-opacity relative mx-auto max-w-screen-2xl">
+      <div className="absolute left-0 top-0 h-[30vh] w-full md:h-[50vh]">
+        <Image
+          src={seoBg}
+          fill
+          priority
+          quality={10}
+          className="object-cover"
+          alt="seo tło"
+        />
+      </div>
       <div className="px-3 py-10 text-center md:py-20">
         <div className="mx-auto mb-4 w-max rounded-3xl bg-gradient-to-r from-[#a63a45]  to-[#b35701] p-0.5">
           <div className=" flex items-center justify-center rounded-3xl bg-[#101017e8] px-5 py-1">
