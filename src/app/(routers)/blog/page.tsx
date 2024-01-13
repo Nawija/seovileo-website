@@ -56,6 +56,7 @@ export default async function Blog() {
                 className="object-cover"
                 src={d.img.url}
                 alt={d.title}
+                priority={i < 5}
                 fill
               />
             </div>
