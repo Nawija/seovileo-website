@@ -1,5 +1,6 @@
 import SmallHero from "@/src/components/SmallHero";
 import { SecondBtn } from "@/src/ui/buttons/SecondBtn";
+import Image from "next/image";
 import Link from "next/link";
 
 // interface BlogsTypes {
@@ -44,14 +45,21 @@ export default async function Blog() {
   return (
     <div className="anim-opacity">
       <SmallHero />
-      <div className="mx-auto -mt-24 grid w-full max-w-screen-2xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto -mt-52 grid w-full max-w-screen-2xl grid-cols-2 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-5">
         {data.map((d, i) => (
           <div
             key={i}
-            className="border-main overflow-hidden rounded-lg border"
+            className="border-main overflow-hidden rounded-md border lg:mb-24"
           >
-            <img className="h-52 w-full object-cover" src={d.img.url} />
-            <div className="bg-second space-y-4 px-4 py-4">
+            <div className="border-main relative h-28 w-full border-b lg:h-40">
+              <Image
+                className="object-cover"
+                src={d.img.url}
+                alt={d.title}
+                fill
+              />
+            </div>
+            <div className="bg-second flex flex-col items-start justify-center space-y-1 px-2 py-2 lg:space-y-4 lg:px-3 lg:py-3">
               <div className="text-p flex items-center justify-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +77,9 @@ export default async function Blog() {
                 </svg>
                 <small>{d.date}</small>
               </div>
-              <p className="text-sm sm:text-base">{d.title}</p>
+              <p className="pb-2 text-sm sm:text-base">
+                {d.title.length > 50 ? `${d.title.slice(0, 50)} ...` : d.title}
+              </p>
               <Link href={`/${d.slug}`}>
                 <SecondBtn>Czytaj wiecej</SecondBtn>
               </Link>
