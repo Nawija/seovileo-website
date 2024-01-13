@@ -3,15 +3,15 @@ import { SecondBtn } from "@/src/ui/buttons/SecondBtn";
 import Image from "next/image";
 import Link from "next/link";
 
-// interface BlogsTypes {
-//   id: string;
-//   date: string;
-//   slug: string;
-//   title: string;
-//   img: {
-//     url: string;
-//   };
-// }
+interface BlogType {
+  id: string;
+  date: string;
+  slug: string;
+  title: string;
+  img: {
+    url: string;
+  };
+}
 
 const fetchDatoCms = async () => {
   const res = await fetch("https://graphql.datocms.com/", {
@@ -41,7 +41,7 @@ const fetchDatoCms = async () => {
 
 export default async function Blog() {
   const fetchData = await fetchDatoCms();
-  const data = await fetchData.data.allBlogs;
+  const data: BlogType[] = await fetchData.data.allBlogs;
   return (
     <div className="anim-opacity">
       <SmallHero />
