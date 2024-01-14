@@ -1,7 +1,9 @@
 "use client";
 
+import grid from "@/public/grid.png";
 import { MainBtn } from "@/src/ui/buttons/MainBtn";
 import clsx from "clsx";
+import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
@@ -10,7 +12,7 @@ const navLinks = [
     label: "Home",
   },
   {
-    href: "/",
+    href: "/portfolio",
     label: "Portfolio",
   },
   {
@@ -26,8 +28,6 @@ const navLinks = [
     label: "Kontakt",
   },
 ];
-
-
 
 type DesctopNavLinksType = {
   pathname: string;
@@ -77,6 +77,7 @@ export function MobileNavLinks({
       className={`border-main bg-main text-p hover:text-main absolute left-0 top-0 z-[50] flex h-screen flex-col items-center justify-center space-y-9 border-r px-24 text-[15px] font-medium drop-shadow-2xl transition-transform duration-200 md:hidden 
       ${showMenu ? "translate-x-0" : "-translate-x-full"}`}
     >
+      <Image src={grid} fill className="object-cover" />
       {navLinks.map((l, index) => (
         <li key={index}>
           {index < navLinks.length - 1 ? (

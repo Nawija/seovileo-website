@@ -37,6 +37,10 @@ body::-webkit-scrollbar-track {
   background-color: var(--bg-second);
 }
 
+.title {
+  
+}
+
 .text-main {
   color: var(--text-main);
 }

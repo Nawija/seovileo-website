@@ -1,10 +1,13 @@
+import grid from "@/public/grid.png";
 import seoBg from "@/public/seo-tlo.png";
 import Image from "next/image";
+import { MainBtn } from "../ui/buttons/MainBtn";
+import { SecondBtn } from "../ui/buttons/SecondBtn";
 
 export default function Home() {
   return (
-    <div className="anim-opacity relative mx-auto max-w-screen-2xl">
-      <div className="absolute left-0 top-0 h-[30vh] w-full md:h-[50vh]">
+    <div className="anim-opacity relative mx-auto max-w-[1800px] ">
+      <div className="absolute -top-20 left-0 h-[30vh] w-full md:h-[60vh]">
         <Image
           src={seoBg}
           fill
@@ -14,7 +17,7 @@ export default function Home() {
           alt="seo tło"
         />
       </div>
-      <div className="px-3 py-10 text-center md:py-20">
+      <div className="mx-auto max-w-screen-2xl px-3 py-10 text-center md:py-20">
         <div className="mx-auto mb-4 w-max rounded-3xl bg-gradient-to-r from-[#a63a45]  to-[#b35701] p-0.5">
           <div className=" flex items-center justify-center rounded-3xl bg-[#101017e8] px-5 py-1">
             <svg
@@ -32,7 +35,7 @@ export default function Home() {
             <p className="text-xs sm:text-sm">Lorem ipsum dolor sit amet</p>
           </div>
         </div>
-        <h1 className="text-2xl font-semibold sm:text-3xl md:text-5xl lg:text-6xl">
+        <h1 className="text-2xl font-semibold sm:text-3xl md:text-5xl lg:text-6xl text-main">
           Lorem ipsum is placeholder <br />
           <span className="w-max bg-gradient-to-tr from-orange-500 to-yellow-400 bg-clip-text text-transparent">
             Strony Internetowe
@@ -55,6 +58,30 @@ export default function Home() {
           />
           {/* <div className="bg-gradient blur-[123px] absolute bottom-2 left-1/2 -z-10 h-12 w-3/4 -translate-x-1/2"></div> */}
         </div>
+      </div>
+      <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-center px-3 py-10 text-start md:flex-row md:py-20 space-y-10 md:space-y-0">
+        <div className="w-full max-w-screen-sm space-y-5 px-4 md:w-3/4">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-main">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non beatae
+            maiores ullam!
+          </h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia,
+            nam at explicabo similique doloribus ullam esse aliquam ducimus
+            itaque facilis porro molestiae nobis pariatur, repellendus vero,
+            minima velit! Qui, ratione?
+          </p>
+          <div className="flex-s space-x-4">
+            <SecondBtn>Wiecej</SecondBtn>
+            <MainBtn>Testy</MainBtn>
+          </div>
+        </div>
+        <div className="w-full max-w-screen-sm px-4 md:w-1/2 relative h-full">
+          <Image src={grid} alt="siatka grid" height={700} width={700} className="object-cover" />
+        </div>
+      </div>
+      <div className=" border-y border-main flex flex-col items-center justify-center text-start md:flex-row py-24 space-y-10 md:space-y-0 bg-black">
+
       </div>
     </div>
   );
