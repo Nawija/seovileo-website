@@ -77,7 +77,7 @@ export function MobileNavLinks({
       className={`border-main bg-[#0b0b0be8] text-p hover:text-main absolute left-0 top-0 z-[50] flex h-screen flex-col items-center justify-center space-y-9 border-r px-24 text-[15px] font-medium drop-shadow-2xl transition-transform duration-200 md:hidden 
       ${showMenu ? "translate-x-0" : "-translate-x-full"}`}
     >
-      <Image src={grid} className="object-cover absolute py-24 opacity-40" alt="siatka grid" fill />
+      <Image src={grid} className="object-cover absolute py-24 opacity-40 -z-10" alt="siatka grid" fill />
       {navLinks.map((l, index) => (
         <li key={index}>
           {index < navLinks.length - 1 ? (

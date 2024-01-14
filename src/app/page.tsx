@@ -57,7 +57,7 @@ export default function Home() {
             className="mx-auto mt-20"
             alt="przegladarka seovileo"
           />
-          <div className="bg-gradient absolute bottom-0 left-1/2 -z-50 h-1/2 w-[30vw] -translate-x-1/2 rounded-full blur-[55px]"></div>
+          <div className="bg-amber-300 absolute bottom-0 left-1/2 -z-50 h-1/2 w-[30vw] -translate-x-1/2 rounded-full blur-[55px]"></div>
         </div>
       </div>
       <Realization />
@@ -95,7 +95,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center justify-center px-4 md:pl-12">
             <div className="flex items-center justify-center">
-              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20 md:opacity-10">
+              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20">
                 1
               </div>
               <p>
@@ -107,7 +107,7 @@ export default function Home() {
             </div>
             <div className="my-6 h-24 w-px bg-gradient" />
             <div className="flex items-center justify-center">
-              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20 md:opacity-10">
+              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20">
                 2
               </div>
               <p>
@@ -119,7 +119,7 @@ export default function Home() {
             </div>
             <div className="my-6 h-24 w-px bg-gradient" />
             <div className="flex items-center justify-center">
-              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20 md:opacity-10">
+              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20">
                 3
               </div>
               <p>
@@ -131,7 +131,7 @@ export default function Home() {
             </div>
             <div className="my-6 h-24 w-px bg-gradient" />
             <div className="flex items-center justify-center">
-              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20 md:opacity-10">
+              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20">
                 4
               </div>
               <p>
@@ -143,7 +143,7 @@ export default function Home() {
             </div>
             <div className="my-6 h-24 w-px bg-gradient" />
             <div className="flex items-center justify-center">
-              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20 md:opacity-10">
+              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20">
                 5
               </div>
               <p>

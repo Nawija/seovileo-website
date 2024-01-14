@@ -19,13 +19,13 @@ const portfolioImg = [
 export default function Realization() {
   return (
     <section className="z-10 mx-auto flex flex-col items-center justify-center overflow-x-hidden py-12 text-center md:py-24">
-      <h2 className="mb-6 text-2xl tracking-wide">Realizacje</h2>
-      <div className="mx-auto grid max-w-screen-2xl grid-cols-2 gap-2 px-3 text-start md:grid-cols-3 md:gap-4 lg:grid-cols-6">
+      <h2 className="text-main mb-6 text-2xl tracking-wide">Realizacje</h2>
+      <div className="mx-auto grid max-w-screen-2xl grid-cols-2 gap-2 px-3 text-start md:grid-cols-3 md:gap-4 lg:grid-cols-5">
         {portfolioImg.map((i, id) => (
           <Link
             href="/"
             key={id}
-            className="group relative h-64 w-full overflow-hidden rounded-lg md:h-80"
+            className="border-main group relative h-64 w-full overflow-hidden rounded-lg border md:h-80"
           >
             <Image
               src={i.img}
@@ -39,7 +39,7 @@ export default function Realization() {
                   25vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/10" />
-            <p className="absolute bottom-2 left-2 z-10 max-w-36 text-xl text-white">
+            <p className="absolute bottom-2 left-2 z-10 max-w-36 text-lg text-white">
               {i.title}
             </p>
           </Link>
