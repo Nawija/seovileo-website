@@ -1,6 +1,7 @@
 import grid from "@/public/grid.png";
 import seoBg from "@/public/seo-tlo.png";
 import Image from "next/image";
+import Realization from "../components/home/Realization";
 import { MainBtn } from "../ui/buttons/MainBtn";
 import { SecondBtn } from "../ui/buttons/SecondBtn";
 
@@ -35,7 +36,7 @@ export default function Home() {
             <p className="text-xs sm:text-sm">Lorem ipsum dolor sit amet</p>
           </div>
         </div>
-        <h1 className="text-2xl font-semibold sm:text-3xl md:text-5xl lg:text-6xl text-main">
+        <h1 className="text-main text-2xl font-semibold sm:text-3xl md:text-5xl lg:text-6xl">
           Lorem ipsum is placeholder <br />
           <span className="w-max bg-gradient-to-tr from-orange-500 to-yellow-400 bg-clip-text text-transparent">
             Strony Internetowe
@@ -56,12 +57,13 @@ export default function Home() {
             className="mx-auto mt-20"
             alt="przegladarka seovileo"
           />
-          {/* <div className="bg-gradient blur-[123px] absolute bottom-2 left-1/2 -z-10 h-12 w-3/4 -translate-x-1/2"></div> */}
+          <div className="bg-gradient absolute bottom-0 left-1/2 -z-50 h-1/2 w-[30vw] -translate-x-1/2 rounded-full blur-[55px]"></div>
         </div>
       </div>
-      <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-center px-3 py-10 text-start md:flex-row md:py-20 space-y-10 md:space-y-0">
+      <Realization />
+      <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-center space-y-10 px-3 py-10 text-start md:flex-row md:space-y-0 md:py-20">
         <div className="w-full max-w-screen-sm space-y-5 px-4 md:w-3/4">
-          <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-main">
+          <h2 className="text-main text-lg font-semibold md:text-xl lg:text-2xl">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non beatae
             maiores ullam!
           </h2>
@@ -76,12 +78,83 @@ export default function Home() {
             <MainBtn>Testy</MainBtn>
           </div>
         </div>
-        <div className="w-full max-w-screen-sm px-4 md:w-1/2 relative h-full">
-          <Image src={grid} alt="siatka grid" height={700} width={700} className="object-cover" />
+        <div className="relative h-full w-full max-w-screen-sm px-4 md:w-1/2">
+          <Image
+            src={grid}
+            alt="siatka grid"
+            height={700}
+            width={700}
+            className="object-cover"
+          />
         </div>
       </div>
-      <div className=" border-y border-main flex flex-col items-center justify-center text-start md:flex-row py-24 space-y-10 md:space-y-0 bg-black">
-
+      <div className=" border-main flex flex-col items-center justify-center space-y-10 border-y bg-black py-24 text-start md:flex-row md:space-y-0">
+        <section className="mx-auto flex max-w-screen-xl flex-col items-start justify-center px-4 py-12 md:flex-row md:py-24">
+          <div className="top-24 mb-32 h-full w-full px-4 text-center text-3xl md:sticky md:mb-0 md:w-1/2 md:text-start md:text-3xl text-main">
+            <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h2>
+          </div>
+          <div className="flex flex-col items-center justify-center px-4 md:pl-12">
+            <div className="flex items-center justify-center">
+              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20 md:opacity-10">
+                1
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam explicabo doloribus eius error esse sint tempore
+                eligendi, deleniti aliquid ratione. A tempora expedita natus
+                placeat eveniet quaerat corporis rerum soluta?
+              </p>
+            </div>
+            <div className="my-6 h-24 w-px bg-gradient" />
+            <div className="flex items-center justify-center">
+              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20 md:opacity-10">
+                2
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam explicabo doloribus eius error esse sint tempore
+                eligendi, deleniti aliquid ratione. A tempora expedita natus
+                placeat eveniet quaerat corporis rerum soluta?
+              </p>
+            </div>
+            <div className="my-6 h-24 w-px bg-gradient" />
+            <div className="flex items-center justify-center">
+              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20 md:opacity-10">
+                3
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam explicabo doloribus eius error esse sint tempore
+                eligendi, deleniti aliquid ratione. A tempora expedita natus
+                placeat eveniet quaerat corporis rerum soluta?
+              </p>
+            </div>
+            <div className="my-6 h-24 w-px bg-gradient" />
+            <div className="flex items-center justify-center">
+              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20 md:opacity-10">
+                4
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam explicabo doloribus eius error esse sint tempore
+                eligendi, deleniti aliquid ratione. A tempora expedita natus
+                placeat eveniet quaerat corporis rerum soluta?
+              </p>
+            </div>
+            <div className="my-6 h-24 w-px bg-gradient" />
+            <div className="flex items-center justify-center">
+              <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20 md:opacity-10">
+                5
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam explicabo doloribus eius error esse sint tempore
+                eligendi, deleniti aliquid ratione. A tempora expedita natus
+                placeat eveniet quaerat corporis rerum soluta?
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
