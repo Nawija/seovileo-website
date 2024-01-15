@@ -51,23 +51,25 @@ export default function Home() {
           industries for previewing layouts and visual mockups.
         </p>
       </div>
-      <div className="relative mx-auto my-12 w-max lg:my-24">
+      <div className="relative mx-auto my-12 h-44 lg:h-[570px] lg:w-3/4 w-full lg:my-24">
         <Image
           src={browser}
-          height={1200}
-          width={1200}
+          fill
           priority
-          className="mx-auto mt-20"
+          className="mx-auto mt-20 object-cover"
           alt="przegladarka seovileo"
         />
         <div className="absolute left-1/2 top-[60%] -z-50 h-[20vw] w-[20vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500 blur-[100px]"></div>
-        <div className="flex-b absolute bottom-0 left-0 w-full p-10">
-          <p className="mr-12">
+        <div className="flex-b absolute bottom-0 left-0 w-full p-4 md:p-10">
+          <p className="text-xs sm:text-sm md:mr-12">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
             quisquam corporis explicabo! Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Nisi earum rerum officia.
           </p>
-          <Link href="/">
+          <Link
+            href="https://pagespeed.web.dev/analysis/https-seovileo-pl/9sy1ae68wc?form_factor=mobile"
+            target="_blank"
+          >
             <SecondBtn className="w-max">Sprawdz testy</SecondBtn>
           </Link>
         </div>
@@ -168,6 +170,77 @@ export default function Home() {
           </div>
         </section>
       </div>
+      <section className="grid grid-cols-2 lg:grid-cols-5">
+        <div className="border-main flex flex-col items-start justify-start border p-10">
+          <p className="text-main mb-3 text-6xl font-medium">#120</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+            aliquid deleniti dolores saepe libero reprehenderit enim commodi
+            laborum, sapiente, incidunt distinctio!
+          </p>
+        </div>
+        <div className="border-main flex flex-col items-start justify-start border p-10">
+          <p className="text-main mb-3 text-6xl font-medium">#30</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur{" "}
+          </p>
+        </div>
+        <div className="border-main flex flex-col items-start justify-start border p-10">
+          <p className="text-main mb-3 text-6xl font-medium">#50</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+            soluta officiis aliquid deleniti dolores saepe libero reprehenderit
+            enim commodi laborum, sapiente, incidunt distinctio!
+          </p>
+        </div>
+        <div className="border-main flex flex-col items-start justify-start border p-10">
+          <p className="text-main mb-3 text-6xl font-medium">#10</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elitoluta
+            officiis aliquid deleniti dolores saepe libero reprehenderit enim
+            commodi laborum, sapiente, incidunt distinctio!
+          </p>
+        </div>
+        <div className="border-main flex flex-col items-start justify-start border p-10">
+          <p className="text-main mb-3 text-6xl font-medium">#73</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+            soluta officiis aliquid deleniti dolores saepe libero reprehenderit
+            enim commodi laborum, sapiente, incidunt
+          </p>
+        </div>
+        <div className="border-main flex flex-col items-start justify-start border p-10">
+          <p className="text-main mb-3 text-6xl font-medium">#81</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipist distinctio!</p>
+        </div>
+        <div className="border-main flex flex-col items-start justify-start border p-10">
+          <p className="text-main mb-3 text-6xl font-medium">#12</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+            soluta officiis aliquid deleniti dolores saepe libero reprehenderit
+            enim commodi laborum, sapiente, incunt distinctio!
+          </p>
+        </div>
+        <div className="border-main flex flex-col items-start justify-start border p-10">
+          <p className="text-main mb-3 text-6xl font-medium">#23</p>
+          <p>Lorem ipsum dolor sit amet consectetur </p>
+        </div>
+        <div className="border-main flex flex-col items-start justify-start border p-10">
+          <p className="text-main mb-3 text-6xl font-medium">#54</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+            soluta officiis aliquid deleniti dolores saepe libero reprehenderit
+            enim commodi l distinctio!
+          </p>
+        </div>
+        <div className="border-main flex flex-col items-start justify-start border p-10">
+          <p className="text-main mb-3 text-6xl font-medium">#43</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ea
+            expedita et!
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
