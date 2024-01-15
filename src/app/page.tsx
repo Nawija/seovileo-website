@@ -1,6 +1,8 @@
-import grid from "@/public/grid.png";
+import browser from "@/public/browser.png";
+import grid from "@/public/seo-grid.png";
 import seoBg from "@/public/seo-tlo.png";
 import Image from "next/image";
+import Link from "next/link";
 import Realization from "../components/home/Realization";
 import { MainBtn } from "../ui/buttons/MainBtn";
 import { SecondBtn } from "../ui/buttons/SecondBtn";
@@ -18,8 +20,8 @@ export default function Home() {
           alt="seo tło"
         />
       </div>
-      <div className="mx-auto max-w-screen-2xl px-3 py-10 text-center md:py-20">
-        <div className="mx-auto mb-4 w-max rounded-3xl bg-gradient-to-r from-[#a63a45]  to-[#b35701] p-0.5">
+      <div className="mx-auto max-w-screen-2xl px-3 py-10 text-center md:pt-20">
+        <div className="mx-auto mb-4 w-max rounded-3xl bg-gradient-to-r from-[#41a63a]  to-[#b0b301] p-0.5">
           <div className=" flex items-center justify-center rounded-3xl bg-[#101017e8] px-5 py-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -48,16 +50,26 @@ export default function Home() {
           placeholder text commonly used in the graphic, print, and publishing
           industries for previewing layouts and visual mockups.
         </p>
-        <div className="relative">
-          <Image
-            src="/browser.svg"
-            height={1300}
-            width={1300}
-            priority
-            className="mx-auto mt-20"
-            alt="przegladarka seovileo"
-          />
-          <div className="bg-amber-300 absolute bottom-0 left-1/2 -z-50 h-1/2 w-[30vw] -translate-x-1/2 rounded-full blur-[55px]"></div>
+      </div>
+      <div className="relative mx-auto my-12 w-max lg:my-24">
+        <Image
+          src={browser}
+          height={1200}
+          width={1200}
+          priority
+          className="mx-auto mt-20"
+          alt="przegladarka seovileo"
+        />
+        <div className="absolute left-1/2 top-[60%] -z-50 h-[20vw] w-[20vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500 blur-[100px]"></div>
+        <div className="flex-b absolute bottom-0 left-0 w-full p-10">
+          <p className="mr-12">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+            quisquam corporis explicabo! Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Nisi earum rerum officia.
+          </p>
+          <Link href="/">
+            <SecondBtn className="w-max">Sprawdz testy</SecondBtn>
+          </Link>
         </div>
       </div>
       <Realization />
@@ -78,7 +90,7 @@ export default function Home() {
             <MainBtn>Testy</MainBtn>
           </div>
         </div>
-        <div className="relative h-full w-full max-w-screen-sm px-4 md:w-1/2">
+        <div className="relative h-full w-full max-w-screen-sm px-4 md:w-full">
           <Image
             src={grid}
             alt="siatka grid"
@@ -90,7 +102,7 @@ export default function Home() {
       </div>
       <div className=" border-main flex flex-col items-center justify-center space-y-10 border-y bg-black py-24 text-start md:flex-row md:space-y-0">
         <section className="mx-auto flex max-w-screen-xl flex-col items-start justify-center px-4 py-12 md:flex-row md:py-24">
-          <div className="top-24 mb-32 h-full w-full px-4 text-center text-3xl md:sticky md:mb-0 md:w-1/2 md:text-start md:text-3xl text-main">
+          <div className="text-main top-24 mb-32 h-full w-full px-4 text-center text-3xl md:sticky md:mb-0 md:w-1/2 md:text-start md:text-3xl">
             <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h2>
           </div>
           <div className="flex flex-col items-center justify-center px-4 md:pl-12">
@@ -105,7 +117,7 @@ export default function Home() {
                 placeat eveniet quaerat corporis rerum soluta?
               </p>
             </div>
-            <div className="my-6 h-24 w-px bg-gradient" />
+            <div className="bg-gradient my-6 h-24 w-px" />
             <div className="flex items-center justify-center">
               <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20">
                 2
@@ -117,7 +129,7 @@ export default function Home() {
                 placeat eveniet quaerat corporis rerum soluta?
               </p>
             </div>
-            <div className="my-6 h-24 w-px bg-gradient" />
+            <div className="bg-gradient my-6 h-24 w-px" />
             <div className="flex items-center justify-center">
               <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20">
                 3
@@ -129,7 +141,7 @@ export default function Home() {
                 placeat eveniet quaerat corporis rerum soluta?
               </p>
             </div>
-            <div className="my-6 h-24 w-px bg-gradient" />
+            <div className="bg-gradient my-6 h-24 w-px" />
             <div className="flex items-center justify-center">
               <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20">
                 4
@@ -141,7 +153,7 @@ export default function Home() {
                 placeat eveniet quaerat corporis rerum soluta?
               </p>
             </div>
-            <div className="my-6 h-24 w-px bg-gradient" />
+            <div className="bg-gradient my-6 h-24 w-px" />
             <div className="flex items-center justify-center">
               <div className="from mr-2 flex -rotate-12 items-center justify-center rounded-full px-4 py-2 text-9xl font-semibold opacity-20">
                 5

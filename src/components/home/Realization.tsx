@@ -4,6 +4,8 @@ import s3 from "@/public/portfolio/3.jpg";
 import s4 from "@/public/portfolio/4.jpg";
 import s5 from "@/public/portfolio/5.jpg";
 import s6 from "@/public/portfolio/6.jpg";
+import { MainBtn } from "@/src/ui/buttons/MainBtn";
+import { SecondBtn } from "@/src/ui/buttons/SecondBtn";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,6 +16,10 @@ const portfolioImg = [
   { img: s4, title: "Jarek Olszewski", time: "0.4" },
   { img: s5, title: "Portfolio", time: "0.5" },
   { img: s6, title: "Portfolio Xyz", time: "0.6" },
+  { img: s3, title: "Emelab", time: "0.3" },
+  { img: s1, title: "Portfolio", time: "0.1" },
+  { img: s2, title: "Nazoltej", time: "0.2" },
+  { img: s4, title: "Jarek Olszewski", time: "0.4" },
 ];
 
 export default function Realization() {
@@ -44,6 +50,14 @@ export default function Realization() {
             </p>
           </Link>
         ))}
+      </div>
+      <div className="flex-c mt-12 space-x-4">
+        <Link href="/">
+          <SecondBtn>Zobacz Wiecej</SecondBtn>
+        </Link>
+        <Link href="/">
+          <MainBtn>Galeria</MainBtn>
+        </Link>
       </div>
     </section>
   );
