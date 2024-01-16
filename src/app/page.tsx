@@ -1,25 +1,16 @@
 import browser from "@/public/browser.png";
 import grid from "@/public/seo-grid.png";
-import seoBg from "@/public/seo-tlo.png";
 import Image from "next/image";
 import Link from "next/link";
 import Realization from "../components/home/Realization";
+import Dots from "../ui/background/Dots";
 import { MainBtn } from "../ui/buttons/MainBtn";
 import { SecondBtn } from "../ui/buttons/SecondBtn";
 
 export default function Home() {
   return (
-    <div className="anim-opacity relative mx-auto max-w-[1800px] ">
-      <div className="absolute -top-20 left-0 h-[30vh] w-full md:h-[60vh]">
-        <Image
-          src={seoBg}
-          fill
-          priority
-          quality={10}
-          className="object-cover"
-          alt="seo tło"
-        />
-      </div>
+    <div className="anim-opacity relative mx-auto max-w-[2000px] ">
+      <Dots />
       <div className="mx-auto max-w-screen-2xl px-3 py-10 text-center md:pt-20">
         <div className="mx-auto mb-4 w-max rounded-3xl bg-gradient-to-r from-[#41a63a]  to-[#b0b301] p-0.5">
           <div className=" flex items-center justify-center rounded-3xl bg-[#101017e8] px-5 py-1">
@@ -51,28 +42,24 @@ export default function Home() {
           industries for previewing layouts and visual mockups.
         </p>
       </div>
-      <div className="relative mx-auto my-12 h-44 lg:h-[570px] lg:w-3/4 w-full lg:my-24">
+      <div className="relative mx-auto my-12 w-full">
         <Image
           src={browser}
-          fill
+          height={1200}
+          width={1200}
           priority
           className="mx-auto mt-20 object-cover"
           alt="przegladarka seovileo"
         />
         <div className="absolute left-1/2 top-[60%] -z-50 h-[20vw] w-[20vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500 blur-[100px]"></div>
-        <div className="flex-b absolute bottom-0 left-0 w-full p-4 md:p-10">
-          <p className="text-xs sm:text-sm md:mr-12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            quisquam corporis explicabo! Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Nisi earum rerum officia.
-          </p>
+
           <Link
             href="https://pagespeed.web.dev/analysis/https-seovileo-pl/9sy1ae68wc?form_factor=mobile"
             target="_blank"
+            className="text-center mx-auto"
           >
             <SecondBtn className="w-max">Sprawdz testy</SecondBtn>
           </Link>
-        </div>
       </div>
       <Realization />
       <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-center space-y-10 px-3 py-10 text-start md:flex-row md:space-y-0 md:py-20">
