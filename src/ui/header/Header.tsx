@@ -87,7 +87,7 @@ export default function Header() {
             alt="seovileo logo"
           />
           <p
-            className={`ml-1 text-sm font-medium md:text-base ${inter.className}`}
+            className={`ml-1 text-sm font-medium md:text-base text-main ${inter.className}`}
           >
             Seovileo
           </p>
