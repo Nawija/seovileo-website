@@ -1,7 +1,5 @@
-import browser from "@/public/browser.png";
 import grid from "@/public/seo-grid.png";
 import Image from "next/image";
-import Link from "next/link";
 import Realization from "../components/home/Realization";
 import CircleBlur from "../ui/background/CircleBlur";
 import { MainBtn } from "../ui/buttons/MainBtn";
@@ -14,7 +12,7 @@ export default function Home() {
         <CircleBlur />
       </div>
 
-      <div className="mx-auto max-w-screen-2xl px-3 py-10 text-center md:pt-20">
+      <div className="relative mx-auto max-w-screen-2xl px-3 py-10 text-center md:pt-20">
         <div className="mx-auto mb-4 w-max rounded-3xl bg-gradient-to-r from-[#41a63a]  to-[#b0b301] p-0.5">
           <div className=" flex items-center justify-center rounded-3xl bg-[#101017e8] px-5 py-1">
             <svg

@@ -71,9 +71,9 @@ export default function Header() {
   return (
     <header
       className={clsx(
-        `flex-b border-main z-[999] w-full border-b px-4 py-2.5`,
+        `flex-b  z-[999] w-full  px-4 py-2.5`,
         {
-          "slide-bottom sticky bg-[#0b0b0be8] top-0 z-[999] ": scrollListenerHeader,
+          "slide-bottom sticky border-main border-b bg-[#0b0b0be8] top-0 z-[999]": scrollListenerHeader,
         },
       )}
     >

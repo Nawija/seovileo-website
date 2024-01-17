@@ -4,6 +4,8 @@ import { inter } from "@/src/ui/fonts";
 import Footer from "@/src/ui/footer/Footer";
 import Header from "@/src/ui/header/Header";
 import type { Metadata } from "next";
+import Image from "next/image";
+import amazingBg from "@/public/amazingBg.jpg"
 
 export const metadata: Metadata = {
   title: "Seovileo-website",
@@ -21,6 +23,15 @@ export default function RootLayout({
         <meta name="theme-color" content="#0B0B0B" />
       </head>
       <body className={` ${inter.className}`}>
+        <div className="absolute -z-50 h-screen w-full overflow-hidden opacity-10">
+          <Image
+            src={amazingBg}
+            fill
+            alt="seovileo tło"
+            className="h-full w-full "
+          />
+          <div className="absolute h-full w-full bg-gradient-to-b from-transparent to-black top-0 left-0 z-50" />
+        </div>
         <Header />
         <main className="min-h-screen">{children}</main>
         <ScrollUp />

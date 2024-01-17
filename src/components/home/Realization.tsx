@@ -38,6 +38,7 @@ export default function Realization() {
               alt="..."
               height={300}
               width={200}
+              priority={id > 5}
               placeholder="blur"
               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
               sizes="(max-width: 640px) 50vw,
@@ -51,7 +52,7 @@ export default function Realization() {
           </Link>
         ))}
       </div>
-      <div className="flex-c mt-12 space-x-4">
+      <div className="flex-c mt-20 space-x-4">
         <Link href="/">
           <SecondBtn>Zobacz Wiecej</SecondBtn>
         </Link>

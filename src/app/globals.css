@@ -6,9 +6,9 @@
   --text-main: #ffffff;
   --text-second: #ff9500;
   --text-paragraf: #b8b8b8;
-  --body-color: #0B0B0B;
+  --body-color: #0f0f0f;
   --bg-second: #131111;
-  --border-color: #424040;
+  --border-color: #222121;
 }
 
 body {
@@ -93,25 +93,18 @@ body::-webkit-scrollbar-track {
 }
 
 
-.slide-right {
-	animation: slide-right 20s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+.aa {
+	animation: slide-right 4s cubic-bezier(0.950, 0.560, 0.550, 0.940) infinite alternate both;
 }
  @keyframes slide-right {
   0% {
-    transform: translateX(0);
+    filter: hue-rotate(0deg);
+
   }
-  30%{
-    scale: 0.8;
-  }
-  40%{
-    scale: 1;
-  }
-  80%{
-    scale: 0.6;
-  }
-  
   100% {
-    transform: translateX(100vw);
+    filter: hue-rotate(530deg);
+    opacity: 0.3;
+
   }
 }
 
