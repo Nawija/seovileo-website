@@ -3,14 +3,17 @@ import grid from "@/public/seo-grid.png";
 import Image from "next/image";
 import Link from "next/link";
 import Realization from "../components/home/Realization";
-import Dots from "../ui/background/Dots";
+import CircleBlur from "../ui/background/CircleBlur";
 import { MainBtn } from "../ui/buttons/MainBtn";
 import { SecondBtn } from "../ui/buttons/SecondBtn";
 
 export default function Home() {
   return (
     <div className="anim-opacity relative mx-auto max-w-[2000px] ">
-      <Dots />
+      <div className="absolute left-0 top-0 -z-10 h-screen w-full">
+        <CircleBlur />
+      </div>
+
       <div className="mx-auto max-w-screen-2xl px-3 py-10 text-center md:pt-20">
         <div className="mx-auto mb-4 w-max rounded-3xl bg-gradient-to-r from-[#41a63a]  to-[#b0b301] p-0.5">
           <div className=" flex items-center justify-center rounded-3xl bg-[#101017e8] px-5 py-1">
@@ -42,7 +45,7 @@ export default function Home() {
           industries for previewing layouts and visual mockups.
         </p>
       </div>
-      <div className="relative mx-auto my-12 w-full">
+      {/* <div className="relative mx-auto my-12 w-full">
         <Image
           src={browser}
           height={1200}
@@ -53,14 +56,14 @@ export default function Home() {
         />
         <div className="absolute left-1/2 top-[60%] -z-50 h-[20vw] w-[20vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500 blur-[100px]"></div>
 
-          <Link
-            href="https://pagespeed.web.dev/analysis/https-seovileo-pl/9sy1ae68wc?form_factor=mobile"
-            target="_blank"
-            className="text-center mx-auto"
-          >
-            <SecondBtn className="w-max">Sprawdz testy</SecondBtn>
-          </Link>
-      </div>
+        <Link
+          href="https://pagespeed.web.dev/analysis/https-seovileo-pl/9sy1ae68wc?form_factor=mobile"
+          target="_blank"
+          className="mx-auto text-center"
+        >
+          <SecondBtn className="w-max">Sprawdz testy</SecondBtn>
+        </Link>
+      </div> */}
       <Realization />
       <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-center space-y-10 px-3 py-10 text-start md:flex-row md:space-y-0 md:py-20">
         <div className="w-full max-w-screen-sm space-y-5 px-4 md:w-3/4">
