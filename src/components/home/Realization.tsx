@@ -38,7 +38,7 @@ export default function Realization() {
               alt="..."
               height={300}
               width={200}
-              priority={id > 5}
+              priority={id < 5}
               placeholder="blur"
               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
               sizes="(max-width: 640px) 50vw,

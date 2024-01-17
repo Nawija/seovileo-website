@@ -44,8 +44,8 @@ export default async function Blog() {
   const data: BlogType[] = await fetchData.data.allBlogs;
   return (
     <div className="anim-opacity">
-      <SmallHero />
-      <div className="mx-auto -mt-52 grid w-full max-w-screen-2xl grid-cols-2 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-5">
+      {/* <SmallHero /> */}
+      <div className="mx-auto mt-12 md:mt-24 grid w-full max-w-screen-2xl grid-cols-2 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-5">
         {data.map((d, i) => (
           <div
             key={i}

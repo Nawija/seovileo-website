@@ -43,25 +43,7 @@ export default function Home() {
           industries for previewing layouts and visual mockups.
         </p>
       </div>
-      {/* <div className="relative mx-auto my-12 w-full">
-        <Image
-          src={browser}
-          height={1200}
-          width={1200}
-          priority
-          className="mx-auto mt-20 object-cover"
-          alt="przegladarka seovileo"
-        />
-        <div className="absolute left-1/2 top-[60%] -z-50 h-[20vw] w-[20vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500 blur-[100px]"></div>
-
-        <Link
-          href="https://pagespeed.web.dev/analysis/https-seovileo-pl/9sy1ae68wc?form_factor=mobile"
-          target="_blank"
-          className="mx-auto text-center"
-        >
-          <SecondBtn className="w-max">Sprawdz testy</SecondBtn>
-        </Link>
-      </div> */}
+      
       <Realization />
       <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-center space-y-10 px-3 py-10 text-start md:flex-row md:space-y-0 md:py-20">
         <div className="w-full max-w-screen-sm space-y-5 px-4 md:w-3/4">

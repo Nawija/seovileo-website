@@ -42,7 +42,7 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScrollListener);
     };
-  }, [scrollListenerHeader]);
+  }, []);
 
   useEffect(() => {
     if (showMenu) {
@@ -71,7 +71,7 @@ export default function Header() {
   return (
     <header
       className={clsx(
-        `flex-b  z-[999] w-full  px-4 py-2.5`,
+        `flex-b  z-[999] w-full px-4 py-2.5`,
         {
           "slide-bottom sticky border-main border-b bg-[#0b0b0be8] top-0 z-[999]": scrollListenerHeader,
         },
