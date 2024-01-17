@@ -29,7 +29,7 @@ export default function RootLayout({
             fill
             alt="seovileo tło"
             quality={10}
-            className="h-full w-full "
+            className="h-full w-full"
             priority
           />
           <div className="absolute h-full w-full bg-gradient-to-b from-transparent to-black top-0 left-0 z-50" />
