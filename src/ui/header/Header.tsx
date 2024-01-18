@@ -44,30 +44,6 @@ export default function Header() {
     };
   }, []);
 
-  useEffect(() => {
-    if (showMenu) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-
-    const handleClickOutside = (e: MouseEvent) => {
-      if (
-        navRef.current &&
-        !navRef.current.contains(e.target as Node) &&
-        showMenu
-      ) {
-        setShowMenu(false);
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [showMenu]);
-
   return (
     <header
       className={clsx(
