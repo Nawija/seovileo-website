@@ -24,7 +24,7 @@ const portfolioImg = [
 
 export default function Realization() {
   return (
-    <section className="z-10 mx-auto flex flex-col items-center justify-center overflow-x-hidden py-12 text-center md:py-24">
+    <section className="z-10 mx-auto flex flex-col items-center justify-center overflow-x-hidden py-12 text-center md:py-24 border-b border-main">
       <h2 className="text-main mb-6 text-2xl tracking-wide">Realizacje</h2>
       <div className="mx-auto grid max-w-screen-2xl grid-cols-2 gap-2 px-3 text-start md:grid-cols-3 md:gap-4 lg:grid-cols-5">
         {portfolioImg.map((i, id) => (

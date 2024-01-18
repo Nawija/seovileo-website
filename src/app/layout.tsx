@@ -28,6 +28,7 @@ export default function RootLayout({
             src={amazingBg}
             height={500}
             width={550}
+            placeholder="blur"
             alt="seovileo tło"
             quality={10}
             className="h-full w-full"
