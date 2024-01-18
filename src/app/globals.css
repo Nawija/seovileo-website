@@ -18,6 +18,10 @@ body {
   scrollbar-color: var(--text-second) var(--border-color);
 }
 
+.body-overflow-hidden {
+  overflow: hidden;
+}
+
 body::-webkit-scrollbar {
   width: 5px;
 }

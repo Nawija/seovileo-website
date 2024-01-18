@@ -39,19 +39,28 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScrollListener);
+    window.addEventListener("scroll", handleScrollListener);
+
+    // Add this to handle body overflow
+    if (showMenu) {
+      document.body.classList.add("body-overflow-hidden");
+    } else {
+      document.body.classList.remove("body-overflow-hidden");
+    }
+
     return () => {
       window.removeEventListener("scroll", handleScrollListener);
+      // Ensure to remove the class when the component is unmounted
+      document.body.classList.remove("body-overflow-hidden");
     };
-  }, []);
+  }, [showMenu]);
 
   return (
     <header
-      className={clsx(
-        `flex-b  z-[999] w-full px-4 py-2.5`,
-        {
-          "slide-bottom sticky border-main border-b bg-[#0b0b0be8] top-0 z-[999]": scrollListenerHeader,
-        },
-      )}
+      className={clsx(`flex-b  z-[999] w-full px-4 py-2.5`, {
+        "slide-bottom border-main sticky top-0 z-[999] border-b bg-[#0b0b0be8]":
+          scrollListenerHeader,
+      })}
     >
       <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between">
         <Link href="/" aria-label="Logo" className="flex-c z-[999]">
@@ -63,7 +72,7 @@ export default function Header() {
             alt="seovileo logo"
           />
           <p
-            className={`ml-1 text-sm font-medium md:text-base text-main ${inter.className}`}
+            className={`text-main ml-1 text-sm font-medium md:text-base ${inter.className}`}
           >
             Seovileo
           </p>
