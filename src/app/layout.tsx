@@ -26,7 +26,8 @@ export default function RootLayout({
         <div className="absolute -z-50 h-screen w-full overflow-hidden opacity-10">
           <Image
             src={amazingBg}
-            fill
+            height={500}
+            width={550}
             alt="seovileo tło"
             quality={10}
             className="h-full w-full"
