@@ -23,21 +23,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#0B0B0B" />
       </head>
       <body className={` ${inter.className}`}>
-        <div className="absolute -z-50 h-screen w-full overflow-hidden opacity-10">
-          <Image
-            src={amazingBg}
-            height={500}
-            width={550}
-            placeholder="blur"
-            alt="seovileo tło"
-            quality={10}
-            className="h-full w-full object-cover"
-            priority
-          />
-          <div className="absolute h-full w-full bg-gradient-to-b from-transparent to-black top-0 left-0 z-50" />
-        </div>
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen text-p">{children}</main>
         <ScrollUp />
         <Footer />
       </body>

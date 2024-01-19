@@ -40,17 +40,17 @@ type MobileNavLinksType = {
 export function DesctopNavLinks({ pathname }: DesctopNavLinksType) {
   return (
     <>
-      <ul className="text-p ml-24 hidden items-center justify-center space-x-6 text-[15px] font-medium md:flex">
+      <ul className="hidden items-center justify-center space-x-6 text-sm font-medium md:flex">
         {navLinks.map((l, index) => (
           <li className="flex-c" key={index}>
             <Link
               className={clsx(
                 `relative p-3`,
                 {
-                  "text-second": pathname === l.href,
+                  "text-orange-500": pathname === l.href,
                 },
                 {
-                  "transition-colors hover:text-white": pathname !== l.href,
+                  "transition-colors hover:text-orange-500": pathname !== l.href,
                 },
               )}
               href={l.href}
@@ -72,7 +72,7 @@ export function MobileNavLinks({
   return (
     <ul
       id="mobile-nav"
-      className={`border-main text-p hover:text-main backdrop-blur-md absolute left-0 top-0 z-[50] flex h-screen flex-col items-center justify-center ease-in-out space-y-9 border-r bg-[#0f0f0fbb] w-screen px-24 text-[15px] font-medium drop-shadow-2xl transition-transform duration-200 md:hidden 
+      className={`border-main absolute left-0 top-0 z-[50] flex h-screen w-screen flex-col items-center justify-center space-y-9 border-r bg-[#ffffff85] px-24 text-[15px] font-medium drop-shadow-2xl backdrop-blur-md transition-transform duration-200 ease-in-out md:hidden 
       ${showMenu ? "translate-x-0" : "-translate-x-full"}`}
     >
       {navLinks.map((l, index) => (

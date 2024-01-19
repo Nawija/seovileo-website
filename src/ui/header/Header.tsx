@@ -1,6 +1,5 @@
 "use client";
 
-import { inter } from "@/src/ui/fonts";
 import { BurgerMenu } from "@/src/ui/header/BurgerMenu";
 import { DesctopNavLinks, MobileNavLinks } from "@/src/ui/header/NavLinks";
 import "@/src/ui/header/header.css";
@@ -9,8 +8,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { MainBtn } from "../buttons/MainBtn";
-import { SecondBtn } from "../buttons/SecondBtn";
 
 const navButtons = [
   {
@@ -57,8 +54,8 @@ export default function Header() {
 
   return (
     <header
-      className={clsx(`flex-b  z-[999] w-full px-4 py-2.5`, {
-        "slide-bottom border-main sticky top-0 z-[999] border-b bg-[#0b0b0be8]":
+      className={clsx(`flex-b text-main z-[999] w-full px-4 py-1.5`, {
+        "slide-bottom border-main  sticky top-0 z-[999] border-b":
           scrollListenerHeader,
       })}
     >
@@ -71,11 +68,7 @@ export default function Header() {
             priority
             alt="seovileo logo"
           />
-          <p
-            className={`text-main ml-1 text-sm font-medium md:text-base ${inter.className}`}
-          >
-            Seovileo
-          </p>
+          <p className="ml-1 text-sm font-medium">Seovileo</p>
         </Link>
         <nav ref={navRef}>
           <DesctopNavLinks pathname={pathname} showMenu={showMenu} />
@@ -85,15 +78,6 @@ export default function Header() {
             handleMenu={handleMenu}
           />
         </nav>
-        <div className="hidden items-center justify-center space-x-3 md:flex">
-          {navButtons.map((button, index) =>
-            index % 2 === 0 ? (
-              <SecondBtn key={index}>{button.label}</SecondBtn>
-            ) : (
-              <MainBtn key={index}>{button.label}</MainBtn>
-            ),
-          )}
-        </div>
         <BurgerMenu handleMenu={handleMenu} showMenu={showMenu} />
       </div>
     </header>
