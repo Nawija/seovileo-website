@@ -24,12 +24,7 @@ export default function TextHero() {
           Strony Internetowe
         </span>
       </h1>
-      <p className="text-p mx-auto mt-12 max-w-screen-md">
-        Lorem ipsum is placeholder text commonly used in the graphic, print, and
-        publishing industries for previewing layouts and visuals placeholder
-        text commonly used in the graphic, print, and publishing industries for
-        previewing layouts and visual mockups.
-      </p>
+     <p className="mt-12 w-1/2 mx-auto">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis, deleniti rem. Numquam, minima! Eos blanditiis corporis magnam, nihil alias laboriosam asperiores tempore et quibusdam quas aperiam iste iusto a explicabo.</p>
     </div>
   );
 }

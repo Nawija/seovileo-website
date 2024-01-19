@@ -1,6 +1,6 @@
 export default function CardSection() {
   return (
-    <section className="grid grid-cols-2 lg:grid-cols-5">
+    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
       <div className="border-main flex flex-col items-start justify-start border p-10">
         <p className="text-main mb-3 text-6xl font-medium">#120</p>
         <p>

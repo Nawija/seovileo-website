@@ -36,14 +36,14 @@ export default function Realization() {
             <Image
               src={i.img}
               alt="..."
-              height={300}
-              width={200}
+              height={200}
+              width={100}
               priority={id < 5}
               placeholder="blur"
               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 640px) 50vw,
-                  (max-width: 1280px) 30vw,
-                  25vw"
+              sizes="(max-width: 640px) 30vw,
+                  (max-width: 1280px) 20vw,
+                  15vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/10" />
             <p className="absolute bottom-2 left-2 z-10 max-w-36 text-lg text-white">
