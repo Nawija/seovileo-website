@@ -16,27 +16,27 @@ const imgSwiper = [
   {
     src: s1,
     alt: "...",
-    title: "Image",
+    title: "Oficialside",
   },
   {
     src: s2,
     alt: "...",
-    title: "Image",
+    title: "Kalanimbu",
   },
   {
     src: s3,
     alt: "...",
-    title: "Image",
+    title: "ImageOPG",
   },
   {
     src: s4,
     alt: "...",
-    title: "Image",
+    title: "Temenolis",
   },
   {
     src: s5,
     alt: "...",
-    title: "Image",
+    title: "Gebenzis",
   },
 ];
 
@@ -46,6 +46,8 @@ export default function CarouselPortfolio() {
   return (
     <Swiper
       effect={"coverflow"}
+      slidesPerView={3}
+      spaceBetween={30}
       freeMode={true}
       navigation={{
         nextEl: ".swiper-button-next",
@@ -57,16 +59,12 @@ export default function CarouselPortfolio() {
         delay: 2600,
         disableOnInteraction: false,
       }}
-      spaceBetween={90}
       coverflowEffect={{
         rotate: 0,
-        stretch: 13,
-        depth: 0,
-        modifier: 5,
+        modifier: 0,
         slideShadows: false,
       }}
       modules={[EffectCoverflow, Navigation]}
-      className="mySwiper mx-auto max-w-screen-xl"
       breakpoints={{
         320: {
           slidesPerView: 2,
@@ -78,39 +76,40 @@ export default function CarouselPortfolio() {
         1000: {
           slidesPerView: 3,
         },
+        1200: {
+          slidesPerView: 3,
+        },
       }}
     >
       {imgSwiper.map((slide, index) => (
         <SwiperSlide key={index}>
-          <div className="mx-2 my-4 bg-[#EDECEB] p-4">
+          <div className=" bg-[#EDECEB] p-7">
             <Image
-              style={{
-                
-                objectFit: "cover",
-                objectPosition: "top",
-              }}
               loading="lazy"
-              className="h-[200px] w-full"
+              className="h-[300px] w-[300px] object-cover object-top"
               height={300}
               width={200}
               src={slide.src}
               alt={slide.alt}
               sizes="(min-width: 1668px) 80vw, (max-width: 786px) 50vw, 33vw"
             />
-            <p className="mt-2 text-center text-sm font-semibold ">{slide.title}</p>
+          </div>
+          <div className="flex flex-col items-start justify-start p-2">
+            <small>Dev</small>
+            <p className="text-center text-sm font-semibold mt-0.5">{slide.title}</p>
           </div>
         </SwiperSlide>
       ))}
-      <div className="mt-4 flex items-center justify-end mr-4 space-x-6">
+      <div className="mr-4 mt-4 flex items-center justify-end space-x-3 text-main">
         <div className="swiper-button-prev cursor-pointer">
-          <div className="text-4xl border border-main rounded-full p-2">
+          <div className="border-main rounded-full border bg-[#EDECEB] p-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="h-6 w-6"
+              className="h-5 w-5"
             >
               <path
                 strokeLinecap="round"
@@ -121,14 +120,14 @@ export default function CarouselPortfolio() {
           </div>
         </div>
         <div className="swiper-button-next cursor-pointer">
-        <div className="text-4xl border border-main rounded-full p-2">
+          <div className="border-main rounded-full border bg-[#EDECEB] p-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="h-6 w-6"
+              className="h-5 w-5"
             >
               <path
                 strokeLinecap="round"

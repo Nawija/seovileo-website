@@ -18,9 +18,14 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className="my-24 flex flex-col md:flex-row max-w-screen-xl mx-auto items-center justify-center space-x-4">
-        <p className="font-semibold">Najnowsze realizacje</p>
-        <div className="overflow-hidden relative w-full">
+      <section className="mx-auto my-24 mr-24 flex max-w-screen-xl flex-col items-center justify-center space-x-4 md:flex-row">
+        <div className="font-semibold ">
+          <small className="text-orange-500">Zobacz</small>
+          <p className="lg:text-2xl">
+            Najnowsze realizacje
+          </p>
+        </div>
+        <div className="relative w-full overflow-hidden">
           <CarouselPortfolio />
         </div>
       </section>
