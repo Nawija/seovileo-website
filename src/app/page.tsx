@@ -19,6 +19,8 @@ export default function Home() {
           <Image
             src={uiux}
             alt="..."
+            height={548}
+            width={455}
             className="object-cover"
             priority
           />
