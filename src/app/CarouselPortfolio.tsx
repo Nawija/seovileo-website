@@ -47,7 +47,7 @@ export default function CarouselPortfolio() {
     <Swiper
       effect={"coverflow"}
       slidesPerView={3}
-      spaceBetween={30}
+      spaceBetween={333}
       freeMode={true}
       navigation={{
         nextEl: ".swiper-button-next",
@@ -77,13 +77,13 @@ export default function CarouselPortfolio() {
           slidesPerView: 3,
         },
         1200: {
-          slidesPerView: 3,
+          slidesPerView: 4,
         },
       }}
     >
       {imgSwiper.map((slide, index) => (
         <SwiperSlide key={index}>
-          <div className=" bg-[#EDECEB] p-7">
+          <div className=" bg-gradient-to-br from-[#ffd394] to p-7 w-max">
             <Image
               loading="lazy"
               className="h-[300px] w-[300px] object-cover object-top"
@@ -100,7 +100,7 @@ export default function CarouselPortfolio() {
           </div>
         </SwiperSlide>
       ))}
-      <div className="mr-4 mt-4 flex items-center justify-end space-x-3 text-main">
+      <div className="mr-4 mt-6 flex items-center justify-center lg:justify-end space-x-3 text-main">
         <div className="swiper-button-prev cursor-pointer">
           <div className="border-main rounded-full border bg-[#EDECEB] p-2">
             <svg

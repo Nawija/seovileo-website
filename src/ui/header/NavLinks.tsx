@@ -72,7 +72,7 @@ export function MobileNavLinks({
   return (
     <ul
       id="mobile-nav"
-      className={`border-main absolute left-0 top-0 z-[50] flex h-screen w-screen flex-col items-center justify-center space-y-9 border-r bg-[#ffffff85] px-24 text-[15px] font-medium drop-shadow-2xl backdrop-blur-md transition-transform duration-200 ease-in-out md:hidden 
+      className={`border-main absolute left-0 top-0 z-[50] flex h-screen w-screen flex-col items-center justify-center space-y-9 border-r bg-[#46171785] px-24 text-[15px] font-medium drop-shadow-2xl backdrop-blur-md transition-transform duration-200 ease-in-out md:hidden 
       ${showMenu ? "translate-x-0" : "-translate-x-full"}`}
     >
       {navLinks.map((l, index) => (

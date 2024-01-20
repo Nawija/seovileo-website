@@ -23,7 +23,7 @@ export default function RootLayout({
       </head>
       <body className={` ${inter.className}`}>
         <Header />
-
+        <div className="bg-gradient-to-bl fixed top-0 left-0 h-full w-full from-[#560031] via-[#ff5467] to-[#ffd394]" />
         <main className="text-p min-h-screen">
           <Providers>{children}</Providers>
         </main>

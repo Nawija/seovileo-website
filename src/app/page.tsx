@@ -1,13 +1,13 @@
-import xx from "@/public/xx.png";
 import Image from "next/image";
 import CarouselPortfolio from "./CarouselPortfolio";
+import uiux from "@/public/uiux.png"
 
 export default function Home() {
   return (
     <div className="anim-opacity relative mx-auto max-w-[2000px] ">
-      <section className="flex-c relative h-[50vh] bg-[#EDECEB] py-24">
-        <div className="z-20 flex max-w-screen-md flex-col items-center justify-center space-y-4 px-10 text-start">
-          <h1 className="text-3xl font-medium">Hero</h1>
+      <section className="flex items-center justify-center flex-col relative md:flex-row">
+        <div className="z-20 flex max-w-screen-md flex-col items-start justify-center space-y-4 px-10 text-start">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-main">Strony Internetowe</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
             quaerat assumenda doloribus harum dolor eligendi! Deserunt, eligendi
@@ -15,16 +15,20 @@ export default function Home() {
             culpa quod, iste perferendis, quibusdam sint porro.
           </p>
         </div>
-        <div >
-          <Image src={xx} alt="..." fill className="object-cover" />
+        <div>
+          <Image
+            src={uiux}
+            alt="..."
+            className=" object-cover"
+          />
         </div>
       </section>
-      <section className="mx-auto my-24 mr-24 flex max-w-screen-xl flex-col items-center justify-center space-x-4 md:flex-row">
-        <div className="font-semibold ">
-          <small className="text-orange-500">Zobacz</small>
-          <p className="lg:text-2xl">Najnowsze realizacje</p>
+      <section className="mx-auto my-24 flex flex-col items-center justify-center space-x-4 md:flex-row lg:ml-24">
+        <div className="mb-8 text-center font-semibold lg:ml-80 lg:text-start">
+          <small className="text-orange-900">Zobacz</small>
+          <p className="text-xl lg:text-2xl text-main">Najnowsze realizacje</p>
         </div>
-        <div className="relative w-full overflow-hidden">
+        <div className="relative w-screen overflow-hidden">
           <CarouselPortfolio />
         </div>
       </section>

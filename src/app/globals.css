@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --text-main: #515151;
+  --text-main: #fcfcfc;
   --text-second: #ff9500;
-  --text-paragraf: #333333;
+  --text-paragraf: #ffffff;
   --body-color: #ffffff;
   --bg-second: #131111;
   --border-color: #e2e2e2;
 }
 
 body {
-  background-color: var(--body-color);
+  /* background: linear-gradient(326deg, #560031 0%, #ff5467 49%, #ffd394 100%); */
   color: var(--text-paragraf);
   scrollbar-width: thin;
   scrollbar-color: var(--text-second) var(--border-color);
