@@ -4,7 +4,6 @@ import { inter } from "@/src/ui/fonts";
 import Footer from "@/src/ui/footer/Footer";
 import Header from "@/src/ui/header/Header";
 import type { Metadata } from "next";
-import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Seovileo-website",
@@ -17,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pl" className="dark">
+    <html lang="pl">
       <head>
         <meta name="theme-color" content="#0B0B0B" />
       </head>
@@ -25,7 +24,7 @@ export default function RootLayout({
         <Header />
         <div className="bg-gradient-to-bl fixed top-0 left-0 h-full w-full from-[#560031] via-[#ff5467] to-[#ffd394]" />
         <main className="text-p min-h-screen">
-          <Providers>{children}</Providers>
+          {children}
         </main>
         <ScrollUp />
         <Footer />
