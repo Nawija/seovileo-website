@@ -2,7 +2,6 @@
 
 import { BurgerMenu } from "@/src/ui/header/BurgerMenu";
 import { DesctopNavLinks, MobileNavLinks } from "@/src/ui/header/NavLinks";
-// import "@/src/ui/header/header.css";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
