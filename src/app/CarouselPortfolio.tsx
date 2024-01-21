@@ -47,13 +47,13 @@ export default function CarouselPortfolio() {
     <Swiper
       effect={"coverflow"}
       slidesPerView={3}
-      spaceBetween={333}
       freeMode={true}
       navigation={{
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       }}
       loop
+      spaceBetween={263}
       speed={500}
       autoplay={{
         delay: 2600,
@@ -82,25 +82,27 @@ export default function CarouselPortfolio() {
       }}
     >
       {imgSwiper.map((slide, index) => (
-        <SwiperSlide key={index}>
-          <div className=" bg-gradient-to-br from-[#ffd394] to p-7 w-max">
-            <Image
-              loading="lazy"
-              className="h-[300px] w-[300px] object-cover object-top"
-              height={300}
-              width={200}
-              src={slide.src}
-              alt={slide.alt}
-              sizes="(min-width: 1668px) 80vw, (max-width: 786px) 50vw, 33vw"
-            />
-          </div>
-          <div className="flex flex-col items-start justify-start p-2">
-            <small>Dev</small>
-            <p className="text-center text-sm font-semibold mt-0.5">{slide.title}</p>
-          </div>
-        </SwiperSlide>
+          <SwiperSlide key={index}>
+            <div className="w-max bg-gray-200 rounded-lg p-5">
+              <Image
+                loading="lazy"
+                className="h-[300px] w-[250px] object-cover object-top"
+                height={300}
+                width={200}
+                src={slide.src}
+                alt={slide.alt}
+                sizes="(min-width: 1668px) 80vw, (max-width: 786px) 50vw, 33vw"
+              />
+            </div>
+            <div className="flex flex-col items-start justify-start p-2">
+              <small>Dev</small>
+              <p className="mt-0.5 text-center text-sm font-semibold">
+                {slide.title}
+              </p>
+            </div>
+          </SwiperSlide>
       ))}
-      <div className="mr-4 mt-6 flex items-center justify-center lg:justify-end space-x-3 text-main">
+      <div className="text-p mr-4 mt-6 flex items-center justify-center space-x-3 lg:justify-end">
         <div className="swiper-button-prev cursor-pointer">
           <div className="border-main rounded-full border bg-[#EDECEB] p-2">
             <svg
