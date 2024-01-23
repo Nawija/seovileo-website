@@ -3,6 +3,7 @@ import ScrollUp from "@/src/ui/buttons/ScrollUp";
 import { inter } from "@/src/ui/fonts";
 import Footer from "@/src/ui/footer/Footer";
 import Header from "@/src/ui/header/Header";
+import { MantineProvider } from "@mantine/core";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,12 +22,14 @@ export default function RootLayout({
         <meta name="theme-color" content="#0B0B0B" />
       </head>
       <body className={` ${inter.className}`}>
-        <Header />
-        <main className="text-p min-h-screen">
-          {children}
-        </main>
-        <ScrollUp />
-        <Footer />
+        <MantineProvider>
+          <>
+            <Header />
+            <main className="text-p min-h-screen">{children}</main>
+            <ScrollUp />
+            <Footer />
+          </>
+        </MantineProvider>
       </body>
     </html>
   );

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --text-main: #fcfcfc;
+  --text-main: #1f1f1f;
   --text-second: #ff9500;
   --text-paragraf: #1f1f1f;
   --body-color: #ffffff;
@@ -21,16 +21,8 @@ body {
   overflow: hidden;
 }
 
-body::-webkit-scrollbar {
-  width: 6px;
-}
-body::-webkit-scrollbar-thumb {
-  background-color: #757575ee;
-  border-radius: 130px;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: var(--border-color);
+.bg-body{
+  background-color: var( --body-color);
 }
 
 .bg-main {

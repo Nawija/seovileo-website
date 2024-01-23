@@ -1,64 +1,25 @@
 "use client";
 
-import { BurgerMenu } from "@/src/ui/header/BurgerMenu";
-import { DesctopNavLinks, MobileNavLinks } from "@/src/ui/header/NavLinks";
-import clsx from "clsx";
+import { Drawer } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-
-const navButtons = [
-  {
-    href: "/uslugi",
-    label: "Usługi",
-  },
-  {
-    href: "/darmowa-wycena",
-    label: "Wycena",
-  },
-];
+import { useState } from "react";
 
 export default function Header() {
   const pathname = usePathname();
+  const [opened, { open, close }] = useDisclosure(false);
   const [showMenu, setShowMenu] = useState(false);
-  const [scrollListenerHeader, setScrollListenerHeader] = useState(false);
-  const navRef = useRef<HTMLDivElement | null>(null);
 
-  function handleMenu() {
-    setShowMenu(!showMenu);
-  }
-
-  useEffect(() => {
-    const handleScrollListener = () => {
-      setScrollListenerHeader(window.scrollY > 750 || scrollListenerHeader);
-    };
-
-    window.addEventListener("scroll", handleScrollListener);
-    window.addEventListener("scroll", handleScrollListener);
-
-    // Add this to handle body overflow
-    if (showMenu) {
-      document.body.classList.add("body-overflow-hidden");
-    } else {
-      document.body.classList.remove("body-overflow-hidden");
-    }
-
-    return () => {
-      window.removeEventListener("scroll", handleScrollListener);
-      // Ensure to remove the class when the component is unmounted
-      document.body.classList.remove("body-overflow-hidden");
-    };
-  }, [showMenu]);
+  const content = Array(100)
+    .fill(0)
+    .map((_, index) => <p key={index}>Drawer with scroll</p>);
 
   return (
-    <header
-      className={clsx(`flex-b text-main z-[999] w-full px-4 py-1.5`, {
-        "slide-bottom border-main  sticky top-0 z-[999] border-b":
-          scrollListenerHeader,
-      })}
-    >
-      <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between">
+    <header className="text-main border-main bg-body sticky top-0 z-[999] w-full border-b px-4 py-2">
+      <div className="mx-auto flex max-w-screen-2xl items-center justify-between">
+        {/* Your Logo */}
         <Link href="/" aria-label="Logo" className="flex-c z-[999]">
           <Image
             src="/seovileo.svg"
@@ -69,15 +30,20 @@ export default function Header() {
           />
           <p className="ml-1 text-sm font-medium">Seovileo</p>
         </Link>
-        <nav ref={navRef}>
-          <DesctopNavLinks pathname={pathname} showMenu={showMenu} />
-          <MobileNavLinks
-            pathname={pathname}
-            showMenu={showMenu}
-            handleMenu={handleMenu}
-          />
-        </nav>
-        <BurgerMenu handleMenu={handleMenu} showMenu={showMenu} />
+
+        {/* Mantine Drawer */}
+        <Drawer
+          opened={opened}
+          onClose={close}
+          position="right"
+          size="xl"
+          overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
+          title="Header is sticky"
+        >
+          {content}
+        </Drawer>
+
+        <button onClick={open}>Menu</button>
       </div>
     </header>
   );
