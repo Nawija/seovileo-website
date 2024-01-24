@@ -9,9 +9,10 @@ export default function RootLayout({
   return (
     <div className="mx-auto flex max-w-[1700px]">
       <div className="border-main sticky top-10 mx-auto hidden min-h-screen w-64 flex-col items-center justify-start space-y-2 border-r bg-[#171717] pt-10 text-center lg:flex">
-        <div className="flex items-start justify-center flex-col">
-          {BLOG_LINKS.map((link) => (
+        <div className="flex flex-col items-start justify-center">
+          {BLOG_LINKS.map((link, i) => (
             <Link
+              key={i}
               href={link.href}
               className="underline-offset-2 hover:underline"
             >

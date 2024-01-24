@@ -17,7 +17,7 @@ export default function Home() {
               <p className="mx-auto text-base leading-relaxed lg:w-2/3 lg:pl-6">
                 Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
                 gentrify, subway tile poke farm-to-table. Franzen you probably
-                haven't heard of them man bun deep jianbing selfies heirloom.
+                haven heard of them man bun deep jianbing selfies heirloom.
               </p>
             </div>
             <div className="-m-1 flex flex-wrap md:-m-2">
