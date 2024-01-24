@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface BlogType {
   id: string;
@@ -36,15 +37,47 @@ const fetchDatoCms = async () => {
   return await res.json();
 };
 
+const fetchDatoCmsPopularne = async () => {
+  const res = await fetch("https://graphql.datocms.com/", {
+    next: { revalidate: 0 },
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
+    },
+    body: JSON.stringify({
+      query: `{
+        allPopularnes(first: 4) {
+          id
+          date
+          slug
+          title
+          img {
+            url
+          }
+        }
+      }`,
+    }),
+  });
+  return await res.json();
+};
+
 export default async function Blog() {
   const fetchData = await fetchDatoCms();
+  const fetchDataPopularne = await fetchDatoCmsPopularne();
   const data: BlogType[] = await fetchData.data.allBlogs;
+  const dataPopularne: BlogType[] = await fetchDataPopularne.data.allPopularnes;
   return (
     <div className="anim-opacity mx-auto max-w-[1700px] bg-[#121212] px-12 pt-12">
       <h1 className="mb-3 text-lg font-semibold uppercase">Popolarne posty</h1>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-4">
         {data.map((d, i) => (
-          <div key={i} className="overflow-hidden lg:mb-5 ">
+          <Link
+            href={`/blog/${d.slug}`}
+            key={i}
+            className="group overflow-hidden lg:mb-5"
+          >
             <div className="relative h-28 w-full lg:h-40">
               <Image
                 className="object-cover"
@@ -72,11 +105,11 @@ export default async function Blog() {
                 </svg>
                 <small>{d.date}</small>
               </div>
-              <p className="pb-2 text-sm sm:text-base">
+              <p className="pb-2 text-sm group-hover:underline sm:text-base">
                 {d.title.length > 50 ? `${d.title.slice(0, 60)} ...` : d.title}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <img
@@ -87,8 +120,12 @@ export default async function Blog() {
         Najnowsze posty
       </h2>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-        {data.map((d, i) => (
-          <div key={i} className="overflow-hidden lg:mb-5">
+        {dataPopularne.map((d, i) => (
+          <Link
+            href={`/blog/${d.slug}`}
+            key={i}
+            className="group overflow-hidden lg:mb-5"
+          >
             <div className="relative h-28 w-full lg:h-32">
               <Image
                 className="object-cover"
@@ -116,11 +153,11 @@ export default async function Blog() {
                 </svg>
                 <small>{d.date}</small>
               </div>
-              <p className="pb-2 text-sm sm:text-base">
+              <p className="pb-2 text-sm group-hover:underline sm:text-base">
                 {d.title.length > 50 ? `${d.title.slice(0, 60)} ...` : d.title}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
