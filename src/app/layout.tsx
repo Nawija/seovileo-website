@@ -1,5 +1,4 @@
 import "@/src/app/globals.css";
-import ScrollUp from "@/src/ui/buttons/ScrollUp";
 import { inter } from "@/src/ui/fonts";
 import Footer from "@/src/ui/footer/Footer";
 import { Header } from "../ui/header/Header";
