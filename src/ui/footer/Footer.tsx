@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex-c text-gray-200 px-4 py-20 bg-[#1C1C1C]">
+    <footer className="flex-c text-gray-200 px-4 py-20 bg-[#232323]">
       <Link href="/" aria-label="Logo" className="flex-c">
         <Image
           src="/seovileo.svg"
