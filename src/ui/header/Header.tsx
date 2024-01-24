@@ -17,7 +17,7 @@ export default function Header() {
     .map((_, index) => <p key={index}>Drawer with scroll</p>);
 
   return (
-    <header className="text-main border-main bg-body sticky top-0 z-[999] w-full border-b px-4 py-2">
+    <header className="text-main bg-[#232323] sticky top-0 z-[999] w-full px-4 py-2">
       <div className="mx-auto flex max-w-screen-2xl items-center justify-between">
         {/* Your Logo */}
         <Link href="/" aria-label="Logo" className="flex-c z-[999]">

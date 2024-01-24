@@ -8,7 +8,7 @@ import { IMG_PORTFOLIO } from "../constants";
 export default function Home() {
   return (
     <div className="anim-opacity mx-auto max-w-[2000px] ">
-      <section className="bg-gray-200 py-24">
+      <section className="bg-black py-24">
         <h1 className="mx-auto max-w-screen-lg px-6 text-center text-2xl sm:text-3xl lg:text-4xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iste
           eveniet aspernatur

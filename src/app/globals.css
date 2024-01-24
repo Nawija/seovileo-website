@@ -3,16 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --text-main: #1f1f1f;
+  --text-main: #ffffff;
   --text-second: #ff9500;
-  --text-paragraf: #1f1f1f;
-  --body-color: #ffffff;
+  --text-paragraf: #ececec;
+  --body-color: #000000;
   --bg-second: #131111;
   --border-color: #e2e2e2;
 }
 
 body {
   color: var(--text-paragraf);
+  background-color: var(--body-color);
   scrollbar-width: thin;
   scrollbar-color: var(--text-second) var(--border-color);
 }
