@@ -4,33 +4,47 @@
 
 :root {
   --text-main: #ffffff;
-  --text-second: #ff9500;
-  --text-paragraf: #ececec;
-  --body-color: #000000;
+  --text-p: #eeeeee;
+  --text-smoke: #8b804d;
+  --text-second: #d3a304;
+  --body-bg: #000000;
+  --body-bg-main: #131212;
+  --body-bg-second: #131212;
   --bg-second: #131111;
-  --border-color: #e2e2e2;
+  --border-color: #3f3f3f;
 }
 
 body {
-  color: var(--text-paragraf);
-  background-color: var(--body-color);
-  scrollbar-width: thin;
-  scrollbar-color: var(--text-second) var(--border-color);
+  color: var(--text-p);
+  background-color: var(--body-bg);
 }
 
 .body-overflow-hidden {
   overflow: hidden;
 }
+.body-overflow-hidden::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 19, 19, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 55;
+  animation: anim-opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
 
 .bg-body{
   background-color: var( --body-color);
 }
 
 .bg-main {
-  background-color: var(--text-main);
+  background-color: var(--body-bg-main);
 }
 .bg-second {
-  background-color: var(--bg-second);
+  background-color: var(--body-bg-second);
 }
 
 .text-main {
@@ -40,12 +54,15 @@ body {
 .text-second {
   color: var(--text-second);
 }
+.text-smoke {
+  color: var(--text-smoke);
+}
 
 .bg-gradient {
   background: linear-gradient(to top right, #fb7d00, #c8b806);
 }
 .text-p {
-  color: var(--text-paragraf);
+  color: var(--text-p);
 }
 .border-main {
   border-color: var(--border-color);

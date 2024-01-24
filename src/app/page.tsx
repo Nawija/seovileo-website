@@ -1,57 +1,77 @@
-"use client";
-import { Carousel } from "@mantine/carousel";
-import "@mantine/carousel/styles.css";
-import Image from "next/image";
-import Link from "next/link";
-import { IMG_PORTFOLIO } from "../constants";
-
 export default function Home() {
   return (
     <div className="anim-opacity mx-auto max-w-[2000px] ">
-      <section className="bg-black py-24">
+      <section className="py-24">
         <h1 className="mx-auto max-w-screen-lg px-6 text-center text-2xl sm:text-3xl lg:text-4xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iste
           eveniet aspernatur
         </h1>
       </section>
-
-      <section className="mx-auto my-24 flex flex-col items-center justify-center px-3 md:flex-row lg:ml-24">
-        <div className="mb-8 text-center font-semibold lg:ml-52 lg:text-start">
-          <small className="text-orange-500">Zobacz</small>
-          <p className="mt-1 text-xl lg:text-2xl w-44">Najnowsze realizacje</p>
-        </div>
-        <Carousel
-          withIndicators
-          controlsOffset="md"
-          slideSize={{ base: "85%", sm: "30%" }}
-          height={200}
-          slideGap="md"
-          align="start"
-        >
-          {IMG_PORTFOLIO.map((image, index) => (
-            <Carousel.Slide key={index}>
-              <Link href="/xx">
-                <Image
-                  src={image.src}
-                  alt="..."
-                  height={300}
-                  width={300}
-                  className="h-80 w-[95%] object-cover object-top"
-                />
-              </Link>
-            </Carousel.Slide>
-          ))}
-          <Carousel.Slide>
-            <div>
-              <Link href="/galeria">
-                <div className="flex-c h-80 w-3/4 bg-gray-100 border">
-                  <p>Wiecej</p>
-                </div>
-              </Link>
+      <section className="border-main border-y py-24">
+        
+          <div className="container mx-auto flex flex-wrap px-5">
+            <div className="mb-20 flex w-full flex-wrap">
+              <h2 className="title-font mb-4 text-2xl font-medium text-second sm:text-3xl lg:mb-0 lg:w-1/3">
+                Master Cleanse Reliac Heirloom
+              </h2>
+              <p className="mx-auto text-base leading-relaxed lg:w-2/3 lg:pl-6">
+                Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
+                gentrify, subway tile poke farm-to-table. Franzen you probably
+                haven't heard of them man bun deep jianbing selfies heirloom.
+              </p>
             </div>
-          </Carousel.Slide>
-        </Carousel>
+            <div className="-m-1 flex flex-wrap md:-m-2">
+              <div className="flex w-1/2 flex-wrap">
+                <div className="w-1/2 p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    className="block h-full w-full object-cover object-center"
+                    src="https://dummyimage.com/500x300"
+                  />
+                </div>
+                <div className="w-1/2 p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    className="block h-full w-full object-cover object-center"
+                    src="https://dummyimage.com/501x301"
+                  />
+                </div>
+                <div className="w-full p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    className="block h-full w-full object-cover object-center"
+                    src="https://dummyimage.com/600x360"
+                  />
+                </div>
+              </div>
+              <div className="flex w-1/2 flex-wrap">
+                <div className="w-full p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    className="block h-full w-full object-cover object-center"
+                    src="https://dummyimage.com/601x361"
+                  />
+                </div>
+                <div className="w-1/2 p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    className="block h-full w-full object-cover object-center"
+                    src="https://dummyimage.com/502x302"
+                  />
+                </div>
+                <div className="w-1/2 p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    className="block h-full w-full object-cover object-center"
+                    src="https://dummyimage.com/503x303"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
       </section>
+      <section className="bg-main border-main border-y py-80"></section>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { BLOG_LINKS } from "@/src/constants";
 import Link from "next/link";
 
 export default function RootLayout({
@@ -6,16 +7,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex mx-auto max-w-[1700px]">
-    <div className="hidden lg:flex flex-col items-center justify-start w-64 sticky top-10 space-y-2 pt-10 bg-[#1C1C1C] min-h-screen">
-      <Link href="/" className="hover:underline underline-offset-2">Strona Internetowa</Link>
-      <Link href="/" className="hover:underline underline-offset-2">Strona Internetowa</Link>
-      <Link href="/" className="hover:underline underline-offset-2">Strona Internetowa</Link>
-      <Link href="/" className="hover:underline underline-offset-2">Strona Internetowa</Link>
-      <Link href="/" className="hover:underline underline-offset-2">Strona Internetowa</Link>
-      <Link href="/blog" className="hover:underline underline-offset-2">Blog</Link>
-    </div>
-      <main className="min-h-screen w-full lg:py-12 bg-[#121212]">{children}</main>
+    <div className="mx-auto flex max-w-[1700px]">
+      <div className="border-main sticky top-10 mx-auto hidden min-h-screen w-64 flex-col items-center justify-start space-y-2 border-r bg-[#1a1919] pt-10 text-center lg:flex">
+        <div className="flex items-start justify-center flex-col">
+          {BLOG_LINKS.map((link) => (
+            <Link
+              href={link.href}
+              className="underline-offset-2 hover:underline"
+            >
+              <span>{link.label}</span>
+            </Link>
+          ))}
+        </div>
+      </div>
+      <main className="min-h-screen w-full flex-grow bg-[#161616]">
+        {children}
+      </main>
     </div>
   );
 }

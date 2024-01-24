@@ -4,8 +4,12 @@ export const NAV_LINKS = [
     label: "Home",
   },
   {
-    href: "/portfolio",
-    label: "Portfolio",
+    href: "/o-mnie",
+    label: "O Mnie",
+  },
+  {
+    href: "/oferta",
+    label: "Oferta",
   },
   {
     href: "/galeria",
@@ -14,6 +18,10 @@ export const NAV_LINKS = [
   {
     href: "/blog",
     label: "Blog",
+  },
+  {
+    href: "/kontakt",
+    label: "Kontakt",
   },
 ];
 
@@ -25,6 +33,29 @@ export const NAV_BTN_LINKS = [
   {
     href: "/darmowa-wycena",
     label: "Darmowa Wycena",
+  },
+];
+
+export const BLOG_LINKS = [
+  {
+    href: "/strona-internetowa",
+    label: "Strona Internetowa",
+  },
+  {
+    href: "/sklep-internetowy",
+    label: "Sklep Internetowy",
+  },
+  {
+    href: "/blog",
+    label: "Blog",
+  },
+  {
+    href: "/strefa-muzyki",
+    label: "Strefa Muzyki",
+  },
+  {
+    href: "/mini-gry",
+    label: "Mini Gry",
   },
 ];
 

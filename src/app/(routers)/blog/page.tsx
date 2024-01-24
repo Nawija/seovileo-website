@@ -69,7 +69,7 @@ export default async function Blog() {
   const data: BlogType[] = await fetchData.data.allBlogs;
   const dataPopularne: BlogType[] = await fetchDataPopularne.data.allPopularnes;
   return (
-    <div className="anim-opacity mx-auto max-w-[1700px] bg-[#121212] px-4 lg:px-12 pt-12">
+    <div className="anim-opacity mx-auto max-w-[1700px] bg-[#121212] px-4 pt-12 lg:px-12">
       <h1 className="mb-3 text-lg font-semibold uppercase">Popolarne posty</h1>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-4">
         {data.map((d, i) => (
@@ -80,7 +80,7 @@ export default async function Blog() {
           >
             <div className="relative h-28 w-full lg:h-40">
               <Image
-                className="object-cover"
+                className="object-cover brightness-75 transition duration-300 group-hover:scale-95 group-hover:brightness-105"
                 src={d.img.url}
                 alt={d.title}
                 priority={i < 4}
@@ -88,7 +88,7 @@ export default async function Blog() {
               />
             </div>
             <div className="bg-second flex flex-col items-start justify-center space-y-1 px-2 py-2 lg:space-y-2 lg:px-3 lg:py-3">
-              <div className="text-p flex items-center justify-start">
+              <div className="text-smoke flex items-center justify-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -105,7 +105,7 @@ export default async function Blog() {
                 </svg>
                 <small>{d.date}</small>
               </div>
-              <p className="pb-2 text-sm group-hover:underline sm:text-base">
+              <p className="pb-2 text-sm transition-colors duration-300 sm:text-base">
                 {d.title.length > 50 ? `${d.title.slice(0, 60)} ...` : d.title}
               </p>
             </div>
@@ -128,15 +128,15 @@ export default async function Blog() {
           >
             <div className="relative h-28 w-full lg:h-32">
               <Image
-                className="object-cover"
+                className="object-cover brightness-75 transition duration-300 group-hover:scale-95 group-hover:brightness-105"
                 src={d.img.url}
                 alt={d.title}
                 priority={i < 4}
                 fill
               />
             </div>
-            <div className="bg-second flex flex-col items-start justify-center space-y-1 px-2 py-2 lg:space-y-4 lg:px-3 lg:py-3">
-              <div className="text-p flex items-center justify-start">
+            <div className="bg-second flex flex-col items-start justify-center space-y-1 px-2 py-2 lg:space-y-2 lg:px-3 lg:py-3">
+              <div className="text-smoke flex items-center justify-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -153,7 +153,7 @@ export default async function Blog() {
                 </svg>
                 <small>{d.date}</small>
               </div>
-              <p className="pb-2 text-sm group-hover:underline sm:text-base">
+              <p className="pb-2 text-sm sm:text-base">
                 {d.title.length > 50 ? `${d.title.slice(0, 60)} ...` : d.title}
               </p>
             </div>
