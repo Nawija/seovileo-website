@@ -69,8 +69,8 @@ export default async function Blog() {
   const data: BlogType[] = await fetchData.data.allBlogs;
   const dataPopularne: BlogType[] = await fetchDataPopularne.data.allPopularnes;
   return (
-    <div className="anim-opacity mx-auto max-w-[1700px] bg-[#121212] px-4 pt-12 lg:px-12">
-      <h1 className="mb-3 text-lg font-semibold uppercase">Popolarne posty</h1>
+    <div className="anim-opacity mx-auto max-w-[1700px] px-4 pt-12 lg:px-12">
+      <h1 className="mb-3 pb-2 text-lg font-semibold uppercase border-b border-main">Popolarne posty</h1>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-4">
         {data.map((d, i) => (
           <Link
@@ -87,7 +87,7 @@ export default async function Blog() {
                 fill
               />
             </div>
-            <div className="bg-second flex flex-col items-start justify-center space-y-1 px-2 py-2 lg:space-y-2 lg:px-3 lg:py-3">
+            <div className="flex flex-col items-start justify-center space-y-1 px-2 py-2 lg:space-y-2 lg:px-3 lg:py-3">
               <div className="text-smoke flex items-center justify-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@ export default async function Blog() {
         src="https://img.freepik.com/darmowe-zdjecie/technologia-panoramiczny-baner_23-2151213588.jpg?w=1800&t=st=1706094937~exp=1706095537~hmac=191115e09f52f79a56bd34146e25b2144d34dd5ba0dc5f2a92dd49b595f51821"
         className="h-44 w-full object-cover"
       />
-      <h2 className="mb-3 mt-12 text-lg font-semibold uppercase">
+      <h2 className="mb-3 mt-12 text-lg font-semibold uppercase pb-2 border-b border-main">
         Najnowsze posty
       </h2>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
@@ -135,7 +135,7 @@ export default async function Blog() {
                 fill
               />
             </div>
-            <div className="bg-second flex flex-col items-start justify-center space-y-1 px-2 py-2 lg:space-y-2 lg:px-3 lg:py-3">
+            <div className=" flex flex-col items-start justify-center space-y-1 px-2 py-2 lg:space-y-2 lg:px-3 lg:py-3">
               <div className="text-smoke flex items-center justify-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
