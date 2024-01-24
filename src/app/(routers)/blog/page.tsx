@@ -69,7 +69,7 @@ export default async function Blog() {
   const data: BlogType[] = await fetchData.data.allBlogs;
   const dataPopularne: BlogType[] = await fetchDataPopularne.data.allPopularnes;
   return (
-    <div className="anim-opacity mx-auto max-w-[1700px] bg-[#121212] px-12 pt-12">
+    <div className="anim-opacity mx-auto max-w-[1700px] bg-[#121212] px-4 lg:px-12 pt-12">
       <h1 className="mb-3 text-lg font-semibold uppercase">Popolarne posty</h1>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-4">
         {data.map((d, i) => (

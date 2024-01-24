@@ -33,12 +33,9 @@ const fetchDatoCmsPopularne = async (id: string) => {
     }),
   });
   const data = await res.json();
-
-  // Sprawdź, czy popularne lub blog są dostępne w danych i zwróć odpowiednią tablicę
   if (data.data && (data.data.popularne || data.data.blog)) {
     return data.data.popularne || data.data.blog;
   } else {
-    // Jeśli nie znaleziono danych, zwróć pustą tablicę lub odpowiedni komunikat błędu
     return [];
   }
 };
