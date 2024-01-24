@@ -18,7 +18,7 @@ export default function Home() {
       <section className="mx-auto my-24 flex flex-col items-center justify-center px-3 md:flex-row lg:ml-24">
         <div className="mb-8 text-center font-semibold lg:ml-52 lg:text-start">
           <small className="text-orange-500">Zobacz</small>
-          <p className="mt-1 text-xl lg:text-2xl">Najnowsze realizacje</p>
+          <p className="mt-1 text-xl lg:text-2xl w-44">Najnowsze realizacje</p>
         </div>
         <Carousel
           withIndicators
