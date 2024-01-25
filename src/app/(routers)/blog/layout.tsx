@@ -29,7 +29,7 @@ export default function RootLayout({
           ))}
         </div>
       </div>
-      <main className="min-h-screen w-full flex-grow bg-[#1d1d1e]">
+      <main className="min-h-screen w-full flex-grow bg-[#1d1d1e] px-6 py-10">
         {children}
       </main>
     </div>
