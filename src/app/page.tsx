@@ -10,7 +10,7 @@ export default function Home() {
           src={blackHeroBg}
           alt="czarne kwadraty tło"
           fill
-          className="object-cover opacity-30"
+          className="object-cover opacity-50"
         />
         <h1 className="mx-auto max-w-screen-lg px-6 text-center text-2xl sm:text-3xl lg:text-5xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iste
