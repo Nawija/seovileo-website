@@ -1,20 +1,28 @@
+"use client";
+
 import { BLOG_LINKS } from "@/src/constants";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
   return (
     <div className="mx-auto flex max-w-[1700px]">
-      <div className="border-main sticky top-10 mx-auto hidden min-h-screen w-64 flex-col items-center justify-start space-y-2 border-r bg-[#171717] pt-10 text-center lg:flex">
-        <div className="flex flex-col items-start justify-center">
+      <div className="border-main sticky top-10 mx-auto hidden min-h-screen flex-col items-stretch justify-stretch border-r bg-[#171717] pt-10 text-center lg:flex">
+        <div className="flex flex-col items-stretch justify-stretch">
           {BLOG_LINKS.map((link, i) => (
             <Link
               key={i}
               href={link.href}
-              className="underline-offset-2 hover:underline"
+              className={`mx-4 w-64 rounded-lg px-12 py-2 my-1 text-start text-sm ${
+                pathname === link.href
+                  ? "bg-[#323232ed]"
+                  : "hover:bg-[#323232ed]"
+              }`}
             >
               <span>{link.label}</span>
             </Link>

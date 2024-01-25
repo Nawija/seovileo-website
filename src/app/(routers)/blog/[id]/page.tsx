@@ -44,10 +44,17 @@ export default async function Pages({ params }: { params: { id: string } }) {
   const slug = params.id;
   const data = await fetchDatoCmsPopularne(slug);
   return (
-    <div className="flex w-full h-full flex-grow flex-col items-center justify-center mx-auto text-center">
-      <Image src={data.img.url} alt={data.title} height={600} width={600} className="mb-12" />
+    <div className="mx-auto flex h-full w-full flex-grow flex-col items-center justify-start py-10 text-start ">
+      <h1 className="text-5xl max-w-screen-md mb-10">{data.title}</h1>
+      <Image
+        src={data.img.url}
+        alt={data.title}
+        height={600}
+        width={600}
+        className="mb-10 w-full px-12 max-h-96 object-cover"
+      />
       <article
-        className="prose prose-headings:underline prose-h1:text-orange-500 prose-a:text-orange-200"
+        className="prose flex flex-col items-center justify-start text-start text-white/80 prose-h1:text-yellow-400 prose-h2:text-yellow-400 prose-h3:text-yellow-400 prose-p:text-white/80 prose-a:text-orange-200 prose-strong:text-white prose-code:text-gray-400"
         dangerouslySetInnerHTML={{ __html: data.desc }}
       />
     </div>
