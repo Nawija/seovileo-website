@@ -3,9 +3,9 @@ import { MainBtn } from "../ui/buttons/MainBtn";
 export default function Home() {
   return (
     <div className="anim-opacity mx-auto max-w-[2000px] ">
-      <section className="py-80 relative flex items-center justify-center flex-col">
-        <img src="https://img.freepik.com/darmowe-zdjecie/fractal-tle-chaosu_1017-2648.jpg?w=826&t=st=1706173668~exp=1706174268~hmac=ea2d792d9b9536a326bd82c58dc59834e65c7b73e7aa77294e053d14912644a6" className="absolute top-0 left-0 h-full w-full object-cover -z-10 opacity-30" />
-        <h1 className="mx-auto max-w-screen-lg px-6 text-center text-2xl sm:text-3xl lg:text-4xl">
+      <section className="h-[60vh] relative flex items-center justify-center flex-col">
+        <img src="https://img.freepik.com/darmowe-wektory/abstrakcyjne-czarne-linie-geometryczne-tlo_677411-2749.jpg?w=1380&t=st=1706175370~exp=1706175970~hmac=b5da5789e6951ee96401159479b6c30f2ff8aa9e32fa11520c96017a05189584" className="absolute top-0 left-0 h-full w-full object-cover -z-10 opacity-30" />
+        <h1 className="mx-auto max-w-screen-lg px-6 text-center text-2xl sm:text-3xl lg:text-5xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iste
           eveniet aspernatur
         </h1>
