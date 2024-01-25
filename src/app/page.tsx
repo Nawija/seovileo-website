@@ -1,11 +1,15 @@
+import { MainBtn } from "../ui/buttons/MainBtn";
+
 export default function Home() {
   return (
     <div className="anim-opacity mx-auto max-w-[2000px] ">
-      <section className="py-24">
+      <section className="py-80 relative flex items-center justify-center flex-col">
+        <img src="https://img.freepik.com/darmowe-zdjecie/fractal-tle-chaosu_1017-2648.jpg?w=826&t=st=1706173668~exp=1706174268~hmac=ea2d792d9b9536a326bd82c58dc59834e65c7b73e7aa77294e053d14912644a6" className="absolute top-0 left-0 h-full w-full object-cover -z-10 opacity-30" />
         <h1 className="mx-auto max-w-screen-lg px-6 text-center text-2xl sm:text-3xl lg:text-4xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iste
           eveniet aspernatur
         </h1>
+        <MainBtn className="mt-12">Zobacz</MainBtn>
       </section>
       <section className="border-main border-y py-24">
         
