@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <head>
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#131212" />
       </head>
       <body className={` ${inter.className}`}>
         <Header />
