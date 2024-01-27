@@ -69,14 +69,14 @@ export default async function Blog() {
   const data: BlogType[] = await fetchData.data.allBlogs;
   const dataPopularne: BlogType[] = await fetchDataPopularne.data.allPopularnes;
   return (
-    <div className="anim-opacity mx-auto max-w-[1700px]">
+    <div className="anim-opacity mx-auto max-w-[1700px] px-6 py-12">
       <h1 className="mb-3 pb-2 text-lg font-semibold uppercase border-b border-main">Popolarne posty</h1>
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-4 ">
         {data.map((d, i) => (
           <Link
             href={`/blog/${d.slug}`}
             key={i}
-            className="group overflow-hidden lg:mb-5 border border-main rounded-xl bg-[#D3E3FD]"
+            className="group overflow-hidden lg:mb-5 border border-main rounded-xl bg-[#D3E3FD] "
           >
             <div className="relative h-28 w-full lg:h-40">
               <Image
