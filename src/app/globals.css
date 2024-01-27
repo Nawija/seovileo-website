@@ -5,13 +5,13 @@
 :root {
   --text-main: #1b1b1b;
   --text-p: #062E6F;
-  --text-smoke: #8b804d;
+  --text-smoke: #000000;
   --text-second: #d3a304;
   --body-bg: #F8FAFD;
-  --body-bg-main: #131212;
+  --body-bg-main: #D3E3FD;
   --body-bg-second: #131212;
   --bg-second: #131111;
-  --border-color: #3f3f3f;
+  --border-color: #D3E3FD;
 }
 
 body {
@@ -33,7 +33,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(19, 19, 19, 0.5);
+  background-color: #f8fafd41;
   backdrop-filter: blur(8px);
   z-index: 55;
   animation: anim-opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;

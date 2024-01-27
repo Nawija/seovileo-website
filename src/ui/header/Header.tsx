@@ -32,10 +32,10 @@ export function Header() {
       <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between">
         <Link href="/" className="flex-c relative z-50 pl-1 lg:py-3">
           <div className="relative flex-c">
-            <Image src="/seovileo.svg" height={30} width={30} alt="logo seovileo" className="mr-1" />
+            <Image src="/seovileo.svg" height={29} width={29} alt="logo seovileo" className="mr-1" />
             <p
-              className={`transition-transform font-semibold ${
-                showMenu ? "animate-pulse text-white" : "text-black"
+              className={`transition-transform font-semibold text-sm text-black/90 ${
+                showMenu ? "animate-pulse" : ""
               }`}
             >
               Seovileo
