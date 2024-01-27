@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --text-main: #ffffff;
-  --text-p: #eeeeee;
+  --text-main: #1b1b1b;
+  --text-p: #062E6F;
   --text-smoke: #8b804d;
   --text-second: #d3a304;
-  --body-bg: #000000;
+  --body-bg: #F8FAFD;
   --body-bg-main: #131212;
   --body-bg-second: #131212;
   --bg-second: #131111;
@@ -17,6 +17,10 @@
 body {
   color: var(--text-p);
   background-color: var(--body-bg);
+}
+
+.bg-body{
+  background-color: var(--body-bg)
 }
 
 .body-overflow-hidden {

@@ -26,7 +26,7 @@ export function Header() {
   return (
     <header
       className={clsx(
-        `sticky top-0 z-[999] flex w-full items-center justify-between bg-main px-3 py-1 font-normal  text-white/70 lg:py-0 border-b border-main`,
+        `sticky top-0 z-[999] flex w-full items-center justify-between bg-[#F8FAFD] px-3 py-1 font-normal lg:py-0`,
       )}
     >
       <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between">
@@ -34,8 +34,8 @@ export function Header() {
           <div className="relative flex-c">
             <Image src="/seovileo.svg" height={30} width={30} alt="logo seovileo" className="mr-1" />
             <p
-              className={`transition-transform ${
-                showMenu ? "animate-pulse text-white" : ""
+              className={`transition-transform font-semibold ${
+                showMenu ? "animate-pulse text-white" : "text-black"
               }`}
             >
               Seovileo
