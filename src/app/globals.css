@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --text-main: #1b1b1b;
-  --text-p: #062E6F;
+  --text-main: #374A69;
+  --text-p: #374A69;
   --text-smoke: #000000;
   --text-second: #d3a304;
   --body-bg: #F8FAFD;
   --body-bg-main: #D3E3FD;
   --body-bg-second: #131212;
   --bg-second: #131111;
-  --border-color: #D3E3FD;
+  --border-color: #a98c6d;
 }
 
 body {

@@ -12,7 +12,7 @@ export default function RootLayout({
   const pathname = usePathname();
   return (
     <div className="mx-auto flex max-w-[1700px]">
-      <div className="mx-auto hidden min-h-screen flex-col items-stretch justify-stretch bg-[#D3E3FD] pt-10 text-center lg:flex rounded-l-xl">
+      <div className="mx-auto hidden min-h-screen flex-col items-stretch justify-stretch pt-10 text-center lg:flex rounded-l-xl">
         <div className="flex flex-col items-stretch justify-stretch">
           {BLOG_LINKS.map((link, i) => (
             <Link
@@ -29,7 +29,7 @@ export default function RootLayout({
           ))}
         </div>
       </div>
-      <main className="min-h-screen w-full flex-grow border rounded-r-xl border-l-0 border-[#D3E3FD]">
+      <main className="min-h-screen w-full flex-grow">
         {children}
       </main>
     </div>

@@ -76,7 +76,7 @@ export default async function Blog() {
           <Link
             href={`/blog/${d.slug}`}
             key={i}
-            className="group overflow-hidden lg:mb-5 border border-main rounded-xl bg-[#D3E3FD] "
+            className="group overflow-hidden lg:mb-5 rounded-xl"
           >
             <div className="relative h-28 w-full lg:h-40">
               <Image

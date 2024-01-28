@@ -1,8 +1,8 @@
 import "@/src/app/globals.css";
 import { inter } from "@/src/ui/fonts";
 import Footer from "@/src/ui/footer/Footer";
-import { Header } from "../ui/header/Header";
 import type { Metadata } from "next";
+import { Header } from "../ui/header/Header";
 
 export const metadata: Metadata = {
   title: "Seovileo-website",
@@ -20,6 +20,30 @@ export default function RootLayout({
         <meta name="theme-color" content="#1d1d1e" />
       </head>
       <body className={` ${inter.className}`}>
+        <svg
+          viewBox="0 0 699 585"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute left-0 top-0 -z-50 w-1/3"
+        >
+          <path
+            d="M0 0H550C550 0 903 467.5 519 421.5C135 375.5 0 585 0 585V0Z"
+            fill="#d2edd2"
+          />
+        </svg>
+        <svg
+          viewBox="0 0 533 528"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute -bottom-44 right-0 -z-50 w-3/4 md:w-1/2"
+        >
+          <path
+            d="M198.275 91.5457C432.475 227.113 545 0 545 0V474.237C545 474.237 365.705 213.607 145.74 474.237C-74.2246 734.867 -35.9261 -44.022 198.275 91.5457Z"
+            fill="#6e79af"
+          />
+        </svg>
+        <div className="fixed top-0 left-0 h-full w-full backdrop-blur-xl -z-40 bg-white/20" />
+
         <Header />
         <main className="text-p min-h-screen">{children}</main>
         <Footer />
