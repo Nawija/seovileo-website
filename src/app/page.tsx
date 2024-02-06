@@ -10,7 +10,6 @@ export default function Home() {
           src={HeroBg}
           alt="hero"
           quality={100}
-          placeholder="blur"
           priority
           fill
         />
