@@ -125,7 +125,7 @@ const Header = () => {
           } `}
         >
           {NAV_LINKS.map((link) => (
-            <li>
+            <li key={link.label}>
               <Link
                 href={link.href}
                 className={`px-4 py-2 transition-colors duration-200 hover:text-orange-700 ${
