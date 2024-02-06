@@ -9,6 +9,9 @@ export default function Home() {
           className="absolute left-0 top-0 -z-10 h-full w-full rotate-180 object-cover"
           src={HeroBg}
           alt="hero"
+          quality={100}
+          placeholder="blur"
+          priority
           fill
         />
         <div className="absolute -z-10 h-full w-full bg-gradient-to-t from-gray-50 via-transparent to-gray-50/50 " />
