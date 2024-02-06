@@ -25,7 +25,7 @@ const Header = () => {
     const onScroll = () => {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 0) {
-        setHeaderBackground("bg-white/70");
+        setHeaderBackground("bg-white/50");
       } else {
         setHeaderBackground("bg-transparent");
       }
@@ -86,7 +86,11 @@ const Header = () => {
       <nav
         className={` mx-auto flex w-full max-w-screen-2xl items-center justify-between `}
       >
-        <div className="flex items-center justify-center">
+        <Link
+          href="/"
+          onClick={closeMenu}
+          className="z-10 flex items-center justify-center"
+        >
           <Image
             height={29}
             width={29}
@@ -96,7 +100,7 @@ const Header = () => {
             className="mr-1"
           />
           <p>Seovileo</p>
-        </div>
+        </Link>
 
         <button
           className="flex flex-col items-center justify-center lg:hidden"
@@ -118,7 +122,7 @@ const Header = () => {
           />
         </button>
         <ul
-          className={`absolute left-0 top-0 flex h-screen flex-col items-center justify-center space-y-5 bg-white/90 px-24 transition-transform lg:relative lg:h-auto lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:bg-transparent ${
+          className={`absolute left-0 top-0 flex h-screen flex-col items-center justify-center space-y-7 bg-white/90 px-24 transition-transform lg:relative lg:h-auto lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:bg-transparent ${
             isMenuOpen
               ? "translate-x-0 duration-200 "
               : "-translate-x-full duration-500 lg:translate-x-0"
@@ -128,7 +132,7 @@ const Header = () => {
             <li key={link.label}>
               <Link
                 href={link.href}
-                className={`px-4 py-2 transition-colors duration-200 hover:text-orange-700 ${
+                className={`px-4 py-2 text-base transition-colors duration-200 hover:text-orange-700 lg:text-sm ${
                   pathname === link.href ? "text-orange-700" : ""
                 }`}
                 onClick={closeMenu}
