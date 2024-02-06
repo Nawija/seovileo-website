@@ -1,8 +1,8 @@
 import "@/src/app/globals.css";
 import { inter } from "@/src/ui/fonts";
 import Footer from "@/src/ui/footer/Footer";
-import { Header } from "../ui/header/Header";
 import type { Metadata } from "next";
+import Header from "../ui/header/Header";
 
 export const metadata: Metadata = {
   title: "Seovileo-website",
@@ -17,11 +17,11 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <head>
-        <meta name="theme-color" content="#1d1d1e" />
+        <meta name="theme-color" content="#000000" />
       </head>
-      <body className={` ${inter.className}`}>
+      <body className={`${inter.className}`}>
         <Header />
-        <main className="text-p min-h-screen">{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

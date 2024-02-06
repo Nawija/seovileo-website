@@ -3,13 +3,11 @@
 import { NAV_LINKS } from "@/src/constants";
 import clsx from "clsx";
 import Link from "next/link";
+import { MainBtn } from "../buttons/MainBtn";
 
-export function NavLinksDesctop({
-  pathname,
-}: {
-  pathname: string;
-}) {
+export function NavLinksDesctop({ pathname }: { pathname: string }) {
   return (
+    <>
     <ul className="hidden items-center justify-center space-x-4 text-sm lg:flex">
       {NAV_LINKS.map((link) => (
         <li className="list-none" key={link.label}>
@@ -17,28 +15,6 @@ export function NavLinksDesctop({
             href={link.href}
             className={clsx(
               `mx-3 px-2 py-2 text-[14px] font-semibold transition-colors duration-75`,
-              {
-                "hover:text-white":
-                  pathname === "/" && pathname !== link.href
-              },
-              {
-                "hover:text-yellow-500":
-                  pathname !== "/" && pathname !== link.href
-              },
-              {
-                "text-yellow-500": pathname !== "/" && pathname === link.href,
-              },
-              {
-                "text-white":
-                  pathname === link.href && pathname === "/",
-              },
-              {
-                "hover:text-white": pathname !== link.href
-              },
-              {
-                "text-yellow-500":
-                  pathname === link.href && pathname === "/"
-              },
             )}
           >
             {link.label}
@@ -46,6 +22,10 @@ export function NavLinksDesctop({
         </li>
       ))}
     </ul>
+    <div>
+      <MainBtn>Wycena</MainBtn>
+    </div>
+    </>
   );
 }
 
@@ -60,7 +40,7 @@ export function NavLinksMobile({
 }) {
   return (
     <ul
-      className={`fixed left-0 top-0 z-40 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-black text-sm text-white/80 shadow-2xl transition-transform duration-200 lg:hidden ${
+      className={`fixed left-0 top-0 z-40 flex h-screen w-72 flex-col items-center justify-center space-y-4 bg-[#d2edd2] text-sm shadow-2xl transition-transform duration-200 lg:hidden ${
         showMenu ? "translate-x-0" : "-translate-x-full"
       }`}
     >

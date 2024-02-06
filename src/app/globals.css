@@ -3,20 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --text-main: #ffffff;
-  --text-p: #eeeeee;
-  --text-smoke: #8b804d;
+  --text-main: #374A69;
+  --text-p: #374A69;
+  --text-smoke: #000000;
   --text-second: #d3a304;
-  --body-bg: #000000;
-  --body-bg-main: #131212;
+  --body-bg: #F8FAFD;
+  --body-bg-main: #D3E3FD;
   --body-bg-second: #131212;
   --bg-second: #131111;
-  --border-color: #3f3f3f;
+  --border-color: #a98c6d;
 }
 
 body {
   color: var(--text-p);
   background-color: var(--body-bg);
+}
+
+.bg-body{
+  background-color: var(--body-bg)
 }
 
 .body-overflow-hidden {
@@ -29,7 +33,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(19, 19, 19, 0.5);
+  background-color: #f8fafd41;
   backdrop-filter: blur(8px);
   z-index: 55;
   animation: anim-opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;

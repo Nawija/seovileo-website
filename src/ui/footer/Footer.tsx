@@ -5,16 +5,16 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex-c text-gray-200 px-4 py-20 bg-main border-t border-main">
+    <footer className="flex-c mt-24 border-t bg-stone-200 px-4 py-20">
       <Link href="/" aria-label="Logo" className="flex-c">
         <Image
           src="/seovileo.svg"
-          height={40}
-          width={40}
+          height={30}
+          width={30}
           priority
           alt="seovileo logo"
         />
-        <p className={`ml-1 text-lg font-medium ${inter.className}`}>
+        <p className={`ml-1 text-sm font-medium ${inter.className}`}>
           Seovileo
         </p>
       </Link>

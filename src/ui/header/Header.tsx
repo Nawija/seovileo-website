@@ -1,55 +1,107 @@
 "use client";
 
-import clsx from "clsx";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { BurgerMenu, NavLinksDesctop, NavLinksMobile } from "./NavLinks";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
-export function Header() {
-  const pathname = usePathname();
-  const [showMenu, setShowMenu] = useState(false);
+const Header = () => {
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      const currentScrollY = window.scrollY;
+      setVisible(lastScrollY > currentScrollY || currentScrollY < 50);
+      setLastScrollY(currentScrollY);
+    }
+  };
 
   useEffect(() => {
-    if (showMenu) {
-      document.body.classList.add("body-overflow-hidden");
-    } else {
-      document.body.classList.remove("body-overflow-hidden");
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+      return () => window.removeEventListener("scroll", controlNavbar);
     }
-  }, [showMenu]);
+  }, [lastScrollY]);
 
-  function handleMenu() {
-    setShowMenu(!showMenu);
-  }
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <header
-      className={clsx(
-        `sticky top-0 z-[999] flex w-full items-center justify-between bg-main px-3 py-1 font-normal  text-white/70 lg:py-0 border-b border-main`,
-      )}
-    >
-      <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between">
-        <Link href="/" className="flex-c relative z-50 pl-1 lg:py-3">
-          <div className="relative flex-c">
-            <Image src="/seovileo.svg" height={30} width={30} alt="logo seovileo" className="mr-1" />
-            <p
-              className={`transition-transform ${
-                showMenu ? "animate-pulse text-white" : ""
-              }`}
-            >
-              Seovileo
-            </p>
-          </div>
-        </Link>
-        <BurgerMenu showMenu={showMenu} handleMenu={handleMenu} />
-        <NavLinksDesctop pathname={pathname} />
-        <NavLinksMobile
-          showMenu={showMenu}
-          pathname={pathname}
-          handleMenu={handleMenu}
-        />
-      </div>
+    <header className="fixed top-0 z-50 w-full font-medium">
+      <nav
+        className={` mx-auto flex w-full max-w-screen-2xl items-center justify-between px-6 py-5 text-sm text-gray-800 transition-transform duration-300 ease-in-out ${
+          !visible ? "-translate-y-full" : ""
+        }`}
+      >
+        <div className="flex items-center justify-center">
+          <Image
+            height={29}
+            width={29}
+            alt="logo"
+            src="/seovileo.svg"
+            priority
+            className="mr-1"
+          />
+          <p>Seovileo</p>
+        </div>
+
+        <button
+          className="flex flex-col items-center justify-center lg:hidden"
+          onClick={toggleMenu}
+        >
+          <div
+            className={`mb-2 h-px w-4 bg-black transition-transform ${
+              isMenuOpen
+                ? "translate-y-1 rotate-[-135deg]  duration-200"
+                : "duration-300"
+            }`}
+          />
+          <div
+            className={`h-px w-4 bg-black transition-transform ${
+              isMenuOpen
+                ? "-translate-y-1 -rotate-45 duration-500"
+                : "duration-500"
+            }`}
+          />
+        </button>
+        <ul
+          className={`absolute left-0 top-0 flex h-screen flex-col items-center justify-center space-y-5 bg-white/90 px-24 transition-transform lg:relative lg:h-auto lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:bg-transparent ${
+            isMenuOpen
+              ? "translate-x-0 duration-200 "
+              : "-translate-x-full duration-500 lg:translate-x-0"
+          } `}
+        >
+          <li>
+            <Link className="px-4 py-2" href="/o-mnie">
+              O Mnie
+            </Link>
+          </li>
+          <li>
+            <Link className="px-4 py-2" href="/o-mnie">
+              Oferta
+            </Link>
+          </li>
+          <li>
+            <Link className="px-4 py-2" href="/galeria">
+              Galeria
+            </Link>
+          </li>
+          <li>
+            <Link className="px-4 py-2" href="/galeria">
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link className="p-2" href="/kontakt">
+              Kontakt
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
-}
+};
+
+export default Header;

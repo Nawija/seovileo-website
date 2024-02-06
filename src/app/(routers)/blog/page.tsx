@@ -69,18 +69,18 @@ export default async function Blog() {
   const data: BlogType[] = await fetchData.data.allBlogs;
   const dataPopularne: BlogType[] = await fetchDataPopularne.data.allPopularnes;
   return (
-    <div className="anim-opacity mx-auto max-w-[1700px]">
+    <div className="anim-opacity mx-auto max-w-[1700px] px-6 py-12">
       <h1 className="mb-3 pb-2 text-lg font-semibold uppercase border-b border-main">Popolarne posty</h1>
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-4 ">
         {data.map((d, i) => (
           <Link
             href={`/blog/${d.slug}`}
             key={i}
-            className="group overflow-hidden lg:mb-5"
+            className="group overflow-hidden lg:mb-5 rounded-xl"
           >
             <div className="relative h-28 w-full lg:h-40">
               <Image
-                className="object-cover brightness-75 transition duration-300 group-hover:scale-95 group-hover:brightness-105"
+                className="object-cover brightness-90 transition-all duration-300 group-hover:scale-[.97] group-hover:brightness-105 group-hover:rounded-xl"
                 src={d.img.url}
                 alt={d.title}
                 priority={i < 4}
@@ -88,7 +88,7 @@ export default async function Blog() {
               />
             </div>
             <div className="flex flex-col items-start justify-center space-y-1 px-2 py-2 lg:space-y-2 lg:px-3 lg:py-3">
-              <div className="text-smoke flex items-center justify-start">
+              <div className="text-smoke flex items-start justify-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -114,7 +114,7 @@ export default async function Blog() {
       </div>
       <img
         src="https://img.freepik.com/darmowe-zdjecie/technologia-panoramiczny-baner_23-2151213588.jpg?w=1800&t=st=1706094937~exp=1706095537~hmac=191115e09f52f79a56bd34146e25b2144d34dd5ba0dc5f2a92dd49b595f51821"
-        className="h-44 w-full object-cover"
+        className="h-44 w-full object-cover rounded-xl"
       />
       <h2 className="mb-3 mt-12 text-lg font-semibold uppercase pb-2 border-b border-main">
         Najnowsze posty
@@ -128,7 +128,7 @@ export default async function Blog() {
           >
             <div className="relative h-28 w-full lg:h-32">
               <Image
-                className="object-cover brightness-75 transition duration-300 group-hover:scale-95 group-hover:brightness-105"
+                className="object-cover brightness-75 transition duration-300 group-hover:scale-95 group-hover:brightness-105 rounded-xl"
                 src={d.img.url}
                 alt={d.title}
                 priority={i < 4}
