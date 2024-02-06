@@ -27,6 +27,33 @@ const Header = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.height = "100vh";
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.height = "";
+      document.body.style.overflow = "";
+    }
+    const handleOutsideClick = (event) => {
+      // Sprawdź czy nawigacja jest otwarta i czy kliknięcie miało miejsce poza nawigacją
+      if (isMenuOpen && !event.target.closest("nav")) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Dodanie nasłuchiwacza zdarzeń
+    document.addEventListener("click", handleOutsideClick);
+
+    // Usunięcie nasłuchiwacza zdarzeń
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [isMenuOpen]);
 
   return (
     <header className="fixed top-0 z-50 w-full font-medium">
@@ -52,14 +79,14 @@ const Header = () => {
           onClick={toggleMenu}
         >
           <div
-            className={`mb-2 h-px w-4 bg-black transition-transform ${
+            className={`mb-2 h-px w-5 bg-black transition-transform ${
               isMenuOpen
                 ? "translate-y-1 rotate-[-135deg]  duration-200"
                 : "duration-300"
             }`}
           />
           <div
-            className={`h-px w-4 bg-black transition-transform ${
+            className={`h-px w-5 bg-black transition-transform ${
               isMenuOpen
                 ? "-translate-y-1 -rotate-45 duration-500"
                 : "duration-500"
@@ -74,27 +101,27 @@ const Header = () => {
           } `}
         >
           <li>
-            <Link className="px-4 py-2" href="/o-mnie">
+            <Link className="px-4 py-2" onClick={closeMenu} href="/o-mnie">
               O Mnie
             </Link>
           </li>
           <li>
-            <Link className="px-4 py-2" href="/o-mnie">
+            <Link className="px-4 py-2" onClick={closeMenu} href="/o-mnie">
               Oferta
             </Link>
           </li>
           <li>
-            <Link className="px-4 py-2" href="/galeria">
+            <Link className="px-4 py-2" onClick={closeMenu} href="/galeria">
               Galeria
             </Link>
           </li>
           <li>
-            <Link className="px-4 py-2" href="/galeria">
+            <Link className="px-4 py-2" onClick={closeMenu} href="/galeria">
               Blog
             </Link>
           </li>
           <li>
-            <Link className="p-2" href="/kontakt">
+            <Link className="px-4 py-2" onClick={closeMenu} href="/kontakt">
               Kontakt
             </Link>
           </li>
