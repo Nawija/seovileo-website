@@ -39,6 +39,14 @@ const Header = () => {
       }
     };
 
+    if (isMenuOpen) {
+      document.body.style.height = "100vh";
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.height = "";
+      document.body.style.overflow = "";
+    }
+
     document.addEventListener("click", handleOutsideClick);
 
     return () => {
