@@ -32,24 +32,15 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.height = "100vh";
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.height = "";
-      document.body.style.overflow = "";
-    }
-    const handleOutsideClick = (event) => {
-      // Sprawdź czy nawigacja jest otwarta i czy kliknięcie miało miejsce poza nawigacją
-      if (isMenuOpen && !event.target.closest("nav")) {
+    const handleOutsideClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isMenuOpen && target && !target.closest("nav")) {
         setIsMenuOpen(false);
       }
     };
 
-    // Dodanie nasłuchiwacza zdarzeń
     document.addEventListener("click", handleOutsideClick);
 
-    // Usunięcie nasłuchiwacza zdarzeń
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
