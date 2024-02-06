@@ -1,84 +1,82 @@
 "use client";
 
-import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BurgerMenu, NavLinksDesctop, NavLinksMobile } from "./NavLinks";
 
-export function Header() {
-  const pathname = usePathname();
-  const [showMenu, setShowMenu] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+const Header = () => {
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      const currentScrollY = window.scrollY;
+      setVisible(lastScrollY > currentScrollY || currentScrollY < 80);
+      setLastScrollY(currentScrollY);
+    }
+  };
 
   useEffect(() => {
-    function handleScroll() {
-      const scrolled = window.scrollY > 0;
-      setIsScrolled(scrolled);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+      return () => window.removeEventListener("scroll", controlNavbar);
     }
+  }, [lastScrollY]);
 
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (showMenu) {
-      document.body.classList.add("body-overflow-hidden");
-    } else {
-      document.body.classList.remove("body-overflow-hidden");
-    }
-  }, [showMenu]);
-
-  useEffect(() => {
-    if (showMenu) {
-      document.body.classList.add("body-overflow-hidden");
-    } else {
-      document.body.classList.remove("body-overflow-hidden");
-    }
-  }, [showMenu]);
-
-  function handleMenu() {
-    setShowMenu(!showMenu);
-  }
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <header
-      className={clsx(
-        `sticky top-0 z-[999] flex w-full items-center justify-between px-3 py-1 transition-colors duration-300 font-normal lg:py-0`,
-        { "bg-white": isScrolled },
-      )}
+    <nav
+      className={`fixed top-0 z-50 flex w-full items-center justify-between bg-black px-10 py-3 text-white transition-transform duration-300 ease-in-out text-sm ${
+        !visible ? "-translate-y-full" : ""
+      }`}
     >
-      <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between">
-        <Link href="/" className="flex-c relative z-50 pl-1 lg:py-3">
-          <div className="flex-c relative">
-            <Image
-              src="/seovileo.svg"
-              height={29}
-              width={29}
-              alt="logo seovileo"
-              className="mr-1"
-            />
-            <p
-              className={`text-sm font-semibold text-black/90 transition-transform ${
-                showMenu ? "animate-pulse" : ""
-              }`}
-            >
-              Seovileo
-            </p>
-          </div>
-        </Link>
-        <BurgerMenu showMenu={showMenu} handleMenu={handleMenu} />
-        <NavLinksDesctop pathname={pathname} />
-        <NavLinksMobile
-          showMenu={showMenu}
-          pathname={pathname}
-          handleMenu={handleMenu}
-        />
+      <div className="flex items-center justify-center">
+        <Image height={29} width={29} alt="logo" src="/seovileo.svg" priority className="mr-1" />
+        <p>Seovileo</p>
       </div>
-    </header>
+
+      <button
+        className="flex flex-col items-center justify-center lg:hidden"
+        onClick={toggleMenu}
+      >
+        <div
+          className={`mb-2 h-px w-4 bg-white transition-transform ${
+            isMenuOpen
+              ? "translate-y-1 rotate-[-135deg]  duration-200"
+              : "duration-300"
+          }`}
+        />
+        <div
+          className={`h-px w-4 bg-white transition-transform ${
+            isMenuOpen
+              ? "-translate-y-1 -rotate-45 duration-500"
+              : "duration-500"
+          }`}
+        />
+      </button>
+      <ul
+        className={`absolute left-0 top-full flex h-screen flex-col items-center justify-center space-y-5 bg-black px-24 text-white transition-transform lg:relative lg:h-auto lg:flex-row lg:items-center lg:justify-center lg:space-x-7 lg:space-y-0 ${
+          isMenuOpen
+            ? "translate-x-0 duration-200 "
+            : "-translate-x-full duration-500 lg:translate-x-0"
+        } `}
+      >
+        <li>
+          <Link href="/">O Mnie</Link>
+        </li>
+        <li>
+          <Link href="/">Galeria</Link>
+        </li>
+        <li>
+          <Link href="/">Kontakt</Link>
+        </li>
+      </ul>
+    </nav>
   );
-}
+};
+
+export default Header;
