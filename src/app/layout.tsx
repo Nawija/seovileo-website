@@ -22,6 +22,7 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <Header />
         <main className="min-h-screen">{children}</main>
+        <div className="h-[120vh]" />
         <Footer />
       </body>
     </html>

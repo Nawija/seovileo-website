@@ -1,21 +1,44 @@
 "use client";
 
+import { NAV_LINKS } from "@/src/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Header = () => {
+  const pathname = usePathname();
   const [lastScrollY, setLastScrollY] = useState(0);
   const [visible, setVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [headerBackground, setHeaderBackground] = useState("bg-transparent");
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
       const currentScrollY = window.scrollY;
-      setVisible(lastScrollY > currentScrollY || currentScrollY < 50);
+      setVisible(lastScrollY > currentScrollY || currentScrollY < 250);
       setLastScrollY(currentScrollY);
     }
   };
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 0) {
+        setHeaderBackground("bg-white/70");
+      } else {
+        setHeaderBackground("bg-transparent");
+      }
+    };
+
+    // Attach the event listener
+    window.addEventListener("scroll", onScroll);
+
+    // Clean up the event listener
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -47,11 +70,13 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed top-0 z-50 w-full font-medium">
+    <header
+      className={`fixed top-0 z-50 w-full px-6 py-4 text-sm font-medium text-gray-800 transition-all duration-500 ease-in-out lg:py-3 ${headerBackground} ${
+        !visible ? "-translate-y-full" : ""
+      }`}
+    >
       <nav
-        className={` mx-auto flex w-full max-w-screen-2xl items-center justify-between px-6 py-5 text-sm text-gray-800 transition-transform duration-300 ease-in-out ${
-          !visible ? "-translate-y-full" : ""
-        }`}
+        className={` mx-auto flex w-full max-w-screen-2xl items-center justify-between `}
       >
         <div className="flex items-center justify-center">
           <Image
@@ -91,31 +116,19 @@ const Header = () => {
               : "-translate-x-full duration-500 lg:translate-x-0"
           } `}
         >
-          <li>
-            <Link className="px-4 py-2" onClick={closeMenu} href="/o-mnie">
-              O Mnie
-            </Link>
-          </li>
-          <li>
-            <Link className="px-4 py-2" onClick={closeMenu} href="/o-mnie">
-              Oferta
-            </Link>
-          </li>
-          <li>
-            <Link className="px-4 py-2" onClick={closeMenu} href="/galeria">
-              Galeria
-            </Link>
-          </li>
-          <li>
-            <Link className="px-4 py-2" onClick={closeMenu} href="/galeria">
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link className="px-4 py-2" onClick={closeMenu} href="/kontakt">
-              Kontakt
-            </Link>
-          </li>
+          {NAV_LINKS.map((link) => (
+            <li>
+              <Link
+                href={link.href}
+                className={`px-4 py-2 transition-colors duration-200 hover:text-orange-700 ${
+                  pathname === link.href ? "text-orange-700" : ""
+                }`}
+                onClick={closeMenu}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

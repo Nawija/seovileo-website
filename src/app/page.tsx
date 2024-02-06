@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="anim-opacity relative mx-auto text-gray-800">
-      <div className="h-[85vh] w-full overflow-hidden">
+      <section className="h-[85vh] w-full overflow-hidden">
         <Image
           className="absolute left-0 top-0 -z-10 h-full w-full rotate-180 object-cover"
           src={HeroBg}
@@ -26,7 +26,7 @@ export default function Home() {
             Voluptas, reprehenderit consectetur
           </p>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
