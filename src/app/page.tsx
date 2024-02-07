@@ -38,25 +38,19 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
 
-      <section className="bg-white">
+      <section>
         <div className="mx-auto max-w-screen-xl items-center gap-8 px-4 py-8 sm:py-16 md:grid md:grid-cols-2 lg:px-6 lg:py-24 xl:gap-16">
           <img
-            className="w-full dark:hidden"
+            className="w-full shadow-2xl"
             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg"
             alt="dashboard image"
           />
-          <img
-            className="hidden w-full"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg"
-            alt="dashboard image"
-          />
           <div className="mt-4 md:mt-0">
-            <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight">
               Lets create more tools and ideas that brings us together.
             </h2>
-            <p className="mb-6 font-light text-gray-500 md:text-lg ">
+            <p className="mb-6 font-light  md:text-lg ">
               Flowbite helps you connect with friends and communities of people
               who share your interests. Connecting with your friends and family
               as well as discovering new ones is easy with features like Groups.
@@ -90,7 +84,7 @@ export default function Home() {
               Our Team by the numbers
             </h2>
 
-            <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+            <p className="mx-auto max-w-screen-md text-center  md:text-lg">
               This is a section of some simple filler text, also known as
               placeholder text. It shares some characteristics of a real written
               text but is random or otherwise generated.
@@ -99,21 +93,21 @@ export default function Home() {
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-8">
             <div className="flex flex-col items-center justify-center rounded-lg bg-white p-4 shadow-2xl lg:p-8">
-              <div className="text-xl font-bold text-yellow-500 sm:text-2xl md:text-3xl">
+              <div className="text-xl font-bold text-sky-600 sm:text-2xl md:text-3xl">
                 200
               </div>
               <div className="text-sm font-semibold sm:text-base">People</div>
             </div>
 
             <div className="flex flex-col items-center justify-center rounded-lg bg-white p-4 shadow-2xl md:p-8">
-              <div className="text-xl font-bold text-yellow-500 sm:text-2xl md:text-3xl">
+              <div className="text-xl font-bold text-sky-600 sm:text-2xl md:text-3xl">
                 500+
               </div>
               <div className="text-sm font-semibold sm:text-base">People</div>
             </div>
 
             <div className="flex flex-col items-center justify-center rounded-lg bg-white p-4 shadow-2xl md:p-8">
-              <div className="text-xl font-bold text-yellow-500 sm:text-2xl md:text-3xl">
+              <div className="text-xl font-bold text-sky-600 sm:text-2xl md:text-3xl">
                 1000+
               </div>
               <div className="text-sm font-semibold sm:text-base">
@@ -122,7 +116,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-center justify-center rounded-lg bg-white p-4 shadow-2xl md:p-8">
-              <div className="text-xl font-bold text-yellow-500 sm:text-2xl md:text-3xl">
+              <div className="text-xl font-bold text-sky-600 sm:text-2xl md:text-3xl">
                 A couple
               </div>
               <div className="text-sm font-semibold sm:text-base">
@@ -154,7 +148,7 @@ export default function Home() {
                   />
 
                   <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                    <small className="text-gray-500">Personalizowana</small>
+                    <small className="">Personalizowana</small>
                     <span className="text-lg font-bold text-gray-800 lg:text-xl">
                       Strona Internetowa
                     </span>
@@ -175,7 +169,7 @@ export default function Home() {
                   />
 
                   <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                    <small className="text-gray-500">Gotowe</small>
+                    <small className="">Gotowe</small>
                     <span className="text-lg font-bold text-gray-800 lg:text-xl">
                       Szablony Stron
                     </span>
@@ -196,7 +190,7 @@ export default function Home() {
                   />
 
                   <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                    <small className="text-gray-500">Google</small>
+                    <small className="">Google</small>
                     <span className="text-lg font-bold text-gray-800 lg:text-xl">
                       Optymalizacja SEO
                     </span>
@@ -217,7 +211,7 @@ export default function Home() {
                   />
 
                   <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                    <small className="text-gray-500">Usługa</small>
+                    <small className="">Usługa</small>
                     <span className="text-lg font-bold text-gray-800 lg:text-xl">
                       Projekty Graficzne
                     </span>
