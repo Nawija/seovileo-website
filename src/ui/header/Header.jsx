@@ -4,7 +4,7 @@ import { NAV_LINKS } from "@/src/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { MainBtn } from "../buttons/MainBtn";
 
 const Header = () => {
@@ -14,50 +14,37 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [headerBackground, setHeaderBackground] = useState("bg-transparent");
 
-  const controlNavbar = () => {
+  const controlNavbarAndHeaderBackground = useCallback(() => {
     if (typeof window !== "undefined") {
       const currentScrollY = window.scrollY;
-      setVisible(lastScrollY > currentScrollY || currentScrollY < 250);
-      setLastScrollY(currentScrollY);
+      const newVisible = lastScrollY > currentScrollY || currentScrollY < 600;
+      const newHeaderBackground =
+        currentScrollY > 0 ? "bg-white/90 shadow-xl" : "bg-transparent";
+
+      if (newVisible !== visible) setVisible(newVisible);
+      if (currentScrollY !== lastScrollY) setLastScrollY(currentScrollY);
+      if (newHeaderBackground !== headerBackground)
+        setHeaderBackground(newHeaderBackground);
     }
-  };
+  }, [lastScrollY, visible, headerBackground]);
 
   useEffect(() => {
-    const onScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 0) {
-        setHeaderBackground("bg-white/90 shadow-xl");
-      } else {
-        setHeaderBackground("bg-transparent");
-      }
-    };
+    window.addEventListener("scroll", controlNavbarAndHeaderBackground);
+    return () =>
+      window.removeEventListener("scroll", controlNavbarAndHeaderBackground);
+  }, [controlNavbarAndHeaderBackground]);
 
-    // Attach the event listener
-    window.addEventListener("scroll", onScroll);
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen(!isMenuOpen);
+  }, [isMenuOpen]);
 
-    // Clean up the event listener
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false);
   }, []);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", controlNavbar);
-      return () => window.removeEventListener("scroll", controlNavbar);
-    }
-  }, [lastScrollY]);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
+    const handleOutsideClick = (event) => {
+      const target = event.target;
       if (isMenuOpen && target && !target.closest("nav")) {
         setIsMenuOpen(false);
       }
@@ -72,7 +59,6 @@ const Header = () => {
     }
 
     document.addEventListener("click", handleOutsideClick);
-
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
@@ -81,7 +67,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 z-50 w-full px-6 py-4 text-sm font-medium text-gray-800 transition-all duration-500 ease-in-out lg:py-3 ${headerBackground} ${
-        !visible ? "-translate-y-full" : ""
+        !visible ? "-translate-y-[120%]" : ""
       }`}
     >
       <nav
