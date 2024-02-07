@@ -2,7 +2,7 @@ import a1 from "@/public/a1.png";
 import a2 from "@/public/a2.png";
 import a3 from "@/public/a3.webp";
 import a4 from "@/public/a4.png";
-import HeroBg from "@/public/wysoka-plama-seo.jpg";
+import HeroBg from "@/public/elegancka-miekka-blekitna-krzywa-wyklada-abstrakcjonistycznego-seo.jpg";
 import Image from "next/image";
 import { MainBtn } from "../ui/buttons/MainBtn";
 import { SecondBtn } from "../ui/buttons/SecondBtn";
@@ -14,15 +14,10 @@ export default function Home() {
         <Image
           className="absolute left-0 top-0 -z-10 h-full w-full rotate-180 object-cover"
           src={HeroBg}
-          alt="hero"
-          quality={100}
+          alt="elegancka-miekka-blekitna-krzywa-wyklada-abstrakcjonistycznego-seo"
           placeholder="blur"
           priority
           fill
-        />
-        <img
-          className="absolute left-0 top-0 -z-10 h-full w-full object-cover"
-          src="https://img.freepik.com/darmowe-zdjecie/elegancka-miekka-blekitna-krzywa-wyklada-abstrakcjonistycznego-tlo_1017-19950.jpg?w=2000&t=st=1707295802~exp=1707296402~hmac=b38019373c5522197904477528efe58f9c385c507e62024a15eb84c97bc5609d"
         />
         <div className="absolute -z-10 h-full w-full bg-gradient-to-t from-gray-50 via-white/50 to-gray-50/90 " />
 
@@ -43,101 +38,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
-        <div className=" py-6 sm:py-8 lg:pb-12">
-          <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-            <h2 className="mb-8 text-center text-2xl font-bold text-gray-800 md:mb-12 lg:text-3xl">
-              Poznaj Ofertę
-            </h2>
-
-            <div className="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4">
-              <div>
-                <a
-                  href="#"
-                  className="bo-white group relative flex h-80 items-end overflow-hidden rounded-lg p-4 shadow-2xl"
-                >
-                  <Image
-                    src={a1}
-                    alt="Photo by Austin Wade"
-                    className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
-                    fill
-                  />
-
-                  <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                    <small className="text-gray-500">Personalizowana</small>
-                    <span className="text-lg font-bold text-gray-800 lg:text-xl">
-                      Strona Internetowa
-                    </span>
-                  </div>
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="bo-white group relative flex h-80 items-end overflow-hidden rounded-lg p-4 shadow-2xl"
-                >
-                  <Image
-                    src={a2}
-                    alt="Photo by Austin Wade"
-                    className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
-                    fill
-                  />
-
-                  <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                    <small className="text-gray-500">Gotowe</small>
-                    <span className="text-lg font-bold text-gray-800 lg:text-xl">
-                      Szablony Stron
-                    </span>
-                  </div>
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="bo-white group relative flex h-80 items-end overflow-hidden rounded-lg p-4 shadow-2xl"
-                >
-                  <Image
-                    src={a3}
-                    alt="Photo by Austin Wade"
-                    className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
-                    fill
-                  />
-
-                  <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                    <small className="text-gray-500">Google</small>
-                    <span className="text-lg font-bold text-gray-800 lg:text-xl">
-                      Optymalizacja SEO
-                    </span>
-                  </div>
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="bo-white group relative flex h-80 items-end overflow-hidden rounded-lg p-4 shadow-2xl"
-                >
-                  <Image
-                    src={a4}
-                    alt="Photo by Austin Wade"
-                    className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
-                    fill
-                  />
-
-                  <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                    <small className="text-gray-500">Usługa</small>
-                    <span className="text-lg font-bold text-gray-800 lg:text-xl">
-                      Projekty Graficzne
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       <section className="bg-white">
         <div className="mx-auto max-w-screen-xl items-center gap-8 px-4 py-8 sm:py-16 md:grid md:grid-cols-2 lg:px-6 lg:py-24 xl:gap-16">
@@ -231,6 +132,102 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <section>
+        <div className=" pb-6 sm:pb-8 lg:pb-12">
+          <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+            <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-12 lg:text-3xl">
+              Poznaj Ofertę
+            </h2>
+
+            <div className="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4">
+              <div>
+                <a
+                  href="#"
+                  className="bo-white group relative flex h-80 items-end overflow-hidden rounded-lg p-4 shadow-2xl"
+                >
+                  <Image
+                    src={a1}
+                    alt="Photo by Austin Wade"
+                    className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                    fill
+                  />
+
+                  <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
+                    <small className="text-gray-500">Personalizowana</small>
+                    <span className="text-lg font-bold text-gray-800 lg:text-xl">
+                      Strona Internetowa
+                    </span>
+                  </div>
+                </a>
+              </div>
+
+              <div>
+                <a
+                  href="#"
+                  className="bo-white group relative flex h-80 items-end overflow-hidden rounded-lg p-4 shadow-2xl"
+                >
+                  <Image
+                    src={a2}
+                    alt="Photo by Austin Wade"
+                    className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                    fill
+                  />
+
+                  <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
+                    <small className="text-gray-500">Gotowe</small>
+                    <span className="text-lg font-bold text-gray-800 lg:text-xl">
+                      Szablony Stron
+                    </span>
+                  </div>
+                </a>
+              </div>
+
+              <div>
+                <a
+                  href="#"
+                  className="bo-white group relative flex h-80 items-end overflow-hidden rounded-lg p-4 shadow-2xl"
+                >
+                  <Image
+                    src={a3}
+                    alt="Photo by Austin Wade"
+                    className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                    fill
+                  />
+
+                  <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
+                    <small className="text-gray-500">Google</small>
+                    <span className="text-lg font-bold text-gray-800 lg:text-xl">
+                      Optymalizacja SEO
+                    </span>
+                  </div>
+                </a>
+              </div>
+
+              <div>
+                <a
+                  href="#"
+                  className="bo-white group relative flex h-80 items-end overflow-hidden rounded-lg p-4 shadow-2xl"
+                >
+                  <Image
+                    src={a4}
+                    alt="Photo by Austin Wade"
+                    className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                    fill
+                  />
+
+                  <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
+                    <small className="text-gray-500">Usługa</small>
+                    <span className="text-lg font-bold text-gray-800 lg:text-xl">
+                      Projekty Graficzne
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

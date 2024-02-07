@@ -71,16 +71,20 @@ export default async function Blog() {
   const dataPopularne: BlogType[] = await fetchDataPopularne.data.allPopularnes;
   return (
     <div className="anim-opacity">
-      <div className="mt-16 h-32 bg-gradient-to-tr from-sky-100 to-indigo-200"></div>
+      <div className="mt-16 h-44 bg-gradient-to-tr from-sky-100 to-indigo-200"></div>
       <div className="mx-auto flex max-w-[1500px] items-start justify-start">
-        <div className="sticky top-20 mt-12 flex w-80 flex-col items-start justify-start border-l border-yellow-500 px-5">
+        <div className="sticky top-24 mt-32 flex w-80 flex-col items-start justify-start border-l border-yellow-500 px-5">
           {BLOG_LINKS.map((link) => (
-            <Link key={link.label} href={link.href} className="my-1 p-1 hover:text-sky-700">
+            <Link
+              key={link.label}
+              href={link.href}
+              className="my-1 p-1 hover:text-sky-700"
+            >
               {link.label}
             </Link>
           ))}
         </div>
-        <div className="mx-auto mt-8 max-w-[1400px] px-4 lg:mt-12">
+        <div className="mx-auto mt-8 max-w-[1400px] px-4 lg:mt-32">
           <h1 className="mb-10 border-b border-yellow-500 pb-1 text-lg font-semibold uppercase">
             Popolarne posty
           </h1>
