@@ -26,7 +26,7 @@ export default function Home() {
         />
         <div className="absolute -z-10 h-full w-full bg-gradient-to-t from-gray-50 via-white/50 to-gray-50/90 " />
 
-        <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center space-y-8 px-8 text-center">
+        <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center space-y-7 px-8 text-center">
           <h1 className="text-3xl font-semibold md:text-4xl lg:text-6xl">
             Odkryj Nowoczesne Rozwiązania Webowe
           </h1>
@@ -54,7 +54,7 @@ export default function Home() {
               <div>
                 <a
                   href="#"
-                  className="group relative flex h-80 items-end overflow-hidden rounded-lg bo-white p-4 shadow-2xl shadow-xl"
+                  className="bo-white group relative flex h-80 items-end overflow-hidden rounded-lg p-4 shadow-2xl"
                 >
                   <Image
                     src={a1}
@@ -64,7 +64,7 @@ export default function Home() {
                   />
 
                   <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                    <span className="text-gray-500">Personalizowana</span>
+                    <small className="text-gray-500">Personalizowana</small>
                     <span className="text-lg font-bold text-gray-800 lg:text-xl">
                       Strona Internetowa
                     </span>
@@ -75,7 +75,7 @@ export default function Home() {
               <div>
                 <a
                   href="#"
-                  className="group relative flex h-80 items-end overflow-hidden rounded-lg bo-white p-4 shadow-2xl shadow-xl"
+                  className="bo-white group relative flex h-80 items-end overflow-hidden rounded-lg p-4 shadow-2xl"
                 >
                   <Image
                     src={a2}
@@ -85,7 +85,7 @@ export default function Home() {
                   />
 
                   <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                    <span className="text-gray-500">Gotowe</span>
+                    <small className="text-gray-500">Gotowe</small>
                     <span className="text-lg font-bold text-gray-800 lg:text-xl">
                       Szablony Stron
                     </span>
@@ -96,7 +96,7 @@ export default function Home() {
               <div>
                 <a
                   href="#"
-                  className="group relative flex h-80 items-end overflow-hidden rounded-lg bo-white p-4 shadow-2xl shadow-xl"
+                  className="bo-white group relative flex h-80 items-end overflow-hidden rounded-lg p-4 shadow-2xl"
                 >
                   <Image
                     src={a3}
@@ -106,7 +106,7 @@ export default function Home() {
                   />
 
                   <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                    <span className="text-gray-500">Google</span>
+                    <small className="text-gray-500">Google</small>
                     <span className="text-lg font-bold text-gray-800 lg:text-xl">
                       Optymalizacja SEO
                     </span>
@@ -117,7 +117,7 @@ export default function Home() {
               <div>
                 <a
                   href="#"
-                  className="group relative flex h-80 items-end overflow-hidden rounded-lg bo-white p-4 shadow-2xl shadow-xl"
+                  className="bo-white group relative flex h-80 items-end overflow-hidden rounded-lg p-4 shadow-2xl"
                 >
                   <Image
                     src={a4}
@@ -127,7 +127,7 @@ export default function Home() {
                   />
 
                   <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                    <span className="text-gray-500">Usługa</span>
+                    <small className="text-gray-500">Usługa</small>
                     <span className="text-lg font-bold text-gray-800 lg:text-xl">
                       Projekty Graficzne
                     </span>
