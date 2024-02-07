@@ -26,7 +26,7 @@ const Header = () => {
     const onScroll = () => {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 0) {
-        setHeaderBackground("bg-white/50");
+        setHeaderBackground("bg-white/90 shadow-xl");
       } else {
         setHeaderBackground("bg-transparent");
       }
@@ -87,6 +87,60 @@ const Header = () => {
       <nav
         className={` mx-auto flex w-full max-w-screen-2xl items-center justify-between `}
       >
+        <Link
+          href="/"
+          onClick={closeMenu}
+          className="z-10 mr-12 flex items-center justify-center lg:hidden "
+        >
+          <Image
+            height={29}
+            width={29}
+            alt="logo"
+            src="/seovileo.svg"
+            priority
+            className="mr-1"
+          />
+          <p>Seovileo</p>
+        </Link>
+        <ul
+          className={`absolute left-0 top-0 flex h-screen flex-col items-center justify-center space-y-7 border-r border-orange-200 bg-white/90 px-24 backdrop-blur-sm transition-transform lg:relative lg:h-auto lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:border-0 lg:bg-transparent lg:backdrop-blur-none ${
+            isMenuOpen
+              ? "translate-x-0 duration-200 "
+              : "-translate-x-full duration-500 lg:translate-x-0"
+          } `}
+        >
+          <Link
+            href="/"
+            onClick={closeMenu}
+            className="z-10 mr-12 hidden items-center justify-center lg:flex "
+          >
+            <Image
+              height={29}
+              width={29}
+              alt="logo"
+              src="/seovileo.svg"
+              priority
+              className="mr-1"
+            />
+            <p>Seovileo</p>
+          </Link>
+          {NAV_LINKS.map((link) => (
+            <li key={link.label}>
+              <Link
+                href={link.href}
+                className={`px-4 py-2 text-base font-semibold transition-colors duration-200 hover:text-sky-700 lg:text-sm lg:font-medium ${
+                  pathname === link.href ? "text-sky-700" : ""
+                }`}
+                onClick={closeMenu}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+          <li>
+            <MainBtn className="lg:hidden">Wycena</MainBtn>
+          </li>
+        </ul>
         <button
           className="flex flex-col items-center justify-center lg:hidden"
           onClick={toggleMenu}
@@ -106,42 +160,6 @@ const Header = () => {
             }`}
           />
         </button>
-        <ul
-          className={`absolute left-0 top-0 flex h-screen flex-col items-center justify-center space-y-7 border-r border-orange-200 bg-orange-50/70 px-24 backdrop-blur-sm transition-transform lg:relative lg:h-auto lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:border-0 lg:bg-transparent lg:backdrop-blur-none ${
-            isMenuOpen
-              ? "translate-x-0 duration-200 "
-              : "-translate-x-full duration-500 lg:translate-x-0"
-          } `}
-        >
-          <Link
-            href="/"
-            onClick={closeMenu}
-            className="z-10 flex items-center justify-center"
-          >
-            <Image
-              height={29}
-              width={29}
-              alt="logo"
-              src="/seovileo.svg"
-              priority
-              className="mr-1"
-            />
-            <p>Seovileo</p>
-          </Link>
-          {NAV_LINKS.map((link) => (
-            <li key={link.label}>
-              <Link
-                href={link.href}
-                className={`px-4 py-2 text-base transition-colors duration-200 hover:text-orange-700 lg:text-sm ${
-                  pathname === link.href ? "text-orange-700" : ""
-                }`}
-                onClick={closeMenu}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
         <MainBtn className="hidden lg:flex">Wycena</MainBtn>
       </nav>
     </header>

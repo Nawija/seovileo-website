@@ -11,17 +11,15 @@ export default function RootLayout({
 }) {
   const pathname = usePathname();
   return (
-    <div className="mx-auto flex max-w-[1700px]">
-      <div className="mx-auto hidden min-h-screen flex-col items-stretch justify-stretch pt-10 text-center lg:flex rounded-l-xl">
+    <div className="mx-auto flex max-w-[1500px]">
+      <div className="mx-auto hidden min-h-screen flex-col items-stretch justify-stretch rounded-l-xl bg-gradient-to-tr from-sky-100 to-indigo-300 pt-10 text-center lg:flex">
         <div className="flex flex-col items-stretch justify-stretch">
           {BLOG_LINKS.map((link, i) => (
             <Link
               key={i}
               href={link.href}
-              className={`ml-4 w-64 rounded-l-xl px-12 py-2 my-1 text-start text-sm transition-colors ${
-                pathname === link.href
-                  ? "bg-[#F8FAFD]"
-                  : "hover:bg-[#F8FAFD]"
+              className={`my-1 ml-4 w-64 rounded-l-xl px-12 py-2 text-start text-sm transition-colors ${
+                pathname === link.href ? "bg-[#F8FAFD]" : "hover:bg-[#F8FAFD]"
               }`}
             >
               <span>{link.label}</span>
@@ -29,9 +27,7 @@ export default function RootLayout({
           ))}
         </div>
       </div>
-      <main className="min-h-screen w-full flex-grow">
-        {children}
-      </main>
+      <main className="min-h-screen w-full flex-grow">{children}</main>
     </div>
   );
 }
