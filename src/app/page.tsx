@@ -40,13 +40,13 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="mx-auto max-w-screen-xl items-center gap-8 px-4 py-8 sm:py-16 md:grid md:grid-cols-2 lg:px-6 lg:py-24 xl:gap-16">
+        <div className="mx-auto max-w-screen-xl items-center gap-8 px-4 pb-8 sm:pb-16 md:grid md:grid-cols-2 lg:px-6 lg:pb-24 xl:gap-16">
           <img
             className="w-full shadow-2xl"
             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg"
             alt="dashboard image"
           />
-          <div className="mt-4 md:mt-0">
+          <div className="mt-24 px-4 md:mt-0">
             <h2 className="mb-4 text-3xl font-bold tracking-tight">
               Lets create more tools and ideas that brings us together.
             </h2>
@@ -128,7 +128,7 @@ export default function Home() {
       </div>
 
       <section>
-        <div className=" pb-6 sm:pb-8 lg:pb-12">
+        <div className=" py-6 sm:py-8 lg:py-24">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-12 lg:text-3xl">
               Poznaj Ofertę

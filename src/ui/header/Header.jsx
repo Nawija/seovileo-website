@@ -99,7 +99,7 @@ const Header = () => {
             <li key={link.label}>
               <Link
                 href={link.href}
-                className={`px-4 py-2 text-base font-semibold transition-colors duration-200 hover:text-sky-700 lg:text-sm lg:font-medium ${
+                className={`rounded-xl px-4 py-2 text-base font-semibold transition-colors delay-75 duration-200 hover:bg-blue-500/10 hover:text-sky-700 lg:text-sm lg:font-medium ${
                   pathname === link.href ? "text-sky-700" : ""
                 }`}
                 onClick={closeMenu}
