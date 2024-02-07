@@ -22,21 +22,27 @@ export default function Home() {
         <div className="absolute -z-10 h-full w-full bg-gradient-to-t from-gray-50 via-white/50 to-gray-50/90 " />
 
         <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center space-y-7 px-8 text-center">
-          <h1 className="text-3xl font-semibold md:text-4xl lg:text-6xl">
+          <h1 className="relative text-3xl font-semibold md:text-4xl lg:text-6xl">
             Odkryj Nowoczesne Rozwiązania Webowe
+            <span className="absolute -top-12 left-12 scale-90">
+              <SecondBtn className="-rotate-45 animate-pulse p-1 tracking-widest">
+                WEB DEV
+              </SecondBtn>
+            </span>
           </h1>
           <p className="max-w-screen-md font-medium">
             Jako doświadczony programista, specjalizuję się w tworzeniu
             responsywnych i wydajnych stron internetowych, wykorzystując
-            najnowsze technologie, takie jak Gatsby i Next.js 14. Moja pasja do
+            najnowsze technologie, takie jak Gatsby i Next.js. Moja pasja do
             ciągłego doskonalenia i zamiłowanie do nowoczesnych rozwiązań
-            pozwalają mi oferować usługi na najwyższym poziomie.
+            pozwalają mi oferować usługi na najwyższym poziomie!
           </p>
           <div className="flex items-center justify-center space-x-5">
             <MainBtn>Indywidualna</MainBtn>
             <SecondBtn>Gotowa</SecondBtn>
           </div>
         </div>
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2"></div>
       </section>
 
       <section>
