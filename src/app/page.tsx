@@ -1,7 +1,7 @@
-import a1 from "@/public/a1.webp";
-import a2 from "@/public/a2.webp";
+import a1 from "@/public/a1.png";
+import a2 from "@/public/a2.png";
 import a3 from "@/public/a3.webp";
-import a4 from "@/public/a4.webp";
+import a4 from "@/public/a4.png";
 import HeroBg from "@/public/wysoka-plama-seo.jpg";
 import Image from "next/image";
 import { MainBtn } from "../ui/buttons/MainBtn";

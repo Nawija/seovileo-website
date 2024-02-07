@@ -76,7 +76,7 @@ const Header = () => {
         <Link
           href="/"
           onClick={closeMenu}
-          className="z-10 mr-12 flex items-center justify-center lg:hidden "
+          className="z-10 mr-12 flex items-center justify-center"
         >
           <Image
             height={29}
@@ -95,21 +95,6 @@ const Header = () => {
               : "-translate-x-full duration-500 lg:translate-x-0"
           } `}
         >
-          <Link
-            href="/"
-            onClick={closeMenu}
-            className="z-10 mr-12 hidden items-center justify-center lg:flex "
-          >
-            <Image
-              height={29}
-              width={29}
-              alt="logo"
-              src="/seovileo.svg"
-              priority
-              className="mr-1"
-            />
-            <p>Seovileo</p>
-          </Link>
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
               <Link
