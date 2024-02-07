@@ -75,7 +75,7 @@ export default async function Blog() {
       <div className="mx-auto flex max-w-[1500px] items-start justify-start">
         <div className="sticky top-20 mt-12 flex w-80 flex-col items-start justify-start border-l border-yellow-500 px-5">
           {BLOG_LINKS.map((link) => (
-            <Link href={link.href} className="my-1 p-1 hover:text-sky-700">
+            <Link key={link.label} href={link.href} className="my-1 p-1 hover:text-sky-700">
               {link.label}
             </Link>
           ))}
