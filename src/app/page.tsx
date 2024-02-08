@@ -1,6 +1,5 @@
 import HeroBg from "@/public/elegancka-miekka-blekitna-krzywa-wyklada-abstrakcjonistycznego-seo.jpg";
 import Image from "next/image";
-import Link from "next/link";
 import { MainBtn } from "../ui/buttons/MainBtn";
 import { SecondBtn } from "../ui/buttons/SecondBtn";
 import NumersSection from "./NumbersSection";
@@ -84,7 +83,7 @@ export default function Home() {
         <div className="mx-auto max-w-screen-xl px-4 md:px-8">
           <div className="mb-8 md:mb-12">
             <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-              Our Team by the numbers
+              Poznaj Ofertę
             </h2>
 
             <p className="mx-auto max-w-screen-md text-center  md:text-lg">
@@ -94,137 +93,303 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-8">
+          <div className="grid grid-cols-2 gap-4 text-center md:grid-cols-4 lg:gap-8">
             <div className="flex flex-col items-center justify-center rounded-lg bg-white p-4 shadow-2xl shadow-sky-100 lg:p-8">
               <div className="text-xl font-bold text-sky-600 sm:text-2xl md:text-3xl">
-                200
-              </div>
-              <div className="text-sm font-semibold sm:text-base">People</div>
-            </div>
-
-            <div className="flex flex-col items-center justify-center rounded-lg bg-white p-4 shadow-2xl shadow-sky-100 md:p-8">
-              <div className="text-xl font-bold text-sky-600 sm:text-2xl md:text-3xl">
-                500+
-              </div>
-              <div className="text-sm font-semibold sm:text-base">People</div>
-            </div>
-
-            <div className="flex flex-col items-center justify-center rounded-lg bg-white p-4 shadow-2xl shadow-sky-100 md:p-8">
-              <div className="text-xl font-bold text-sky-600 sm:text-2xl md:text-3xl">
-                1000+
+                od 700zł
               </div>
               <div className="text-sm font-semibold sm:text-base">
-                Customers
+                Strona Internetowa
               </div>
             </div>
 
             <div className="flex flex-col items-center justify-center rounded-lg bg-white p-4 shadow-2xl shadow-sky-100 md:p-8">
               <div className="text-xl font-bold text-sky-600 sm:text-2xl md:text-3xl">
-                A couple
+                od 200zł
               </div>
               <div className="text-sm font-semibold sm:text-base">
-                Coffee breaks
+                Gotowe Szablony
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-center rounded-lg bg-white p-4 shadow-2xl shadow-sky-100 md:p-8">
+              <div className="text-xl font-bold text-sky-600 sm:text-2xl md:text-3xl">
+                od 900zł
+              </div>
+              <div className="text-sm font-semibold sm:text-base">
+                Pozycjonowanie SEO
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-center rounded-lg bg-white p-4 shadow-2xl shadow-sky-100 md:p-8">
+              <div className="text-xl font-bold text-sky-600 sm:text-2xl md:text-3xl">
+                Wycena
+              </div>
+              <div className="text-sm font-semibold sm:text-base">
+                Proejkty Graficzne
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <section>
-        <div className="border-y-2 border-sky-100 bg-white py-24">
-          <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-            <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-12 lg:text-3xl">
-              Poznaj Ofertę
-            </h2>
+      <div className="bg-white py-16 lg:py-24">
+        <div className="mx-auto max-w-screen-2xl px-4 text-center md:px-8">
+          <h2 className="mb-8 text-2xl font-bold text-gray-800 lg:mb-12 lg:text-3xl">
+            Gotowe szablony
+          </h2>
 
-            <div className="grid grid-cols-2 gap-4 text-center md:gap-6 lg:grid-cols-4">
-              <Link
-                href="/"
-                className="flex flex-col items-center justify-center rounded-2xl border-t-2 border-dotted border-yellow-400 p-10 shadow-xl shadow-sky-100 transition-all duration-300 hover:scale-105"
+          <div className="grid gap-x-4 gap-y-8 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4">
+            <div>
+              <a
+                href="#"
+                className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="bg-gradient mb-5 h-16 w-16 rounded-full p-2 text-white"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
-                  />
-                </svg>
-                <p className="font-bold text-sky-700">Strona Internetowa</p>
-              </Link>
-              <Link
-                href="/"
-                className="flex flex-col items-center justify-center rounded-2xl border-t-2 border-dotted border-yellow-400 p-10 shadow-xl shadow-sky-100 transition-all duration-300 hover:scale-105"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="bg-gradient mb-5 h-16 w-16 rounded-full p-2 text-white"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 3.75H6.912a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859M12 3v8.25m0 0-3-3m3 3 3-3"
-                  />
-                </svg>
+                <img
+                  src="https://i.pinimg.com/564x/04/a4/4a/04a44a824058d96e4ccc871d3faa9031.jpg"
+                  loading="lazy"
+                  alt="Photo by Rachit Tank"
+                  className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-110"
+                />
 
-                <p className="font-bold text-sky-700">Szablony Stron</p>
-              </Link>
-              <Link
-                href="/"
-                className="flex flex-col items-center justify-center rounded-2xl border-t-2 border-dotted border-yellow-400 p-10 shadow-xl shadow-sky-100 transition-all duration-300 hover:scale-105"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="bg-gradient mb-5 h-16 w-16 rounded-full p-2 text-white"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"
-                  />
-                </svg>
+                <span className="absolute left-0 top-0 rounded-br-lg bg-red-500 px-3 py-1.5 text-sm uppercase tracking-wider text-white">
+                  PROMOCJA
+                </span>
+              </a>
 
-                <p className="font-bold text-sky-700">Pozycjonowanie SEO</p>
-              </Link>
-              <Link
-                href="/"
-                className="flex flex-col items-center justify-center rounded-2xl border-t-2 border-dotted border-yellow-400 p-10 shadow-xl shadow-sky-100 transition-all duration-300 hover:scale-105"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="bg-gradient mb-5 h-16 w-16 rounded-full p-2 text-white"
+              <div>
+                <a
+                  href="#"
+                  className="hover:gray-800 mb-1 text-gray-500 transition duration-100 lg:text-lg"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
-                  />
-                </svg>
+                  Timely Watch
+                </a>
 
-                <p className="font-bold text-sky-700">Projekt Graficzny</p>
-              </Link>
+                <div className="flex items-end gap-2">
+                  <span className="font-bold text-gray-800 lg:text-lg">
+                    $150.00 zł
+                  </span>
+                  <span className="mb-0.5 text-red-500 line-through">
+                    $300.00 zł
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <a
+                href="#"
+                className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3"
+              >
+                <img
+                  src="https://i.pinimg.com/564x/5e/21/4f/5e214fb7a1c6d6a7154dc88672c0bb33.jpg"
+                  loading="lazy"
+                  alt="Photo by Galina N"
+                  className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-110"
+                />
+              </a>
+
+              <div>
+                <a
+                  href="#"
+                  className="hover:gray-800 mb-1 text-gray-500 transition duration-100 lg:text-lg"
+                >
+                  Fancy Plant
+                </a>
+
+                <div className="flex items-end gap-2">
+                  <span className="font-bold text-gray-800 lg:text-lg">
+                    220.00 zł
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <a
+                href="#"
+                className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3"
+              >
+                <img
+                  src="https://i.pinimg.com/564x/d2/27/f8/d227f8283b580743535ae21d3ae5b1b2.jpg"
+                  loading="lazy"
+                  alt="Photo by eniko kis"
+                  className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-110"
+                />
+              </a>
+
+              <div>
+                <a
+                  href="#"
+                  className="hover:gray-800 mb-1 text-gray-500 transition duration-100 lg:text-lg"
+                >
+                  Elderly Cam
+                </a>
+
+                <div className="flex items-end gap-2">
+                  <span className="font-bold text-gray-800 lg:text-lg">
+                    250.00 zł
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <a
+                href="#"
+                className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3"
+              >
+                <img
+                  src="https://i.pinimg.com/236x/17/a8/ac/17a8ac19326e77d93cdd563be6cf400a.jpg"
+                  loading="lazy"
+                  alt="Photo by Irene Kredenets"
+                  className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-110"
+                />
+              </a>
+
+              <div>
+                <a
+                  href="#"
+                  className="hover:gray-800 mb-1 text-gray-500 transition duration-100 lg:text-lg"
+                >
+                  Shiny Shoe
+                </a>
+
+                <div className="flex items-end gap-2">
+                  <span className="font-bold text-gray-800 lg:text-lg">
+                    290.00 zł
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <a
+                href="#"
+                className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3"
+              >
+                <img
+                  src="https://i.pinimg.com/236x/01/d2/33/01d233aa419390b115b2cb1ee6b41282.jpg"
+                  loading="lazy"
+                  alt="Photo by Charles Deluvio"
+                  className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-110"
+                />
+              </a>
+
+              <div>
+                <a
+                  href="#"
+                  className="hover:gray-800 mb-1 text-gray-500 transition duration-100 lg:text-lg"
+                >
+                  Spiky Plant
+                </a>
+
+                <div className="flex items-end gap-2">
+                  <span className="font-bold text-gray-800 lg:text-lg">
+                    400.00 zł
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <a
+                href="#"
+                className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3"
+              >
+                <img
+                  src="https://i.pinimg.com/474x/49/70/35/497035dc62fada6477bc5ecd26d008fd.jpg"
+                  loading="lazy"
+                  alt="Photo by Fernando Lavin"
+                  className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-110"
+                />
+              </a>
+
+              <div>
+                <a
+                  href="#"
+                  className="hover:gray-800 mb-1 text-gray-500 transition duration-100 lg:text-lg"
+                >
+                  Wieldy Film
+                </a>
+
+                <div className="flex items-end gap-2">
+                  <span className="font-bold text-gray-800 lg:text-lg">
+                    199.00 zł
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <a
+                href="#"
+                className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3"
+              >
+                <img
+                  src="https://i.pinimg.com/236x/40/77/8d/40778d21d3d184869549c62bfdb0fd6c.jpg"
+                  loading="lazy"
+                  alt="Photo by Kiran CK"
+                  className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-110"
+                />
+                <span className="absolute left-0 top-0 rounded-br-lg bg-red-500 px-3 py-1.5 text-sm uppercase tracking-wider text-white">
+                  sale
+                </span>
+              </a>
+
+              <div>
+                <a
+                  href="#"
+                  className="hover:gray-800 mb-1 text-gray-500 transition duration-100 lg:text-lg"
+                >
+                  Sturdy Stand
+                </a>
+
+                <div className="flex items-end gap-2">
+                  <span className="font-bold text-gray-800 lg:text-lg">
+                    120.00 zł
+                  </span>
+                  <span className="mb-0.5 text-red-500 line-through">
+                    240.00 zł
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <a
+                href="#"
+                className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3"
+              >
+                <img
+                  src="https://i.pinimg.com/236x/12/23/0f/12230fc3812bd8d4e034e32cbe1bba4f.jpg"
+                  loading="lazy"
+                  alt="Photo by Fakurian Design"
+                  className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-110"
+                />
+              </a>
+
+              <div>
+                <a
+                  href="#"
+                  className="hover:gray-800 mb-1 text-gray-500 transition duration-100 lg:text-lg"
+                >
+                  Lazy Bottle
+                </a>
+
+                <div className="flex items-end gap-2">
+                  <span className="font-bold text-gray-800 lg:text-lg">
+                    170.00 zł
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
+          <SecondBtn className="mt-12">Więcej</SecondBtn>
         </div>
-      </section>
+      </div>
+
+      <NumersSection />
 
       <section className="">
         <div className=" mx-auto flex max-w-screen-xl flex-wrap px-5 py-24">
@@ -257,7 +422,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <NumersSection />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import OrangeCircle from "../ui/blurCircle/OrangeCircle";
 
 export default function NumersSection() {
   return (
-    <section className="flex flex-col  items-center justify-center space-y-10 border-y border-sky-100 bg-white py-24 text-start md:flex-row md:space-y-0">
+    <section className="flex flex-col  items-center justify-center space-y-10 py-24 text-start md:flex-row md:space-y-0">
       <div className="relative mx-auto flex max-w-screen-xl flex-col items-start justify-center px-4 py-12 md:flex-row md:py-24">
         <div className="text-main mb-32 h-full w-full px-4 text-center text-3xl md:sticky md:top-28 md:mb-0 md:w-1/2 md:text-start md:text-3xl">
           <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h2>
