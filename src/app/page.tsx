@@ -1,8 +1,6 @@
-"use client";
 import HeroBg from "@/public/elegancka-miekka-blekitna-krzywa-wyklada-abstrakcjonistycznego-seo.jpg";
 import Image from "next/image";
 import Link from "next/link";
-import TypeWriterEffect from "react-typewriter-effect";
 import { MainBtn } from "../ui/buttons/MainBtn";
 import { SecondBtn } from "../ui/buttons/SecondBtn";
 import NumersSection from "./NumbersSection";
@@ -26,25 +24,6 @@ export default function Home() {
         <div className="absolute -z-10 h-full w-full bg-gradient-to-t from-gray-50 via-white/50 to-gray-50/90 " />
 
         <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center space-y-7 px-8 text-center ">
-          <TypeWriterEffect
-            textStyle={{
-              color: "#0ea282",
-              fontWeight: 600,
-              height: "30px",
-              textAlign: "center",
-            }}
-            startDelay={1000}
-            cursorColor="#d7a540"
-            multiText={[
-              "Szalenie szybsze strony!",
-              "Niesamowicie bezpieczne i stabilne!",
-              "Perfekcyjna widoczność w Google!",
-              "Szybkie wprowadzanie zmian!",
-              "Wsparcie dla aplikacji mobilnych i webowych!",
-            ]}
-            multiTextDelay={1000}
-            typeSpeed={44}
-          />
           <h1 className="relative text-3xl font-semibold md:text-4xl lg:text-6xl">
             Odkryj Nowoczesne Rozwiązania Webowe
           </h1>
