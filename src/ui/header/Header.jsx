@@ -19,7 +19,9 @@ const Header = () => {
       const currentScrollY = window.scrollY;
       const newVisible = lastScrollY > currentScrollY || currentScrollY < 600;
       const newHeaderBackground =
-        currentScrollY > 0 ? "bg-white/90 shadow-xl" : "bg-transparent";
+        currentScrollY > 0
+          ? "bg-white/90 shadow-xl shadow-sky-100/90"
+          : "bg-transparent";
 
       if (newVisible !== visible) setVisible(newVisible);
       if (currentScrollY !== lastScrollY) setLastScrollY(currentScrollY);
