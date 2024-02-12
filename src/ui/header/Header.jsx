@@ -91,7 +91,7 @@ const Header = () => {
           <p>Seovileo</p>
         </Link>
         <ul
-          className={`absolute left-0 top-0 flex h-screen flex-col items-center justify-center space-y-7 border-r border-sky-100 bg-gradient-to-b from-white/90 to-sky-100/90 px-24 backdrop-blur-sm transition-transform lg:relative lg:h-auto lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:border-0 lg:bg-none lg:backdrop-blur-none ${
+          className={`absolute left-0 top-0 flex h-screen flex-col items-center justify-center space-y-7 border-r border-gray-200 bg-gradient-to-b from-white/80 to-sky-50/90 px-24 backdrop-blur-sm transition-transform lg:relative lg:h-auto lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:border-0 lg:bg-none lg:backdrop-blur-none ${
             isMenuOpen
               ? "translate-x-0 duration-200 "
               : "-translate-x-full duration-500 lg:translate-x-0"

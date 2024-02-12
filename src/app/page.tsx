@@ -7,7 +7,7 @@ import NumersSection from "./NumbersSection";
 export default function Home() {
   return (
     <div className="anim-opacity relative mx-auto text-gray-800">
-      <section className="relative h-screen w-full overflow-hidden lg:h-[70vh]">
+      <section className="relative h-[90vh] w-full overflow-hidden lg:h-[70vh]">
         <Image
           className="absolute left-0 top-0 -z-10 h-full w-full rotate-180 object-cover"
           src={HeroBg}
@@ -18,12 +18,12 @@ export default function Home() {
         />
         <img
           className="absolute left-0 top-0 -z-10 h-full w-full rotate-180 object-cover"
-          src="https://images.unsplash.com/photo-1530578294319-9d6b376c11ca?q=80&w=3304&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://images.unsplash.com/photo-1652449823136-b279fbe5dfd3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDkwfENEd3V3WEpBYkV3fHxlbnwwfHx8fHw%3D"
         />
         <div className="absolute -z-10 h-full w-full bg-gradient-to-t from-gray-50 via-white/50 to-gray-50/90 " />
 
-        <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center space-y-7 px-8 text-center ">
-          <h1 className="relative text-3xl font-semibold md:text-4xl lg:text-6xl">
+        <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center space-y-7 px-4 text-center ">
+          <h1 className="relative text-4xl font-semibold md:text-4xl lg:text-6xl">
             Odkryj Nowoczesne Rozwiązania Webowe
           </h1>
           <p className="max-w-screen-md font-medium">
