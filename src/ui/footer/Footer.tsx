@@ -21,7 +21,7 @@ export default function Footer() {
           </p>
         </Link>
         <footer className="mx-auto w-full max-w-screen-2xl px-4 md:px-8">
-          <div className="flex flex-col items-center justify-between gap-4 border-y border-dotted border-yellow-500 px-2 py-6 md:flex-row">
+          <div className="border-main flex flex-col items-center justify-between gap-4 border-y border-dotted px-2 py-6 md:flex-row">
             <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
               {NAV_LINKS.map((link) => (
                 <Link className="text-sm" href={link.href} key={link.label}>
@@ -34,7 +34,7 @@ export default function Footer() {
               <a
                 href="#"
                 target="_blank"
-                className="text-gray-500 transition-colors hover:text-gray-700 active:text-gray-900"
+                className="transition-colors hover:text-gray-700 active:text-gray-900"
               >
                 <svg
                   className="h-5 w-5"
@@ -51,7 +51,7 @@ export default function Footer() {
               <a
                 href="#"
                 target="_blank"
-                className="text-gray-500 transition-colors hover:text-gray-700 active:text-gray-900"
+                className="transition-colors hover:text-gray-700 active:text-gray-900"
               >
                 <svg
                   className="h-5 w-5"
@@ -68,7 +68,7 @@ export default function Footer() {
               <a
                 href="#"
                 target="_blank"
-                className="text-gray-500 transition-colors hover:text-gray-700 active:text-gray-900"
+                className="transition-colors hover:text-gray-700 active:text-gray-900"
               >
                 <svg
                   className="h-5 w-5"
@@ -85,7 +85,7 @@ export default function Footer() {
               <a
                 href="#"
                 target="_blank"
-                className="text-gray-500 transition-colors hover:text-gray-700 active:text-gray-900"
+                className="transition-colors hover:text-gray-700 active:text-gray-900"
               >
                 <svg
                   className="h-5 w-5"
@@ -101,8 +101,8 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="py-8 text-center text-sm text-sky-700">
-            © 2021 - Present Flowrift.7All rights reserved.
+          <div className="bg-gradient-to-r from-red-500 to-indigo-500 bg-clip-text py-8 text-center text-sm text-transparent">
+            © 2022 - Present seovileo rights reserved.
           </div>
         </footer>
       </div>

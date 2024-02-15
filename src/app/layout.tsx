@@ -3,6 +3,7 @@ import { inter } from "@/src/ui/fonts";
 import Footer from "@/src/ui/footer/Footer";
 import type { Metadata } from "next";
 import Header from "../ui/header/Header";
+import ScrollUp from "../ui/buttons/ScrollUp";
 
 export const metadata: Metadata = {
   title: "Seovileo-website",
@@ -24,7 +25,8 @@ export default function RootLayout({
         <main className="text-p mx-auto min-h-screen max-w-screen-2xl px-4">
           {children}
         </main>
-        <div className="h-[200vh]" />
+        <ScrollUp />
+        <div className="h-[100vh]" />
         <Footer />
       </body>
     </html>
