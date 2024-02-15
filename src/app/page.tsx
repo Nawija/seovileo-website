@@ -58,8 +58,9 @@ export default function Home() {
           </Link>
         </div>
         <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {PORTFOLIO.map((p) => (
+          {PORTFOLIO.map((p, i) => (
             <Link
+              key={i}
               className="bg-main border-second rounded-lg border"
               href={p.href}
             >
