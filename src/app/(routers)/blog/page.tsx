@@ -71,14 +71,13 @@ export default async function Blog() {
   const dataPopularne: BlogType[] = await fetchDataPopularne.data.allPopularnes;
   return (
     <div className="anim-opacity">
-      <div className="mt-16 h-44 bg-gradient-to-tr from-sky-100 to-indigo-200"></div>
-      <div className="mx-auto flex max-w-[1500px] items-start justify-start">
-        <div className="sticky top-24 mt-32 flex w-80 flex-col items-start justify-start border-l border-yellow-500 px-5">
+      <div className="flex items-start justify-start">
+        <div className="bg- border-main sticky top-24 mr-12 mt-32 flex w-80 flex-col items-start justify-start border-l px-5">
           {BLOG_LINKS.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="my-1 p-1 hover:text-sky-700"
+              className="my-1 p-1 transition-colors duration-300 hover:text-white"
             >
               {link.label}
             </Link>
