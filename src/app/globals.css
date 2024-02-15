@@ -3,15 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --text-main: #374a69;
-  --text-p: #374a69;
-  --text-smoke: #000000;
-  --text-second: #d3a304;
-  --body-bg: #f8fafd;
-  --body-bg-main: #d3e3fd;
-  --body-bg-second: #131212;
-  --bg-second: #131111;
-  --border-color: #a98c6d;
+  --bg-body: #141414;
+  --bg-main: #1c1c1c;
+  --text-main: #ffffff;
+  --text-p: #adadad;
+  --border-color: #383737;
 }
 
 html {
@@ -20,53 +16,21 @@ html {
 
 body {
   color: var(--text-p);
-  background-color: var(--body-bg);
+  background-color: var(--bg-body);
 }
 
 .bg-body {
-  background-color: var(--body-bg);
+  background-color: var(--bg-body);
 }
-
-.body-overflow-hidden {
-  overflow: hidden;
+.bg-body-90 {
+  background-color: var(--bg-body);
 }
-.body-overflow-hidden::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f8fafd41;
-  backdrop-filter: blur(8px);
-  z-index: 55;
-  animation: anim-opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-.bg-body {
-  background-color: var(--body-color);
-}
-
 .bg-main {
-  background-color: var(--body-bg-main);
-}
-.bg-second {
-  background-color: var(--body-bg-second);
+  background-color: var(--bg-main);
 }
 
 .text-main {
   color: var(--text-main);
-}
-
-.text-second {
-  color: var(--text-second);
-}
-.text-smoke {
-  color: var(--text-smoke);
-}
-
-.bg-gradient {
-  background: linear-gradient(to top right, #fb7d00, #c8b806);
 }
 .text-p {
   color: var(--text-p);

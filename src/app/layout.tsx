@@ -21,7 +21,8 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className}`}>
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen text-p">{children}</main>
+        <div className="h-[200vh]" />
         <Footer />
       </body>
     </html>

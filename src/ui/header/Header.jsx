@@ -6,29 +6,23 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { MainBtn } from "../buttons/MainBtn";
+import { SecondBtn } from "../buttons/SecondBtn";
 
 const Header = () => {
   const pathname = usePathname();
   const [lastScrollY, setLastScrollY] = useState(0);
   const [visible, setVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [headerBackground, setHeaderBackground] = useState("bg-transparent");
 
   const controlNavbarAndHeaderBackground = useCallback(() => {
     if (typeof window !== "undefined") {
       const currentScrollY = window.scrollY;
-      const newVisible = lastScrollY > currentScrollY || currentScrollY < 600;
-      const newHeaderBackground =
-        currentScrollY > 0
-          ? "bg-white/90 shadow-xl shadow-sky-100/90"
-          : "bg-transparent";
+      const newVisible = lastScrollY > currentScrollY || currentScrollY < 40;
 
       if (newVisible !== visible) setVisible(newVisible);
       if (currentScrollY !== lastScrollY) setLastScrollY(currentScrollY);
-      if (newHeaderBackground !== headerBackground)
-        setHeaderBackground(newHeaderBackground);
     }
-  }, [lastScrollY, visible, headerBackground]);
+  }, [lastScrollY, visible]);
 
   useEffect(() => {
     window.addEventListener("scroll", controlNavbarAndHeaderBackground);
@@ -68,7 +62,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full px-6 py-4 text-sm font-medium text-gray-800 transition-all duration-500 ease-in-out lg:py-3 ${headerBackground} ${
+      className={`bg-body border-main sticky top-0 z-50 w-full border-b px-6 py-4 text-sm font-medium transition-all duration-500 ease-in-out lg:py-3 ${
         !visible ? "-translate-y-[120%]" : ""
       }`}
     >
@@ -78,11 +72,11 @@ const Header = () => {
         <Link
           href="/"
           onClick={closeMenu}
-          className="z-10 mr-12 flex items-center justify-center"
+          className="z-10 mr-12 flex items-center justify-center text-white"
         >
           <Image
-            height={29}
-            width={29}
+            height={27}
+            width={27}
             alt="logo"
             src="/seovileo.svg"
             priority
@@ -91,7 +85,7 @@ const Header = () => {
           <p>Seovileo</p>
         </Link>
         <ul
-          className={`absolute left-0 top-0 flex h-screen flex-col items-center justify-center space-y-7 border-r border-gray-200 bg-gradient-to-b from-white/80 to-sky-50/90 px-24 backdrop-blur-sm transition-transform lg:relative lg:h-auto lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:border-0 lg:bg-none lg:backdrop-blur-none ${
+          className={`border-main bg-main absolute left-0 top-0 flex h-screen flex-col items-center justify-center space-y-7 border-r px-28 backdrop-blur-sm transition-transform lg:absolute lg:left-1/2 lg:top-1/2 lg:h-auto lg:-translate-x-1/2 lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:rounded-lg lg:border lg:bg-none lg:p-3 lg:px-0 lg:backdrop-blur-none ${
             isMenuOpen
               ? "translate-x-0 duration-200 "
               : "-translate-x-full duration-500 lg:translate-x-0"
@@ -101,8 +95,8 @@ const Header = () => {
             <li key={link.label}>
               <Link
                 href={link.href}
-                className={`rounded-xl px-4 py-2 text-base font-semibold transition-colors delay-75 duration-200 hover:bg-blue-500/10 hover:text-sky-700 lg:text-sm lg:font-medium ${
-                  pathname === link.href ? "text-sky-700" : ""
+                className={`rounded-xl px-4 py-2 text-base font-semibold transition-colors duration-500 hover:text-white lg:text-sm lg:font-medium ${
+                  pathname === link.href ? "text-white" : ""
                 }`}
                 onClick={closeMenu}
               >
@@ -110,30 +104,30 @@ const Header = () => {
               </Link>
             </li>
           ))}
-          <li>
-            <MainBtn className="lg:hidden">Wycena</MainBtn>
-          </li>
         </ul>
+        <div className="flex items-center justify-center">
+          <SecondBtn className="mr-4 hidden lg:flex">Szablony</SecondBtn>
+          <MainBtn className=" hidden lg:flex">Wycena</MainBtn>
+        </div>
         <button
           className="flex flex-col items-center justify-center p-2 lg:hidden"
           onClick={toggleMenu}
         >
           <div
-            className={`mb-2 h-px w-5 bg-black transition-transform ${
+            className={`mb-2 h-px w-5 bg-white transition-transform ${
               isMenuOpen
                 ? "translate-y-1 rotate-[-135deg]  duration-200"
                 : "duration-300"
             }`}
           />
           <div
-            className={`h-px w-5 bg-black transition-transform ${
+            className={`h-px w-5 bg-white transition-transform ${
               isMenuOpen
                 ? "-translate-y-1 -rotate-45 duration-500"
                 : "duration-500"
             }`}
           />
         </button>
-        <MainBtn className="hidden lg:flex">Wycena</MainBtn>
       </nav>
     </header>
   );

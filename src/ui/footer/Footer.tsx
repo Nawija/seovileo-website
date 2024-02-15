@@ -6,7 +6,7 @@ import { inter } from "../fonts";
 
 export default function Footer() {
   return (
-    <footer className="flex-c from mt-24 w-full border-t border-sky-200 bg-gradient-to-br from-sky-100 to-sky-50 px-4 py-12">
+    <footer className="flex-c from border-main bg-main mt-24 w-full border-t px-4 py-12">
       <div className="w-full pt-4 sm:pt-10 lg:pt-12">
         <Link href="/" aria-label="Logo" className="flex-c mb-12">
           <Image
