@@ -22,10 +22,12 @@ export default function Home() {
             <SecondBtn>Gotowa</SecondBtn>
           </div>
         </div>
-        <div className="relative mx-auto mt-12 flex max-w-screen-sm items-center justify-center space-x-10 overflow-hidden">
-          {NAV_LINKS.map((btn) => (
-            <p key={btn.label}>{btn.label}</p>
-          ))}
+        <div className="relative mx-auto mt-12 flex max-w-screen-sm items-center justify-center  overflow-hidden ">
+          <div className="flex-c scrolling relative space-x-10 overflow-hidden">
+            {NAV_LINKS.concat(NAV_LINKS).map((btn, index) => (
+              <p key={btn.label}>{btn.label}</p>
+            ))}
+          </div>
           <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-r from-[#141414] via-transparent  to-[#141414]" />
         </div>
       </section>
