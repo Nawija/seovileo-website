@@ -24,7 +24,7 @@ export default function Home() {
         </div>
         <div className="relative mx-auto mt-12 flex max-w-screen-sm items-center justify-center space-x-10 overflow-hidden">
           {NAV_LINKS.map((btn) => (
-            <p>{btn.label}</p>
+            <p key={btn.label}>{btn.label}</p>
           ))}
           <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-r from-[#141414] via-transparent  to-[#141414]" />
         </div>

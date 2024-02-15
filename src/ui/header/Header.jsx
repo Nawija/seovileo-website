@@ -88,7 +88,7 @@ const Header = () => {
           className={`border-main bg-main absolute left-0 top-0 flex h-screen flex-col items-center justify-center space-y-7 border-r px-28 backdrop-blur-sm transition-transform lg:absolute lg:left-1/2 lg:top-1/2 lg:h-auto lg:-translate-x-1/2 lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:rounded-lg lg:border lg:bg-none lg:p-3 lg:px-0 lg:backdrop-blur-none ${
             isMenuOpen
               ? "translate-x-0 duration-200 "
-              : "-translate-x-full duration-500 lg:translate-x-0"
+              : "-translate-x-full duration-500"
           } `}
         >
           {NAV_LINKS.map((link) => (
