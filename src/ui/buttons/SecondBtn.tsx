@@ -10,7 +10,7 @@ export function SecondBtn({ children, className, ...rest }: ButtonProps) {
     <button
       {...rest}
       className={clsx(
-        "border-main bg-main relative rounded-lg border px-5 py-2 text-sm font-semibold text-white/80 transition-colors duration-300 hover:text-white",
+        "border-main bg-main relative rounded-lg border px-5 py-2 text-sm font-semibold text-white/80 transition-colors duration-300 hover:bg-zinc-900 hover:text-white",
         className,
       )}
     >

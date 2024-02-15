@@ -25,14 +25,75 @@ export const NAV_LINKS = [
   },
 ];
 
-export const NAV_BTN_LINKS = [
+export const SCROLLING_LABEL = [
   {
-    href: "/kontakt",
-    label: "Kontakt",
+    label: "Szybkość stron",
   },
   {
-    href: "/darmowa-wycena",
-    label: "Darmowa Wycena",
+    label: "Niezawodność",
+  },
+  {
+    label: "Nowoczesny Design",
+  },
+  {
+    label: "Przyjazne dla Google",
+  },
+  {
+    label: "Indywidualność",
+  },
+  {
+    label: "Skontaktuj sie po więcej",
+  },
+];
+
+export const PORTFOLIO = [
+  {
+    href: "/",
+    url: "https://i.pinimg.com/236x/b6/96/f6/b696f67fd753adce35170477240b5111.jpg",
+    label: "Home",
+    desc: "usługi na najwyższym poziomie!",
+    prevPrice: "",
+    price: "1100",
+  },
+  {
+    href: "/",
+    url: "https://i.pinimg.com/236x/ba/8d/20/ba8d20cd829af021cf965c903d36fbaf.jpg",
+    label: "O Mnie",
+    desc: "usługi na najwyższym poziomie!",
+    prevPrice: "",
+    price: "120",
+  },
+  {
+    href: "/",
+    url: "https://i.pinimg.com/236x/d3/45/47/d34547a0e156ff7dcaa56410b10e4722.jpg",
+    label: "Oferta",
+    desc: "usługi na najwyższym poziomie!",
+    prevPrice: "",
+    price: "950",
+  },
+  {
+    href: "/",
+    url: "https://i.pinimg.com/236x/14/7c/19/147c19d2f1dfe3f624b7255193302fb7.jpg",
+    label: "Galeria",
+    desc: "usługi na najwyższym poziomie!",
+    prevPrice: "",
+    price: "900",
+  },
+  {
+    href: "/",
+    url: "https://i.pinimg.com/236x/98/07/2c/98072ca2a47d1b75a06a7f68b17b52b7.jpg",
+    label: "Blog",
+    desc: "usługi na najwyższym poziomie!",
+    prevPrice: "1300",
+    price: "700",
+  },
+  {
+    href: "/",
+    url: "https://i.pinimg.com/236x/3c/a4/19/3ca4197154b515b3471863682a415c7a.jpg",
+    label: "Matesio",
+    desc: "usługi na najwyższym poziomie!",
+    prevPrice: "",
+    price: "300",
   },
 ];
 

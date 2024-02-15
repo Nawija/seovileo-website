@@ -17,11 +17,13 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <head>
-        <meta name="theme-color" content="#F8FAFD" />
+        <meta name="theme-color" content="#141414" />
       </head>
       <body className={`${inter.className}`}>
         <Header />
-        <main className="min-h-screen text-p">{children}</main>
+        <main className="text-p mx-auto min-h-screen max-w-screen-2xl px-4">
+          {children}
+        </main>
         <div className="h-[200vh]" />
         <Footer />
       </body>
