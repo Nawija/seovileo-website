@@ -8,8 +8,8 @@ export default function Home() {
 
   return (
     <div className="anim-opacity relative mx-auto">
-      <section className="relative mx-auto py-24">
-        <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center space-y-7 px-4 text-center ">
+      <section className="relative mx-auto py-12 lg:py-24">
+        <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center space-y-7 px-2 text-center ">
           <h1 className="text-main relative text-4xl font-semibold md:text-4xl lg:text-6xl">
             Odkryj Nowoczesne Rozwiązania Webowe
           </h1>
@@ -26,7 +26,7 @@ export default function Home() {
           </div>
         </div>
         <div className="relative mx-auto mt-12 flex w-full max-w-screen-md items-center justify-center overflow-x-hidden ">
-          <div className="scrolling flex  items-center justify-center">
+          <div className="scrolling flex items-center justify-center">
             {doubledLabels.map((label, index) => (
               <p className="ml-12 inline-block" key={index}>
                 {label.label}
@@ -40,7 +40,7 @@ export default function Home() {
         <div className="flex-b">
           <h2 className="text-main text-lg">Most Popular Framer Templates</h2>
           <Link href="/" className="flex-c transition-colors hover:text-white">
-            <p>Więcej</p>
+            <p className="text-xs">Więcej</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
