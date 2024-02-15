@@ -27,8 +27,8 @@ export default function Home() {
         </div>
         <div className="relative mx-auto mt-12 flex w-full max-w-screen-md items-center justify-center overflow-x-hidden ">
           <div className="scrolling flex items-center justify-center">
-            {doubledLabels.map((label, index) => (
-              <p className="ml-12 inline-block" key={index}>
+            {doubledLabels.map((label, i) => (
+              <p className="ml-12 inline-block" key={i}>
                 {label.label}
               </p>
             ))}
