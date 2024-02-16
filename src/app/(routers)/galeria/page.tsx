@@ -1,13 +1,93 @@
-import { MainBtn } from "@/src/ui/buttons/MainBtn";
+import { BlogTypes } from "@/src/types";
+import Image from "next/image";
 import Link from "next/link";
 
-export default function Bulding() {
+const fetchPhotoDatoCms = async () => {
+  const res = await fetch("https://graphql.datocms.com/", {
+    next: { revalidate: 600 },
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
+    },
+    body: JSON.stringify({
+      query: `{
+        allBlogs {
+          img {
+            id
+            url
+          }
+        }
+      }`,
+    }),
+  });
+  return await res.json();
+};
+export default async function Galeria() {
+  const datoCmsPhoto = await fetchPhotoDatoCms();
+
   return (
-    <div className="anim-opacity h-[82vh] w-full flex items-center justify-center flex-col">
-      <h1 className="text-xl mb-8 font-medium">Strona w <span className="text-main-color">budowie</span></h1>
-      <Link href="/">
-        <MainBtn>Powrót</MainBtn>
-      </Link>
-    </div>
+    <>
+      <div className="anim-opacity mx-2 mt-5 columns-1 gap-4 text-sm sm:columns-2 lg:px-2 xl:columns-3 2xl:columns-5">
+        <div className="after:content shadow-highlight after:shadow-highlight bg-main border-main relative mb-5 flex h-[350px] flex-col items-center justify-center gap-4 overflow-hidden rounded-lg border px-6 text-center after:pointer-events-none after:absolute after:inset-0 after:rounded-lg lg:pt-0">
+          <p className="max-w-[40ch] sm:max-w-[32ch]">
+            Serdecznie witam, galeria zdjęć, które uwieczniły wyjątkowe chwile z
+            tego niepowtarzalnego wydarzenia.
+          </p>
+          <p className="max-w-[40ch] sm:max-w-[32ch]">
+            Mam nadzieję, że każda z zamieszczonych fotografii pozwoli na
+            współdzielenie emocji i przeżyć związanych z tym wyjątkowym
+            momentem.
+          </p>
+          <p className="absolute bottom-2 right-12 mb-4 text-sm text-white/80">
+            Galeria
+          </p>
+        </div>
+        {datoCmsPhoto.data.allBlogs.map((photo: BlogTypes) => (
+          <Link
+            key={photo.img.id}
+            href={`/galeria/${photo.img.id}`}
+            shallow
+            passHref
+            className="after:content after:shadow-highlight group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg"
+          >
+            <Image
+              alt="fotografia galeria"
+              className="transform rounded-lg shadow-xl brightness-75 transition will-change-auto group-hover:brightness-100"
+              src={photo.img.url}
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/EP+pAAAABJ0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAANSURBVAiZY/j//z8ABf4C/qc1gYQAAAAASUVORK5CYII="
+              width={520}
+              height={380}
+              sizes="(max-width: 640px) 100vw,
+                (max-width: 1280px) 50vw,
+                (max-width: 1536px) 33vw,
+                25vw"
+            />
+          </Link>
+        ))}
+      </div>
+      <footer className="border-second mt-12 border-t p-6 text-center font-semibold sm:p-12">
+        Dziękuję za skorzystanie z moich usług, Podziel się opinią na{" "}
+        <Link
+          href="/"
+          target="_blank"
+          className="font-semibold text-white transition-colors hover:text-white/50"
+          rel="noreferrer"
+        >
+          Google
+        </Link>{" "}
+        lub{" "}
+        <Link
+          href="/"
+          target="_blank"
+          className="font-semibold text-white transition-colors hover:text-white/50"
+          rel="noreferrer"
+        >
+          Facebook
+        </Link>
+      </footer>
+    </>
   );
 }

@@ -1,4 +1,6 @@
 export type BlogTypes = {
-  id: string;
-  url: string;
+  img: {
+    id: string;
+    url: string;
+  };
 };

@@ -4,8 +4,12 @@ import { MainBtn } from "../ui/buttons/MainBtn";
 import { SecondBtn } from "../ui/buttons/SecondBtn";
 
 interface PortfolioItem {
-  prevPrice: string | number;
-  price: string | number;
+  prevPrice: string;
+  price: string;
+  href: string;
+  url: string;
+  label: string;
+  desc: string;
 }
 
 export default function Home() {
@@ -66,10 +70,12 @@ export default function Home() {
           </Link>
         </div>
         <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {PORTFOLIO.map((p, i) => {
+          {PORTFOLIO.map((p: PortfolioItem, i: number) => {
             let discountPercent =
               p.prevPrice !== ""
-                ? ((p.prevPrice - p.price) / p.prevPrice) * 100
+                ? ((parseFloat(p.prevPrice) - parseFloat(p.price)) /
+                    parseFloat(p.prevPrice)) *
+                  100
                 : 0;
             return (
               <Link
