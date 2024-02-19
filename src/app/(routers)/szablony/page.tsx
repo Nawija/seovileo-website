@@ -1,23 +1,13 @@
 "use client";
-// import PortfolioItemComponent from "@/src/components/home/PortfolioItemComponent";
+
 import { PORTFOLIO } from "@/src/constants";
 import { PortfolioItemSkeleton } from "@/src/ui/Skeletons";
-import { Suspense, lazy, useEffect, useState } from "react";
-
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-const PortfolioItemComponent = lazy(() =>
-  delay(42000).then(
-    () => import("@/src/components/home/PortfolioItemComponent"),
-  ),
+import React, { Suspense } from "react";
+const PortfolioItemComponent = React.lazy(
+  () => import("@/src/components/home/PortfolioItemComponent"),
 );
 
 export default function Szablony() {
-  const [key, setKey] = useState(Math.random());
-
-  useEffect(() => {
-    // Update the key every time the component mounts
-    setKey(Math.random());
-  }, []);
   return (
     <div className="anim-opacity flex w-full flex-col items-center justify-center">
       <section className="relative mx-auto py-12 lg:py-24">
@@ -38,8 +28,8 @@ export default function Szablony() {
         </div>
         <section className="mx-auto">
           <div className="mt-24 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
-            {PORTFOLIO.map((item) => (
-              <Suspense fallback={<PortfolioItemSkeleton />} key={key}>
+            {PORTFOLIO.map((item, i) => (
+              <Suspense fallback={<PortfolioItemSkeleton />} key={i}>
                 <PortfolioItemComponent item={item} />
               </Suspense>
             ))}
