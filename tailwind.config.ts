@@ -6,10 +6,18 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      scrollbarHide: {
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
+        "scrollbar-width": "none",
+        "-ms-overflow-style": "none",
+      },
+    },
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    require("@tailwindcss/typography"),
     // ...
   ],
 };

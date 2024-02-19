@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    /* display: none; */
+    background-color: #424242;
+    height: 6px;
+    scroll-snap-type: proximity;
+  }
+  .no-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #ffffff; /* Red color for the thumb */
+    border-radius: 3px; /* Optional: To make the thumb rounded */
+  }
+  .no-scrollbar {
+    /* -ms-overflow-style: none; */
+    scroll-snap-type: proximity;
+    scroll-behavior: smooth;
+  }
+}
+
 :root {
   --bg-body: #141414;
   --bg-main: #1c1c1c;
