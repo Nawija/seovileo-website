@@ -17,6 +17,7 @@ const fetchPhotoDatoCms = async () => {
           img {
             id
             url
+            blurUpThumb
           }
         }
       }`,
@@ -53,14 +54,14 @@ export default async function Galeria() {
             className="after:content after:shadow-highlight group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg"
           >
             <Image
-              alt="fotografia galeria"
+              alt="..."
               className="transform rounded-lg shadow-xl brightness-75 transition will-change-auto group-hover:brightness-100"
               src={photo.img.url}
               placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/EP+pAAAABJ0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAANSURBVAiZY/j//z8ABf4C/qc1gYQAAAAASUVORK5CYII="
-              width={520}
-              height={380}
-              sizes="(max-width: 640px) 100vw,
+              blurDataURL={photo.img.blurUpThumb}
+              width={620}
+              height={580}
+              sizes="(max-width: 640px) 90vw,
                 (max-width: 1280px) 50vw,
                 (max-width: 1536px) 33vw,
                 25vw"

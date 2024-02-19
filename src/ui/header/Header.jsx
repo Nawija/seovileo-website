@@ -105,8 +105,8 @@ const Header = () => {
             </li>
           ))}
           <div className="flex items-center justify-center">
-            <SecondBtn className="mr-4 lg:hidden">Szablony</SecondBtn>
-            <MainBtn className="lg:hidden">Wycena</MainBtn>
+            <SecondBtn className="mr-4 mt-12 lg:hidden">Szablony</SecondBtn>
+            <MainBtn className="mt-12 lg:hidden ">Wycena</MainBtn>
           </div>
         </ul>
         <div className="flex items-center justify-center">
