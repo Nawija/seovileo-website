@@ -1,8 +1,10 @@
 import { PORTFOLIO } from "@/src/constants/index";
 import Link from "next/link";
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import { PortfolioItemSkeleton } from "../../ui/Skeletons";
-import PortfolioItemComponent from "./PortfolioItemComponent";
+const PortfolioItemComponent = React.lazy(
+  () => import("./PortfolioItemComponent"),
+);
 
 export default function Portfolio() {
   return (
@@ -12,12 +14,10 @@ export default function Portfolio() {
           Most Popular Framer Templates
         </h2>
         <Link
-          href="/"
+          href="/szablony"
           className="flex-c transition-colors duration-300 hover:text-white"
         >
-          <Link href="/szablony" className="text-xs lg:text-sm">
-            Więcej
-          </Link>
+          <p className="text-xs lg:text-sm">Więcej</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

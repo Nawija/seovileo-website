@@ -72,19 +72,22 @@ export default async function Blog() {
   return (
     <div className="anim-opacity">
       <div className="flex items-start justify-start">
-        <div className="bg- border-main sticky top-24 mr-12 mt-32 flex w-80 flex-col items-start justify-start border-l px-5">
+        <div className="sticky top-24 mr-12 mt-32 hidden w-64 flex-col items-start justify-start lg:flex">
           {BLOG_LINKS.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="my-1 p-1 transition-colors duration-300 hover:text-white"
+              className="border-main border-l p-1 py-2 pl-5 transition-colors duration-300 hover:border-white hover:text-white"
             >
               {link.label}
             </Link>
           ))}
+          <span className="absolute left-1/2 top-24 -z-10 w-max -translate-x-1/2 -rotate-90 bg-gradient-to-t from-white/10 to-transparent bg-clip-text py-12 text-4xl font-bold uppercase tracking-[1rem] text-transparent opacity-60 sm:py-20 lg:text-[14rem]">
+            blog
+          </span>
         </div>
         <div className="mx-auto mt-8 max-w-[1400px] px-4 lg:mt-32">
-          <h1 className="mb-10 border-b border-yellow-500 pb-1 text-lg font-semibold uppercase">
+          <h1 className="border-main mb-8 border-b pb-1 text-lg font-semibold uppercase">
             Popolarne posty
           </h1>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-4 ">
@@ -92,11 +95,11 @@ export default async function Blog() {
               <Link
                 href={`/blog/${d.slug}`}
                 key={i}
-                className="overflow-hidden rounded-xl lg:mb-5"
+                className="bg-main border-main overflow-hidden rounded-lg border p-4 "
               >
                 <div className="relative h-28 w-full lg:h-40">
                   <Image
-                    className="object-cover transition-all duration-300"
+                    className="rounded-lg object-cover transition-all duration-300"
                     src={d.img.url}
                     alt={d.title}
                     priority={i < 4}
@@ -131,10 +134,10 @@ export default async function Blog() {
             ))}
           </div>
           <img
-            src="https://img.freepik.com/darmowe-zdjecie/technologia-panoramiczny-baner_23-2151213588.jpg?w=1800&t=st=1706094937~exp=1706095537~hmac=191115e09f52f79a56bd34146e25b2144d34dd5ba0dc5f2a92dd49b595f51821"
-            className="h-44 w-full rounded-xl object-cover"
+            src="https://img.freepik.com/darmowe-zdjecie/kreatywne-tlo-o-wysokim-kacie-z-szarymi-ksztaltami_23-2148811502.jpg?size=626&ext=jpg&ga=GA1.1.1304961695.1684166548&semt=ais"
+            className="my-8 h-44 w-full rounded-lg object-cover shadow-2xl shadow-white/20"
           />
-          <h2 className="mb-3 mt-12 border-b border-orange-500 pb-2 text-lg font-semibold uppercase">
+          <h2 className="border-main mb-3 mt-12 border-b pb-2 text-lg font-semibold uppercase">
             Najnowsze posty
           </h2>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
@@ -146,7 +149,7 @@ export default async function Blog() {
               >
                 <div className="relative h-28 w-full lg:h-32">
                   <Image
-                    className="rounded-xl object-cover brightness-75 transition duration-300 group-hover:scale-95 group-hover:brightness-105"
+                    className=" object-cover brightness-75 transition duration-300 group-hover:scale-95 group-hover:brightness-105"
                     src={d.img.url}
                     alt={d.title}
                     priority={i < 4}
