@@ -16,7 +16,6 @@
   }
   .no-scrollbar {
     /* -ms-overflow-style: none; */
-    scroll-snap-type: proximity;
     scroll-behavior: smooth;
   }
 }
@@ -99,7 +98,7 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-30vw);
+    transform: translateX(-50vw);
   }
 }
 

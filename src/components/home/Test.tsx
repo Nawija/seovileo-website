@@ -36,7 +36,7 @@ export default function Test() {
     if (!isDragging || !scrollContainer.current) return;
     e.preventDefault();
     const x = e.pageX - scrollContainer.current.offsetLeft;
-    const walk = (x - startX) * 1.6;
+    const walk = (x - startX) * 3;
     scrollContainer.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -72,30 +72,32 @@ export default function Test() {
   }, [isDragging, startX, scrollLeft]);
 
   return (
-    <section className="flex w-full flex-col items-center justify-start overflow-hidden py-24 lg:flex-row">
-      <h2 className="text-main mb-6 px-3 text-lg lg:ml-24 lg:w-96 lg:text-3xl">
+    <section className="flex w-full flex-col items-center justify-start overflow-hidden py-24 lg:flex-row lg:py-48">
+      <h2 className="text-main mb-8 px-3 text-center text-xl font-semibold lg:ml-24 lg:w-96 lg:text-start lg:text-3xl">
         Lorem ipsum dolor sit amet consectetur
       </h2>
 
-      <div className="relative flex w-full justify-between">
+      <div className="relative flex w-full justify-between lg:w-3/4">
         <div
           ref={scrollContainer}
-          className="no-scrollbar ml-12 flex w-full snap-x items-start justify-start overflow-x-scroll rounded-lg pb-4"
+          className="no-scrollbar flex snap-x items-start justify-start overflow-x-scroll pb-6"
         >
           {PORTFOLIO.map((p, i) => (
-            <img
-              key={i}
-              src={p.url}
-              draggable="false"
-              alt="..."
-              className="mr-10 h-96 w-96 snap-center object-cover object-center"
-            />
+            <div className="bg-main border-main mr-10 h-96 w-full flex-shrink-0 snap-center overflow-hidden rounded-lg border p-4 shadow-2xl shadow-white/10 sm:w-1/3">
+              <img
+                key={i}
+                src={p.url}
+                draggable="false"
+                alt="..."
+                className=" h-full w-full object-cover object-top"
+              />
+            </div>
           ))}
         </div>
         {!isAtStart && (
           <button
-            onClick={() => scroll(-300)}
-            className="bg-main border-main absolute left-0 top-1/2 mr-3 rounded border p-1.5 text-white"
+            onClick={() => scroll(-330)}
+            className="bg-main border-main absolute left-0 top-1/2 z-10 mr-3 rounded border p-1.5 text-white"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -115,8 +117,8 @@ export default function Test() {
         )}
         {!isAtEnd && (
           <button
-            onClick={() => scroll(300)}
-            className="bg-main border-main absolute -right-0 top-1/2 z-10 mr-3 rounded border p-1.5 text-white"
+            onClick={() => scroll(330)}
+            className="bg-main border-main absolute -right-3 top-1/2 z-10 mr-3 rounded border p-1.5 text-white"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
