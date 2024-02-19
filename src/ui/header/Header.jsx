@@ -105,15 +105,26 @@ const Header = () => {
             </li>
           ))}
           <div className="flex items-center justify-center">
-            <SecondBtn className="mr-4 mt-12 lg:hidden">Szablony</SecondBtn>
-            <MainBtn className="mt-12 lg:hidden ">Wycena</MainBtn>
+            <Link href="/szablony" className="mr-4 mt-12 lg:hidden">
+              <SecondBtn>Szablony</SecondBtn>
+            </Link>
+
+            <Link href="darmowa-wycena" className="mt-12 lg:hidden ">
+              {" "}
+              <MainBtn>Wycena</MainBtn>
+            </Link>
           </div>
         </ul>
         <div className="flex items-center justify-center">
-          <SecondBtn className="mr-4 hidden lg:flex">Szablony</SecondBtn>
-          <MainBtn className=" hidden lg:flex">Wycena</MainBtn>
+          <Link href="/szablony" className="mr-4 hidden lg:flex">
+            <SecondBtn>Szablony</SecondBtn>
+          </Link>
+          <Link href="darmowa-wycena" className=" hidden lg:flex">
+            <MainBtn>Wycena</MainBtn>
+          </Link>
         </div>
         <button
+          aria-label="Menu"
           className="flex flex-col items-center justify-center p-2 lg:hidden"
           onClick={toggleMenu}
         >

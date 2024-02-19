@@ -11,7 +11,7 @@
     scroll-snap-type: proximity;
   }
   .no-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #ffffff; /* Red color for the thumb */
+    background-color: #cfcece; /* Red color for the thumb */
     border-radius: 3px; /* Optional: To make the thumb rounded */
   }
   .no-scrollbar {

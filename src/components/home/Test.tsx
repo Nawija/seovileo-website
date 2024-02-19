@@ -73,19 +73,25 @@ export default function Test() {
 
   return (
     <section className="flex w-full flex-col items-center justify-start overflow-hidden py-24 lg:flex-row lg:py-48">
-      <h2 className="text-main mb-8 px-3 text-center text-xl font-semibold lg:ml-24 lg:w-96 lg:text-start lg:text-3xl">
-        Lorem ipsum dolor sit amet consectetur
-      </h2>
+      <div className="mb-12 flex flex-col items-center justify-center space-y-3 px-3 text-center lg:ml-24 lg:w-96 lg:text-start">
+        <h2 className="text-main text-2xl font-semibold lg:text-3xl">
+          Lorem ipsum dolor sit amet consectetur
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni
+          temporibus quo blanditiis.
+        </p>
+      </div>
 
       <div className="relative flex w-full justify-between lg:w-3/4">
         <div
           ref={scrollContainer}
-          className="no-scrollbar flex snap-x items-start justify-start overflow-x-scroll pb-6"
+          className="no-scrollbar flex snap-x items-start justify-start overflow-x-scroll pb-16 pl-[28%] lg:pl-0"
         >
           {PORTFOLIO.map((p, i) => (
             <div
               key={i}
-              className="bg-main border-main mr-10 h-96 w-full flex-shrink-0 snap-center overflow-hidden rounded-lg border p-4 shadow-2xl shadow-white/10 sm:w-1/3"
+              className="bg-main border-main relative mr-10 h-80 w-[75%] flex-shrink-0 snap-center overflow-hidden rounded-lg border p-3 pb-5 shadow-2xl shadow-white/10 sm:w-1/2 md:w-1/4 lg:p-4 lg:pb-8"
             >
               <img
                 src={p.url}
@@ -93,11 +99,13 @@ export default function Test() {
                 alt="..."
                 className=" h-full w-full object-cover object-top"
               />
+              <div className="bg-main border-main absolute bottom-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border lg:h-4 lg:w-4" />
             </div>
           ))}
         </div>
         {!isAtStart && (
           <button
+            aria-label="przesuń w lewo"
             onClick={() => scroll(-330)}
             className="bg-main border-main absolute left-0 top-1/2 z-10 mr-3 rounded border p-1.5 text-white"
           >
@@ -119,6 +127,7 @@ export default function Test() {
         )}
         {!isAtEnd && (
           <button
+            aria-label="przesuń w prawo"
             onClick={() => scroll(330)}
             className="bg-main border-main absolute -right-3 top-1/2 z-10 mr-3 rounded border p-1.5 text-white"
           >

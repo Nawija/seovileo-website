@@ -13,7 +13,7 @@ export default function Portfolio() {
           href="/"
           className="flex-c transition-colors duration-300 hover:text-white"
         >
-          <p className="text-xs lg:text-sm">Więcej</p>
+          <Link href="/szablony" className="text-xs lg:text-sm">Więcej</Link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -30,7 +30,7 @@ export default function Portfolio() {
           </svg>
         </Link>
       </div>
-      <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
         {PORTFOLIO.map((p: PortfolioItem, i: number) => {
           let discountPercent =
             p.prevPrice !== ""
@@ -44,7 +44,7 @@ export default function Portfolio() {
               className="bg-main border-second rounded-lg border"
               href={p.href}
             >
-              <div className="border-second group relative overflow-hidden border-b bg-gradient-to-tr from-[#161616] to-transparent p-4">
+              <div className="border-second group relative overflow-hidden border-b bg-gradient-to-tr from-[#161616] to-transparent p-2 lg:p-4">
                 {p.prevPrice !== "" && (
                   <p className="bg-main absolute left-0 top-0 rounded-lg p-2 text-xs font-semibold tracking-wider text-yellow-500">
                     PROMOCJA
@@ -54,7 +54,7 @@ export default function Portfolio() {
                 <img
                   src={p.url}
                   alt="..."
-                  className="h-52 w-full object-cover"
+                  className="h-44 w-full object-cover lg:h-52"
                 />
                 <div className="text-main absolute left-0 top-0 hidden h-full w-full translate-y-full items-center justify-center bg-[rgba(28,28,28,0.8)] opacity-80 transition-transform duration-300 group-hover:translate-y-0 lg:flex">
                   <svg
@@ -86,13 +86,13 @@ export default function Portfolio() {
                     {p.desc.length > 17 ? `${p.desc.slice(0, 17)}...` : p.desc}
                   </p>
                   {p.prevPrice !== "" && (
-                    <div className="flex-c">
+                    <div className="flex flex-col items-end justify-end sm:items-center sm:flex-row">
                       {p.prevPrice !== "" && (
-                        <p className="bg-main flex-c border-main mr-2 rounded-full border p-1.5 text-xs font-semibold tracking-wider text-white">
+                        <p className="bg-main flex-c border-main order-1 sm:order-none sm:mr-2 rounded-full border p-1.5 text-xs font-semibold tracking-wider text-white">
                           -{discountPercent.toFixed(0)}%
                         </p>
                       )}
-                      <p className="text-red-700 line-through">
+                      <p className="text-red-600 line-through">
                         {p.prevPrice}
                         <span>zł</span>
                       </p>
