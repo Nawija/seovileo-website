@@ -83,9 +83,11 @@ export default function Test() {
           className="no-scrollbar flex snap-x items-start justify-start overflow-x-scroll pb-6"
         >
           {PORTFOLIO.map((p, i) => (
-            <div className="bg-main border-main mr-10 h-96 w-full flex-shrink-0 snap-center overflow-hidden rounded-lg border p-4 shadow-2xl shadow-white/10 sm:w-1/3">
+            <div
+              key={i}
+              className="bg-main border-main mr-10 h-96 w-full flex-shrink-0 snap-center overflow-hidden rounded-lg border p-4 shadow-2xl shadow-white/10 sm:w-1/3"
+            >
               <img
-                key={i}
                 src={p.url}
                 draggable="false"
                 alt="..."
