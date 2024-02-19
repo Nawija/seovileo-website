@@ -7,12 +7,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      scrollbarHide: {
-        "&::-webkit-scrollbar": {
-          display: "none",
+      keyframes: {
+        shimmer: {
+          "100%": {
+            transform: "translateX(100%)",
+          },
         },
-        "scrollbar-width": "none",
-        "-ms-overflow-style": "none",
       },
     },
   },
