@@ -104,7 +104,7 @@ const Header = () => {
               </Link>
             </li>
           ))}
-          <div role="menuitem" className="flex items-center justify-center">
+          <div className="flex items-center justify-center">
             <Link
               href="/szablony"
               onClick={closeMenu}
