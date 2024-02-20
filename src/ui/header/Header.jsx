@@ -85,6 +85,7 @@ const Header = () => {
           <p>Seovileo</p>
         </Link>
         <ul
+          role="menu"
           className={`border-main bg-body absolute left-0 top-0 flex h-screen flex-col items-center justify-center space-y-7 border-r px-12 backdrop-blur-sm transition-transform lg:absolute lg:left-1/2 lg:top-1/2 lg:h-auto lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:rounded-lg lg:border lg:bg-none lg:px-4 lg:py-2 lg:backdrop-blur-none ${
             isMenuOpen
               ? "translate-x-0 duration-200 "
@@ -104,11 +105,11 @@ const Header = () => {
               </Link>
             </li>
           ))}
-          <li className="flex items-center justify-center">
+          <div role="menuitem" className="flex items-center justify-center">
             <Link
               href="/szablony"
               onClick={closeMenu}
-              className="mr-4 mt-12 lg:hidden"
+              className="mr-4 mt-10 lg:hidden"
             >
               <SecondBtn>Szablony</SecondBtn>
             </Link>
@@ -116,20 +117,20 @@ const Header = () => {
             <Link
               href="darmowa-wycena"
               onClick={closeMenu}
-              className="mt-12 lg:hidden "
+              className="mt-10 lg:hidden "
             >
               <MainBtn>Wycena</MainBtn>
             </Link>
-          </li>
+          </div>
         </ul>
-        <li className="flex items-center justify-center">
+        <div className="flex items-center justify-center">
           <Link href="/szablony" className="mr-4 hidden lg:flex">
             <SecondBtn>Szablony</SecondBtn>
           </Link>
           <Link href="darmowa-wycena" className=" hidden lg:flex">
             <MainBtn>Wycena</MainBtn>
           </Link>
-        </li>
+        </div>
         <button
           aria-label="Menu"
           className="flex flex-col items-center justify-center p-2 lg:hidden"
