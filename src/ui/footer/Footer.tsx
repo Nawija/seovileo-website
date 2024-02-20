@@ -1,24 +1,17 @@
 "use client";
 
 import { NAV_LINKS } from "@/src/constants";
-import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "../svg/Logo";
 
 export default function Footer() {
   return (
     <footer className="flex-c from border-main bg-main mt-24 w-full border-t px-4 py-12">
       <div className="w-full pt-4 sm:pt-10 lg:pt-12">
         <Link href="/" aria-label="Logo" className="flex-c mb-12">
-          <Image
-            src="/seovileo.svg"
-            height={30}
-            width={30}
-            priority
-            alt="seovileo logo"
-          />
-          <p className="text-main ml-1 text-sm font-medium">Seovileo</p>
+          <Logo h={33} w={33} />
         </Link>
-        <footer className="mx-auto w-full max-w-screen-2xl px-4 md:px-8">
+        <div className="mx-auto w-full max-w-screen-2xl px-4 md:px-8">
           <div className="border-main flex flex-col items-center justify-between gap-4 border-y border-dotted px-2 py-6 md:flex-row">
             <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
               {NAV_LINKS.map((link) => (
@@ -110,7 +103,7 @@ export default function Footer() {
           <div className="bg-gradient-to-r from-red-500 to-indigo-500 bg-clip-text py-8 text-center text-sm text-transparent">
             © 2022 - Present seovileo rights reserved.
           </div>
-        </footer>
+        </div>
       </div>
     </footer>
   );

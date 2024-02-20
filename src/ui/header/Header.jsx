@@ -1,12 +1,12 @@
 "use client";
 
 import { NAV_LINKS } from "@/src/constants";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { MainBtn } from "../buttons/MainBtn";
 import { SecondBtn } from "../buttons/SecondBtn";
+import { Logo } from "../svg/Logo";
 
 const Header = () => {
   const pathname = usePathname();
@@ -69,20 +69,8 @@ const Header = () => {
       <nav
         className={` mx-auto flex w-full max-w-screen-2xl items-center justify-between `}
       >
-        <Link
-          href="/"
-          onClick={closeMenu}
-          className="z-10 mr-12 flex items-center justify-center text-white"
-        >
-          <Image
-            height={27}
-            width={27}
-            alt="logo"
-            src="/seovileo.svg"
-            priority
-            className="mr-1"
-          />
-          <p>Seovileo</p>
+        <Link href="/" onClick={closeMenu} className="z-10 mr-12 text-white">
+          <Logo h={27} w={27} />
         </Link>
         <ul
           className={`border-main bg-body absolute left-0 top-0 flex h-screen flex-col items-center justify-center space-y-7 border-r px-12 backdrop-blur-sm transition-transform lg:absolute lg:left-1/2 lg:top-1/2 lg:h-auto lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:rounded-lg lg:border lg:bg-none lg:px-4 lg:py-2 lg:backdrop-blur-none ${

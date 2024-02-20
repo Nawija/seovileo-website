@@ -15,3 +15,8 @@ export type PortfolioItem = {
   label: string;
   desc: string;
 };
+
+export type HeightWightTypes = {
+  h: number;
+  w: number;
+};

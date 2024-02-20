@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import Hero from "../components/home/Hero";
 const Portfolio = dynamic(() => import("../components/home/Portfolio"));
 const Carousel = dynamic(() => import("../components/home/Carousel"), {
-  loading: () => <div>Ładowanie...</div>,
+  loading: () => <div className="text-white">Ładowanie...</div>,
 });
 
 export default function Home() {

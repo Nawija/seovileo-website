@@ -1,5 +1,6 @@
 "use client";
 import { PORTFOLIO } from "@/src/constants";
+import { ArrowLeft, ArrowRight } from "@/src/ui/svg/Arrows";
 import { useEffect, useRef, useState } from "react";
 
 export default function Carousel() {
@@ -86,7 +87,7 @@ export default function Carousel() {
       <div className="relative flex w-full justify-between lg:w-3/4">
         <div
           ref={scrollContainer}
-          className="no-scrollbar flex snap-x items-start justify-start overflow-x-scroll pb-16 pl-[28%] lg:pl-0"
+          className="no-scrollbar flex snap-x items-start justify-start overflow-x-scroll py-16 pl-[12%] lg:pl-0"
         >
           {PORTFOLIO.map((p, i) => (
             <div
@@ -109,20 +110,7 @@ export default function Carousel() {
             onClick={() => scroll(-330)}
             className="bg-main border-main absolute left-0 top-1/2 z-10 mr-3 rounded border p-1.5 text-white"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="h-6 w-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 19.5 8.25 12l7.5-7.5"
-              />
-            </svg>
+            <ArrowLeft h={15} w={15} />
           </button>
         )}
         {!isAtEnd && (
@@ -131,20 +119,7 @@ export default function Carousel() {
             onClick={() => scroll(330)}
             className="bg-main border-main absolute -right-3 top-1/2 z-10 mr-3 rounded border p-1.5 text-white"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="h-6 w-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m8.25 4.5 7.5 7.5-7.5 7.5"
-              />
-            </svg>
+            <ArrowRight h={15} w={15} />
           </button>
         )}
       </div>
