@@ -41,7 +41,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
       <div className="relative h-full w-full">
         <iframe
           className={`mx-auto h-full transition-all duration-500 ${iframeWidth}`}
-          src="https://nazoltej.pl"
+          src={portfolioItem.link}
         />
       </div>
     </div>

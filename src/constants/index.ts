@@ -55,6 +55,7 @@ export const PORTFOLIO = [
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro nulla consectetur?",
     prevPrice: "",
     price: "1100",
+    link:"https://seovileo.com"
   },
   {
     id: "2",
@@ -64,6 +65,7 @@ export const PORTFOLIO = [
     desc: "usługi na najwyższym poziomie",
     prevPrice: "",
     price: "120",
+    link:"https://nazoltej.pl"
   },
   {
     id: "3",
@@ -73,6 +75,7 @@ export const PORTFOLIO = [
     desc: "usługi met consectetur adipisicing elit. Dolorum porro nulla consectetur?",
     prevPrice: "",
     price: "950",
+    link:"https://nazoltej.pl"
   },
   {
     id: "4",
@@ -82,6 +85,7 @@ export const PORTFOLIO = [
     desc: "rem ipsum dolor sit ametolorum porro nulla consect",
     prevPrice: "",
     price: "900",
+    link:"https://nazoltej.pl"
   },
   {
     id: "5",
@@ -91,6 +95,7 @@ export const PORTFOLIO = [
     desc: "nsectetur adipisicing elit. Dolorum porro nulla consectetur?",
     prevPrice: "1300",
     price: "700",
+    link:"https://nazoltej.pl"
   },
   {
     id: "6",
@@ -100,6 +105,7 @@ export const PORTFOLIO = [
     desc: "usłuLorem ipsum dolor sit amet consectet Dolorum porro nulla consee!",
     prevPrice: "",
     price: "300",
+    link:"https://nazoltej.pl"
   },
   {
     id: "7",
@@ -109,6 +115,7 @@ export const PORTFOLIO = [
     desc: "usłuLorem ipsum dolor sit amet consectet Dolorum porro nulla consee!",
     prevPrice: "",
     price: "850",
+    link:"https://nazoltej.pl"
   },
   {
     id: "8",
@@ -118,6 +125,7 @@ export const PORTFOLIO = [
     desc: "usłuLorem ipsum dolor sit amet consectet Dolorum porro nulla consee!",
     prevPrice: "",
     price: "1500",
+    link:"https://nazoltej.pl"
   },
 ];
 
