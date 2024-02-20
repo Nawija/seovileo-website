@@ -1,4 +1,5 @@
 import { SCROLLING_LABEL } from "@/src/constants";
+import TextBacgroud from "@/src/ui/background/TextBacgroud";
 import { MainBtn } from "@/src/ui/buttons/MainBtn";
 import { SecondBtn } from "@/src/ui/buttons/SecondBtn";
 
@@ -7,9 +8,7 @@ export default function Hero() {
   return (
     <section className="relative mx-auto py-12 lg:py-24">
       <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center space-y-7 px-2 text-center ">
-        <span className="absolute left-1/2 top-10 -z-10 w-max -translate-x-1/2 bg-gradient-to-t from-white/10 to-transparent bg-clip-text py-2 sm:py-12 text-4xl font-bold uppercase tracking-[1rem] text-transparent opacity-60 lg:text-[14rem]">
-          WEB DEV
-        </span>
+        <TextBacgroud text="web dev" />
         <h1 className="text-main relative text-4xl font-semibold md:text-4xl lg:text-6xl">
           Odkryj Nowoczesne Rozwiązania Webowe
         </h1>

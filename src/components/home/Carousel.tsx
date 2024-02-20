@@ -2,7 +2,7 @@
 import { PORTFOLIO } from "@/src/constants";
 import { useEffect, useRef, useState } from "react";
 
-export default function Test() {
+export default function Carousel() {
   const scrollContainer = useRef<HTMLDivElement>(null);
   const [isAtStart, setIsAtStart] = useState<boolean>(true);
   const [isAtEnd, setIsAtEnd] = useState<boolean>(false);

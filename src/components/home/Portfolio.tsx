@@ -1,9 +1,12 @@
 import { PORTFOLIO } from "@/src/constants/index";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import React, { Suspense } from "react";
 import { PortfolioItemSkeleton } from "../../ui/Skeletons";
-const PortfolioItemComponent = React.lazy(
+const PortfolioItemComponent = dynamic(
   () => import("./PortfolioItemComponent"),
+  {
+    loading: () => <PortfolioItemSkeleton />,
+  },
 );
 
 export default function Portfolio() {
@@ -36,9 +39,7 @@ export default function Portfolio() {
       </div>
       <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
         {PORTFOLIO.map((item) => (
-          <Suspense fallback={<PortfolioItemSkeleton />} key={item.label}>
-            <PortfolioItemComponent item={item} />
-          </Suspense>
+          <PortfolioItemComponent key={item.label} item={item} />
         ))}
       </div>
     </section>

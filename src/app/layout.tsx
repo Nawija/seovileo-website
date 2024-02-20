@@ -1,9 +1,11 @@
 import "@/src/app/globals.css";
 import { inter } from "@/src/ui/fonts";
-import Footer from "@/src/ui/footer/Footer";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+
 import Header from "../ui/header/Header";
-import ScrollUp from "../ui/buttons/ScrollUp";
+const ScrollUp = dynamic(() => import("@/src/ui/buttons/ScrollUp"));
+const Footer = dynamic(() => import("@/src/ui/footer/Footer"));
 
 export const metadata: Metadata = {
   title: "Seovileo-website",

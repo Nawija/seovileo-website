@@ -105,12 +105,19 @@ const Header = () => {
             </li>
           ))}
           <div className="flex items-center justify-center">
-            <Link href="/szablony" className="mr-4 mt-12 lg:hidden">
+            <Link
+              href="/szablony"
+              onClick={closeMenu}
+              className="mr-4 mt-12 lg:hidden"
+            >
               <SecondBtn>Szablony</SecondBtn>
             </Link>
 
-            <Link href="darmowa-wycena" className="mt-12 lg:hidden ">
-              {" "}
+            <Link
+              href="darmowa-wycena"
+              onClick={closeMenu}
+              className="mt-12 lg:hidden "
+            >
               <MainBtn>Wycena</MainBtn>
             </Link>
           </div>

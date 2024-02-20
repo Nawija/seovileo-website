@@ -2,6 +2,7 @@
 
 import { PORTFOLIO } from "@/src/constants";
 import { PortfolioItemSkeleton } from "@/src/ui/Skeletons";
+import TextBacgroud from "@/src/ui/background/TextBacgroud";
 import React, { Suspense } from "react";
 const PortfolioItemComponent = React.lazy(
   () => import("@/src/components/home/PortfolioItemComponent"),
@@ -10,11 +11,9 @@ const PortfolioItemComponent = React.lazy(
 export default function Szablony() {
   return (
     <div className="anim-opacity flex w-full flex-col items-center justify-center">
-      <section className="relative mx-auto py-12 lg:py-24">
+      <section className="relative mx-auto py-12 lg:py-12">
         <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center space-y-7 px-2 text-center ">
-          <span className="absolute left-1/2 top-10 -z-10 w-max -translate-x-1/2 bg-gradient-to-t from-white/10 to-transparent bg-clip-text py-2 text-4xl font-bold uppercase tracking-[1rem] text-transparent opacity-60 sm:py-12 lg:text-[14rem]">
-            szablony
-          </span>
+          <TextBacgroud text="szablony" />
           <h1 className="text-main relative text-4xl font-semibold md:text-4xl lg:text-6xl">
             Nowoczesne gotowe strony internetowe
             <br />
