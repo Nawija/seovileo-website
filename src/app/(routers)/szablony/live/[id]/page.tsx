@@ -9,9 +9,9 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="anim-opacity max-h-screen w-full overflow-hidden">
+    <div className="anim-opacity z-[99999] h-screen w-full overflow-hidden">
       <iframe
-        className="fixed left-0 top-0 z-[99999] h-full w-full"
+        className="fixed left-0 top-0  h-full w-full"
         src="https://nazoltej.pl"
       ></iframe>
     </div>
