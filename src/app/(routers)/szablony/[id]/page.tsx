@@ -12,8 +12,8 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="anim-opacity max-h-screen">
-      <div className=" py-6 sm:py-8 lg:py-12">
+    <div className="anim-opacity">
+      <div className="py-6 sm:py-8 lg:py-12">
         <div className="mx-auto max-w-screen-xl px-4 md:px-8 ">
           <div className="grid gap-8 md:grid-cols-2 ">
             <div className="grid gap-4 lg:grid-cols-5">
@@ -44,7 +44,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                 </div>
               </div>
 
-              <div className="relative h-1/2 overflow-hidden rounded-lg lg:col-span-4 lg:h-3/4">
+              <div className="relative h-96 overflow-hidden rounded-lg lg:col-span-4 lg:h-[600px]">
                 <img
                   src={portfolioItem.url}
                   alt="Photo by Himanshu Dewangan"
@@ -59,7 +59,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
 
                 <a
                   href="#"
-                  className="hover: duration-100focus-visible:ring absolute right-4 top-4 inline-block rounded-lg border bg-white px-3.5 py-3 text-center text-sm font-semibold  outline-none ring-indigo-300 transition active:text-gray-700 md:text-base"
+                  className="hover: duration-100focus-visible:ring absolute right-4 top-4 inline-block rounded-lg border bg-white p-2 text-center text-sm font-semibold  outline-none ring-red-500 transition active:text-red-500 md:text-base"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -162,6 +162,25 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                 <MainBtn>Kup Teraz</MainBtn>
               </div>
             </div>
+          </div>
+          <div className="my-12 px-3">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum
+              nemo similique nostrum, commodi ut quam quisquam aperiam iusto
+              quis incidunt molestiae? Eaque odit veritatis, vero debitis
+              dolores sapiente perferendis saepe reiciendis cumque voluptate
+              possimus nulla neque itaque natus necessitatibus nihil a illo,
+              aliquid minima quis, maxime quam ducimus magnam. Possimus,
+              aspernatur? Impedit, laudantium, quos, nemo repellendus velit nam
+              ipsam suscipit quis magnam maxime vel. Natus reiciendis ipsum
+              libero exercitationem, fugit aperiam neque odit dolore dolorem
+              eos! Ratione, eius atque eum qui adipisci quam voluptatem cumque
+              sapiente quod debitis id animi reiciendis porro libero praesentium
+              dolorem reprehenderit facilis. Velit libero alias quas corporis
+              eum minus, veritatis in dolore illum repudiandae at earum natus
+              reiciendis ad ducimus incidunt sunt et ipsa eveniet tempore
+              perferendis? Iste?
+            </p>
           </div>
         </div>
       </div>
