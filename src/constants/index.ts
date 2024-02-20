@@ -65,7 +65,7 @@ export const PORTFOLIO = [
     desc: "usługi na najwyższym poziomie",
     prevPrice: "",
     price: "120",
-    link: "https://github.com",
+    link: "https://tanewkajaki.pl/",
   },
   {
     id: "3",
@@ -85,7 +85,7 @@ export const PORTFOLIO = [
     desc: "rem ipsum dolor sit ametolorum porro nulla consect",
     prevPrice: "",
     price: "900",
-    link: "http://answerthepublic.com",
+    link: "https://tanewkajaki.pl/",
   },
   {
     id: "5",
@@ -95,7 +95,7 @@ export const PORTFOLIO = [
     desc: "nsectetur adipisicing elit. Dolorum porro nulla consectetur?",
     prevPrice: "1300",
     price: "700",
-    link: "https://drive.google.com",
+    link: "https://heroicons.com",
   },
   {
     id: "6",
