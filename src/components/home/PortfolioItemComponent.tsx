@@ -10,7 +10,7 @@ interface PortfolioItemComponentProps {
 const PortfolioItemComponent: React.FC<PortfolioItemComponentProps> = ({
   item,
 }) => {
-  const { href, url, label, desc, prevPrice, price } = item;
+  const { id, url, label, desc, prevPrice, price } = item;
   let discountPercent =
     prevPrice !== ""
       ? ((parseFloat(prevPrice) - parseFloat(price)) / parseFloat(prevPrice)) *
@@ -21,7 +21,7 @@ const PortfolioItemComponent: React.FC<PortfolioItemComponentProps> = ({
     <Link
       key={label}
       className="bg-main border-second rounded-lg border"
-      href={href}
+      href={`/szablony/${id}`}
     >
       <div className="border-second group relative overflow-hidden border-b bg-gradient-to-tr from-[#161616] to-transparent p-2 lg:p-4">
         {prevPrice !== "" && (

@@ -1,11 +1,13 @@
-"use client";
-
 import { PORTFOLIO } from "@/src/constants";
 import { PortfolioItemSkeleton } from "@/src/ui/Skeletons";
 import TextBacgroud from "@/src/ui/background/TextBacgroud";
-import React, { Suspense } from "react";
-const PortfolioItemComponent = React.lazy(
+import dynamic from "next/dynamic";
+
+const PortfolioItemComponent = dynamic(
   () => import("@/src/components/home/PortfolioItemComponent"),
+  {
+    loading: () => <PortfolioItemSkeleton />,
+  },
 );
 
 export default function Szablony() {
@@ -28,9 +30,7 @@ export default function Szablony() {
         <section className="mx-auto">
           <div className="mt-24 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
             {PORTFOLIO.map((item, i) => (
-              <Suspense fallback={<PortfolioItemSkeleton />} key={i}>
-                <PortfolioItemComponent item={item} />
-              </Suspense>
+              <PortfolioItemComponent item={item} key={i} />
             ))}
           </div>
         </section>
