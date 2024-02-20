@@ -22,6 +22,15 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/ui/header/Header.jsx", "src/ui/footer/Footer.tsx", "src/ui/buttons/MainBtn.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/ui/header/Header.jsx",
+    "src/ui/footer/Footer.tsx",
+    "src/ui/buttons/MainBtn.tsx",
+    ".next/types/app/(routers)/szablony/live/layout.tsx"
+  ],
   "exclude": ["node_modules"]
 }
