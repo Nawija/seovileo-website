@@ -27,3 +27,11 @@ export function PortfolioItemSkeleton() {
     </div>
   );
 }
+
+export function FullFixedSkeleton() {
+  return (
+    <div
+      className={`fixed left-0 top-0 z-[9999999999999] h-full w-full bg-[#292828] before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_1s_infinite] before:bg-gradient-to-r before:from-[#292828] before:via-[#4e4e4eee] before:to-[#292828]`}
+    />
+  );
+}

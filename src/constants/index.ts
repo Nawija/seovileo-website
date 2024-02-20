@@ -55,7 +55,7 @@ export const PORTFOLIO = [
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro nulla consectetur?",
     prevPrice: "",
     price: "1100",
-    link:"https://seovileo.com"
+    link: "https://seovileo.com",
   },
   {
     id: "2",
@@ -65,7 +65,7 @@ export const PORTFOLIO = [
     desc: "usługi na najwyższym poziomie",
     prevPrice: "",
     price: "120",
-    link:"https://nazoltej.pl"
+    link: "https://github.com",
   },
   {
     id: "3",
@@ -75,7 +75,7 @@ export const PORTFOLIO = [
     desc: "usługi met consectetur adipisicing elit. Dolorum porro nulla consectetur?",
     prevPrice: "",
     price: "950",
-    link:"https://nazoltej.pl"
+    link: "https://cklfacades.com/",
   },
   {
     id: "4",
@@ -85,7 +85,7 @@ export const PORTFOLIO = [
     desc: "rem ipsum dolor sit ametolorum porro nulla consect",
     prevPrice: "",
     price: "900",
-    link:"https://nazoltej.pl"
+    link: "http://answerthepublic.com",
   },
   {
     id: "5",
@@ -95,7 +95,7 @@ export const PORTFOLIO = [
     desc: "nsectetur adipisicing elit. Dolorum porro nulla consectetur?",
     prevPrice: "1300",
     price: "700",
-    link:"https://nazoltej.pl"
+    link: "https://drive.google.com",
   },
   {
     id: "6",
@@ -105,7 +105,7 @@ export const PORTFOLIO = [
     desc: "usłuLorem ipsum dolor sit amet consectet Dolorum porro nulla consee!",
     prevPrice: "",
     price: "300",
-    link:"https://nazoltej.pl"
+    link: "https://www.freecodecamp.org/news",
   },
   {
     id: "7",
@@ -115,7 +115,7 @@ export const PORTFOLIO = [
     desc: "usłuLorem ipsum dolor sit amet consectet Dolorum porro nulla consee!",
     prevPrice: "",
     price: "850",
-    link:"https://nazoltej.pl"
+    link: "https://www.seobility.net/en/seocheck/",
   },
   {
     id: "8",
@@ -125,7 +125,7 @@ export const PORTFOLIO = [
     desc: "usłuLorem ipsum dolor sit amet consectet Dolorum porro nulla consee!",
     prevPrice: "",
     price: "1500",
-    link:"https://nazoltej.pl"
+    link: "https://nazoltej.pl",
   },
 ];
 
