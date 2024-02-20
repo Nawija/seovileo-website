@@ -156,31 +156,12 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
               </div>
 
               <div className="flex gap-2.5">
-                <Link href={`/szablony/${id}/live`}>
+                <Link href={`/szablony/live/${id}`}>
                   <SecondBtn>Zobacz Live</SecondBtn>
                 </Link>
                 <MainBtn>Kup Teraz</MainBtn>
               </div>
             </div>
-          </div>
-          <div className="my-12 px-3">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum
-              nemo similique nostrum, commodi ut quam quisquam aperiam iusto
-              quis incidunt molestiae? Eaque odit veritatis, vero debitis
-              dolores sapiente perferendis saepe reiciendis cumque voluptate
-              possimus nulla neque itaque natus necessitatibus nihil a illo,
-              aliquid minima quis, maxime quam ducimus magnam. Possimus,
-              aspernatur? Impedit, laudantium, quos, nemo repellendus velit nam
-              ipsam suscipit quis magnam maxime vel. Natus reiciendis ipsum
-              libero exercitationem, fugit aperiam neque odit dolore dolorem
-              eos! Ratione, eius atque eum qui adipisci quam voluptatem cumque
-              sapiente quod debitis id animi reiciendis porro libero praesentium
-              dolorem reprehenderit facilis. Velit libero alias quas corporis
-              eum minus, veritatis in dolore illum repudiandae at earum natus
-              reiciendis ad ducimus incidunt sunt et ipsa eveniet tempore
-              perferendis? Iste?
-            </p>
           </div>
         </div>
       </div>

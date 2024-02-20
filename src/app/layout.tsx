@@ -28,7 +28,6 @@ export default function RootLayout({
           {children}
         </main>
         <ScrollUp />
-        <div className="h-[100vh]" />
         <Footer />
       </body>
     </html>
