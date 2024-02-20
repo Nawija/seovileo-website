@@ -48,6 +48,7 @@ export const SCROLLING_LABEL = [
 
 export const PORTFOLIO = [
   {
+    id: "1",
     href: "/",
     url: "https://i.pinimg.com/236x/b6/96/f6/b696f67fd753adce35170477240b5111.jpg",
     label: "HelloJB",
@@ -56,6 +57,7 @@ export const PORTFOLIO = [
     price: "1100",
   },
   {
+    id: "2",
     href: "/",
     url: "https://i.pinimg.com/236x/ba/8d/20/ba8d20cd829af021cf965c903d36fbaf.jpg",
     label: "O Mnie",
@@ -64,6 +66,7 @@ export const PORTFOLIO = [
     price: "120",
   },
   {
+    id: "3",
     href: "/",
     url: "https://i.pinimg.com/236x/d3/45/47/d34547a0e156ff7dcaa56410b10e4722.jpg",
     label: "Oferta",
@@ -72,6 +75,7 @@ export const PORTFOLIO = [
     price: "950",
   },
   {
+    id: "4",
     href: "/",
     url: "https://i.pinimg.com/236x/14/7c/19/147c19d2f1dfe3f624b7255193302fb7.jpg",
     label: "Galeria",
@@ -80,6 +84,7 @@ export const PORTFOLIO = [
     price: "900",
   },
   {
+    id: "5",
     href: "/",
     url: "https://i.pinimg.com/236x/98/07/2c/98072ca2a47d1b75a06a7f68b17b52b7.jpg",
     label: "Blog",
@@ -88,6 +93,7 @@ export const PORTFOLIO = [
     price: "700",
   },
   {
+    id: "6",
     href: "/",
     url: "https://i.pinimg.com/236x/3c/a4/19/3ca4197154b515b3471863682a415c7a.jpg",
     label: "Matesio",
@@ -96,6 +102,7 @@ export const PORTFOLIO = [
     price: "300",
   },
   {
+    id: "7",
     href: "/",
     url: "https://i.pinimg.com/236x/4a/2a/a3/4a2aa3be57423f9a2285949923fcfd26.jpg",
     label: "Matesio",
@@ -104,6 +111,7 @@ export const PORTFOLIO = [
     price: "850",
   },
   {
+    id: "8",
     href: "/",
     url: "https://i.pinimg.com/236x/fb/9a/1e/fb9a1ec6aaa38fd7813110e36c8ef6f2.jpg",
     label: "AuthKit",

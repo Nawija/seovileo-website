@@ -104,7 +104,7 @@ const Header = () => {
               </Link>
             </li>
           ))}
-          <div className="flex items-center justify-center">
+          <li className="flex items-center justify-center">
             <Link
               href="/szablony"
               onClick={closeMenu}
@@ -120,16 +120,16 @@ const Header = () => {
             >
               <MainBtn>Wycena</MainBtn>
             </Link>
-          </div>
+          </li>
         </ul>
-        <div className="flex items-center justify-center">
+        <li className="flex items-center justify-center">
           <Link href="/szablony" className="mr-4 hidden lg:flex">
             <SecondBtn>Szablony</SecondBtn>
           </Link>
           <Link href="darmowa-wycena" className=" hidden lg:flex">
             <MainBtn>Wycena</MainBtn>
           </Link>
-        </div>
+        </li>
         <button
           aria-label="Menu"
           className="flex flex-col items-center justify-center p-2 lg:hidden"

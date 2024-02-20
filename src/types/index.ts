@@ -7,10 +7,11 @@ export type BlogTypes = {
 };
 
 export type PortfolioItem = {
+  id: string;
   prevPrice: string;
   price: string;
   href: string;
   url: string;
   label: string;
   desc: string;
-}
+};

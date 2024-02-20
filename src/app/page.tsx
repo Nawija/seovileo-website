@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-const Hero = dynamic(() => import("../components/home/Hero"));
+import Hero from "../components/home/Hero";
 const Portfolio = dynamic(() => import("../components/home/Portfolio"));
 const Carousel = dynamic(() => import("../components/home/Carousel"), {
   loading: () => <div>Ładowanie...</div>,

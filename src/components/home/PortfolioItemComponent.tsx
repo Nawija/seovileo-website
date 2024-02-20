@@ -51,7 +51,9 @@ const PortfolioItemComponent: React.FC<PortfolioItemComponentProps> = ({
       <div className="flex flex-col items-start justify-start p-4">
         <div className="flex-b text-main w-full">
           <p>{label}</p>
-          <p>
+          <p
+            className={` ${prevPrice > "0" ? "text-green-400" : "text-main"} `}
+          >
             {price}
             <span>zł</span>
           </p>
@@ -65,7 +67,7 @@ const PortfolioItemComponent: React.FC<PortfolioItemComponentProps> = ({
                   -{discountPercent.toFixed(0)}%
                 </p>
               )}
-              <p className="text-red-600 line-through">
+              <p className="line-through">
                 {prevPrice}
                 <span>zł</span>
               </p>
