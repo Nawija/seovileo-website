@@ -6,7 +6,7 @@ export type BlogType = {
   img: {
     url: string;
   };
-}
+};
 export type BlogItemTypes = {
   slug: string;
   title: string;
@@ -29,4 +29,12 @@ export type PortfolioItem = {
 export type HeightWightTypes = {
   h: number;
   w: number;
+};
+
+export type GaleriaTypes = {
+  img: {
+    id: string;
+    url: string;
+    blurUpThumb: string;
+  };
 };

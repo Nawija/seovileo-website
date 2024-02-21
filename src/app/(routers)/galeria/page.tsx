@@ -1,4 +1,4 @@
-import { BlogTypes } from "@/src/types";
+import { GaleriaTypes } from "@/src/types";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -45,7 +45,7 @@ export default async function Galeria() {
             Galeria
           </p>
         </div>
-        {datoCmsPhoto.data.allBlogs.map((photo: BlogTypes) => (
+        {datoCmsPhoto.data.allBlogs.map((photo: GaleriaTypes) => (
           <Link
             key={photo.img.id}
             href={`/galeria/${photo.img.id}`}
