@@ -1,8 +1,18 @@
-export type BlogTypes = {
+export type BlogType = {
+  id: string;
+  date: string;
+  slug: string;
+  title: string;
   img: {
-    id: string;
     url: string;
-    blurUpThumb: string;
+  };
+}
+export type BlogItemTypes = {
+  slug: string;
+  title: string;
+  date: string;
+  img: {
+    url: string;
   };
 };
 
