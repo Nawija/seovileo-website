@@ -55,7 +55,7 @@ export const PORTFOLIO = [
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro nulla consectetur?",
     prevPrice: "",
     price: "1100",
-    link: "https://seovileo.com",
+    link: "https://jj-three.vercel.app/",
   },
   {
     id: "2",
@@ -105,7 +105,7 @@ export const PORTFOLIO = [
     desc: "usłuLorem ipsum dolor sit amet consectet Dolorum porro nulla consee!",
     prevPrice: "",
     price: "300",
-    link: "https://www.freecodecamp.org/news",
+    link: "https://ssw-nine.vercel.app/",
   },
   {
     id: "7",
