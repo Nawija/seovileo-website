@@ -24,7 +24,12 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className}`}>
         <Header />
-        <main className="text-p mx-auto max-w-screen-2xl px-4">{children}</main>
+        <main
+          style={{ minHeight: "calc(100vh - 510px)" }}
+          className="text-p mx-auto max-w-screen-2xl px-4"
+        >
+          {children}
+        </main>
         <ScrollUp />
         <Footer />
       </body>

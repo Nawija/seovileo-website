@@ -22,7 +22,7 @@ const query = `{
         url
       }
     }
-    allBlogs(first: 4) {
+    allBlogs {
       id
       date
       slug
@@ -37,6 +37,11 @@ export default async function Blog() {
   const data = await fetchDatoCms(query);
   return (
     <div className="anim-opacity">
+      <ul className="flex-s space-x-8 p-2 text-sm">
+        <li>Blog</li>
+        <li className="list-disc">Blog</li>
+        <li className="list-disc">Blog</li>
+      </ul>
       <div className="absolute left-12 top-1/2 -rotate-90">
         <TextBacgroud text="BLOG" />
       </div>
@@ -56,7 +61,7 @@ export default async function Blog() {
           <h1 className="border-main mb-8 border-b pb-1 text-lg font-semibold uppercase">
             Popolarne posty
           </h1>
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-4 ">
+          <div className=" lg:gap relative grid grid-cols-1 gap-2 sm:grid-cols-3 lg:grid-cols-4 ">
             {data.allPopularnes.map((item: any, i: any) => (
               <BlogPopularComponent item={item} key={i} />
             ))}

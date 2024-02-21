@@ -6,7 +6,7 @@ import { Logo } from "../svg/Logo";
 
 export default function Footer() {
   return (
-    <footer className="flex-c from border-main bg-main mt-24 w-full border-t px-4 py-12">
+    <footer className="flex-c border-main bg-main mt-24 h-[350px] w-full border-t px-4 py-12">
       <div className="w-full pt-4 sm:pt-10 lg:pt-12">
         <Link href="/" aria-label="Logo" className="flex-c mb-12">
           <Logo h={33} w={33} />
