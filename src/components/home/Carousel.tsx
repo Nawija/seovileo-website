@@ -110,7 +110,7 @@ export default function Carousel() {
             onClick={() => scroll(-330)}
             className="bg-main border-main absolute left-0 top-1/2 z-10 mr-3 rounded border p-1.5 text-white"
           >
-            <ArrowLeft h={15} w={15} />
+            <ArrowLeft h={24} w={24} />
           </button>
         )}
         {!isAtEnd && (
@@ -119,7 +119,7 @@ export default function Carousel() {
             onClick={() => scroll(330)}
             className="bg-main border-main absolute -right-3 top-1/2 z-10 mr-3 rounded border p-1.5 text-white"
           >
-            <ArrowRight h={15} w={15} />
+            <ArrowRight h={24} w={24} />
           </button>
         )}
       </div>

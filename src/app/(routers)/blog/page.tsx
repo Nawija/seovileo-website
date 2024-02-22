@@ -1,3 +1,4 @@
+import Breadcrumbs from "@/src/components/BreadCrumb";
 import { BLOG_LINKS } from "@/src/constants";
 import fetchDatoCms from "@/src/lib/fetchDatoCms";
 import { PortfolioItemSkeleton } from "@/src/ui/Skeletons";
@@ -33,15 +34,22 @@ const query = `{
     }
 }`;
 
+const breadcrumbs = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "Blog",
+    href: "/blog",
+  },
+];
+
 export default async function Blog() {
   const data = await fetchDatoCms(query);
   return (
-    <div className="anim-opacity">
-      <ul className="flex-s space-x-8 p-2 text-sm">
-        <li>Blog</li>
-        <li className="list-disc">Blog</li>
-        <li className="list-disc">Blog</li>
-      </ul>
+    <div className="anim-opacity mx-auto max-w-screen-2xl">
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
       <div className="absolute left-12 top-1/2 -rotate-90">
         <TextBacgroud text="BLOG" />
       </div>

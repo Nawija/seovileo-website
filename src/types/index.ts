@@ -1,3 +1,8 @@
+export type BreadcrumbTypes = {
+  title: string;
+  href: string;
+};
+
 export type BlogType = {
   id: string;
   date: string;

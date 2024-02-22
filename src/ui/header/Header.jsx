@@ -73,7 +73,7 @@ const Header = () => {
           <Logo h={27} w={27} />
         </Link>
         <ul
-          className={`border-main bg-main absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center space-y-7 border-r px-12 backdrop-blur-sm transition-transform lg:absolute lg:left-1/2 lg:top-1/2 lg:h-auto lg:w-max lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:rounded-lg lg:border lg:bg-none lg:px-4 lg:py-2 lg:backdrop-blur-none ${
+          className={`border-main bg-main absolute left-0 top-0 flex h-screen w-72 flex-col items-center justify-center space-y-7 border-r px-12 backdrop-blur-sm transition-transform lg:absolute lg:left-1/2 lg:top-1/2 lg:h-auto lg:w-max lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:rounded-lg lg:border lg:bg-none lg:px-4 lg:py-2 lg:backdrop-blur-none ${
             isMenuOpen
               ? "translate-x-0 duration-200 "
               : "-translate-x-full duration-500"
@@ -95,7 +95,7 @@ const Header = () => {
 
           <li>
             <Link href="/szablony" onClick={closeMenu} className="lg:hidden">
-              <SecondBtn className="mt-12 w-52">Szablony</SecondBtn>
+              <SecondBtn className="mt-2 w-52">Szablony</SecondBtn>
             </Link>
           </li>
 

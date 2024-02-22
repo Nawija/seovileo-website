@@ -1,8 +1,23 @@
-import Carousel from "@/src/components/home/Carousel";
+import Breadcrumbs from "@/src/components/BreadCrumb";
+import dynamic from "next/dynamic";
+
+const Carousel = dynamic(() => import("@/src/components/home/Carousel"));
+
 import { PORTFOLIO } from "@/src/constants";
 import { SecondBtn } from "@/src/ui/buttons/SecondBtn";
 import { SuccesBtn } from "@/src/ui/buttons/SuccessBtn";
 import Link from "next/link";
+
+const breadcrumbs = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "Szablony",
+    href: "/szablony",
+  },
+];
 
 export default function SzablonyID({ params }: { params: { id: string } }) {
   const id = params.id;
@@ -15,30 +30,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
   return (
     <>
       <div className="anim-opacity mx-auto max-w-screen-2xl">
-        <div className="flex-s space-x-5 px-2 py-2 text-sm lg:px-6">
-          <Link
-            href="/szablony"
-            className="transition-colors duration-300 hover:text-white"
-          >
-            Powrót
-          </Link>
-          <li>
-            <Link
-              href="/"
-              className="transition-colors duration-300 hover:text-white"
-            >
-              Start
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/szablony"
-              className="transition-colors duration-300 hover:text-white"
-            >
-              Szablony
-            </Link>
-          </li>
-        </div>
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
         <div className="py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8 ">
             <div className="grid gap-6 lg:flex lg:items-start lg:justify-start">
@@ -149,24 +141,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                       voluptatum?
                     </p>
                   </div>
-                  <div className="mt-12 scroll-m-12 pl-2" id="roczna-gwarancja">
-                    <h2 className="text-main mb-3 text-2xl">
-                      Roczna Gwarancja
-                    </h2>
-                    <p className="max-w-screen-lg">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Adipisci dicta facere repudiandae iure culpa iste placeat
-                      illum, tempore ipsa in ex consequatur aliquam porro fuga?
-                      Aliquam aliquid soluta exercitationem reiciendis corrupti
-                      ipsum explicabo dignissimos nostrum culpa, sequi mollitia!
-                      Harum nihil voluptatibus dolores vel qui ipsa quas? Ex
-                      beatae unde soluta, aliquid doloremque pariatur veniam ut
-                      incidunt, quia atque iste. Atque enim consectetur,
-                      officiis veritatis labore nisi. Est ab rerum blanditiis
-                      maiores, reiciendis cupiditate velit accusamus similique
-                      voluptatum?
-                    </p>
-                  </div>
+
                   <div
                     className="mt-12 scroll-m-12 pl-2"
                     id="wsparcie-techniczne
@@ -211,7 +186,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                 </div>
               </div>
 
-              <div className="top-24 order-first flex flex-col items-start justify-start rounded-lg bg-gray-100 p-10 text-black lg:sticky lg:order-last lg:w-80">
+              <div className="top-24 order-first flex flex-col items-start justify-start rounded-lg bg-gray-100 p-10 text-black lg:sticky lg:order-last lg:w-[330px]">
                 <div className="mb-2 md:mb-3">
                   <span className="mb-0.5 inline-block ">
                     Strona Internetowa
@@ -259,22 +234,16 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                       2. Darmowe edycje tekstu
                     </Link>
                     <Link
-                      href="#roczna-gwarancja"
-                      className="rounded-lg border border-gray-200 bg-white p-1.5 px-4  font-semibold transition-colors duration-300  hover:bg-gray-200"
-                    >
-                      3. Roczna Gwarancja
-                    </Link>
-                    <Link
                       href="#wsparcie-techniczne"
                       className="rounded-lg border border-gray-200 bg-white p-1.5 px-4  font-semibold transition-colors duration-300  hover:bg-gray-200"
                     >
-                      4. Wsparcie techniczne
+                      3. Wsparcie techniczne
                     </Link>
                     <Link
                       href="#darmowy-hosting"
                       className="rounded-lg border border-gray-200  bg-white p-1.5 px-4 font-semibold transition-colors duration-300  hover:bg-gray-200"
                     >
-                      5. Darmowy hosting
+                      4. Darmowy hosting
                     </Link>
                   </div>
                 </div>
@@ -325,7 +294,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
           </div>
         </div>
       </div>
-      <div className="border-second border-t bg-black">
+      <div className="border-second border-t">
         <Carousel />
       </div>
     </>
