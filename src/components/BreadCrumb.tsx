@@ -21,7 +21,7 @@ export default function Breadcrumbs({
           </button>
         </li>
         {breadcrumbs.map((breadcrumb: BreadcrumbTypes, index: number) => (
-          <li key={index} className={`list-disc ${liClass}`}>
+          <li key={index} className={`list-disc capitalize ${liClass}`}>
             {breadcrumb.href ? (
               <Link href={breadcrumb.href}>{breadcrumb.title}</Link>
             ) : (

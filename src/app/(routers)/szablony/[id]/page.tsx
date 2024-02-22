@@ -284,7 +284,9 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                 </div>
 
                 <div className="flex gap-2.5">
-                  <SuccesBtn>Kup Teraz</SuccesBtn>
+                  <Link href={`/zamowienie/szablony/${id}`}>
+                    <SuccesBtn>Kup Teraz</SuccesBtn>
+                  </Link>
                   <Link href={`/szablony/live/${id}`}>
                     <SecondBtn>Zobacz Live</SecondBtn>
                   </Link>
