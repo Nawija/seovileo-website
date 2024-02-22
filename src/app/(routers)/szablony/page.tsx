@@ -12,7 +12,7 @@ const PortfolioItemComponent = dynamic(
 
 export default function Szablony() {
   return (
-    <div className="anim-opacity flex w-full flex-col items-center justify-center ">
+    <div className="anim-opacity mx-auto flex w-full max-w-screen-2xl flex-col items-center justify-center ">
       <section className="relative mx-auto py-2 lg:py-12">
         <TextBacgroud text="szablony" />
 

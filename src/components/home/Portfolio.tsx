@@ -39,7 +39,7 @@ export default function Portfolio() {
         </Link>
       </div>
       <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
-        {PORTFOLIO.map((item) => (
+        {PORTFOLIO.slice(0, 8).map((item) => (
           <PortfolioItemComponent key={item.label} item={item} />
         ))}
       </div>
