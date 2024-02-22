@@ -13,44 +13,35 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
 
   return (
     <div className="anim-opacity">
+      <div className="flex-s space-x-5 px-2 py-2 text-sm lg:px-6">
+        <Link
+          href="/szablony"
+          className="transition-colors duration-300 hover:text-white"
+        >
+          Powrót
+        </Link>
+        <li>
+          <Link
+            href="/"
+            className="transition-colors duration-300 hover:text-white"
+          >
+            Start
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/szablony"
+            className="transition-colors duration-300 hover:text-white"
+          >
+            Szablony
+          </Link>
+        </li>
+      </div>
       <div className="py-6 sm:py-8 lg:py-12">
         <div className="mx-auto max-w-screen-2xl px-4 md:px-8 ">
           <div className="grid gap-6 lg:flex lg:items-start lg:justify-start">
             <div className="grid gap-6 lg:w-3/4 lg:grid-cols-5">
-              <div className="order-last flex gap-4 lg:order-none lg:flex-col">
-                <div className="overflow-hidden rounded-lg">
-                  <img
-                    src={portfolioItem.url}
-                    alt="Photo by Himanshu Dewangan"
-                    className="h-40 w-full object-cover object-top"
-                  />
-                </div>
-
-                <div className="overflow-hidden rounded-lg">
-                  <img
-                    src={portfolioItem.url}
-                    loading="lazy"
-                    alt="Photo by Himanshu Dewangan"
-                    className="h-40 w-full object-cover object-top"
-                  />
-                </div>
-
-                <div className="overflow-hidden rounded-lg">
-                  <img
-                    src={portfolioItem.url}
-                    alt="Photo by Himanshu Dewangan"
-                    className="h-62 w-full object-cover object-top"
-                  />
-                </div>
-              </div>
-
-              <div className="relative w-full overflow-hidden lg:col-span-4 ">
-                <img
-                  src={portfolioItem.url}
-                  alt="Photo by Himanshu Dewangan"
-                  className="h-96 w-full rounded-lg object-cover object-top lg:h-[600px]"
-                />
-
+              <div className="relative w-full overflow-hidden lg:col-span-5 ">
                 {portfolioItem.prevPrice !== "" && (
                   <span className="absolute left-0 top-0 rounded-br-lg bg-red-500 px-3 py-1 text-sm uppercase tracking-wider text-white">
                     PROMOCJA
@@ -73,6 +64,42 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                     />
                   </svg>
                 </button>
+
+                <div className="w-full gap-6 lg:flex">
+                  <img
+                    src={portfolioItem.url}
+                    alt="Photo by Himanshu Dewangan"
+                    className="h-96 w-full rounded-lg object-cover object-top lg:h-[700px]"
+                  />
+
+                  <div className="order-last mt-6 flex gap-1  lg:order-first lg:mt-0 lg:flex-col lg:gap-6">
+                    <div className="overflow-hidden rounded-lg">
+                      <img
+                        src={portfolioItem.smallUrl1}
+                        alt="Photo by Himanshu Dewangan"
+                        className="h-40 w-full object-cover object-top"
+                      />
+                    </div>
+
+                    <div className="overflow-hidden rounded-lg">
+                      <img
+                        src={portfolioItem.smallUrl2}
+                        loading="lazy"
+                        alt="Photo by Himanshu Dewangan"
+                        className="h-52 w-full object-cover object-top"
+                      />
+                    </div>
+
+                    <div className="overflow-hidden rounded-lg">
+                      <img
+                        src={portfolioItem.smallUrl3}
+                        alt="Photo by Himanshu Dewangan"
+                        className="h-64 w-full object-cover object-top"
+                      />
+                    </div>
+                  </div>
+                </div>
+
                 <div className="mt-12 scroll-m-28 pl-2" id="1">
                   <h2 className="text-main mb-3 text-2xl">Opis produktu</h2>
                   <p>
@@ -168,7 +195,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
               </div>
             </div>
 
-            <div className="flex-c top-24 flex flex-grow flex-col items-center justify-center rounded-lg bg-gray-100 p-10 text-black md:py-8 lg:sticky">
+            <div className="top-24 order-first flex flex-col items-start justify-start rounded-lg bg-gray-100 p-10 text-black lg:sticky lg:order-last lg:w-80">
               <div className="mb-2 md:mb-3">
                 <span className="mb-0.5 inline-block ">Strona Internetowa</span>
                 <h2 className="text-2xl font-bold lg:text-3xl">

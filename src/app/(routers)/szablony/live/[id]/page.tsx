@@ -25,14 +25,14 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
   return (
     <div className="anim-opacity fixed left-0 top-0 z-[9999999999999] h-screen w-full">
       <div className="flex-b bg-main border-second border-b p-2 text-sm">
-        <p className="md:hidden flex">Więcej opcji na PC</p>
+        <p className="flex md:hidden">Więcej opcji na PC</p>
         <div className="hidden md:flex" />
         <div className="hidden items-center justify-center space-x-5 md:flex">
           <button
             className="border-main bg-body cursor-pointer rounded-lg border px-2.5 py-2"
             onClick={() =>
               handleIframeClassChange(
-                "w-[430px] h-full lg:h-[730px] px-4 py-12 lg:mt-12 rounded-3xl border border-main bg-gray-400",
+                "w-[430px] h-full lg:h-[730px] px-4 py-12 lg:mt-12 rounded-3xl border border-main bg-zinc-800",
               )
             }
           >
@@ -55,7 +55,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
             className="border-main bg-body cursor-pointer rounded-lg border px-2.5 py-2"
             onClick={() =>
               handleIframeClassChange(
-                "w-[700px] h-full lg:h-[90%] px-4 py-12 lg:mt-2 rounded-3xl border border-main bg-gray-400",
+                "w-[700px] h-full lg:h-[90%] px-4 py-12 lg:mt-2 rounded-3xl border border-main bg-zinc-800",
               )
             }
           >
@@ -119,7 +119,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
         )}
         <iframe
           onLoad={handleIframeLoaded}
-          className={`mx-auto h-full transition-all duration-500 ${iframe}`}
+          className={`mx-auto h-full relative transition-all duration-500 ${iframe}`}
           src={portfolioItem.link}
         />
       </div>

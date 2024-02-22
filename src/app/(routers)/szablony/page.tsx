@@ -14,19 +14,16 @@ export default function Szablony() {
   return (
     <div className="anim-opacity flex w-full flex-col items-center justify-center ">
       <section className="relative mx-auto py-2 lg:py-12">
-        <div className="mx-auto flex h-full flex-col items-center justify-center space-y-7 px-2 text-center ">
-          <TextBacgroud text="szablony" />
-          <h1 className="text-main relative text-4xl font-semibold md:text-4xl lg:text-6xl">
-            Darmowa konficuracja do kazdej strony
-          </h1>
-          <p className="max-w-screen-md font-medium">
-            Jako doświadczony programista, specjalizuję się w tworzeniu
-            responsywnych i wydajnych stron internetowych, wykorzystując
-            najnowsze technologie, takie jak Gatsby i Next.js
-          </p>
-        </div>
+        <TextBacgroud text="szablony" />
+
         <section className="mx-auto">
-          <div className="mt-10 grid grid-cols-2 gap-3 lg:mt-20 lg:grid-cols-4 lg:gap-4">
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:mt-20 lg:grid-cols-4 lg:gap-4">
+            <h1 className="text-main relative flex max-w-screen-md flex-col items-center justify-center text-center text-lg font-semibold sm:text-xl lg:text-2xl">
+              <strong className="animate-pulse font-semibold text-yellow-500">
+                Darmowa
+              </strong>{" "}
+              konficuracja i serwis do kazdej zakupionej strony internetowej
+            </h1>
             {PORTFOLIO.map((item, i) => (
               <PortfolioItemComponent item={item} key={i} />
             ))}
