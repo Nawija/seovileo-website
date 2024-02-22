@@ -1,6 +1,6 @@
 import { PORTFOLIO } from "@/src/constants";
-import { MainBtn } from "@/src/ui/buttons/MainBtn";
 import { SecondBtn } from "@/src/ui/buttons/SecondBtn";
+import { SuccesBtn } from "@/src/ui/buttons/SuccessBtn";
 import Link from "next/link";
 
 export default function SzablonyID({ params }: { params: { id: string } }) {
@@ -14,9 +14,9 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
   return (
     <div className="anim-opacity">
       <div className="py-6 sm:py-8 lg:py-12">
-        <div className="mx-auto max-w-screen-xl px-4 md:px-8 ">
-          <div className="grid gap-8 md:grid-cols-2 ">
-            <div className="grid gap-4 lg:grid-cols-5">
+        <div className="mx-auto max-w-screen-2xl px-4 md:px-8 ">
+          <div className="grid gap-6 lg:flex lg:items-start lg:justify-start">
+            <div className="grid gap-6 lg:w-3/4 lg:grid-cols-5">
               <div className="order-last flex gap-4 lg:order-none lg:flex-col">
                 <div className="overflow-hidden rounded-lg">
                   <img
@@ -39,16 +39,16 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                   <img
                     src={portfolioItem.url}
                     alt="Photo by Himanshu Dewangan"
-                    className="h-40 w-full object-cover object-top"
+                    className="h-62 w-full object-cover object-top"
                   />
                 </div>
               </div>
 
-              <div className="relative h-96 overflow-hidden rounded-lg lg:col-span-4 lg:h-[600px]">
+              <div className="relative w-full overflow-hidden lg:col-span-4 ">
                 <img
                   src={portfolioItem.url}
                   alt="Photo by Himanshu Dewangan"
-                  className="h-full w-full object-cover object-top"
+                  className="h-96 w-full rounded-lg object-cover object-top lg:h-[600px]"
                 />
 
                 {portfolioItem.prevPrice !== "" && (
@@ -57,10 +57,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                   </span>
                 )}
 
-                <a
-                  href="#"
-                  className="hover: duration-100focus-visible:ring absolute right-4 top-4 inline-block rounded-lg border bg-white p-2 text-center text-sm font-semibold  outline-none ring-red-500 transition active:text-red-500 md:text-base"
-                >
+                <button className="hover: duration-100focus-visible:ring absolute right-4 top-4 inline-block rounded-lg border bg-white p-1.5 text-center text-sm font-semibold  outline-none ring-red-500 transition hover:text-red-300 active:text-red-400 md:text-base">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -75,15 +72,107 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                       d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                     />
                   </svg>
-                </a>
+                </button>
+                <div className="mt-12 scroll-m-28 pl-2" id="1">
+                  <h2 className="text-main mb-3 text-2xl">Opis produktu</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Minima neque nostrum qui dolores officia vel reprehenderit,
+                    molestiae perferendis itaque quas maxime? Consequatur
+                    aliquam facilis pariatur? Architecto deserunt neque
+                    voluptatem sit ab repellat facilis beatae alias magni
+                    molestias nulla, reprehenderit totam animi harum dolores!
+                    Fuga fugit porro excepturi optio rerum rem! Recusandae,
+                    alias hic, tempore aspernatur voluptatum quaerat labore
+                    atque a consequuntur tenetur iusto officiis porro? Minus
+                    reiciendis ducimus laboriosam laborum animi id, aperiam
+                    pariatur quam facere exercitationem rem, ut necessitatibus
+                    ad consequuntur accusamus quas dolorem sunt eligendi,
+                    repellat praesentium ipsum molestias quo. Mollitia hic
+                    reiciendis accusamus incidunt laboriosam enim commodi
+                    architecto possimus consectetur harum, dolorem eum veniam,
+                    eligendi ratione voluptatem dolores ipsum quam molestiae id,
+                    voluptatum sunt exercitationem atque odit! Asperiores, culpa
+                    commodi.
+                  </p>
+                </div>
+                <div className="mt-12 pl-2">
+                  <h2 className="text-main mb-3 text-2xl">Opis produktu</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Minima neque nostrum qui dolores officia vel reprehenderit,
+                    molestiae perferendis itaque quas maxime? Consequatur
+                    aliquam facilis pariatur? Architecto deserunt neque
+                    voluptatem sit ab repellat facilis beatae alias magni
+                    molestias nulla, reprehenderit totam animi harum dolores!
+                    Fuga fugit porro excepturi optio rerum rem! Recusandae,
+                    alias hic, tempore aspernatur voluptatum quaerat labore
+                    atque a consequuntur tenetur iusto officiis porro? Minus
+                    reiciendis ducimus laboriosam laborum animi id, aperiam
+                    pariatur quam facere exercitationem rem, ut necessitatibus
+                    ad consequuntur accusamus quas dolorem sunt eligendi,
+                    repellat praesentium ipsum molestias quo. Mollitia hic
+                    reiciendis accusamus incidunt laboriosam enim commodi
+                    architecto possimus consectetur harum, dolorem eum veniam,
+                    eligendi ratione voluptatem dolores ipsum quam molestiae id,
+                    voluptatum sunt exercitationem atque odit! Asperiores, culpa
+                    commodi.
+                  </p>
+                </div>
+                <div className="mt-12 pl-2">
+                  <h2 className="text-main mb-3 text-2xl">Opis produktu</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Minima neque nostrum qui dolores officia vel reprehenderit,
+                    molestiae perferendis itaque quas maxime? Consequatur
+                    aliquam facilis pariatur? Architecto deserunt neque
+                    voluptatem sit ab repellat facilis beatae alias magni
+                    molestias nulla, reprehenderit totam animi harum dolores!
+                    Fuga fugit porro excepturi optio rerum rem! Recusandae,
+                    alias hic, tempore aspernatur voluptatum quaerat labore
+                    atque a consequuntur tenetur iusto officiis porro? Minus
+                    reiciendis ducimus laboriosam laborum animi id, aperiam
+                    pariatur quam facere exercitationem rem, ut necessitatibus
+                    ad consequuntur accusamus quas dolorem sunt eligendi,
+                    repellat praesentium ipsum molestias quo. Mollitia hic
+                    reiciendis accusamus incidunt laboriosam enim commodi
+                    architecto possimus consectetur harum, dolorem eum veniam,
+                    eligendi ratione voluptatem dolores ipsum quam molestiae id,
+                    voluptatum sunt exercitationem atque odit! Asperiores, culpa
+                    commodi.
+                  </p>
+                </div>
+                <div className="mt-12 pl-2">
+                  <h2 className="text-main mb-3 text-2xl">Opis produktu</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Minima neque nostrum qui dolores officia vel reprehenderit,
+                    molestiae perferendis itaque quas maxime? Consequatur
+                    aliquam facilis pariatur? Architecto deserunt neque
+                    voluptatem sit ab repellat facilis beatae alias magni
+                    molestias nulla, reprehenderit totam animi harum dolores!
+                    Fuga fugit porro excepturi optio rerum rem! Recusandae,
+                    alias hic, tempore aspernatur voluptatum quaerat labore
+                    atque a consequuntur tenetur iusto officiis porro? Minus
+                    reiciendis ducimus laboriosam laborum animi id, aperiam
+                    pariatur quam facere exercitationem rem, ut necessitatibus
+                    ad consequuntur accusamus quas dolorem sunt eligendi,
+                    repellat praesentium ipsum molestias quo. Mollitia hic
+                    reiciendis accusamus incidunt laboriosam enim commodi
+                    architecto possimus consectetur harum, dolorem eum veniam,
+                    eligendi ratione voluptatem dolores ipsum quam molestiae id,
+                    voluptatum sunt exercitationem atque odit! Asperiores, culpa
+                    commodi.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="md:py-8">
+            <div className="flex-c top-24 flex flex-grow flex-col items-center justify-center rounded-lg bg-gray-100 p-10 text-black md:py-8 lg:sticky">
               <div className="mb-2 md:mb-3">
-                <span className="mb-0.5 inline-block ">Fancy Brand</span>
-                <h2 className="text-main text-2xl font-bold lg:text-3xl">
-                  Pullover with pattern
+                <span className="mb-0.5 inline-block ">Strona Internetowa</span>
+                <h2 className="text-2xl font-bold lg:text-3xl">
+                  {portfolioItem.label}
                 </h2>
               </div>
 
@@ -108,21 +197,33 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
 
               <div className="mb-8 md:mb-10">
                 <span className="mb-3 inline-block text-sm font-semibold  md:text-base">
-                  Usługa
+                  Zakup obejmuje:
                 </span>
 
-                <div className="flex flex-wrap gap-3">
-                  <MainBtn>1</MainBtn>
-                  <MainBtn>2</MainBtn>
-                  <MainBtn>3</MainBtn>
-                  <MainBtn>4</MainBtn>
-                  <MainBtn>5</MainBtn>
-                </div>
+                <ol className="flex flex-col flex-wrap gap-1 pl-6 text-sm">
+                  <li className="list-decimal font-semibold">
+                    <Link href="#1" className="hover:underline">
+                      Darmowa configuracja
+                    </Link>
+                  </li>
+                  <li className="list-decimal font-semibold">
+                    Darmowa edycja tekstu
+                  </li>
+                  <li className="list-decimal font-semibold">
+                    Gwarancja roczna
+                  </li>
+                  <li className="list-decimal font-semibold">
+                    Wsparcie techniczne
+                  </li>
+                  <li className="list-decimal font-semibold">
+                    Darmowy hosting
+                  </li>
+                </ol>
               </div>
 
               <div className="mb-4">
                 <div className="flex items-end gap-2">
-                  <span className="text-main text-xl font-bold md:text-2xl">
+                  <span className=" text-xl font-bold text-emerald-700 md:text-2xl">
                     {portfolioItem.price}zł
                   </span>
                   {portfolioItem.prevPrice !== "" && (
@@ -156,7 +257,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
               </div>
 
               <div className="flex gap-2.5">
-                <MainBtn>Kup Teraz</MainBtn>
+                <SuccesBtn>Kup Teraz</SuccesBtn>
                 <Link href={`/szablony/live/${id}`}>
                   <SecondBtn>Zobacz Live</SecondBtn>
                 </Link>
