@@ -24,25 +24,25 @@ export default function ZamowienieSzablonyId({
       <div className="flex items-center justify-center px-4 py-16 2xl:container md:px-6 2xl:mx-auto 2xl:px-0">
         <div className="flex w-full flex-col items-start justify-start space-y-9">
           <div className="flex w-full flex-col justify-center space-y-6 xl:flex-row xl:justify-between xl:space-x-6 xl:space-y-0">
-            <div className="flex flex-col items-center justify-center rounded-lg bg-gray-100 px-10 py-7 sm:flex-row sm:py-0 xl:w-3/5 xl:flex-col xl:py-10 dark:bg-gray-800 ">
-              <div className="flex w-full flex-col items-start justify-start space-y-4 font-bold">
-                <p className="text-xl leading-normal text-gray-800 md:text-2xl dark:text-gray-50">
+            <div className="flex flex-col items-center justify-center rounded-lg bg-gray-100 px-10 py-7 sm:flex-row sm:py-0 xl:w-3/5 xl:flex-col xl:py-10 ">
+              <div className="flex w-full flex-col items-start justify-start space-y-4 font-bold xl:px-20">
+                <p className="text-xl leading-normal text-gray-800 md:text-2xl ">
                   {portfolioItem.label}
                 </p>
-                <p className="text-base font-bold leading-none text-gray-600 lg:text-lg dark:text-white">
+                <p className="text-base font-bold leading-none text-gray-600 lg:text-lg ">
                   {portfolioItem.price}zł
                 </p>
               </div>
               <div className="mt-6 w-52 sm:mt-0 sm:w-96 xl:my-10 xl:w-full xl:px-20">
                 <img
                   src={portfolioItem.url}
-                  className="h-full w-full"
+                  className="h-full w-full rounded-lg"
                   alt="headphones"
                 />
               </div>
             </div>
 
-            <div className="flex flex-col rounded-lg bg-gray-100 p-8 lg:w-full xl:w-3/5 dark:bg-gray-800">
+            <div className="flex flex-col rounded-lg bg-gray-100 p-8 lg:w-full xl:w-3/5">
               <button className="flex w-full flex-row items-center justify-center space-x-2 rounded-lg border border-transparent bg-gray-900 py-4 text-white transition-colors hover:border-gray-300 hover:bg-white hover:text-gray-900 dark:bg-white dark:text-gray-900 dark:hover:border-gray-900 dark:hover:bg-gray-900 dark:hover:text-white">
                 <div>
                   <svg
@@ -70,7 +70,7 @@ export default function ZamowienieSzablonyId({
 
               <div className="mt-6 flex flex-row items-center justify-center">
                 <hr className="w-full border" />
-                <p className="flex flex-shrink-0 px-4 text-base leading-4 text-gray-600 dark:text-white">
+                <p className="flex flex-shrink-0 px-4 text-base leading-4 text-gray-600 ">
                   lub zapłac kartą
                 </p>
                 <hr className="w-full border" />
@@ -86,7 +86,7 @@ export default function ZamowienieSzablonyId({
                 />
               </div>
 
-              <label className="mt-8 text-base leading-4 text-gray-800 dark:text-gray-50">
+              <label className="mt-8 text-base leading-4 text-gray-800 ">
                 Numer Karty
               </label>
               <div className="mt-2 flex-col">
@@ -117,7 +117,7 @@ export default function ZamowienieSzablonyId({
                 </div>
               </div>
 
-              <label className="mt-8 text-base leading-4 text-gray-800 dark:text-gray-50">
+              <label className="mt-8 text-base leading-4 text-gray-800 ">
                 Nazwa karty
               </label>
               <div className="mt-2 flex-col">
@@ -132,7 +132,7 @@ export default function ZamowienieSzablonyId({
                 </div>
               </div>
 
-              <label className="mt-8 text-base leading-4 text-gray-800 dark:text-gray-50">
+              <label className="mt-8 text-base leading-4 text-gray-800 ">
                 Adres
               </label>
               <div className="mt-2 flex-col">

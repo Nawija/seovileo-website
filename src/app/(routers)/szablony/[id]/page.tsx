@@ -54,7 +54,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                   </button>
 
                   <div className="w-full gap-6 lg:flex">
-                    <div className="relative h-96 w-full lg:h-[700px]">
+                    <div className="relative h-auto w-full lg:h-[700px]">
                       <img
                         src={portfolioItem.url}
                         alt="Photo by Himanshu Dewangan"
