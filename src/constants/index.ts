@@ -290,17 +290,17 @@ export const PORTFOLIO = [
   {
     id: "8",
     href: "/",
-    url: "https://i.pinimg.com/236x/fb/9a/1e/fb9a1ec6aaa38fd7813110e36c8ef6f2.jpg",
+    url: "https://i.pinimg.com/736x/29/94/46/2994467025050e73069872c6d1583419.jpg",
     smallUrl1:
-      "https://i.pinimg.com/236x/b6/96/f6/b696f67fd753adce35170477240b5111.jpg",
+      "https://i.pinimg.com/736x/29/94/46/2994467025050e73069872c6d1583419.jpg",
     smallUrl2:
-      "https://i.pinimg.com/236x/b6/96/f6/b696f67fd753adce35170477240b5111.jpg",
+      "https://i.pinimg.com/736x/29/94/46/2994467025050e73069872c6d1583419.jpg",
     smallUrl3:
-      "https://i.pinimg.com/564x/af/38/ee/af38ee3fb4f709e35e5b8f965c4b4c8b.jpg",
-    label: "AuthKit",
-    desc: "usłuLorem ipsum dolor sit amet consectet Dolorum porro nulla consee!",
+      "https://i.pinimg.com/736x/29/94/46/2994467025050e73069872c6d1583419.jpg",
+    label: "Nazoltej",
+    desc: "Strona internetowa Nażółtej.pl napisana w technologii gatsbyjs oferuje usługi związane z rejestracją pojazdów na żółte tablice, które są przeznaczone dla pojazdów zabytkowych. Firma zapewnia pomoc w przygotowaniu dokumentów, wycenie wartości pojazdów, a także w ekspertyzach powypadkowych i przedzakupowych. Oferują również usługi tłumaczenia dokumentów, ubezpieczenia pojazdów oraz wsparcie w odprawie celnej. Strona zawiera informacje o korzyściach rejestracji pojazdu zabytkowego oraz o firmie, w tym o ich doświadczeniu w branży motoryzacyjnej​",
     prevPrice: "",
-    price: "1500",
+    price: "800",
     link: "https://nazoltej.pl",
   },
 ];
