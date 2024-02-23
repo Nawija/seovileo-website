@@ -19,7 +19,7 @@ export default function Szablony() {
         <section className="mx-auto">
           <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:mt-20 lg:grid-cols-4 lg:gap-4">
             <h1 className="text-main relative flex max-w-screen-md flex-col items-start justify-center text-start text-xl font-semibold sm:text-xl lg:text-2xl">
-              <strong className="animate-pulse font-semibold text-yellow-500">
+              <strong className="animate-pulse font-semibold text-yellow-500 uppercase">
                 Darmowa
               </strong>{" "}
               konficuracja i serwis do kazdej zakupionej strony internetowej
