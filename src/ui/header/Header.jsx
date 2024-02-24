@@ -7,6 +7,7 @@ import { useCallback, useEffect, useState } from "react";
 import { MainBtn } from "../buttons/MainBtn";
 import { SecondBtn } from "../buttons/SecondBtn";
 import { Logo } from "../svg/Logo";
+import SearchParams from "@/src/components/SearchParams";
 
 const Header = () => {
   const pathname = usePathname();
@@ -110,6 +111,7 @@ const Header = () => {
           </li>
         </ul>
         <div className="flex items-center justify-center">
+          <SearchParams />
           <Link href="/szablony" className="mr-4 hidden lg:flex">
             <SecondBtn>Szablony</SecondBtn>
           </Link>
