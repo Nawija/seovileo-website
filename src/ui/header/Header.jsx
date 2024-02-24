@@ -1,6 +1,7 @@
 "use client";
 
 import { NAV_LINKS } from "@/src/constants";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
