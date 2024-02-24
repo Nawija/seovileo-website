@@ -6,13 +6,11 @@ import { useEffect, useRef, useState } from "react";
 import { PORTFOLIO } from "../constants";
 import { PortfolioItem } from "../types";
 
-
 export default function SearchParams() {
   const searchParams = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("szukaj") || "");
   const [filteredProducts, setFilteredProducts] = useState<PortfolioItem[]>([]);
   const inputRef = useRef<HTMLDivElement>(null);
-
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -38,6 +36,9 @@ export default function SearchParams() {
       setFilteredProducts([]);
     }
   };
+  const clearFilterProducts = () => {
+    setFilteredProducts([]);
+  };
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside, true);
@@ -54,29 +55,30 @@ export default function SearchParams() {
           value={search}
           onChange={handleSearchChange}
           placeholder="Szukaj"
-          className="rounded-md border border-gray-300 px-2 py-1"
+          className="w-44 rounded-md border border-gray-300 px-2 py-1"
         />
       </form>
       {filteredProducts.length > 0 && (
-        <div className="border-second absolute left-0 top-10 z-10 w-96 rounded-lg border bg-gray-100/10 p-6 backdrop-blur-xl">
+        <div className="border-second absolute -left-1/2 top-10 z-10 w-80 rounded-lg border bg-gray-100/10 p-6 backdrop-blur-xl lg:left-0">
           <p className="text-main mb-4">Szukane:</p>
           <ul className="flex flex-col items-start justify-start space-y-2">
             {filteredProducts.map((product, index) => (
               <li
                 key={index}
-                className="bg-body border-main w-full rounded-lg border p-2"
+                className="bg-body border-main w-full rounded-lg border p-2 transition-colors duration-300 hover:border-zinc-300"
               >
                 <Link
+                  onClick={clearFilterProducts}
                   href={`/szablony/${product.id}`}
-                  className="bg-body flex items-start justify-start space-x-2"
+                  className="bg-body flex items-center justify-between space-x-2 p-2"
                 >
                   <img
                     src={product.url}
-                    className="h-20 w-32 rounded-lg object-cover object-top"
+                    className="h-11 w-28 rounded-lg object-cover object-top"
                   />
                   <div className="mt-2">
                     <p>{product.label}</p>
-                    <p>{product.price}zł</p>
+                    <p className="text-sm">{product.price}zł</p>
                   </div>
                 </Link>
               </li>
