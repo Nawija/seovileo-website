@@ -129,12 +129,12 @@ const Header = () => {
           <div
             className={`mb-2 h-[2px] bg-white transition-transform ${
               isMenuOpen
-                ? "w-4 translate-y-1 rotate-[-135deg] duration-200"
+                ? "w-5 translate-y-1 rotate-[-135deg] duration-200"
                 : "w-5 duration-300"
             }`}
           />
           <div
-            className={`h-[2px] w-4 bg-white transition-transform ${
+            className={`h-[2px] w-5 bg-white transition-transform ${
               isMenuOpen
                 ? "-translate-y-1.5 rotate-[315deg] duration-500"
                 : "duration-500"
