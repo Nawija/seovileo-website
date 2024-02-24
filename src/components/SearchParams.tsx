@@ -59,7 +59,7 @@ export default function SearchParams() {
         />
       </form>
       {filteredProducts.length > 0 && (
-        <div className="border-second anim-opacity no-scrollbar absolute -left-1/2 top-10 z-10 h-[40vh] w-80 overflow-y-auto rounded-lg border bg-gray-100/10 p-6 backdrop-blur-xl lg:left-0">
+        <div className="border-second anim-opacity no-scrollbar absolute -left-1/2 top-10 z-10 max-h-[40vh] w-80 overflow-y-auto rounded-lg border bg-gray-100/10 p-6 backdrop-blur-xl lg:left-0">
           <p className="text-main mb-4">Szukane:</p>
           <ul className="flex flex-col items-center justify-center space-y-2">
             {filteredProducts.slice(0, 4).map((product, index) => (
