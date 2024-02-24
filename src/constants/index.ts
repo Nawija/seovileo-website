@@ -233,14 +233,14 @@ export const PORTFOLIO = [
       "https://i.pinimg.com/236x/b6/96/f6/b696f67fd753adce35170477240b5111.jpg",
     smallUrl3:
       "https://i.pinimg.com/236x/b6/96/f6/b696f67fd753adce35170477240b5111.jpg",
-    label: "Blog",
+    label: "BlogHello hel",
     desc: "nsectetur adipisicing elit. Dolorum porro nulla consectetur?",
     prevPrice: "1300",
     price: "700",
     link: "https://heroicons.com",
   },
   {
-    id: "13",
+    id: "matesiohello1",
     href: "/",
     url: "https://i.pinimg.com/236x/3c/a4/19/3ca4197154b515b3471863682a415c7a.jpg",
     smallUrl1:
@@ -249,14 +249,14 @@ export const PORTFOLIO = [
       "https://i.pinimg.com/236x/b6/96/f6/b696f67fd753adce35170477240b5111.jpg",
     smallUrl3:
       "https://i.pinimg.com/236x/b6/96/f6/b696f67fd753adce35170477240b5111.jpg",
-    label: "Matesio",
+    label: "MatesioHello1",
     desc: "usłuLorem ipsum dolor sit amet consectet Dolorum porro nulla consee!",
     prevPrice: "",
     price: "300",
     link: "https://ssw-nine.vercel.app/",
   },
   {
-    id: "14",
+    id: "matesiohello2",
     href: "/",
     url: "https://i.pinimg.com/236x/4a/2a/a3/4a2aa3be57423f9a2285949923fcfd26.jpg",
     smallUrl1:
@@ -265,7 +265,7 @@ export const PORTFOLIO = [
       "https://i.pinimg.com/236x/b6/96/f6/b696f67fd753adce35170477240b5111.jpg",
     smallUrl3:
       "https://i.pinimg.com/236x/b6/96/f6/b696f67fd753adce35170477240b5111.jpg",
-    label: "Matesio",
+    label: "MatesioHello2",
     desc: "usłuLorem ipsum dolor sit amet consectet Dolorum porro nulla consee!",
     prevPrice: "",
     price: "850",

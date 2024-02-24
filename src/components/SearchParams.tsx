@@ -59,10 +59,10 @@ export default function SearchParams() {
         />
       </form>
       {filteredProducts.length > 0 && (
-        <div className="border-second absolute -left-1/2 top-10 z-10 w-80 rounded-lg border bg-gray-100/10 p-6 backdrop-blur-xl lg:left-0">
+        <div className="border-second anim-opacity absolute -left-1/2 top-10 z-10 w-80 rounded-lg border bg-gray-100/10 p-6 backdrop-blur-xl lg:left-0">
           <p className="text-main mb-4">Szukane:</p>
-          <ul className="flex flex-col items-start justify-start space-y-2">
-            {filteredProducts.map((product, index) => (
+          <ul className="flex flex-col items-center justify-center space-y-2">
+            {filteredProducts.slice(0, 4).map((product, index) => (
               <li
                 key={index}
                 className="bg-body border-main w-full rounded-lg border p-2 transition-colors duration-300 hover:border-zinc-300"
@@ -70,14 +70,14 @@ export default function SearchParams() {
                 <Link
                   onClick={clearFilterProducts}
                   href={`/szablony/${product.id}`}
-                  className="bg-body flex items-center justify-between space-x-2 p-2"
+                  className="bg-body flex items-start justify-between space-x-2 p-2"
                 >
                   <img
                     src={product.url}
-                    className="h-11 w-28 rounded-lg object-cover object-top"
+                    className="h-16 w-28 rounded-lg object-cover object-top"
                   />
-                  <div className="mt-2">
-                    <p>{product.label}</p>
+                  <div>
+                    <p className="text-main">{product.label}</p>
                     <p className="text-sm">{product.price}zł</p>
                   </div>
                 </Link>
