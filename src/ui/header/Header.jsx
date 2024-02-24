@@ -8,7 +8,8 @@ import { useCallback, useEffect, useState } from "react";
 import { MainBtn } from "../buttons/MainBtn";
 import { SecondBtn } from "../buttons/SecondBtn";
 import { Logo } from "../svg/Logo";
-const SearchParams = dynamic(() => import("@/src/components/SearchParams"));
+
+const SearchBar = dynamic(() => import("@/src/components/SearchBar"));
 
 const Header = () => {
   const pathname = usePathname();
@@ -33,8 +34,8 @@ const Header = () => {
   }, [controlNavbarAndHeaderBackground]);
 
   const toggleMenu = useCallback(() => {
-    setIsMenuOpen(!isMenuOpen);
-  }, [isMenuOpen]);
+    setIsMenuOpen((prevState) => !prevState);
+  }, []);
 
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
@@ -112,7 +113,7 @@ const Header = () => {
           </li>
         </ul>
         <div className="flex items-center justify-center">
-          <SearchParams />
+          <SearchBar />
           <Link href="/szablony" className="mr-4 hidden lg:flex">
             <SecondBtn>Szablony</SecondBtn>
           </Link>
