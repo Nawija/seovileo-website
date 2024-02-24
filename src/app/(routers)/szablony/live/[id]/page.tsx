@@ -24,7 +24,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
 
   return (
     <div className="anim-opacity fixed left-0 top-0 z-[9999999999999] h-screen w-full">
-      <div className="flex-b bg-main border-second border-b p-2 text-sm">
+      <div className="flex-b bg-main border-second border-b p-2 px-4 text-sm">
         <p className="flex md:hidden">Więcej opcji na PC</p>
         <div className="hidden md:flex" />
         <div className="hidden items-center justify-center space-x-5 md:flex">
@@ -119,7 +119,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
         )}
         <iframe
           onLoad={handleIframeLoaded}
-          className={`mx-auto h-full relative transition-all duration-500 ${iframe}`}
+          className={`relative mx-auto h-full transition-all duration-500 ${iframe}`}
           src={portfolioItem.link}
         />
       </div>
