@@ -7,7 +7,7 @@ import { useCallback, useEffect, useState } from "react";
 import { MainBtn } from "../buttons/MainBtn";
 import { SecondBtn } from "../buttons/SecondBtn";
 import { Logo } from "../svg/Logo";
-import SearchParams from "@/src/components/SearchParams";
+const SearchParams = dynamic(() => import("@/src/components/SearchParams"));
 
 const Header = () => {
   const pathname = usePathname();
