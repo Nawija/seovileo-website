@@ -8,6 +8,7 @@
     /* display: none; */
     background-color: #424242;
     height: 6px;
+    width: 6px;
     scroll-snap-type: proximity;
   }
   .no-scrollbar::-webkit-scrollbar-thumb {
@@ -124,7 +125,7 @@ body {
 }
 
 .anim-opacity {
-  animation: anim-opacity .4s both 0.2s;
+  animation: anim-opacity 0.4s both 0.2s;
 }
 @keyframes anim-opacity {
   0% {
