@@ -24,10 +24,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className}`}>
         <Header />
-        <main
-          style={{ minHeight: "calc(100vh - 510px)" }}
-          className="text-p px-4"
-        >
+        <main style={{ minHeight: "calc(100vh - 510px)" }} className="text-p">
           {children}
         </main>
         <div

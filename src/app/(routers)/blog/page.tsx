@@ -1,16 +1,17 @@
+"use client";
+
 import Breadcrumbs from "@/src/components/BreadCrumb";
-import { BLOG_LINKS } from "@/src/constants";
 import fetchDatoCms from "@/src/lib/fetchDatoCms";
 import { PortfolioItemSkeleton } from "@/src/ui/Skeletons";
-import TextBacgroud from "@/src/ui/background/TextBacgroud";
 import dynamic from "next/dynamic";
-import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const BlogPopularComponent = dynamic(
   () => import("@/src/components/blog/BlogPopularComponent"),
   {
     loading: () => <PortfolioItemSkeleton />,
-  },
+  }
 );
 
 const query = `{
@@ -45,49 +46,72 @@ const breadcrumbs = [
   },
 ];
 
-export default async function Blog() {
-  const data = await fetchDatoCms(query);
+const Blog = () => {
+  const [data, setData] = useState({
+    allPopularnes: [],
+    allBlogs: [],
+  });
+  const searchParams = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get("blog") || "");
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetchDatoCms(query);
+      setData(result);
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (search.length >= 2) {
+        const filteredProducts = data.allBlogs.filter((product) =>
+          product.title.toLowerCase().includes(search.toLowerCase())
+        );
+        setFilteredProducts(filteredProducts);
+      } else {
+        setFilteredProducts([]);
+      }
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, [search, data.allBlogs]);
+
   return (
-    <div className="anim-opacity mx-auto max-w-screen-2xl">
-      <Breadcrumbs breadcrumbs={breadcrumbs} />
-      <div className="absolute left-12 top-1/2 -rotate-90">
-        <TextBacgroud text="BLOG" />
-      </div>
-      <div className="flex items-start justify-start">
-        <div className="sticky top-24 mr-12 mt-32 hidden w-64 flex-col items-start justify-start lg:flex">
-          {BLOG_LINKS.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="border-main border-l p-1 py-2 pl-5 transition-colors duration-300 hover:border-white hover:text-white"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-        <div className="mx-auto mt-8 max-w-[1400px] px-4 lg:mt-32">
-          <h1 className="border-main mb-8 border-b pb-1 text-lg font-semibold uppercase">
-            Popolarne posty
-          </h1>
-          <div className=" lg:gap relative grid grid-cols-1 gap-2 sm:grid-cols-3 lg:grid-cols-4 ">
-            {data.allPopularnes.map((item: any, i: any) => (
-              <BlogPopularComponent item={item} key={i} />
-            ))}
-          </div>
-          <img
-            src="https://img.freepik.com/darmowe-zdjecie/kreatywne-tlo-o-wysokim-kacie-z-szarymi-ksztaltami_23-2148811502.jpg?size=626&ext=jpg&ga=GA1.1.1304961695.1684166548&semt=ais"
-            className="my-8 h-44 w-full rounded-lg object-cover shadow-xl shadow-white/10"
+    <>
+      <div className="flex-c relative h-56 w-full lg:h-60">
+        <img
+          src="https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          alt=""
+        />
+        <div className="bg-body border-main w-3/4 rounded-lg border p-2 text-xs text-white sm:w-1/2 lg:w-1/3">
+          <input
+            type="search"
+            placeholder="Wyszukaj"
+            className="bg-body h-full w-full focus:outline-none"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
-          <h2 className="border-main mb-3 mt-12 border-b pb-2 text-lg font-semibold uppercase">
-            Najnowsze posty
-          </h2>
+        </div>
+      </div>
+      <div className="anim-opacity mx-auto max-w-screen-2xl">
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
+        <div className="mx-auto mt-8 px-4 lg:mt-32">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-            {data.allBlogs.map((item: any, i: any) => (
-              <BlogPopularComponent item={item} key={i} />
-            ))}
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((item, i) => (
+                <BlogPopularComponent item={item} key={i} />
+              ))
+            ) : (
+              <div>No products found</div>
+            )}
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
-}
+};
+
+export default Blog;
