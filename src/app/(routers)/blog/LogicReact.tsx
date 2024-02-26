@@ -14,11 +14,10 @@ const BlogPopularComponent = dynamic(
 );
 
 const LogicReact = ({ mergedData }) => {
-  console.log(mergedData)
+  
   const searchParams = useSearchParams();
   const search = searchParams.get("blog");
   const [filteredProducts, setFilteredProducts] = useState([]);
-  // const [mergedData, setMergedData] = useState([]);
 
   useEffect(() => {
     if (search && search.length >= 2) {
@@ -34,7 +33,7 @@ const LogicReact = ({ mergedData }) => {
   return (
     <>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-        {filteredProducts.length > 0
+        {!filteredProducts
           ? filteredProducts.map((item, i) => (
               <BlogPopularComponent item={item} key={i} />
             ))

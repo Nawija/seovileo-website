@@ -1,15 +1,6 @@
 import Breadcrumbs from "@/src/components/BreadCrumb";
 import fetchDatoCms from "@/src/lib/fetchDatoCms";
-import { PortfolioItemSkeleton } from "@/src/ui/Skeletons";
-import dynamic from "next/dynamic";
 import LogicReact from "./LogicReact";
-
-const BlogPopularComponent = dynamic(
-  () => import("@/src/components/blog/BlogPopularComponent"),
-  {
-    loading: () => <PortfolioItemSkeleton />,
-  },
-);
 
 const query = `{
     allPopularnes(first: 4) {
@@ -45,7 +36,8 @@ const breadcrumbs = [
 
 const Blog = async () => {
   const data = await fetchDatoCms(query);
-  const mergedData = [{...data.allBlogs, ...data.allPopularnes}];
+  const dataArray = [{ ...data.allBlogs, ...data.allPopularnes }];
+  const mergedData = Object.values(dataArray[0]);
   return (
     <>
       <div className="flex-c relative h-56 w-full lg:h-60">
@@ -54,14 +46,18 @@ const Blog = async () => {
           className="absolute inset-0 -z-10 h-full w-full object-cover"
           alt=""
         />
-        <div className="bg-body border-main w-3/4 rounded-lg border p-2 text-xs text-white sm:w-1/2 lg:w-1/3"></div>
+        <div className="bg-body border-main w-3/4 rounded-lg border p-2 text-xs text-white sm:w-1/2 lg:w-1/3">
+          <input
+            type="search"
+            className="bg-body h-full w-full p-1 focus:outline-none"
+            placeholder="Wyszukaj"
+          />
+        </div>
       </div>
       <div className="anim-opacity mx-auto max-w-screen-2xl">
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <div className="mx-auto mt-8 px-4 lg:mt-32">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-            <LogicReact mergedData={mergedData} />
-          </div>
+          <LogicReact mergedData={mergedData} />
         </div>
       </div>
     </>
