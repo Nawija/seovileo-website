@@ -6,6 +6,7 @@ const Carousel = dynamic(() => import("@/src/components/home/Carousel"));
 import { PORTFOLIO } from "@/src/constants/portfolio";
 import { SecondBtn } from "@/src/ui/buttons/SecondBtn";
 import { SuccesBtn } from "@/src/ui/buttons/SuccessBtn";
+import Image from "next/image";
 import Link from "next/link";
 
 const breadcrumbs = [
@@ -53,17 +54,126 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                     </svg>
                   </button>
 
-                  <div className="relative h-auto w-full lg:h-[700px]">
-                    <img
+                  <div className="relative order-first h-auto w-full lg:max-h-[700px]">
+                    <Image
                       src={portfolioItem.url}
                       alt="Photo by Himanshu Dewangan"
-                      className="border-main h-full w-full rounded-lg border object-cover object-top"
+                      className="border-main h-full w-full rounded-lg border object-contain object-top"
                     />
                     {portfolioItem.prevPrice !== "" && (
                       <span className="absolute left-0 top-0 rounded-br-lg bg-red-500 px-3 py-1 text-sm uppercase tracking-wider text-white">
                         PROMOCJA
                       </span>
                     )}
+                  </div>
+
+                  <div className="top-24 order-2 mt-12 flex flex-col items-start justify-start rounded-lg bg-gray-100 p-10 text-black lg:sticky lg:order-last lg:hidden lg:w-[330px]">
+                    <div className="mb-2 md:mb-3">
+                      <span className="mb-0.5 inline-block ">
+                        Strona Internetowa
+                      </span>
+                      <h2 className="text-2xl font-bold lg:text-3xl">
+                        {portfolioItem.label}
+                      </h2>
+                    </div>
+
+                    <div className="mb-6 flex items-center gap-3 md:mb-10">
+                      <div className="flex h-7 items-center gap-1 rounded-full bg-yellow-500 px-2 text-black/80">
+                        <span className="text-sm font-medium">4.2</span>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      </div>
+
+                      <span className="text-sm  transition duration-100">
+                        56 ocen
+                      </span>
+                    </div>
+
+                    <div className="mb-8 md:mb-10">
+                      <span className="mb-3 inline-block text-sm font-semibold  md:text-base">
+                        Zakup obejmuje:
+                      </span>
+
+                      <div className="flex flex-col gap-1 text-start text-sm">
+                        <Link
+                          href="#darmowa-konfiguracja"
+                          className="rounded-lg border border-gray-200  bg-white p-1.5 px-4 font-semibold transition-colors duration-300  hover:bg-gray-200"
+                        >
+                          1. Darmowa konfiguracja
+                        </Link>
+                        <Link
+                          href="#darmowe-edycje-tekstu"
+                          className="rounded-lg border border-gray-200 bg-white p-1.5 px-4  font-semibold transition-colors duration-300  hover:bg-gray-200"
+                        >
+                          2. Darmowe edycje tekstu
+                        </Link>
+                        <Link
+                          href="#wsparcie-techniczne"
+                          className="rounded-lg border border-gray-200 bg-white p-1.5 px-4  font-semibold transition-colors duration-300  hover:bg-gray-200"
+                        >
+                          3. Wsparcie techniczne
+                        </Link>
+                        <Link
+                          href="#darmowy-hosting"
+                          className="rounded-lg border border-gray-200  bg-white p-1.5 px-4 font-semibold transition-colors duration-300  hover:bg-gray-200"
+                        >
+                          4. Darmowy hosting
+                        </Link>
+                      </div>
+                    </div>
+
+                    <div className="mb-4">
+                      <div className="flex items-end gap-2">
+                        <span className=" text-xl font-bold text-emerald-700 md:text-2xl">
+                          {portfolioItem.price}zł
+                        </span>
+                        {portfolioItem.prevPrice !== "" && (
+                          <span className="mb-0.5 text-red-500 line-through">
+                            {portfolioItem.prevPrice}zł
+                          </span>
+                        )}
+                      </div>
+
+                      <span className="text-sm ">brutto</span>
+                    </div>
+
+                    <div className="mb-6 flex items-center gap-2 ">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
+                        />
+                      </svg>
+
+                      <span className="text-sm">
+                        2-4 godzin czas oczekiwania
+                      </span>
+                    </div>
+
+                    <div className="flex gap-2.5">
+                      <Link href={`/zamowienie/szablony/${id}`}>
+                        <SuccesBtn>Kup Teraz</SuccesBtn>
+                      </Link>
+                      <Link href={`/szablony/live/${id}`}>
+                        <SecondBtn className="px-5 py-2">Zobacz Live</SecondBtn>
+                      </Link>
+                    </div>
                   </div>
 
                   <div className="mt-12 pl-2">
@@ -157,7 +267,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                 </div>
               </div>
 
-              <div className="top-24 order-first flex flex-col items-start justify-start rounded-lg bg-gray-100 p-10 text-black lg:sticky lg:order-last lg:w-[330px]">
+              <div className="top-24 order-2 hidden flex-col items-start justify-start rounded-lg bg-gray-100 p-10 text-black lg:sticky lg:order-last lg:flex lg:w-[330px]">
                 <div className="mb-2 md:mb-3">
                   <span className="mb-0.5 inline-block ">
                     Strona Internetowa

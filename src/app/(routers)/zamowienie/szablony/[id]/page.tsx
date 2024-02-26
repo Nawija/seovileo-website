@@ -1,6 +1,7 @@
 import Breadcrumbs from "@/src/components/BreadCrumb";
 import { PORTFOLIO } from "@/src/constants/portfolio";
 import { SuccesBtn } from "@/src/ui/buttons/SuccessBtn";
+import Image from "next/image";
 const breadcrumbs = [
   {
     title: "szablony",
@@ -34,7 +35,7 @@ export default function ZamowienieSzablonyId({
                 </p>
               </div>
               <div className="mt-6 w-52 sm:mt-0 sm:w-96 xl:my-10 xl:w-full xl:px-20">
-                <img
+                <Image
                   src={portfolioItem.url}
                   className="h-full w-full rounded-lg"
                   alt="headphones"

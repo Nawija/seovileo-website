@@ -1,4 +1,5 @@
-import { PORTFOLIO } from "@/src/constants";
+
+import { PORTFOLIO } from "@/src/constants/portfolio";
 import { PortfolioItemSkeleton } from "@/src/ui/Skeletons";
 import TextBacgroud from "@/src/ui/background/TextBacgroud";
 import dynamic from "next/dynamic";

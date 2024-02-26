@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export type BreadcrumbTypes = {
   title: string;
   href: string;
@@ -26,7 +28,7 @@ export type PortfolioItem = {
   prevPrice: string;
   price: string;
   href: string;
-  url: string;
+  url: StaticImageData;
   label: string;
   desc: string;
 };
