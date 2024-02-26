@@ -17,7 +17,7 @@ export default function SearchParams({
   return (
     <li className="bg-body border-main w-full rounded-lg border p-2 transition-colors duration-300 hover:border-zinc-300">
       <Link
-        onClick={(e) => {
+        onClick={() => {
           clearFilterProducts();
           closeModal();
         }}
@@ -28,6 +28,8 @@ export default function SearchParams({
           alt="label"
           src={url}
           className="h-16 w-28 rounded-lg object-cover object-top"
+          height={55}
+          width={110}
         />
         <div>
           <p className="text-main">{label}</p>

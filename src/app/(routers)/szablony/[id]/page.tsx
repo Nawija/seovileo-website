@@ -11,10 +11,6 @@ import Link from "next/link";
 
 const breadcrumbs = [
   {
-    title: "Home",
-    href: "/",
-  },
-  {
     title: "Szablony",
     href: "/szablony",
   },
