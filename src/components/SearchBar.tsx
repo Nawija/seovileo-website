@@ -5,8 +5,9 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
-import { PORTFOLIO } from "../constants";
+
 import { PortfolioItem } from "../types";
+import { PORTFOLIO } from "../constants/portfolio";
 
 const SearchParams = dynamic(() => import("@/src/components/SearchParams"));
 

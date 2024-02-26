@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { PortfolioItem } from "../types";
 
@@ -23,7 +24,8 @@ export default function SearchParams({
         href={`/szablony/${id}`}
         className="bg-body flex items-start justify-between space-x-2 p-2"
       >
-        <img
+        <Image
+          alt="label"
           src={url}
           className="h-16 w-28 rounded-lg object-cover object-top"
         />
