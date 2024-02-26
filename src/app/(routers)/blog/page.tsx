@@ -1,3 +1,5 @@
+"use client";
+
 import Breadcrumbs from "@/src/components/BreadCrumb";
 import fetchDatoCms from "@/src/lib/fetchDatoCms";
 import LogicReact from "./LogicReact";
@@ -35,9 +37,14 @@ const breadcrumbs = [
 ];
 
 const Blog = async () => {
+  const [searchValue, setSearchValue] = useState("");
   const data = await fetchDatoCms(query);
   const dataArray = [{ ...data.allBlogs, ...data.allPopularnes }];
   const mergedData = Object.values(dataArray[0]);
+
+  const handleSearchChange = (event) => {
+    setSearchValue(event.target.value);
+  };
   return (
     <>
       <div className="flex-c relative h-56 w-full lg:h-60">
@@ -51,6 +58,8 @@ const Blog = async () => {
             type="search"
             className="bg-body h-full w-full p-1 focus:outline-none"
             placeholder="Wyszukaj"
+            value={searchValue} // Powiązanie wartości input z wartością stanu
+            onChange={handleSearchChange} // Aktualizacja stanu podczas wpisywania
           />
         </div>
       </div>

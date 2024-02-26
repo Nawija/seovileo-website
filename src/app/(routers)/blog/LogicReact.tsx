@@ -13,22 +13,21 @@ const BlogPopularComponent = dynamic(
   },
 );
 
-const LogicReact = ({ mergedData }) => {
-  
+const LogicReact = ({ mergedData, searchValue }) => {
   const searchParams = useSearchParams();
   const search = searchParams.get("blog");
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    if (search && search.length >= 2) {
+    if (searchValue && searchValue.length >= 2) {
       const filteredProducts = mergedData.filter((product) =>
-        product.title.toLowerCase().includes(search.toLowerCase()),
+        product.title.toLowerCase().includes(searchValue.toLowerCase()),
       );
       setFilteredProducts(filteredProducts);
     } else {
-      setFilteredProducts([]);
+      setFilteredProducts(mergedData);
     }
-  }, [search]);
+  }, [searchValue, mergedData]);
 
   return (
     <>
