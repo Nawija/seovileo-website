@@ -6,15 +6,20 @@ import { PortfolioItem } from "../types";
 export default function SearchParams({
   item,
   clearFilterProducts,
+  closeModal,
 }: {
   item: PortfolioItem;
   clearFilterProducts: () => void;
+  closeModal: () => void;
 }) {
   const { id, url, label, price } = item;
   return (
     <li className="bg-body border-main w-full rounded-lg border p-2 transition-colors duration-300 hover:border-zinc-300">
       <Link
-        onClick={clearFilterProducts}
+        onClick={(e) => {
+          clearFilterProducts();
+          closeModal();
+        }}
         href={`/szablony/${id}`}
         className="bg-body flex items-start justify-between space-x-2 p-2"
       >

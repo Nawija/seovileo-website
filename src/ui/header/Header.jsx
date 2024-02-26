@@ -5,7 +5,8 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { MainBtn } from "../buttons/MainBtn";
+import { BsMoonStarsFill } from "react-icons/bs";
+
 import { SecondBtn } from "../buttons/SecondBtn";
 import { Logo } from "../svg/Logo";
 
@@ -75,12 +76,13 @@ const Header = () => {
         <Link href="/" onClick={closeMenu} className="z-10 mr-12 text-white">
           <Logo h={27} w={27} />
         </Link>
-        <ul
-          className={`border-main bg-main absolute left-0 top-0 flex h-screen w-72 flex-col items-center justify-center space-y-7 border-r px-12 backdrop-blur-sm transition-transform lg:absolute lg:left-1/2 lg:top-1/2 lg:h-auto lg:w-max lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:rounded-lg lg:border lg:bg-none lg:px-4 lg:py-2 lg:backdrop-blur-none ${
+        <div className={`border-main bg-main absolute left-0 top-0 flex h-screen w-72 flex-col items-center justify-center border-r  text-start backdrop-blur-sm transition-transform lg:absolute lg:left-1/2 lg:top-1/2 lg:h-auto lg:w-max lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:rounded-lg lg:border lg:bg-none lg:px-4 lg:py-2 lg:backdrop-blur-none ${
             isMenuOpen
               ? "translate-x-0 duration-200 "
               : "-translate-x-full duration-500"
-          } `}
+          } `}>
+        <ul className="space-y-5"
+          
         >
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
@@ -95,31 +97,17 @@ const Header = () => {
               </Link>
             </li>
           ))}
-
-          <li>
-            <Link href="/szablony" onClick={closeMenu} className="lg:hidden">
-              <SecondBtn className="mt-2 w-52">Szablony</SecondBtn>
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              href="darmowa-wycena"
-              onClick={closeMenu}
-              className="lg:hidden "
-            >
-              <MainBtn className="w-52">Wycena</MainBtn>
-            </Link>
-          </li>
-        </ul>
-        <div className="flex items-center justify-center">
           <SearchBar />
-          <Link href="/szablony" className="mr-4 hidden lg:flex">
-            <SecondBtn>Szablony</SecondBtn>
-          </Link>
-          <Link href="darmowa-wycena" className=" hidden lg:flex">
-            <MainBtn>Wycena</MainBtn>
-          </Link>
+          <SecondBtn className="fixed right-0 top-2 p-2 px-3">
+            <BsMoonStarsFill className="text-lg" />
+          </SecondBtn>
+        </ul>
+        </div>
+        <div className="hidden items-center justify-center lg:flex">
+          <SearchBar />
+          <SecondBtn className="p-2 px-3">
+            <BsMoonStarsFill className="text-lg" />
+          </SecondBtn>
         </div>
         <button
           aria-label="Menu"

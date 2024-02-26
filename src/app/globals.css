@@ -84,8 +84,10 @@ body {
 .bg-body {
   background-color: var(--bg-body);
 }
-.bg-body-90 {
-  background-color: var(--bg-body);
+.bg-hidden {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
 }
 .bg-main {
   background-color: var(--bg-main);
@@ -125,7 +127,7 @@ body {
 }
 
 .anim-opacity {
-  animation: anim-opacity 0.4s both 0.2s;
+  animation: anim-opacity 0.2s both 0.1s;
 }
 @keyframes anim-opacity {
   0% {
