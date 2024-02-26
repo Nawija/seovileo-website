@@ -2,6 +2,7 @@
 
 import { PORTFOLIO } from "@/src/constants/portfolio";
 import { ArrowLeft, ArrowRight } from "@/src/ui/svg/Arrows";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function Carousel() {
@@ -95,7 +96,7 @@ export default function Carousel() {
               key={i}
               className="bg-main border-main relative mr-10 h-80 w-[75%] flex-shrink-0 snap-center overflow-hidden rounded-lg border p-3 pb-5 shadow-2xl shadow-white/10 sm:w-1/2 md:w-1/4 lg:p-4 lg:pb-8"
             >
-              <img
+              <Image
                 src={p.url}
                 draggable="false"
                 alt="..."
