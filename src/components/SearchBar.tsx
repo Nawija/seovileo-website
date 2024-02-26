@@ -71,7 +71,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="relative mr-5" ref={inputRef}>
+    <div className=" fixed left-1/2 top-16 z-10 mr-5" ref={inputRef}>
       <form className="relative">
         <input
           type="text"
@@ -87,9 +87,9 @@ export default function SearchBar() {
         />
       </form>
       {isModalOpen && (
-        <>
-          <div className="anim-opacity fixed inset-0 h-full w-full bg-black/40 backdrop-blur-sm" />
-          <div className="anim-opacity border-second fixed left-1/2 top-16 z-10 w-3/4 -translate-x-1/2 transform rounded-lg border bg-zinc-800 p-6 sm:w-1/2 lg:w-1/3">
+        <div>
+          <div className="anim-opacity absolute inset-0 h-full w-full bg-black/40 backdrop-blur-sm" />
+          <div className="anim-opacity border-second  w-3/4 -translate-x-1/2 transform rounded-lg border bg-zinc-800 p-6 sm:w-1/2 lg:w-1/3">
             <button
               className="absolute right-2 top-2 text-white"
               onClick={closeModal}
@@ -115,7 +115,7 @@ export default function SearchBar() {
               ))}
             </ul>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
