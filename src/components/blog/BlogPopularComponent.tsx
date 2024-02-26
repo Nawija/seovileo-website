@@ -11,17 +11,17 @@ export default function BlogPopularComponent({
   item: BlogItemTypes;
 }) {
   const { slug, img, title, date } = item;
+  const imgUrl = item.img && item.img.url ? item.img.url : '';
   return (
     <Link
       href={`/blog/${slug}`}
       className="bg-main border-main overflow-hidden rounded-lg border p-4 "
     >
       <div className="relative h-28 w-full lg:h-40">
-        <Image
+        <img
           className="rounded-lg object-cover transition-all duration-300"
-          src={img.url}
+          src={imgUrl}
           alt={title}
-          fill
         />
       </div>
       <div className="flex flex-col items-start justify-center space-y-1 px-2 py-2 lg:space-y-2 lg:px-3 lg:py-3">
@@ -42,9 +42,7 @@ export default function BlogPopularComponent({
           </svg>
           <small>{date}</small>
         </div>
-        <p className="pb-2 text-sm transition-colors duration-300 sm:text-base">
-          {title.length > 50 ? `${title.slice(0, 60)} ...` : title}
-        </p>
+       
       </div>
     </Link>
   );
