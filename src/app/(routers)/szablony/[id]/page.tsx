@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 
 const Carousel = dynamic(() => import("@/src/components/home/Carousel"));
 
-import { PORTFOLIO } from "@/src/constants";
+import { PORTFOLIO } from "@/src/constants/portfolio";
 import { SecondBtn } from "@/src/ui/buttons/SecondBtn";
 import { SuccesBtn } from "@/src/ui/buttons/SuccessBtn";
 import Link from "next/link";
@@ -53,46 +53,17 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                     </svg>
                   </button>
 
-                  <div className="w-full gap-6 lg:flex">
-                    <div className="relative h-auto w-full lg:h-[700px]">
-                      <img
-                        src={portfolioItem.url}
-                        alt="Photo by Himanshu Dewangan"
-                        className="h-full w-full rounded-lg object-cover object-top"
-                      />
-                      {portfolioItem.prevPrice !== "" && (
-                        <span className="absolute left-0 top-0 rounded-br-lg bg-red-500 px-3 py-1 text-sm uppercase tracking-wider text-white">
-                          PROMOCJA
-                        </span>
-                      )}
-                    </div>
-
-                    <div className="order-last mt-6 flex gap-1  lg:order-first lg:mt-0 lg:flex-col lg:gap-6">
-                      <div className="overflow-hidden rounded-lg">
-                        <img
-                          src={portfolioItem.smallUrl1}
-                          alt="Photo by Himanshu Dewangan"
-                          className="h-40 w-full object-cover object-top"
-                        />
-                      </div>
-
-                      <div className="overflow-hidden rounded-lg">
-                        <img
-                          src={portfolioItem.smallUrl2}
-                          loading="lazy"
-                          alt="Photo by Himanshu Dewangan"
-                          className="h-52 w-full object-cover object-top"
-                        />
-                      </div>
-
-                      <div className="overflow-hidden rounded-lg">
-                        <img
-                          src={portfolioItem.smallUrl3}
-                          alt="Photo by Himanshu Dewangan"
-                          className="h-64 w-full object-cover object-top"
-                        />
-                      </div>
-                    </div>
+                  <div className="relative h-auto w-full lg:h-[700px]">
+                    <img
+                      src={portfolioItem.url}
+                      alt="Photo by Himanshu Dewangan"
+                      className="border-main h-full w-full rounded-lg border object-cover object-top"
+                    />
+                    {portfolioItem.prevPrice !== "" && (
+                      <span className="absolute left-0 top-0 rounded-br-lg bg-red-500 px-3 py-1 text-sm uppercase tracking-wider text-white">
+                        PROMOCJA
+                      </span>
+                    )}
                   </div>
 
                   <div className="mt-12 pl-2">
@@ -288,7 +259,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                     <SuccesBtn>Kup Teraz</SuccesBtn>
                   </Link>
                   <Link href={`/szablony/live/${id}`}>
-                    <SecondBtn>Zobacz Live</SecondBtn>
+                    <SecondBtn className="px-5 py-2">Zobacz Live</SecondBtn>
                   </Link>
                 </div>
               </div>

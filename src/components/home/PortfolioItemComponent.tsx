@@ -1,6 +1,7 @@
 "use client";
 
 import { PortfolioItem } from "@/src/types";
+import Image from "next/image";
 import Link from "next/link";
 
 interface PortfolioItemComponentProps {
@@ -30,7 +31,7 @@ const PortfolioItemComponent: React.FC<PortfolioItemComponentProps> = ({
           </p>
         )}
 
-        <img src={url} alt="..." className="h-44 w-full object-cover lg:h-52" />
+        <Image src={url} alt={label} className="h-44 w-full object-cover lg:h-52" />
         <div className="text-main absolute left-0 top-0 hidden h-full w-full translate-y-full items-center justify-center bg-[rgba(28,28,28,0.8)] opacity-80 transition-transform duration-300 group-hover:translate-y-0 lg:flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"

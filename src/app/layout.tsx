@@ -24,9 +24,16 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className}`}>
         <Header />
-        <main style={{ minHeight: "calc(100vh - 510px)" }} className="text-p px-4">
+        <main
+          style={{ minHeight: "calc(100vh - 510px)" }}
+          className="text-p px-4"
+        >
           {children}
         </main>
+        <div
+          id="bgBlur"
+          className="anim-opacity fixed inset-0 -z-10 h-full w-full"
+        />
         <ScrollUp />
         <Footer />
       </body>

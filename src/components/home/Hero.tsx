@@ -21,8 +21,12 @@ export default function Hero() {
           oferować usługi na najwyższym poziomie!
         </p>
         <div className="flex items-center justify-center space-x-5">
-          <Link href="/darmowa-wycena"><MainBtn>Indywidualna</MainBtn></Link>
-          <Link href="/szablony"><SecondBtn>Gotowa</SecondBtn></Link>
+          <Link href="/darmowa-wycena">
+            <MainBtn>Indywidualna</MainBtn>
+          </Link>
+          <Link href="/szablony">
+            <SecondBtn className="px-5 py-2">Gotowa</SecondBtn>
+          </Link>
         </div>
       </div>
       <div className="relative mx-auto mt-12 flex w-full max-w-screen-md items-center justify-center overflow-x-hidden ">

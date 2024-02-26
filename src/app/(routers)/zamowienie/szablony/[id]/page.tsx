@@ -1,5 +1,5 @@
 import Breadcrumbs from "@/src/components/BreadCrumb";
-import { PORTFOLIO } from "@/src/constants";
+import { PORTFOLIO } from "@/src/constants/portfolio";
 import { SuccesBtn } from "@/src/ui/buttons/SuccessBtn";
 const breadcrumbs = [
   {

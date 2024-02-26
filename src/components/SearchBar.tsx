@@ -1,6 +1,9 @@
+"use client";
+
 import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { IoIosCloseCircle } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import { PORTFOLIO } from "../constants";
 import { PortfolioItem } from "../types";
@@ -71,7 +74,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div className=" fixed left-1/2 top-16 z-10 mr-5" ref={inputRef}>
+    <div className="relative mr-5" ref={inputRef}>
       <form className="relative">
         <input
           type="text"
@@ -87,24 +90,22 @@ export default function SearchBar() {
         />
       </form>
       {isModalOpen && (
-        <div>
-          <div className="anim-opacity absolute inset-0 h-full w-full bg-black/40 backdrop-blur-sm" />
-          <div className="anim-opacity border-second  w-3/4 -translate-x-1/2 transform rounded-lg border bg-zinc-800 p-6 sm:w-1/2 lg:w-1/3">
+        <div className="fixed left-0 top-16 z-10 max-h-80 overflow-y-scroll rounded-lg lg:left-1/2 lg:h-full lg:max-h-full lg:w-1/3 lg:-translate-x-1/2 lg:overflow-auto">
+          <div className="anim-opacity border-second w-full transform space-y-3 rounded-lg border bg-gradient-to-br from-pink-900 from-20% to-violet-800 p-3 sm:w-1/2 lg:w-full lg:p-6">
             <button
               className="absolute right-2 top-2 text-white"
               onClick={closeModal}
             >
-              X
+              <IoIosCloseCircle className="text-2xl" />
             </button>
-            <p className="text-main mb-3">Szukaj:</p>
             <input
               type="text"
               value={search}
               onChange={handleSearchChange}
               placeholder="Wpisz 2 litery aby rozpoczać"
-              className="w-full rounded-md border border-gray-300 px-2 py-1"
+              className="hidden w-full rounded-md border border-gray-300 px-2 py-1 lg:flex"
             />
-            <ul className="mt-6 flex flex-col items-center justify-center space-y-2">
+            <ul className="flex flex-col items-center justify-center space-y-2">
               {filteredProducts.slice(0, 4).map((item, index) => (
                 <SearchParams
                   item={item}

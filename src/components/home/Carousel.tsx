@@ -1,5 +1,6 @@
 "use client";
-import { PORTFOLIO } from "@/src/constants";
+
+import { PORTFOLIO } from "@/src/constants/portfolio";
 import { ArrowLeft, ArrowRight } from "@/src/ui/svg/Arrows";
 import { useEffect, useRef, useState } from "react";
 

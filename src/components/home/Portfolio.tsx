@@ -1,7 +1,8 @@
-import { PORTFOLIO } from "@/src/constants/index";
+
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { PortfolioItemSkeleton } from "../../ui/Skeletons";
+import { PORTFOLIO } from "@/src/constants/portfolio";
 
 const PortfolioItemComponent = dynamic(
   () => import("./PortfolioItemComponent"),
