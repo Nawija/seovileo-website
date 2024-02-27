@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 const LogicReact = dynamic(() => import("./LogicReact"));
 
 const query = `{
-    allPopularnes(first: 4) {
+    allPopularnes {
       id
       tags
       date

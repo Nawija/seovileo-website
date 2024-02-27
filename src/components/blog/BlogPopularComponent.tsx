@@ -43,10 +43,12 @@ export default function BlogPopularComponent({
           {
             "bg-red-500": tags.includes("strony"),
             "bg-pink-400": tags.includes("marketing"),
+            "bg-blue-400": tags.includes("technologia"),
+            "bg-violet-500": tags.includes("popularne"),
           },
         )}
       >
-        {tags.join(", ")}
+        {tags}
       </p>
     </Link>
   );

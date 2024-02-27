@@ -66,7 +66,7 @@ const LogicReact = ({ mergedData }: any) => {
         </div>
       </div>
       <Breadcrumbs breadcrumbs={breadcrumbs} />
-      <div className="mx-auto mt-6 grid max-w-screen-2xl grid-cols-2 gap-2 px-2 sm:grid-cols-3 lg:mt-24 lg:grid-cols-5">
+      <div className="mx-auto mt-6 grid max-w-screen-2xl grid-cols-2 gap-4 px-2 sm:grid-cols-3 lg:mt-24 lg:grid-cols-5">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((item: BlogItemTypes, i: number) => (
             <BlogPopularComponent item={item} key={i} />
