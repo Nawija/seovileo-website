@@ -1,5 +1,7 @@
 import fetchDatoCms from "@/src/lib/fetchDatoCms";
-import LogicReact from "./LogicReact";
+
+import dynamic from "next/dynamic";
+const LogicReact = dynamic(() => import("./LogicReact"));
 
 const query = `{
     allPopularnes(first: 4) {
