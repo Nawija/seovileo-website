@@ -2,6 +2,7 @@
 
 import { BlogItemTypes } from "@/src/types";
 import clsx from "clsx";
+import Image from "next/image";
 import Link from "next/link";
 import { MdDateRange } from "react-icons/md";
 
@@ -18,10 +19,11 @@ export default function BlogPopularComponent({
       className="bg-main anim-opacity border-main relative overflow-hidden rounded-lg border p-4 pb-12 "
     >
       <div className="relative h-20 w-full lg:h-32">
-        <img
+        <Image
           className="h-full w-full rounded-sm object-cover transition-all duration-300"
           src={imgUrl}
           alt={title}
+          fill
         />
         <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-t from-black/70 to-transparent" />
       </div>

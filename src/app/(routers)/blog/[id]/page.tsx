@@ -55,36 +55,40 @@ export default async function Pages({ params }: { params: { id: string } }) {
     },
   ];
   return (
-    <div
-      className="anim-opacity mx-auto flex h-full w-full flex-grow 
-    flex-col items-center justify-start px-6 py-20 text-center"
-    >
-      <Breadcrumbs breadcrumbs={breadcrumbs} />
-      <h1 className="text-4xl lg:text-6xl">{data.title}</h1>
-      <div className="flex-c mb-12 mt-2 space-x-4">
-        <small>{data.date}</small>
-        <small>Udostepnij</small>
-      </div>
-
-      <div className="relative w-full">
+    <>
+      <div className="absolute left-0 top-0 -z-10 h-3/4 w-full rounded-2xl opacity-5">
         <Image
           src={data.img.url}
           alt={data.title}
-          className="-z-10 h-full w-full rounded-2xl object-cover opacity-15"
+          className=" object-cover"
           fill
         />
-        <Image
-          src={data.img.url}
-          alt={data.title}
-          height={600}
-          width={600}
-          className="z-10 mx-auto mt-44 h-96 rounded-2xl object-cover"
+      </div>
+      <div
+        className="anim-opacity mx-auto flex h-full w-full flex-grow 
+    flex-col items-center justify-start px-6 py-20 text-center"
+      >
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
+        <h1 className="text-4xl lg:text-6xl">{data.title}</h1>
+        <div className="flex-c mb-12 mt-2 space-x-4">
+          <small>{data.date}</small>
+          <small>Udostepnij</small>
+        </div>
+
+        <div className="relative w-full">
+          <Image
+            src={data.img.url}
+            alt={data.title}
+            height={600}
+            width={600}
+            className="z-10 mx-auto h-96 rounded-2xl object-cover"
+          />
+        </div>
+        <article
+          className="prose flex max-w-screen-lg flex-col items-center justify-start transition-colors duration-300 prose-p:text-gray-200 prose-a:text-emerald-400 hover:prose-a:text-emerald-600 prose-strong:text-white prose-code:text-gray-300"
+          dangerouslySetInnerHTML={{ __html: data.desc }}
         />
       </div>
-      <article
-        className="prose flex max-w-screen-lg flex-col items-center justify-start transition-colors duration-300 prose-p:text-gray-200 prose-a:text-emerald-400 hover:prose-a:text-emerald-600 prose-strong:text-white prose-code:text-gray-300"
-        dangerouslySetInnerHTML={{ __html: data.desc }}
-      />
-    </div>
+    </>
   );
 }

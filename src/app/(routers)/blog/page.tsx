@@ -12,6 +12,7 @@ const query = `{
       title
       img {
         url
+        blurUpThumb(quality: 1)
       }
     }
     allBlogs {
@@ -22,6 +23,7 @@ const query = `{
       title
       img {
         url
+        blurUpThumb(quality: 1)
       }
     }
 }`;
