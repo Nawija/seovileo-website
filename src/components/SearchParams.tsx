@@ -13,7 +13,7 @@ export default function SearchParams({
   clearFilterProducts: () => void;
   closeModal: () => void;
 }) {
-  const { id, url, label, price } = item;
+  const { id, url, label, price, prevPrice } = item;
   return (
     <li className="bg-body border-main w-full rounded-lg border p-2 transition-colors duration-300 hover:border-zinc-300">
       <Link
@@ -31,9 +31,19 @@ export default function SearchParams({
           height={55}
           width={110}
         />
-        <div>
+        <div className="flex flex-col items-end justify-end">
           <p className="text-main">{label}</p>
-          <p className="text-sm">{price}zł</p>
+          <div className="flex flex-col items-end justify-end text-sm">
+            <p>{price}zł</p>
+            {prevPrice && (
+              <div className="flex-c mt-2 text-sm">
+                <p className="mr-2 text-xs text-yellow-500">Promocja</p>
+                <small className=" text-red-700 line-through">
+                  {prevPrice}zł
+                </small>
+              </div>
+            )}
+          </div>
         </div>
       </Link>
     </li>

@@ -6,8 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 
-import { PortfolioItem } from "../types";
 import { PORTFOLIO } from "../constants/portfolio";
+import { PortfolioItem } from "../types";
 
 const SearchParams = dynamic(() => import("@/src/components/SearchParams"));
 
@@ -92,7 +92,7 @@ export default function SearchBar() {
       </form>
       {isModalOpen && (
         <div className="fixed left-0 top-16 z-10 max-h-80 overflow-y-scroll rounded-lg lg:left-1/2 lg:h-full lg:max-h-full lg:w-1/3 lg:-translate-x-1/2 lg:overflow-auto">
-          <div className="anim-opacity border-second w-full transform space-y-3 rounded-lg border bg-gradient-to-br from-pink-900 from-20% to-violet-800 p-3 sm:w-1/2 lg:w-full lg:p-6">
+          <div className="anim-opacity border-second w-full transform space-y-3 rounded-lg border bg-gradient-to-br from-pink-700 from-20% via-violet-500 to-sky-400 p-3 sm:w-1/2 lg:w-full lg:p-6">
             <button
               className="absolute right-2 top-2 text-white"
               onClick={closeModal}

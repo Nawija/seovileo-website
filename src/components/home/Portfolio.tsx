@@ -1,8 +1,7 @@
-
+import { PORTFOLIO } from "@/src/constants/portfolio";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { PortfolioItemSkeleton } from "../../ui/Skeletons";
-import { PORTFOLIO } from "@/src/constants/portfolio";
 
 const PortfolioItemComponent = dynamic(
   () => import("./PortfolioItemComponent"),
@@ -14,10 +13,8 @@ const PortfolioItemComponent = dynamic(
 export default function Portfolio() {
   return (
     <section className="mx-auto">
-      <div className="flex-b">
-        <h2 className="text-main text-lg lg:text-2xl">
-          Most Popular Framer Templates
-        </h2>
+      <div className="flex-b lg:px-1">
+        <h2 className="text-main text-lg  lg:text-xl">Populane szablony</h2>
         <Link
           href="/szablony"
           className="flex-c transition-colors duration-300 hover:text-white"

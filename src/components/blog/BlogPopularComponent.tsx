@@ -1,9 +1,7 @@
 "use client";
 
 import { BlogItemTypes } from "@/src/types";
-import Image from "next/image";
 import Link from "next/link";
-
 
 export default function BlogPopularComponent({
   item,
@@ -11,15 +9,15 @@ export default function BlogPopularComponent({
   item: BlogItemTypes;
 }) {
   const { slug, img, title, date } = item;
-  const imgUrl = item.img && item.img.url ? item.img.url : '';
+  const imgUrl = item.img && item.img.url ? item.img.url : "";
   return (
     <Link
       href={`/blog/${slug}`}
-      className="bg-main border-main overflow-hidden rounded-lg border p-4 "
+      className="bg-main anim-opacity border-main overflow-hidden rounded-lg border p-4 "
     >
       <div className="relative h-28 w-full lg:h-40">
         <img
-          className="rounded-lg object-cover transition-all duration-300"
+          className="h-full w-full rounded-lg object-cover transition-all duration-300"
           src={imgUrl}
           alt={title}
         />
@@ -42,7 +40,10 @@ export default function BlogPopularComponent({
           </svg>
           <small>{date}</small>
         </div>
-       
+        <p>
+          {title.slice(0, 40) + "... "}
+          <small className="text-main">wiecej</small>
+        </p>
       </div>
     </Link>
   );
