@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import Breadcrumbs from "@/src/components/BreadCrumb";
-import { BlogType } from "@/src/types";
+import { BlogItemTypes, BlogType } from "@/src/types";
 import { PortfolioItemSkeleton } from "@/src/ui/Skeletons";
 import dynamic from "next/dynamic";
 
@@ -21,36 +21,29 @@ const breadcrumbs = [
   },
 ];
 
-const LogicReact = ({ mergedData }: { mergedData: BlogType }) => {
+const LogicReact = ({ mergedData }: any) => {
   const searchParams = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("blog") || "");
   const [filteredProducts, setFilteredProducts] = useState(mergedData);
 
   useEffect(() => {
     if (search) {
-      const filteredProducts = mergedData.filter((product) =>
+      const newfilteredProducts = mergedData.filter((product: BlogType) =>
         product.tags[0].toLowerCase().includes(search.toLowerCase()),
       );
-      setFilteredProducts(filteredProducts);
-    } else {
-      setFilteredProducts([]);
+
+      const filteredProducts = mergedData.filter((product: BlogType) =>
+        product.title.toLowerCase().includes(search.toLowerCase()),
+      );
+
+      const dataMerged = [{ ...newfilteredProducts, ...filteredProducts }];
+      const mergedDataFilterArray = Object.values(dataMerged[0]);
+
+      setFilteredProducts(mergedDataFilterArray);
     }
   }, [search]);
 
-  const handleSearchBtn = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(event.target.value);
-  };
-
-  useEffect(() => {
-    if (search) {
-      const filteredProducts = mergedData.filter((product) =>
-        product.title.toLowerCase().includes(search.toLowerCase()),
-      );
-      setFilteredProducts(filteredProducts);
-    }
-  }, []);
-
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (event: any) => {
     setSearch(event.target.value);
   };
 
@@ -88,7 +81,7 @@ const LogicReact = ({ mergedData }: { mergedData: BlogType }) => {
         </div>
         <div className="grid grid-cols-2 gap-2 px-2 sm:grid-cols-3  lg:grid-cols-5">
           {filteredProducts.length > 0 ? (
-            filteredProducts.map((item, i) => (
+            filteredProducts.map((item: BlogItemTypes, i: number) => (
               <BlogPopularComponent item={item} key={i} />
             ))
           ) : (
