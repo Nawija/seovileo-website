@@ -24,7 +24,7 @@ const breadcrumbs = [
 const LogicReact = ({ mergedData }: { mergedData: BlogType }) => {
   const searchParams = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("blog") || "");
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState(mergedData);
 
   useEffect(() => {
     if (search) {
@@ -36,6 +36,19 @@ const LogicReact = ({ mergedData }: { mergedData: BlogType }) => {
       setFilteredProducts([]);
     }
   }, [search]);
+
+  const handleSearchBtn = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.target.value);
+  };
+
+  useEffect(() => {
+    if (search) {
+      const filteredProducts = mergedData.filter((product) =>
+        product.title.toLowerCase().includes(search.toLowerCase()),
+      );
+      setFilteredProducts(filteredProducts);
+    }
+  }, []);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
@@ -63,24 +76,26 @@ const LogicReact = ({ mergedData }: { mergedData: BlogType }) => {
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       <div className="mx-auto max-w-screen-2xl px-2">
         <div className="mb-3 mt-8 w-full space-x-4 rounded-lg bg-black px-4 py-1 text-xs font-semibold lg:mt-32">
-          <button value="2" onClick={handleSearchChange}>
+          <button value="1" onClick={handleSearchChange}>
             Popularne
           </button>
-          <button value="1" onClick={handleSearchChange}>
+          <button value="2" onClick={handleSearchChange}>
             Strony
           </button>
-          <button value="Technologie" onClick={handleSearchChange}>
+          <button value="3" onClick={handleSearchChange}>
             Technologie
           </button>
         </div>
         <div className="grid grid-cols-2 gap-2 px-2 sm:grid-cols-3  lg:grid-cols-5">
-          {filteredProducts.length > 0
-            ? filteredProducts.map((item, i) => (
-                <BlogPopularComponent item={item} key={i} />
-              ))
-            : mergedData.map((item, i) => (
-                <BlogPopularComponent item={item} key={i} />
-              ))}
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((item, i) => (
+              <BlogPopularComponent item={item} key={i} />
+            ))
+          ) : (
+            <div>
+              <p>Brak szukanych</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
