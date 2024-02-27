@@ -8,7 +8,7 @@ export default function BlogPopularComponent({
 }: {
   item: BlogItemTypes;
 }) {
-  const { slug, img, title, date, tags } = item;
+  const { slug, title, date, tags } = item;
   const imgUrl = item.img && item.img.url ? item.img.url : "";
   return (
     <Link

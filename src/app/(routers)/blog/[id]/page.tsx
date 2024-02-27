@@ -1,3 +1,4 @@
+import Breadcrumbs from "@/src/components/BreadCrumb";
 import Image from "next/image";
 
 const fetchDatoCmsPopularne = async (id: string) => {
@@ -43,8 +44,22 @@ const fetchDatoCmsPopularne = async (id: string) => {
 export default async function Pages({ params }: { params: { id: string } }) {
   const slug = params.id;
   const data = await fetchDatoCmsPopularne(slug);
+  const breadcrumbs = [
+    {
+      title: "Blog",
+      href: "/blog",
+    },
+    {
+      title: data.title.slice(0, 30),
+      href: "#",
+    },
+  ];
   return (
-    <div className="anim-opacity mx-auto flex h-full w-full max-w-screen-lg flex-grow flex-col items-center justify-start px-6 py-20 text-center">
+    <div
+      className="anim-opacity mx-auto flex h-full w-full max-w-screen-lg flex-grow 
+    flex-col items-center justify-start px-6 py-20 text-center"
+    >
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
       <h1 className="text-4xl lg:text-6xl">{data.title}</h1>
       <div className="flex-c mb-12 mt-2 space-x-4">
         <small>{data.date}</small>
@@ -59,7 +74,7 @@ export default async function Pages({ params }: { params: { id: string } }) {
         className="mb-10 max-h-96 w-full rounded-2xl object-cover shadow-xl shadow-white/10"
       />
       <article
-        className="prose flex flex-col items-center justify-start prose-p:text-gray-200 prose-a:text-emerald-400 hover:prose-a:text-emerald-600 transition-colors duration-300 prose-strong:text-white prose-code:text-gray-300"
+        className="prose flex flex-col items-center justify-start transition-colors duration-300 prose-p:text-gray-200 prose-a:text-emerald-400 hover:prose-a:text-emerald-600 prose-strong:text-white prose-code:text-gray-300"
         dangerouslySetInnerHTML={{ __html: data.desc }}
       />
     </div>

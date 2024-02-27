@@ -69,14 +69,17 @@ const LogicReact = ({ mergedData }: any) => {
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       <div className="mx-auto max-w-screen-2xl px-2">
         <div className="mb-3 mt-8 w-full space-x-4 rounded-lg bg-black px-4 py-1 text-xs font-semibold lg:mt-32">
-          <button value="1" onClick={handleSearchChange}>
+          <button value="Popularne" onClick={handleSearchChange}>
             Popularne
           </button>
-          <button value="2" onClick={handleSearchChange}>
+          <button value="Strony" onClick={handleSearchChange}>
             Strony
           </button>
-          <button value="3" onClick={handleSearchChange}>
+          <button value="Technologie" onClick={handleSearchChange}>
             Technologie
+          </button>
+          <button value="Marketing" onClick={handleSearchChange}>
+            Marketing
           </button>
         </div>
         <div className="grid grid-cols-2 gap-2 px-2 sm:grid-cols-3  lg:grid-cols-5">
