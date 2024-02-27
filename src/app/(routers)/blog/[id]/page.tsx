@@ -56,7 +56,7 @@ export default async function Pages({ params }: { params: { id: string } }) {
   ];
   return (
     <div
-      className="anim-opacity mx-auto flex h-full w-full max-w-screen-lg flex-grow 
+      className="anim-opacity mx-auto flex h-full w-full flex-grow 
     flex-col items-center justify-start px-6 py-20 text-center"
     >
       <Breadcrumbs breadcrumbs={breadcrumbs} />
@@ -66,15 +66,23 @@ export default async function Pages({ params }: { params: { id: string } }) {
         <small>Udostepnij</small>
       </div>
 
-      <Image
-        src={data.img.url}
-        alt={data.title}
-        height={600}
-        width={600}
-        className="mb-10 max-h-96 w-full rounded-2xl object-cover shadow-xl shadow-white/10"
-      />
+      <div className="relative w-full">
+        <Image
+          src={data.img.url}
+          alt={data.title}
+          className="-z-10 h-full w-full rounded-2xl object-cover opacity-15"
+          fill
+        />
+        <Image
+          src={data.img.url}
+          alt={data.title}
+          height={600}
+          width={600}
+          className="z-10 mx-auto mt-44 h-96 rounded-2xl object-cover"
+        />
+      </div>
       <article
-        className="prose flex flex-col items-center justify-start transition-colors duration-300 prose-p:text-gray-200 prose-a:text-emerald-400 hover:prose-a:text-emerald-600 prose-strong:text-white prose-code:text-gray-300"
+        className="prose flex max-w-screen-lg flex-col items-center justify-start transition-colors duration-300 prose-p:text-gray-200 prose-a:text-emerald-400 hover:prose-a:text-emerald-600 prose-strong:text-white prose-code:text-gray-300"
         dangerouslySetInnerHTML={{ __html: data.desc }}
       />
     </div>
