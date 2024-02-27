@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import Breadcrumbs from "@/src/components/BreadCrumb";
-import { BlogType, PortfolioItem } from "@/src/types";
+import { BlogType } from "@/src/types";
 import { PortfolioItemSkeleton } from "@/src/ui/Skeletons";
 import dynamic from "next/dynamic";
 
@@ -22,7 +22,6 @@ const breadcrumbs = [
 ];
 
 const LogicReact = ({ mergedData }: { mergedData: BlogType }) => {
-  const [searchValue, setSearchValue] = useState("");
   const searchParams = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("blog") || "");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -30,7 +29,7 @@ const LogicReact = ({ mergedData }: { mergedData: BlogType }) => {
   useEffect(() => {
     if (search) {
       const filteredProducts = mergedData.filter((product) =>
-        product.title.toLowerCase().includes(search.toLowerCase()),
+        product.tags[0].toLowerCase().includes(search.toLowerCase()),
       );
       setFilteredProducts(filteredProducts);
     } else {
@@ -44,7 +43,7 @@ const LogicReact = ({ mergedData }: { mergedData: BlogType }) => {
 
   return (
     <div>
-      <div className="flex-c relative h-56 w-full lg:h-60">
+      <div className="flex-c bg-url relative h-56 w-full bg-fixed lg:h-60">
         <img
           src="https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           className="absolute inset-0 -z-10 h-full w-full object-cover"
@@ -62,14 +61,27 @@ const LogicReact = ({ mergedData }: { mergedData: BlogType }) => {
         </div>
       </div>
       <Breadcrumbs breadcrumbs={breadcrumbs} />
-      <div className="mx-auto mt-8 grid max-w-screen-2xl grid-cols-2 gap-4 px-4 sm:grid-cols-3 lg:mt-32 lg:grid-cols-5">
-        {filteredProducts.length > 0
-          ? filteredProducts.map((item, i) => (
-              <BlogPopularComponent item={item} key={i} />
-            ))
-          : mergedData.map((item, i) => (
-              <BlogPopularComponent item={item} key={i} />
-            ))}
+      <div className="mx-auto max-w-screen-2xl px-2">
+        <div className="mb-3 mt-8 w-full space-x-4 rounded-lg bg-black px-4 py-1 text-xs font-semibold lg:mt-32">
+          <button value="2" onClick={handleSearchChange}>
+            Popularne
+          </button>
+          <button value="1" onClick={handleSearchChange}>
+            Strony
+          </button>
+          <button value="Technologie" onClick={handleSearchChange}>
+            Technologie
+          </button>
+        </div>
+        <div className="grid grid-cols-2 gap-2 px-2 sm:grid-cols-3  lg:grid-cols-5">
+          {filteredProducts.length > 0
+            ? filteredProducts.map((item, i) => (
+                <BlogPopularComponent item={item} key={i} />
+              ))
+            : mergedData.map((item, i) => (
+                <BlogPopularComponent item={item} key={i} />
+              ))}
+        </div>
       </div>
     </div>
   );

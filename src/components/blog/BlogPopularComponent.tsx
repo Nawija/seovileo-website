@@ -8,7 +8,7 @@ export default function BlogPopularComponent({
 }: {
   item: BlogItemTypes;
 }) {
-  const { slug, img, title, date } = item;
+  const { slug, img, title, date, tags } = item;
   const imgUrl = item.img && item.img.url ? item.img.url : "";
   return (
     <Link
@@ -45,6 +45,7 @@ export default function BlogPopularComponent({
           <small className="text-main">wiecej</small>
         </p>
       </div>
+      <p>{tags}</p>
     </Link>
   );
 }

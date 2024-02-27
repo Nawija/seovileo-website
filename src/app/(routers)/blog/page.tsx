@@ -4,6 +4,7 @@ import LogicReact from "./LogicReact";
 const query = `{
     allPopularnes(first: 4) {
       id
+      tags
       date
       slug
       title
@@ -13,6 +14,7 @@ const query = `{
     }
     allBlogs {
       id
+      tags
       date
       slug
       title

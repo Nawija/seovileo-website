@@ -7,6 +7,7 @@ export type BreadcrumbTypes = {
 
 export type BlogType = {
   id: string;
+  tags: string[];
   date: string;
   slug: string;
   title: string;
@@ -17,6 +18,7 @@ export type BlogType = {
 export type BlogItemTypes = {
   slug: string;
   title: string;
+  tags: string[];
   date: string;
   img: {
     url: string;
