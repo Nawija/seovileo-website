@@ -46,7 +46,6 @@ const LogicReact = ({ mergedData }: any) => {
   const handleSearchChange = (event: any) => {
     setSearch(event.target.value);
   };
-
   return (
     <div>
       <div className="flex-c bg-url relative h-56 w-full bg-fixed lg:h-60">
@@ -67,32 +66,16 @@ const LogicReact = ({ mergedData }: any) => {
         </div>
       </div>
       <Breadcrumbs breadcrumbs={breadcrumbs} />
-      <div className="mx-auto max-w-screen-2xl px-2">
-        <div className="mb-3 mt-8 w-full space-x-4 rounded-lg bg-black px-4 py-1 text-xs font-semibold lg:mt-32">
-          <button value="Popularne" onClick={handleSearchChange}>
-            Popularne
-          </button>
-          <button value="Strony" onClick={handleSearchChange}>
-            Strony
-          </button>
-          <button value="Technologie" onClick={handleSearchChange}>
-            Technologie
-          </button>
-          <button value="Marketing" onClick={handleSearchChange}>
-            Marketing
-          </button>
-        </div>
-        <div className="grid grid-cols-2 gap-2 px-2 sm:grid-cols-3  lg:grid-cols-5">
-          {filteredProducts.length > 0 ? (
-            filteredProducts.map((item: BlogItemTypes, i: number) => (
-              <BlogPopularComponent item={item} key={i} />
-            ))
-          ) : (
-            <div>
-              <p>Brak szukanych</p>
-            </div>
-          )}
-        </div>
+      <div className="mx-auto mt-6 grid max-w-screen-2xl grid-cols-2 gap-2 px-2 sm:grid-cols-3 lg:mt-24 lg:grid-cols-5">
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((item: BlogItemTypes, i: number) => (
+            <BlogPopularComponent item={item} key={i} />
+          ))
+        ) : (
+          <div>
+            <p>Brak szukanych</p>
+          </div>
+        )}
       </div>
     </div>
   );
