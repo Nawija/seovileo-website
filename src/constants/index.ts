@@ -8,6 +8,10 @@ export const NAV_LINKS = [
     label: "Szablony",
   },
   {
+    href: "/",
+    label: "Boty",
+  },
+  {
     href: "/oferta",
     label: "Oferta",
   },
@@ -45,10 +49,6 @@ export const SCROLLING_LABEL = [
     label: "Skontaktuj sie po więcej",
   },
 ];
-
-
-
-
 
 export const BLOG_LINKS = [
   {
