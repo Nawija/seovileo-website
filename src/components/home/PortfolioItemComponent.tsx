@@ -21,7 +21,7 @@ const PortfolioItemComponent: React.FC<PortfolioItemComponentProps> = ({
   return (
     <Link
       key={label}
-      className="bg-main border-second rounded-lg border"
+      className="bg-main border-second rounded-lg border-2 transition-colors duration-300 hover:border-[#8f6341]"
       href={`/szablony/${id}`}
     >
       <div className="border-second group relative overflow-hidden border-b bg-gradient-to-tr from-[#161616] to-transparent p-2 lg:p-4">
@@ -37,7 +37,7 @@ const PortfolioItemComponent: React.FC<PortfolioItemComponentProps> = ({
             alt={label}
             className="h-40 w-full object-cover lg:h-52"
           />
-          <div className="text-main absolute left-0 top-0 hidden h-full w-full  translate-y-full scale-0 items-center justify-center bg-[#4D3A2B] opacity-0 transition-all delay-300 duration-500 group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-80 lg:flex">
+          <div className="text-main absolute left-0 top-0 hidden h-full w-full  translate-y-full scale-0 items-center justify-center bg-[#4D3A2B] transition-all duration-300 group-hover:translate-y-0 group-hover:scale-100 lg:flex">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
