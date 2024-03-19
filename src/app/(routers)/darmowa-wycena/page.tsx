@@ -1,6 +1,6 @@
 "use client";
 
-import { MainBtn } from "@/src/ui/buttons/MainBtn";
+import { MainBtn } from "@/src/components/ui/buttons/MainBtn";
 import React, { useState } from "react";
 
 export default function OfertaPage() {

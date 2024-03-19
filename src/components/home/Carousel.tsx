@@ -1,7 +1,7 @@
 "use client";
 
+import { ArrowLeft, ArrowRight } from "@/src/components/ui/Arrows";
 import { PORTFOLIO } from "@/src/constants/portfolio";
-import { ArrowLeft, ArrowRight } from "@/src/ui/svg/Arrows";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 

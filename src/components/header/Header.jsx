@@ -7,8 +7,8 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { BsMoonStarsFill } from "react-icons/bs";
 
-import { SecondBtn } from "../buttons/SecondBtn";
-import { Logo } from "../svg/Logo";
+import { Logo } from "@/src/components/ui/Logo";
+import { SecondBtn } from "../ui/buttons/SecondBtn";
 
 const SearchBar = dynamic(() => import("@/src/components/SearchBar"));
 

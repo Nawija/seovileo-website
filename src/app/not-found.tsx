@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MainBtn } from "../ui/buttons/MainBtn";
+import { MainBtn } from "../components/ui/buttons/MainBtn";
 
 export default function NotFound() {
   return (

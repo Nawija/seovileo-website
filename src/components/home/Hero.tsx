@@ -1,7 +1,7 @@
 import HeroBg from "@/public/fale-czastek-3d-futurystyczne-tlo-technologii.jpg";
+import { MainBtn } from "@/src/components/ui/buttons/MainBtn";
+import { SecondBtn } from "@/src/components/ui/buttons/SecondBtn";
 import { SCROLLING_LABEL } from "@/src/constants";
-import { MainBtn } from "@/src/ui/buttons/MainBtn";
-import { SecondBtn } from "@/src/ui/buttons/SecondBtn";
 import Image from "next/image";
 import Link from "next/link";
 

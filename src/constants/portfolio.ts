@@ -10,8 +10,13 @@ import a8 from "@/public/portfolio/a8.png";
 export const PORTFOLIO = [
   {
     id: "seovileo",
+    tech: {
+      label: "Nextjs 14",
+      link: "https://nextjs.org/",
+    },
     href: "/",
     url: a1,
+    color: "#8f6341",
     label: "Seovileo",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro nulla consectetur?",
     prevPrice: "",
@@ -20,8 +25,13 @@ export const PORTFOLIO = [
   },
   {
     id: "nazoltej",
+    tech: {
+      label: "GatsbyJS",
+      link: "https://www.gatsbyjs.com/",
+    },
     href: "/",
     url: a2,
+    color: "#8f6341",
     label: "Nazoltej",
     desc: "Strona internetowa Nażółtej.pl napisana w technologii gatsbyjs oferuje usługi związane z rejestracją pojazdów na żółte tablice, które są przeznaczone dla pojazdów zabytkowych. Firma zapewnia pomoc w przygotowaniu dokumentów, wycenie wartości pojazdów, a także w ekspertyzach powypadkowych i przedzakupowych. Oferują również usługi tłumaczenia dokumentów, ubezpieczenia pojazdów oraz wsparcie w odprawie celnej. Strona zawiera informacje o korzyściach rejestracji pojazdu zabytkowego oraz o firmie, w tym o ich doświadczeniu w branży motoryzacyjnej​",
     prevPrice: "850",
@@ -30,8 +40,13 @@ export const PORTFOLIO = [
   },
   {
     id: "acme",
+    tech: {
+      label: "Nextjs 14",
+      link: "https://nextjs.org/",
+    },
     href: "/",
     url: a3,
+    color: "#0070F2",
     label: "Acme",
     desc: "usługi na najwyższym poziomie",
     prevPrice: "",
@@ -40,8 +55,13 @@ export const PORTFOLIO = [
   },
   {
     id: "fotograf",
+    tech: {
+      label: "Nextjs 14",
+      link: "https://nextjs.org/",
+    },
     href: "/",
     url: a4,
+    color: "#F3F5F6",
     label: "Fotograf",
     desc: "usługi na najwyższym poziomie",
     prevPrice: "600",
@@ -50,8 +70,13 @@ export const PORTFOLIO = [
   },
   {
     id: "fotograf1",
+    tech: {
+      label: "Nextjs 14",
+      link: "https://nextjs.org/",
+    },
     href: "/",
     url: a5,
+    color: "#8f6341",
     label: "Fotograf",
     desc: "usługi na najwyższym poziomie",
     prevPrice: "",
@@ -60,8 +85,13 @@ export const PORTFOLIO = [
   },
   {
     id: "panel-zdjec",
+    tech: {
+      label: "Nextjs 14",
+      link: "https://nextjs.org/",
+    },
     href: "/",
     url: a6,
+    color: "#9bc99d",
     label: "Panel ze zdjeciami",
     desc: "usługi na najwyższym poziomie",
     prevPrice: "1300",
@@ -69,9 +99,29 @@ export const PORTFOLIO = [
     link: "https://gg-khaki-nine.vercel.app/",
   },
   {
+    id: "seo-modern",
+    tech: {
+      label: "Nextjs 14",
+      link: "https://nextjs.org/",
+    },
+    href: "/",
+    url: a7,
+    color: "#9D712C",
+    label: "Panel ze zdjeciami",
+    desc: "usługi na najwyższym poziomie",
+    prevPrice: "",
+    price: "1200",
+    link: "https://gg-khaki-nine.vercel.app/",
+  },
+  {
     id: "kajaki-tanew",
+    tech: {
+      label: "GatsbyJS",
+      link: "https://www.gatsbyjs.com/",
+    },
     href: "/",
     url: a8,
+    color: "#5c4e44",
     label: "tanew kajaki",
     desc: "usługi m poziomie lore12",
     prevPrice: "",

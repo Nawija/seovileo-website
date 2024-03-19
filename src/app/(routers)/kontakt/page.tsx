@@ -1,4 +1,4 @@
-import { MainBtn } from "@/src/ui/buttons/MainBtn";
+import { MainBtn } from "@/src/components/ui/buttons/MainBtn";
 import Link from "next/link";
 
 export default function Bulding() {

@@ -1,12 +1,12 @@
 import "@/src/app/globals.css";
-import { inter } from "@/src/ui/fonts";
+import { inter } from "@/src/components/fonts";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 import Providers from "../components/ProgressBarProvider";
-import Header from "../ui/header/Header";
-const ScrollUp = dynamic(() => import("@/src/ui/buttons/ScrollUp"));
-const Footer = dynamic(() => import("@/src/ui/footer/Footer"));
+import Header from "../components/header/Header";
+const ScrollUp = dynamic(() => import("@/src/components/ui/buttons/ScrollUp"));
+const Footer = dynamic(() => import("@/src/components/footer/Footer"));
 
 export const metadata: Metadata = {
   title: "Seovileo-website",

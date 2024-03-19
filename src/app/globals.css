@@ -143,11 +143,11 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50vw);
+    transform: translateX(-100vw);
   }
 }
 
 .scrolling {
   white-space: nowrap;
-  animation: scroll 10s linear infinite;
+  animation: scroll 20s linear infinite;
 }

@@ -1,6 +1,6 @@
 "use client";
-import "@/src/ui/buttons/scrollUp.css";
 
+import "@/src/components/ui/buttons/scrollUp.css";
 import { useEffect, useState } from "react";
 
 export default function ScrollUp() {
@@ -31,7 +31,7 @@ export default function ScrollUp() {
 
   return (
     <button
-      className={`bg-main border-main transition-colors duration-300 fixed bottom-3 right-3 rounded-lg border p-1.5 text-white hover:bg-zinc-800 lg:p-2.5 ${
+      className={`bg-main border-main fixed bottom-3 right-3 rounded-lg border p-1.5 text-white transition-colors duration-300 hover:bg-zinc-800 lg:p-2.5 ${
         scrollUp ? "slide-left" : "hidden"
       }`}
       onClick={scrollToTop}

@@ -27,9 +27,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/ui/header/Header.jsx",
-    "src/ui/footer/Footer.tsx",
-    "src/ui/buttons/MainBtn.tsx",
+    "src/components/header/Header.jsx",
+    "src/components/footer/Footer.tsx",
+    "src/components/ui/buttons/MainBtn.tsx",
     ".next/types/app/(routers)/szablony/live/layout.tsx"
   ],
   "exclude": ["node_modules"]

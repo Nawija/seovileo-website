@@ -4,8 +4,8 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import Breadcrumbs from "@/src/components/BreadCrumb";
+import { PortfolioItemSkeleton } from "@/src/components/ui/Skeletons";
 import { BlogItemTypes, BlogType } from "@/src/types";
-import { PortfolioItemSkeleton } from "@/src/ui/Skeletons";
 import dynamic from "next/dynamic";
 
 const BlogPopularComponent = dynamic(

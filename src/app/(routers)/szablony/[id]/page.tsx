@@ -3,11 +3,15 @@ import dynamic from "next/dynamic";
 
 const Carousel = dynamic(() => import("@/src/components/home/Carousel"));
 
+import Promotion from "@/src/components/ui/buttons/Promotion";
+import { SecondBtn } from "@/src/components/ui/buttons/SecondBtn";
+import { SuccesBtn } from "@/src/components/ui/buttons/SuccessBtn";
 import { PORTFOLIO } from "@/src/constants/portfolio";
-import { SecondBtn } from "@/src/ui/buttons/SecondBtn";
-import { SuccesBtn } from "@/src/ui/buttons/SuccessBtn";
+import { PortfolioItem } from "@/src/types";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { FaLink } from "react-icons/fa";
 
 const breadcrumbs = [
   {
@@ -16,6 +20,22 @@ const breadcrumbs = [
   },
 ];
 
+type Props = {
+  params: { id: string };
+};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const id = params.id;
+  const portfolioItem: PortfolioItem | undefined = PORTFOLIO.find(
+    (item) => item.id === id,
+  );
+
+  return {
+    title: `Szablon strony internetowej ${portfolioItem?.label} | Darmowa konfiguracja `,
+    description: `Błyskawiczna strona internetowa wykonana w nowoczensej technolgoii. Kup szablon teraz za ${portfolioItem?.price}zł a my zajmiemy sie konfiguracja! `,
+    metadataBase: new URL("https://seovileo.com"),
+  };
+}
 export default function SzablonyID({ params }: { params: { id: string } }) {
   const id = params.id;
   const portfolioItem = PORTFOLIO.find((item) => item.id === id);
@@ -27,47 +47,30 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
   return (
     <>
       <div className="anim-opacity mx-auto max-w-screen-2xl">
-        <div className="absolute left-1/2 top-0 -z-10 h-80 w-1/2 -translate-x-1/2 rounded-full bg-[#8f6341] blur-[300px]" />
+        <div
+          style={{ backgroundColor: `${portfolioItem.color}` }}
+          className={`absolute left-1/2 top-0 -z-10 h-[25vh] w-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[160px] lg:blur-[300px]`}
+        />
+
         <Breadcrumbs breadcrumbs={breadcrumbs} />
-        <div className="mt-4 lg:mt-10 py-6 sm:py-8 lg:py-12">
+        <div className="mt-4 py-4 sm:py-8 lg:py-10">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8 ">
             <div className="grid gap-6 lg:flex lg:items-start lg:justify-start">
               <div className="grid gap-6 lg:w-3/4 lg:grid-cols-5">
                 <div className="relative w-full overflow-hidden lg:col-span-5 ">
-                  <button className="hover: duration-100focus-visible:ring absolute right-4 top-4 inline-block rounded-lg border bg-white p-1.5 text-center text-sm font-semibold  outline-none ring-red-500 transition hover:text-red-300 active:text-red-400 md:text-base">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                      />
-                    </svg>
-                  </button>
-
                   <div className="relative order-first h-auto w-full lg:max-h-[700px]">
                     <Image
                       src={portfolioItem.url}
                       alt="Photo by Himanshu Dewangan"
                       className="border-main h-full w-full rounded-lg border object-contain object-top"
                     />
-                    {portfolioItem.prevPrice !== "" && (
-                      <span className="absolute left-0 top-0 rounded-br-lg bg-red-500 px-3 py-1 text-sm uppercase tracking-wider text-white">
-                        PROMOCJA
-                      </span>
-                    )}
+                    {portfolioItem.prevPrice !== "" && <Promotion />}
                   </div>
 
                   <div className="top-24 order-2 mt-12 flex flex-col items-start justify-start rounded-lg bg-gray-100 p-10 text-black lg:sticky lg:order-last lg:hidden lg:w-[330px]">
                     <div className="mb-2 md:mb-3">
                       <span className="mb-0.5 inline-block ">
-                        Strona Internetowa
+                        Strona Internetowaaaa
                       </span>
                       <h2 className="text-2xl font-bold lg:text-3xl">
                         {portfolioItem.label}
@@ -172,6 +175,9 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                       </Link>
                     </div>
                   </div>
+                  <h1 className="text-main max-w-screen-lg font-medium py-5 text-2xl lg:text-4xl">
+                    Nowoczesna i szybka strona internetowa {portfolioItem.label} - od projektanta i programisty seovileo 
+                  </h1>
 
                   <div className="mt-12 pl-2">
                     <h2 className="text-main mb-3 text-2xl">Opis produktu</h2>
@@ -323,6 +329,17 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                     >
                       4. Darmowy hosting
                     </Link>
+                    <div className="flex-b mt-2 w-full">
+                      <p className="font-medium">Technologia:</p>
+                      <Link
+                        href={portfolioItem.tech.link}
+                        target="_blank"
+                        className="flex-c hover:underline"
+                      >
+                        <FaLink className="mx-2 mr-0.5 text-lg" />{" "}
+                        <p>{portfolioItem.tech.label}</p>
+                      </Link>
+                    </div>
                   </div>
                 </div>
 

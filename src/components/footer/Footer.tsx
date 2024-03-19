@@ -2,7 +2,7 @@
 
 import { NAV_LINKS } from "@/src/constants";
 import Link from "next/link";
-import { Logo } from "../svg/Logo";
+import { Logo } from "../ui/Logo";
 
 export default function Footer() {
   return (
