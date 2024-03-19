@@ -67,17 +67,29 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                     {portfolioItem.prevPrice !== "" && <Promotion />}
                   </div>
 
-                  <div className="top-24 order-2 mt-12 flex flex-col items-start justify-start rounded-lg bg-gray-100 p-10 text-black lg:sticky lg:order-last lg:hidden lg:w-[330px]">
+                  <div className="order-2 mt-12 flex flex-col items-start justify-start rounded-lg bg-gray-100 p-10 text-black lg:order-last lg:hidden ">
+                    <div className="flex-b w-full text-xs">
+                      <p className="font-medium">Technologia:</p>
+                      <Link
+                        href={portfolioItem.tech.link}
+                        target="_blank"
+                        className="flex-c rounded-lg border border-gray-200  bg-white p-1.5 px-3 font-semibold transition-colors duration-300  hover:bg-gray-200"
+                      >
+                        <FaLink className="mr-1.5 text-lg" />{" "}
+                        <p>{portfolioItem.tech.label}</p>
+                      </Link>
+                    </div>
                     <div className="mb-2 md:mb-3">
-                      <span className="mb-0.5 inline-block ">
-                        Strona Internetowaaaa
+                      <span className="mb-0.5 mt-3 inline-block">
+                        Strona Internetowa
                       </span>
+
                       <h2 className="text-2xl font-bold lg:text-3xl">
                         {portfolioItem.label}
                       </h2>
                     </div>
 
-                    <div className="mb-6 flex items-center gap-3 md:mb-10">
+                    <div className="mb-6 flex items-center gap-3 md:mb-10 ">
                       <div className="flex h-7 items-center gap-1 rounded-full bg-yellow-500 px-2 text-black/80">
                         <span className="text-sm font-medium">4.2</span>
 
@@ -175,8 +187,9 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                       </Link>
                     </div>
                   </div>
-                  <h1 className="text-main max-w-screen-lg font-medium py-5 text-2xl lg:text-4xl">
-                    Nowoczesna i szybka strona internetowa {portfolioItem.label} - od projektanta i programisty seovileo 
+                  <h1 className="pb-2 pl-4 pr-2 pt-10 text-3xl font-medium text-gray-200 lg:pl-0 lg:text-4xl">
+                    Nowoczesna i szybka strona internetowa {portfolioItem.label}{" "}
+                    - od projektanta i programisty seovileo
                   </h1>
 
                   <div className="mt-12 pl-2">
@@ -271,16 +284,28 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
               </div>
 
               <div className="top-24 order-2 hidden flex-col items-start justify-start rounded-lg bg-gray-100 p-10 text-black lg:sticky lg:order-last lg:flex lg:w-[330px]">
+                <div className="flex-b w-full text-xs">
+                  <p className="font-medium">Technologia:</p>
+                  <Link
+                    href={portfolioItem.tech.link}
+                    target="_blank"
+                    className="flex-c rounded-lg border border-gray-200  bg-white p-1.5 px-3 font-semibold transition-colors duration-300  hover:bg-gray-200"
+                  >
+                    <FaLink className="mr-1.5 text-lg" />{" "}
+                    <p>{portfolioItem.tech.label}</p>
+                  </Link>
+                </div>
                 <div className="mb-2 md:mb-3">
-                  <span className="mb-0.5 inline-block ">
+                  <span className="mb-0.5 mt-3 inline-block">
                     Strona Internetowa
                   </span>
+
                   <h2 className="text-2xl font-bold lg:text-3xl">
                     {portfolioItem.label}
                   </h2>
                 </div>
 
-                <div className="mb-6 flex items-center gap-3 md:mb-10">
+                <div className="mb-6 flex items-center gap-3 md:mb-10 ">
                   <div className="flex h-7 items-center gap-1 rounded-full bg-yellow-500 px-2 text-black/80">
                     <span className="text-sm font-medium">4.2</span>
 
@@ -329,17 +354,6 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                     >
                       4. Darmowy hosting
                     </Link>
-                    <div className="flex-b mt-2 w-full">
-                      <p className="font-medium">Technologia:</p>
-                      <Link
-                        href={portfolioItem.tech.link}
-                        target="_blank"
-                        className="flex-c hover:underline"
-                      >
-                        <FaLink className="mx-2 mr-0.5 text-lg" />{" "}
-                        <p>{portfolioItem.tech.label}</p>
-                      </Link>
-                    </div>
                   </div>
                 </div>
 

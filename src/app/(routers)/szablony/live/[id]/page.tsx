@@ -28,14 +28,17 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
       <WidthLiveControls handleIframeClassChange={handleIframeClassChange} />
       <div className="bg-body relative -z-10 flex h-full w-full rounded-lg">
         {isIframeLoading && (
-          <div className="flex-c bg-main absolute left-1/2 top-1/2 -mt-12 h-full w-full -translate-x-1/2 -translate-y-1/2">
+          <div className="bg-main absolute left-1/2 top-1/2 -mt-12 flex h-full w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center">
+            <p className="animate-pulse font-medium tracking-wide">
+              Przygotowuje stronę
+            </p>
             <span className="loader" />
           </div>
         )}
 
         <iframe
           onLoad={handleIframeLoaded}
-          className={`mx-auto h-full bg-white transition-all duration-500 ${iframe}`}
+          className={`mx-auto h-[95vh] bg-white transition-all duration-500 ${iframe}`}
           src={portfolioItem.link}
         />
       </div>
