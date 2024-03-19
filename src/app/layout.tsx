@@ -3,6 +3,7 @@ import { inter } from "@/src/ui/fonts";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
+import Providers from "../components/ProgressBarProvider";
 import Header from "../ui/header/Header";
 const ScrollUp = dynamic(() => import("@/src/ui/buttons/ScrollUp"));
 const Footer = dynamic(() => import("@/src/ui/footer/Footer"));
@@ -24,9 +25,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className}`}>
         <Header />
-        <main style={{ minHeight: "calc(100vh - 510px)" }} className="text-p">
-          {children}
-        </main>
+        <Providers>{children}</Providers>
         <div
           id="bgBlur"
           className="anim-opacity fixed inset-0 -z-10 h-full w-full"

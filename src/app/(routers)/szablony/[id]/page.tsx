@@ -27,8 +27,9 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
   return (
     <>
       <div className="anim-opacity mx-auto max-w-screen-2xl">
+        <div className="absolute left-1/2 top-0 -z-10 h-80 w-1/2 -translate-x-1/2 rounded-full bg-[#8f6341] blur-[300px]" />
         <Breadcrumbs breadcrumbs={breadcrumbs} />
-        <div className="py-6 sm:py-8 lg:py-12">
+        <div className="mt-4 lg:mt-10 py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8 ">
             <div className="grid gap-6 lg:flex lg:items-start lg:justify-start">
               <div className="grid gap-6 lg:w-3/4 lg:grid-cols-5">

@@ -14,25 +14,7 @@ const SearchBar = dynamic(() => import("@/src/components/SearchBar"));
 
 const Header = () => {
   const pathname = usePathname();
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [visible, setVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const controlNavbarAndHeaderBackground = useCallback(() => {
-    if (typeof window !== "undefined") {
-      const currentScrollY = window.scrollY;
-      const newVisible = lastScrollY > currentScrollY || currentScrollY < 40;
-
-      if (newVisible !== visible) setVisible(newVisible);
-      if (currentScrollY !== lastScrollY) setLastScrollY(currentScrollY);
-    }
-  }, [lastScrollY, visible]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", controlNavbarAndHeaderBackground);
-    return () =>
-      window.removeEventListener("scroll", controlNavbarAndHeaderBackground);
-  }, [controlNavbarAndHeaderBackground]);
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prevState) => !prevState);
@@ -66,9 +48,7 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-body border-second sticky top-0 z-50 w-full border-b px-6 py-4 text-sm font-medium transition-all duration-500 ease-in-out lg:py-3 ${
-        !visible ? "-translate-y-[120%]" : ""
-      }`}
+      className={`relative z-50 w-full px-6 py-4 text-sm font-medium transition-all duration-500 ease-in-out lg:py-3`}
     >
       <nav
         className={` mx-auto flex w-full max-w-screen-2xl items-center justify-between `}

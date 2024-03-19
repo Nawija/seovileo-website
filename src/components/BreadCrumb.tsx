@@ -13,7 +13,7 @@ export default function Breadcrumbs({
   const liClass = "hover:text-white transition-colors duration-300";
   return (
     <nav aria-label="Breadcrumb">
-      <ol className="flex items-center justify-start space-x-8 px-2 py-2 text-sm lg:px-6">
+      <ol className="mt-3 flex items-center justify-start space-x-8 px-2 py-2 text-sm lg:px-6">
         <li key="powrot" className={liClass}>
           <button onClick={() => router.back()} className="flex-c">
             <IoArrowBack className="mr-1" />
