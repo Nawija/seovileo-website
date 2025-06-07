@@ -8,6 +8,7 @@ import { useCallback, useEffect, useState } from "react";
 import { BsMoonStarsFill } from "react-icons/bs";
 
 import { Logo } from "@/components/ui/Logo";
+import { Suspense } from "react";
 import { SecondBtn } from "../ui/buttons/SecondBtn";
 
 const SearchBar = dynamic(() => import("@/components/SearchBar"));
@@ -51,15 +52,15 @@ const Header = () => {
       className={`relative z-50 w-full px-6 py-4 text-sm font-medium transition-all duration-500 ease-in-out lg:py-3`}
     >
       <nav
-        className={` mx-auto flex w-full max-w-screen-2xl items-center justify-between `}
+        className={`mx-auto flex w-full max-w-screen-2xl items-center justify-between`}
       >
         <Link href="/" onClick={closeMenu} className="z-10 mr-12 text-white">
           <Logo h={27} w={27} />
         </Link>
         <div
-          className={`border-main bg-main absolute left-0 top-0 flex h-screen w-72 flex-col items-center justify-center border-r  text-start backdrop-blur-sm transition-transform lg:absolute lg:left-1/2 lg:top-1/2 lg:h-auto lg:w-max lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center lg:justify-center  lg:rounded-lg lg:border lg:bg-none lg:px-4 lg:py-2 lg:backdrop-blur-none ${
+          className={`border-main bg-main absolute top-0 left-0 flex h-screen w-72 flex-col items-center justify-center border-r text-start backdrop-blur-sm transition-transform lg:absolute lg:top-1/2 lg:left-1/2 lg:h-auto lg:w-max lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center lg:justify-center lg:rounded-lg lg:border lg:bg-none lg:px-4 lg:py-2 lg:backdrop-blur-none ${
             isMenuOpen
-              ? "translate-x-0 duration-200 "
+              ? "translate-x-0 duration-200"
               : "-translate-x-full duration-500"
           } `}
         >
@@ -78,15 +79,19 @@ const Header = () => {
               </li>
             ))}
             <div className="lg:hidden">
-              <SearchBar />
+              <Suspense fallback={null}>
+                <SearchBar />
+              </Suspense>
             </div>
-            <SecondBtn className="fixed right-0 top-2 p-2 px-3 lg:hidden">
+            <SecondBtn className="fixed top-2 right-0 p-2 px-3 lg:hidden">
               <BsMoonStarsFill className="text-lg" />
             </SecondBtn>
           </ul>
         </div>
         <div className="hidden items-center justify-center lg:flex">
-          <SearchBar />
+          <Suspense fallback={null}>
+            <SearchBar />
+          </Suspense>
           <SecondBtn className="p-2 px-3">
             <BsMoonStarsFill className="text-lg" />
           </SecondBtn>
