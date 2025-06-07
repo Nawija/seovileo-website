@@ -1,37 +1,11 @@
-import fetchDatoCms from "@/lib/fetchDatoCms";
-
+// page.tsx (główna strona bloga)
 import dynamic from "next/dynamic";
+import { getAllBlogPosts } from "@/lib/mdx";
+
 const LogicReact = dynamic(() => import("./LogicReact"));
 
-const query = `{
-    allPopularnes {
-      id
-      tags
-      date
-      slug
-      title
-      img {
-        url
-        blurUpThumb(quality: 1)
-      }
-    }
-    allBlogs {
-      id
-      tags
-      date
-      slug
-      title
-      img {
-        url
-        blurUpThumb(quality: 1)
-      }
-    }
-}`;
-
 const Blog = async () => {
-  const data = await fetchDatoCms(query);
-  const dataArray = [{ ...data.allBlogs, ...data.allPopularnes }];
-  const mergedData = Object.values(dataArray[0]);
+  const mergedData = getAllBlogPosts();
 
   return (
     <div className="anim-opacity">

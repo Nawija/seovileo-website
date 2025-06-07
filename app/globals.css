@@ -78,6 +78,10 @@ body {
   color: var(--text-p);
   background-color: var(--bg-body);
 }
+@theme {
+  --color-body: #141414;
+  --color-main: #1c1c1c;
+}
 
 .bg-body {
   background-color: var(--bg-body);
@@ -149,5 +153,3 @@ body {
   white-space: nowrap;
   animation: scroll 20s linear infinite;
 }
-
-

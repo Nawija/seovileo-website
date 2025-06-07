@@ -1,23 +1,15 @@
 export const NAV_LINKS = [
   {
     href: "/",
-    label: "Home",
+    label: "Strona Główna",
   },
   {
     href: "/szablony",
     label: "Szablony",
   },
   {
-    href: "/",
-    label: "Boty",
-  },
-  {
     href: "/oferta",
     label: "Oferta",
-  },
-  {
-    href: "/galeria",
-    label: "Galeria",
   },
   {
     href: "/blog",
