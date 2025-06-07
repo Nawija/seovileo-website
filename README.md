@@ -1,2 +1,0 @@
-seovileo.pl
-seovileo.com
