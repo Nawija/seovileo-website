@@ -1,4 +1,3 @@
-import HeroBg from "@/public/fale-czastek-3d-futurystyczne-tlo-technologii.jpg";
 import { MainBtn } from "@/components/ui/buttons/MainBtn";
 import { SecondBtn } from "@/components/ui/buttons/SecondBtn";
 import { SCROLLING_LABEL } from "@/constants";
@@ -9,17 +8,17 @@ export default function Hero() {
   const doubledLabels = [...SCROLLING_LABEL, ...SCROLLING_LABEL];
   return (
     <section className="relative mx-auto py-20 lg:py-36">
-      <div className="absolute left-0 top-0 -z-10 h-96 w-full opacity-30 lg:opacity-25">
+      <div className="absolute top-0 left-0 -z-10 h-96 w-full opacity-30 lg:opacity-25">
         <Image
           className="-z-10 h-full w-full object-cover"
-          src={HeroBg}
+          src="/fale-czastek-3d-futurystyczne-tlo-technologii.webp"
           alt="fale-czastek-3d-futurystyczne-tlo-technologii"
           fill
           quality={10}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#141414] via-transparent via-40% to-[#141414]" />
       </div>
-      <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center space-y-7 px-2 text-center ">
+      <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center space-y-7 px-2 text-center">
         <h1 className="text-main relative text-4xl font-semibold sm:px-4 md:text-4xl lg:text-6xl">
           Nowoczesne Rozwiązania Webowe
         </h1>
@@ -39,7 +38,7 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-      <div className="relative mx-auto mt-12 flex w-full max-w-screen-md items-center justify-center overflow-x-hidden ">
+      <div className="relative mx-auto mt-12 flex w-full max-w-screen-md items-center justify-center overflow-x-hidden">
         <div className="scrolling flex items-center justify-center">
           {doubledLabels.map((label, i) => (
             <p className="ml-12 inline-block" key={i}>
@@ -47,7 +46,7 @@ export default function Hero() {
             </p>
           ))}
         </div>
-        <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-r from-[#141414] via-transparent to-[#141414]" />
+        <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-[#141414] via-transparent to-[#141414]" />
       </div>
     </section>
   );

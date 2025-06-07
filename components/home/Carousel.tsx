@@ -57,21 +57,28 @@ export default function Carousel() {
 
   useEffect(() => {
     const container = scrollContainer.current;
-    if (container) {
-      container.addEventListener("mousedown", onMouseDown as any);
-      container.addEventListener("mouseleave", onMouseLeave as any);
-      container.addEventListener("mouseup", onMouseUp as any);
-      container.addEventListener("mousemove", onMouseMove as any);
-      container.addEventListener("scroll", checkScrollPosition);
+    if (!container) return;
 
-      return () => {
-        container.removeEventListener("mousedown", onMouseDown as any);
-        container.removeEventListener("mouseleave", onMouseLeave as any);
-        container.removeEventListener("mouseup", onMouseUp as any);
-        container.removeEventListener("mousemove", onMouseMove as any);
-        container.removeEventListener("scroll", checkScrollPosition);
-      };
-    }
+    const handleMouseDown = (e: MouseEvent) =>
+      onMouseDown(e as unknown as React.MouseEvent);
+    const handleMouseLeave = () => onMouseLeave();
+    const handleMouseUp = () => onMouseUp();
+    const handleMouseMove = (e: MouseEvent) => onMouseMove(e);
+    const handleScroll = () => checkScrollPosition();
+
+    container.addEventListener("mousedown", handleMouseDown);
+    container.addEventListener("mouseleave", handleMouseLeave);
+    container.addEventListener("mouseup", handleMouseUp);
+    container.addEventListener("mousemove", handleMouseMove);
+    container.addEventListener("scroll", handleScroll);
+
+    return () => {
+      container.removeEventListener("mousedown", handleMouseDown);
+      container.removeEventListener("mouseleave", handleMouseLeave);
+      container.removeEventListener("mouseup", handleMouseUp);
+      container.removeEventListener("mousemove", handleMouseMove);
+      container.removeEventListener("scroll", handleScroll);
+    };
   }, [isDragging, startX, scrollLeft]);
 
   return (

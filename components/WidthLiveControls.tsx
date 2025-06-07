@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 export default function WidthLiveControls({
   handleIframeClassChange,
 }: {
   handleIframeClassChange: (classChange: string) => void;
 }) {
-  const router = useRouter();
   return (
     <div className="flex-b bg-main border-second z-[99999] h-[3.8rem] border-b p-2 px-4 text-sm">
       <p className="flex lg:hidden">Więcej opcji na PC</p>

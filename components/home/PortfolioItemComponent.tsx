@@ -13,7 +13,7 @@ const PortfolioItemComponent: React.FC<PortfolioItemComponentProps> = ({
   item,
 }) => {
   const { id, url, label, desc, prevPrice, price } = item;
-  let discountPercent =
+  const discountPercent =
     prevPrice !== ""
       ? ((parseFloat(prevPrice) - parseFloat(price)) / parseFloat(prevPrice)) *
         100
@@ -46,7 +46,7 @@ const PortfolioItemComponent: React.FC<PortfolioItemComponentProps> = ({
             <span>zł</span>
           </p>
         </div>
-        <div className="flex-b text-p mt-1 w-full text-xs lg:text-sm ">
+        <div className="flex-b text-p mt-1 w-full text-xs lg:text-sm">
           <p>{desc.length > 23 ? `${desc.slice(0, 23)}...` : desc}</p>
           {prevPrice !== "" && (
             <div className="flex flex-col items-end justify-end pl-0.5 sm:flex-row sm:items-center">
