@@ -69,14 +69,14 @@ export const PORTFOLIO = [
     link: "https://fotograf-six.vercel.app/",
   },
   {
-    id: "fotograf1",
+    id: "fotograf-jarek-olszewski",
     tech: {
       label: "Nextjs 14",
       link: "https://nextjs.org/",
     },
     href: "/",
     url: "/images/111.png",
-    color: "#1E3C53",
+    color: "#db4d30",
     label: "Fotograf - Jarek Olszewski",
     desc: "Lokalny fotograf",
     prevPrice: "",

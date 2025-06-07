@@ -33,6 +33,10 @@ export type PortfolioItem = {
   url: StaticImageData | string;
   label: string;
   desc: string;
+  tech: {
+    link: string;
+    label: string;
+  };
 };
 
 export type HeightWightTypes = {

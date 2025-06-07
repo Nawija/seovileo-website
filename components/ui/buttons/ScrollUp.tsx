@@ -31,7 +31,7 @@ export default function ScrollUp() {
 
   return (
     <button
-      className={`bg-main border-main fixed bottom-6 right-4 rounded-lg border p-2 text-white transition-colors duration-300 hover:bg-zinc-800 lg:p-2.5 ${
+      className={`bg-main border-main cursor-pointer fixed bottom-6 right-4 rounded-lg border p-2 text-white transition-colors duration-300 hover:bg-zinc-800 lg:p-2.5 ${
         scrollUp ? "slide-left" : "hidden"
       }`}
       onClick={scrollToTop}

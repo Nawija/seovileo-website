@@ -83,18 +83,18 @@ export default function SearchBar() {
           onChange={handleSearchChange}
           onFocus={modelOp}
           placeholder="Szukaj"
-          className="w-40 rounded-md border border-gray-300 px-2 py-1 lg:flex"
+          className="w-48 rounded-md border border-gray-300 bg-white px-2 py-1.5 placeholder:text-zinc-500 lg:flex"
         />
         <IoSearch
-          className="absolute right-2 top-1.5 text-lg text-zinc-400"
+          className="absolute top-1/2 right-2 -translate-y-1/2 text-lg text-zinc-600"
           onClick={handleSearchIconClick}
         />
       </form>
       {isModalOpen && (
-        <div className="fixed left-0 top-16 z-10 max-h-80 overflow-y-scroll rounded-lg lg:left-1/2 lg:h-full lg:max-h-full lg:w-1/3 lg:-translate-x-1/2 lg:overflow-auto">
-          <div className="anim-opacity border-second w-full transform space-y-3 rounded-lg border bg-gradient-to-br from-pink-700 from-20% via-violet-500 to-sky-400 p-3 sm:w-1/2 lg:w-full lg:p-6">
+        <div className="fixed top-16 left-0 z-10 max-h-80 overflow-y-scroll rounded-lg lg:left-1/2 lg:h-full lg:max-h-full lg:w-1/3 lg:-translate-x-1/2 lg:overflow-auto">
+          <div className="anim-opacity border-second w-full transform space-y-3 rounded-lg border bg-main p-3 sm:w-1/2 lg:w-full lg:p-6">
             <button
-              className="absolute right-2 top-2 text-white"
+              className="absolute top-2 right-2 text-white"
               onClick={closeModal}
             >
               <IoIosCloseCircle className="text-2xl" />

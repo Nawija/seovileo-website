@@ -21,29 +21,39 @@ const breadcrumbs = [
   },
 ];
 
-const LogicReact = ({ mergedData }: any) => {
+interface LogicReactProps {
+  mergedData: BlogType[];
+}
+
+const LogicReact = ({ mergedData }: LogicReactProps) => {
   const searchParams = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("blog") || "");
   const [filteredProducts, setFilteredProducts] = useState(mergedData);
 
   useEffect(() => {
     if (search) {
-      const newfilteredProducts = mergedData.filter((product: BlogType) =>
+      const byTag = mergedData.filter((product) =>
         product.tags[0].toLowerCase().includes(search.toLowerCase()),
       );
 
-      const filteredProducts = mergedData.filter((product: BlogType) =>
+      const byTitle = mergedData.filter((product) =>
         product.title.toLowerCase().includes(search.toLowerCase()),
       );
 
-      const dataMerged = [{ ...newfilteredProducts, ...filteredProducts }];
-      const mergedDataFilterArray = Object.values(dataMerged[0]);
+      const combined = [...byTag, ...byTitle];
 
-      setFilteredProducts(mergedDataFilterArray);
+      // Jeśli `product.title` jest unikalne, możemy go użyć do filtrowania duplikatów:
+      const unique = Array.from(
+        new Map(combined.map((item) => [item.title, item])).values(),
+      );
+
+      setFilteredProducts(unique);
+    } else {
+      setFilteredProducts(mergedData);
     }
-  }, [search]);
+  }, [search, mergedData]);
 
-  const handleSearchChange = (event: any) => {
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
   return (
