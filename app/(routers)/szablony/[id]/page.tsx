@@ -279,12 +279,13 @@ export default async function SzablonyID({
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="grid gap-6 lg:flex lg:items-start lg:justify-start">
               <div className="grid gap-6 lg:w-3/4 lg:grid-cols-5">
-                <div className="relative w-full overflow-hidden lg:col-span-5">
-                  <div className="relative order-first h-[700px] w-full">
+                <div className="relative w-full lg:col-span-5">
+                  <div className="relative order-first h-max w-full">
                     <Image
                       src={portfolioItem.url}
                       alt="Photo by Himanshu Dewangan"
-                      fill
+                      height={600}
+                      width={900}
                       className="border-main h-full w-full rounded-lg border object-contain object-top"
                     />
                     {portfolioItem.prevPrice !== "" && <Promotion />}
