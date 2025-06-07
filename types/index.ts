@@ -13,6 +13,7 @@ export type BlogType = {
   title: string;
   img?: {
     url: string;
+    blurUpThumb?: string;
   };
 };
 export type BlogItemTypes = {
@@ -22,6 +23,7 @@ export type BlogItemTypes = {
   date: string;
   img?: {
     url: string;
+    blurUpThumb?: string;
   };
 };
 
