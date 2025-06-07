@@ -20,7 +20,7 @@ export type BlogItemTypes = {
   title: string;
   tags: string[];
   date: string;
-  img: {
+  img?: {
     url: string;
   };
 };
