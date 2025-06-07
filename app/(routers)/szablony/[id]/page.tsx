@@ -9,7 +9,6 @@ import { SuccesBtn } from "@/components/ui/buttons/SuccessBtn";
 import { PORTFOLIO } from "@/constants/portfolio";
 import { PortfolioItem } from "@/types";
 import { Star, Truck } from "lucide-react";
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa";
@@ -27,9 +26,15 @@ interface ProductCardProps {
   className?: string;
 }
 
-const ProductCard = ({ portfolioItem, id, className = "" }: ProductCardProps) => {
+const ProductCard = ({
+  portfolioItem,
+  id,
+  className = "",
+}: ProductCardProps) => {
   return (
-    <div className={`flex flex-col items-start justify-start rounded-lg bg-gray-100 p-10 text-black ${className}`}>
+    <div
+      className={`flex flex-col items-start justify-start rounded-lg bg-gray-100 p-10 text-black ${className}`}
+    >
       <div className="flex-b w-full text-xs">
         <p className="font-medium">Technologia:</p>
         <Link
@@ -42,9 +47,7 @@ const ProductCard = ({ portfolioItem, id, className = "" }: ProductCardProps) =>
         </Link>
       </div>
       <div className="mb-2 md:mb-3">
-        <span className="mt-3 mb-0.5 inline-block">
-          Strona Internetowa
-        </span>
+        <span className="mt-3 mb-0.5 inline-block">Strona Internetowa</span>
 
         <h2 className="text-2xl font-bold lg:text-3xl">
           {portfolioItem.label}
@@ -57,9 +60,7 @@ const ProductCard = ({ portfolioItem, id, className = "" }: ProductCardProps) =>
           <Star size={15} fill="currentColor" />
         </div>
 
-        <span className="text-sm transition duration-100">
-          56 ocen
-        </span>
+        <span className="text-sm transition duration-100">56 ocen</span>
       </div>
 
       <div className="mb-8 md:mb-10">
@@ -112,9 +113,7 @@ const ProductCard = ({ portfolioItem, id, className = "" }: ProductCardProps) =>
 
       <div className="mb-6 flex items-center gap-2">
         <Truck className="h-6 w-6" />
-        <span className="text-sm">
-          2-4 tygodni czas oczekiwania
-        </span>
+        <span className="text-sm">2-4 tygodni czas oczekiwania</span>
       </div>
 
       <div className="flex gap-2.5">
@@ -129,7 +128,11 @@ const ProductCard = ({ portfolioItem, id, className = "" }: ProductCardProps) =>
   );
 };
 
-const ProductDescription = ({ portfolioItem }: { portfolioItem: PortfolioItem }) => {
+const ProductDescription = ({
+  portfolioItem,
+}: {
+  portfolioItem: PortfolioItem;
+}) => {
   const sections = [
     {
       id: "darmowa-konfiguracja",
@@ -144,7 +147,7 @@ const ProductDescription = ({ portfolioItem }: { portfolioItem: PortfolioItem })
         incidunt, quia atque iste. Atque enim consectetur,
         officiis veritatis labore nisi. Est ab rerum blanditiis
         maiores, reiciendis cupiditate velit accusamus similique
-        voluptatum?`
+        voluptatum?`,
     },
     {
       id: "darmowe-edycje-tekstu",
@@ -159,7 +162,7 @@ const ProductDescription = ({ portfolioItem }: { portfolioItem: PortfolioItem })
         incidunt, quia atque iste. Atque enim consectetur,
         officiis veritatis labore nisi. Est ab rerum blanditiis
         maiores, reiciendis cupiditate velit accusamus similique
-        voluptatum?`
+        voluptatum?`,
     },
     {
       id: "wsparcie-techniczne",
@@ -168,7 +171,7 @@ const ProductDescription = ({ portfolioItem }: { portfolioItem: PortfolioItem })
         Adipisci dicta facere repudiandae iure culpa iste placeat
         i ipsa quas? Ex beatae unde soluta, aliquid dnditiis
         maiores, reiciendis cupiditate velit accusamus similique
-        voluptatum?`
+        voluptatum?`,
     },
     {
       id: "darmowy-hosting",
@@ -191,16 +194,16 @@ const ProductDescription = ({ portfolioItem }: { portfolioItem: PortfolioItem })
         doloremque pariatur veniam ut incidunt, quia atque iste.
         Atque enim consectetur, officiis veritatis labore nisi.
         Est ab rerum blanditiis maiores, reiciendis cupiditate
-        velit accusamus similique voluptatum?`
-      ]
-    }
+        velit accusamus similique voluptatum?`,
+      ],
+    },
   ];
 
   return (
     <>
       <h1 className="pt-10 pr-2 pb-2 pl-4 text-3xl font-medium text-gray-200 lg:pl-0 lg:text-4xl">
-        Nowoczesna i szybka strona internetowa {portfolioItem.label}{" "}
-        - od projektanta i programisty seovileo
+        Nowoczesna i szybka strona internetowa {portfolioItem.label} - od
+        projektanta i programisty seovileo
       </h1>
 
       <div className="mt-12 pl-2">
@@ -214,22 +217,18 @@ const ProductDescription = ({ portfolioItem }: { portfolioItem: PortfolioItem })
           className="mt-12 scroll-m-12 pl-2"
           id={section.id}
         >
-          <h2 className="text-main mb-3 text-2xl">
-            {section.title}
-          </h2>
+          <h2 className="text-main mb-3 text-2xl">{section.title}</h2>
           {Array.isArray(section.content) ? (
             section.content.map((paragraph, index) => (
-              <p 
-                key={index} 
-                className={`max-w-screen-lg ${index === 0 ? 'mb-12' : ''}`}
+              <p
+                key={index}
+                className={`max-w-screen-lg ${index === 0 ? "mb-12" : ""}`}
               >
                 {paragraph}
               </p>
             ))
           ) : (
-            <p className="max-w-screen-lg">
-              {section.content}
-            </p>
+            <p className="max-w-screen-lg">{section.content}</p>
           )}
         </div>
       ))}
@@ -237,25 +236,26 @@ const ProductDescription = ({ portfolioItem }: { portfolioItem: PortfolioItem })
   );
 };
 
-type Props = {
-  params: { id: string };
-};
+// export async function generateMetadata({ params }: Props): Promise<Metadata> {
+//   const id = params.id;
+//   const portfolioItem: PortfolioItem | undefined = PORTFOLIO.find(
+//     (item) => item.id === id,
+//   );
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const id = params.id;
-  const portfolioItem: PortfolioItem | undefined = PORTFOLIO.find(
-    (item) => item.id === id,
-  );
+//   return {
+//     title: `Szablon strony internetowej ${portfolioItem?.label} | Darmowa konfiguracja `,
+//     description: `Błyskawiczna strona internetowa wykonana w nowoczensej technolgoii. Kup szablon teraz za ${portfolioItem?.price}zł a my zajmiemy sie konfiguracja! `,
+//     metadataBase: new URL("https://seovileo.com"),
+//   };
+// }
 
-  return {
-    title: `Szablon strony internetowej ${portfolioItem?.label} | Darmowa konfiguracja `,
-    description: `Błyskawiczna strona internetowa wykonana w nowoczensej technolgoii. Kup szablon teraz za ${portfolioItem?.price}zł a my zajmiemy sie konfiguracja! `,
-    metadataBase: new URL("https://seovileo.com"),
-  };
-}
-
-export default function SzablonyID({ params }: { params: { id: string } }) {
-  const id = params.id;
+export default async function SzablonyID({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const awaitedParams = await Promise.resolve(params);
+  const { id } = awaitedParams;
   const portfolioItem = PORTFOLIO.find((item) => item.id === id);
 
   if (!portfolioItem) {
@@ -291,7 +291,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                   </div>
 
                   {/* Mobile version - widoczna tylko na mobile */}
-                  <ProductCard 
+                  <ProductCard
                     portfolioItem={portfolioItem}
                     id={id}
                     className="order-2 mt-12 lg:order-last lg:hidden"
@@ -303,7 +303,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
               </div>
 
               {/* Desktop version - sticky sidebar */}
-              <ProductCard 
+              <ProductCard
                 portfolioItem={portfolioItem}
                 id={id}
                 className="top-24 order-2 hidden lg:sticky lg:order-last lg:flex lg:w-[330px]"

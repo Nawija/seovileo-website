@@ -6,9 +6,9 @@ import { PORTFOLIO } from "@/constants/portfolio";
 import { useState } from "react";
 
 export default function SzablonyID({ params }: { params: { id: string } }) {
+  const id = params.id;
   const [iframe, setIframe] = useState("w-full h-full");
   const [isIframeLoading, setIframeLoading] = useState(true);
-  const id = params.id;
   const portfolioItem = PORTFOLIO.find((item) => item.id === id);
 
   if (!portfolioItem) {
