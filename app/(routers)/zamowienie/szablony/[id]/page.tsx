@@ -8,12 +8,13 @@ const breadcrumbs = [
     href: "/szablony",
   },
 ];
-export default function ZamowienieSzablonyId({
+export default async function ZamowienieSzablonyId({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const id = params.id;
+  const awaitedParams = await Promise.resolve(params);
+  const { id } = awaitedParams;
   const portfolioItem = PORTFOLIO.find((item) => item.id === id);
 
   if (!portfolioItem) {
@@ -22,15 +23,15 @@ export default function ZamowienieSzablonyId({
   return (
     <section className="anim-opacity mx-auto max-w-screen-2xl">
       <Breadcrumbs breadcrumbs={breadcrumbs} />
-      <div className="flex items-center justify-center px-4 py-16 2xl:container md:px-6 2xl:mx-auto 2xl:px-0">
+      <div className="flex items-center justify-center px-4 py-16 md:px-6 2xl:container 2xl:mx-auto 2xl:px-0">
         <div className="flex w-full flex-col items-start justify-start space-y-9">
-          <div className="flex w-full flex-col justify-center space-y-6 xl:flex-row xl:justify-between xl:space-x-6 xl:space-y-0">
-            <div className="flex flex-col items-center justify-center rounded-lg bg-gray-100 px-10 py-7 sm:flex-row sm:py-0 xl:w-3/5 xl:flex-col xl:py-10 ">
+          <div className="flex w-full flex-col justify-center space-y-6 xl:flex-row xl:justify-between xl:space-y-0 xl:space-x-6">
+            <div className="flex flex-col items-center justify-center rounded-lg bg-gray-100 px-10 py-7 sm:flex-row sm:py-0 xl:w-3/5 xl:flex-col xl:py-10">
               <div className="flex w-full flex-col items-start justify-start space-y-4 font-bold xl:px-20">
-                <p className="text-xl leading-normal text-gray-800 md:text-2xl ">
+                <p className="text-xl leading-normal text-gray-800 md:text-2xl">
                   {portfolioItem.label}
                 </p>
-                <p className="text-base font-bold leading-none text-gray-600 lg:text-lg ">
+                <p className="text-base leading-none font-bold text-gray-600 lg:text-lg">
                   {portfolioItem.price}zł
                 </p>
               </div>
@@ -71,7 +72,7 @@ export default function ZamowienieSzablonyId({
 
               <div className="mt-6 flex flex-row items-center justify-center">
                 <hr className="w-full border" />
-                <p className="flex flex-shrink-0 px-4 text-base leading-4 text-gray-600 ">
+                <p className="flex flex-shrink-0 px-4 text-base leading-4 text-gray-600">
                   lub zapłac kartą
                 </p>
                 <hr className="w-full border" />
@@ -87,7 +88,7 @@ export default function ZamowienieSzablonyId({
                 />
               </div>
 
-              <label className="mt-8 text-base leading-4 text-gray-800 ">
+              <label className="mt-8 text-base leading-4 text-gray-800">
                 Numer Karty
               </label>
               <div className="mt-2 flex-col">
@@ -118,7 +119,7 @@ export default function ZamowienieSzablonyId({
                 </div>
               </div>
 
-              <label className="mt-8 text-base leading-4 text-gray-800 ">
+              <label className="mt-8 text-base leading-4 text-gray-800">
                 Nazwa karty
               </label>
               <div className="mt-2 flex-col">
@@ -133,19 +134,19 @@ export default function ZamowienieSzablonyId({
                 </div>
               </div>
 
-              <label className="mt-8 text-base leading-4 text-gray-800 ">
+              <label className="mt-8 text-base leading-4 text-gray-800">
                 Adres
               </label>
               <div className="mt-2 flex-col">
                 <input
-                  className="w-full rounded-lg rounded-bl rounded-br border border-gray-300 p-4 text-base leading-4 text-gray-600 placeholder-gray-600"
+                  className="w-full rounded-lg rounded-br rounded-bl border border-gray-300 p-4 text-base leading-4 text-gray-600 placeholder-gray-600"
                   type="text"
                   name=""
                   id=""
                   placeholder="Kod pocztowy"
                 />
                 <input
-                  className="w-full rounded-lg rounded-bl rounded-br border border-gray-300 p-4 text-base leading-4 text-gray-600 placeholder-gray-600"
+                  className="w-full rounded-lg rounded-br rounded-bl border border-gray-300 p-4 text-base leading-4 text-gray-600 placeholder-gray-600"
                   type="text"
                   name=""
                   id=""
