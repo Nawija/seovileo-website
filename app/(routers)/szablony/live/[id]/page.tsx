@@ -15,7 +15,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
     return <div>Obiekt nie znaleziony</div>;
   }
 
-  const handleIframeClassChange = (classChange: any) => {
+  const handleIframeClassChange = (classChange: string) => {
     setIframe(classChange);
   };
 
