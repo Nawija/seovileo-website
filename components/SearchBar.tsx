@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 
@@ -92,7 +92,7 @@ export default function SearchBar() {
       </form>
       {isModalOpen && (
         <div className="fixed top-16 left-0 z-10 max-h-80 overflow-y-scroll rounded-lg lg:left-1/2 lg:h-full lg:max-h-full lg:w-1/3 lg:-translate-x-1/2 lg:overflow-auto">
-          <div className="anim-opacity border-second w-full transform space-y-3 rounded-lg border bg-main p-3 sm:w-1/2 lg:w-full lg:p-6">
+          <div className="anim-opacity border-second bg-main w-full transform space-y-3 rounded-lg border p-3 sm:w-1/2 lg:w-full lg:p-6">
             <button
               className="absolute top-2 right-2 text-white"
               onClick={closeModal}
@@ -107,14 +107,16 @@ export default function SearchBar() {
               className="hidden w-full rounded-md border border-gray-300 px-2 py-1 lg:flex"
             />
             <ul className="flex flex-col items-center justify-center space-y-2">
-              {filteredProducts.slice(0, 4).map((item, index) => (
-                <SearchParams
-                  item={item}
-                  key={index}
-                  closeModal={closeModal}
-                  clearFilterProducts={clearFilterProducts}
-                />
-              ))}
+              <Suspense fallback={<p>Ładowanie...</p>}>
+                {filteredProducts.slice(0, 4).map((item, index) => (
+                  <SearchParams
+                    item={item}
+                    key={index}
+                    closeModal={closeModal}
+                    clearFilterProducts={clearFilterProducts}
+                  />
+                ))}
+              </Suspense>
             </ul>
           </div>
         </div>

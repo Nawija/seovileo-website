@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 import Breadcrumbs from "@/components/BreadCrumb";
 import { PortfolioItemSkeleton } from "@/components/ui/Skeletons";
@@ -66,13 +66,15 @@ const LogicReact = ({ mergedData }: LogicReactProps) => {
         />
 
         <div className="bg-body border-main w-3/4 rounded-lg border p-2 text-xs text-white sm:w-1/2 lg:w-1/3">
-          <input
-            type="search"
-            className="bg-body h-full w-full p-1 focus:outline-none"
-            placeholder="Wyszukaj"
-            value={search}
-            onChange={handleSearchChange}
-          />
+          <Suspense fallback={<p>Ładowanie...</p>}>
+            <input
+              type="search"
+              className="bg-body h-full w-full p-1 focus:outline-none"
+              placeholder="Wyszukaj"
+              value={search}
+              onChange={handleSearchChange}
+            />
+          </Suspense>
         </div>
       </div>
       <Breadcrumbs breadcrumbs={breadcrumbs} />
