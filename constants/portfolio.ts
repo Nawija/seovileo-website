@@ -77,11 +77,11 @@ export const PORTFOLIO = [
     href: "/",
     url: a5,
     color: "#1E3C53",
-    label: "Fotograf",
+    label: "Fotograf - Jarek Olszewski",
     desc: "usługi na najwyższym poziomie",
     prevPrice: "",
     price: "500",
-    link: "https://jj-three.vercel.app/",
+    link: "https://jarekolszewski.pl/",
   },
   {
     id: "panel-zdjec",

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function WidthLiveControls({
@@ -7,7 +8,7 @@ export default function WidthLiveControls({
 }) {
   const router = useRouter();
   return (
-    <div className="flex-b bg-main border-second z-[99999] border-b p-2 px-4 text-sm">
+    <div className="flex-b bg-main border-second z-[99999] h-[3.8rem] border-b p-2 px-4 text-sm">
       <p className="flex lg:hidden">Więcej opcji na PC</p>
       <div className="hidden md:flex" />
       <div className="hidden items-center justify-center space-x-5 md:flex">
@@ -77,7 +78,7 @@ export default function WidthLiveControls({
           </svg>
         </button>
       </div>
-      <button onClick={() => router.back()}>
+      <Link href="/szablony">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -92,7 +93,7 @@ export default function WidthLiveControls({
             d="M6 18 18 6M6 6l12 12"
           />
         </svg>
-      </button>
+      </Link>
     </div>
   );
 }

@@ -24,11 +24,11 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
   };
 
   return (
-    <div className="anim-opacity fixed left-0 top-0 z-[9999999999999] h-screen w-full">
+    <div className="anim-opacity fixed top-0 left-0 z-[9999999999999] h-screen w-full">
       <WidthLiveControls handleIframeClassChange={handleIframeClassChange} />
-      <div className="bg-body relative -z-10 flex h-full w-full rounded-lg">
+      <div className="bg-body relative -z-10 flex h-[calc(100vh-3.8rem)] w-full rounded-lg">
         {isIframeLoading && (
-          <div className="bg-main absolute left-1/2 top-1/2 -mt-12 flex h-full w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center">
+          <div className="bg-main absolute top-1/2 left-1/2 -mt-12 flex h-full w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center">
             <p className="animate-pulse font-medium tracking-wide">
               Przygotowuje stronę
             </p>
@@ -36,11 +36,13 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
           </div>
         )}
 
-        <iframe
-          onLoad={handleIframeLoaded}
-          className={`mx-auto h-[95vh] bg-white transition-all duration-500 ${iframe}`}
-          src={portfolioItem.link}
-        />
+        <div className="h-[calc(100vh-3.8rem)] w-full">
+          <iframe
+            onLoad={handleIframeLoaded}
+            className={`mx-auto bg-white transition-all duration-500 ${iframe}`}
+            src={portfolioItem.link}
+          />
+        </div>
       </div>
     </div>
   );

@@ -25,7 +25,9 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className}`}>
         <Header />
-        <Providers>{children}</Providers>
+        <Providers>
+          <main className="min-h-screen">{children}</main>
+        </Providers>
         <div
           id="bgBlur"
           className="anim-opacity fixed inset-0 -z-10 h-full w-full"
