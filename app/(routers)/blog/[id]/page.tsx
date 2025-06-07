@@ -1,5 +1,5 @@
 // [id]/page.tsx (strona pojedynczego posta)
-import "@/app/(routers)/blog/[id]/article.css"
+import "@/app/(routers)/blog/[id]/article.css";
 import Breadcrumbs from "@/components/BreadCrumb";
 import { getAllBlogSlugs, getBlogBySlug } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -13,9 +13,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPost({ params }: { params: { id: string } }) {
-  const slug = params.id;
-  const post = getBlogBySlug(slug);
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const awaitedParams = await Promise.resolve(params);
+  const { id } = awaitedParams;
+  const post = getBlogBySlug(id);
 
   if (!post) {
     notFound();
@@ -43,7 +48,7 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
             fill
             className="object-cover"
           />
-        <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-main to-transparent" />
+          <div className="from-main absolute inset-0 h-full w-full bg-gradient-to-t to-transparent" />
         </div>
       )}
       <div className="anim-opacity mx-auto flex h-full w-full flex-grow flex-col items-center justify-start px-6 py-20 text-center">
@@ -56,7 +61,7 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
         </div>
 
         {post.img && (
-          <div className="border-main rounded-xl relative mb-6 h-80 w-full overflow-hidden border sm:w-3/4 lg:mb-12 lg:h-[500px] xl:w-1/2">
+          <div className="border-main relative mb-6 h-80 w-full overflow-hidden rounded-xl border sm:w-3/4 lg:mb-12 lg:h-[500px] xl:w-1/2">
             <Image
               src={post.img.url}
               alt={post.title}
@@ -66,7 +71,7 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
           </div>
         )}
 
-        <article className="border-main rounded-xl bg-main article-content text-start max-w-screen-lg border p-3 transition-colors duration-300 sm:p-4 lg:p-6">
+        <article className="border-main bg-main article-content max-w-screen-lg rounded-xl border p-3 text-start transition-colors duration-300 sm:p-4 lg:p-6">
           <MDXRemote source={post.content || ""} />
         </article>
       </div>
