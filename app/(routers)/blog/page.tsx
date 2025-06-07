@@ -6,6 +6,7 @@ const LogicReact = dynamic(() => import("./LogicReact"));
 
 const Blog = async () => {
   const mergedData = getAllBlogPosts();
+  
 
   return (
     <div className="anim-opacity">

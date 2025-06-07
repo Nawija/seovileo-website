@@ -11,7 +11,7 @@ export type BlogType = {
   date: string;
   slug: string;
   title: string;
-  img: {
+  img?: {
     url: string;
   };
 };
