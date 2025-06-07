@@ -99,8 +99,10 @@ export default function Carousel() {
               <Image
                 src={p.url}
                 draggable="false"
+                height={500}
+                width={300}
                 alt="..."
-                className=" h-full w-full object-cover object-top"
+                className="h-full w-full object-cover object-top"
               />
               <div className="bg-main border-main absolute bottom-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border lg:h-4 lg:w-4" />
             </div>
@@ -110,7 +112,7 @@ export default function Carousel() {
           <button
             aria-label="przesuń w lewo"
             onClick={() => scroll(-330)}
-            className="bg-main border-main absolute left-0 top-1/2 z-10 mr-3 rounded border p-1.5 text-white"
+            className="bg-main border-main absolute top-1/2 left-0 z-10 mr-3 cursor-pointer rounded border p-1.5 text-white"
           >
             <ArrowLeft h={24} w={24} />
           </button>
@@ -119,7 +121,7 @@ export default function Carousel() {
           <button
             aria-label="przesuń w prawo"
             onClick={() => scroll(330)}
-            className="bg-main border-main absolute -right-3 top-1/2 z-10 mr-3 rounded border p-1.5 text-white"
+            className="bg-main border-main absolute top-1/2 -right-3 z-10 mr-3 cursor-pointer rounded border p-1.5 text-white"
           >
             <ArrowRight h={24} w={24} />
           </button>

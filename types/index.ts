@@ -30,7 +30,7 @@ export type PortfolioItem = {
   prevPrice: string;
   price: string;
   href: string;
-  url: StaticImageData;
+  url: StaticImageData | string;
   label: string;
   desc: string;
 };

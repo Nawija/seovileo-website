@@ -31,6 +31,8 @@ const PortfolioItemComponent: React.FC<PortfolioItemComponentProps> = ({
         <Image
           src={url}
           alt={label}
+          height={300}
+          width={300}
           className="h-36 w-full object-cover lg:h-52"
         />
       </div>

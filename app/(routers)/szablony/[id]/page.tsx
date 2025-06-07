@@ -62,6 +62,7 @@ export default function SzablonyID({ params }: { params: { id: string } }) {
                     <Image
                       src={portfolioItem.url}
                       alt="Photo by Himanshu Dewangan"
+                      fill
                       className="border-main h-full w-full rounded-lg border object-contain object-top"
                     />
                     {portfolioItem.prevPrice !== "" && <Promotion />}
