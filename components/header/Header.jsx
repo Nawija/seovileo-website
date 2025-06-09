@@ -77,7 +77,7 @@ const Header = () => {
                 : "-translate-x-full duration-500"
             } `}
           >
-            <div className="mb-12 lg:hidden">
+            <div className="mb-12 ml-3 lg:hidden">
               <Suspense fallback={null}>
                 <SearchBar />
               </Suspense>
