@@ -24,7 +24,7 @@ export default function Portfolio() {
           <ArrowRight size={15} />
         </Link>
       </div>
-      <div className="mt-6 grid grid-cols-1 gap-3 lg:grid-cols-4 lg:gap-4">
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
         {PORTFOLIO?.slice(0, 8).map((item, index) => (
           <PortfolioItemComponent key={item.label + index} item={item} />
         ))}
