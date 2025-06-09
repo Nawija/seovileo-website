@@ -75,7 +75,7 @@ export default function SearchBar() {
           onChange={handleSearchChange}
           onFocus={modelOp}
           placeholder="Szukaj"
-          className="border-mian w-full rounded-md border bg-white px-2 py-1.5 outline-0 placeholder:text-zinc-500 lg:flex"
+          className="border-mian w-full text-[16px] rounded-md border bg-white px-2 py-1 outline-0 placeholder:text-zinc-500 lg:flex"
         />
         {search.length > 0 ? (
           <IoClose

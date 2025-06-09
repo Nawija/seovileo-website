@@ -107,7 +107,7 @@ const Header = () => {
               <SearchBar />
             </Suspense>
             <SecondBtn className="p-2 px-3">
-              <BsMoonStarsFill className="text-lg" />
+              <BsMoonStarsFill className="text-base" />
             </SecondBtn>
           </div>
           <button
