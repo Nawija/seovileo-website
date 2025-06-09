@@ -112,15 +112,14 @@ body {
 }
 
 @keyframes scroll {
-  from {
-    transform: translateX(0);
+  0% {
+    transform: translateX(0%);
   }
-  to {
-    transform: translateX(-100vw);
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-.scrolling {
-  white-space: nowrap;
+.scroller {
   animation: scroll 20s linear infinite;
 }

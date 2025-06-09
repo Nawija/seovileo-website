@@ -5,7 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
-  const doubledLabels = [...SCROLLING_LABEL, ...SCROLLING_LABEL];
+  const scrollingContent = [
+    ...SCROLLING_LABEL,
+    ...SCROLLING_LABEL,
+    ...SCROLLING_LABEL,
+  ];
+
   return (
     <section className="relative mx-auto py-20 lg:py-36">
       <div className="absolute top-0 left-0 -z-10 h-96 w-full opacity-30 lg:opacity-25">
@@ -39,11 +44,15 @@ export default function Hero() {
         </div>
       </div>
       <div className="relative mx-auto mt-12 flex w-full max-w-screen-md items-center justify-center overflow-x-hidden">
-        <div className="scrolling flex items-center justify-center">
-          {doubledLabels.map((label, i) => (
-            <p className="ml-12 inline-block" key={i}>
-              {label.label}
-            </p>
+        <div className="scroller flex whitespace-nowrap">
+          {[...Array(2)].map((_, index) => (
+            <div key={index} className="flex shrink-0">
+              {scrollingContent.map((label, i) => (
+                <p className="mx-6 inline-block" key={`${index}-${i}`}>
+                  {label.label}
+                </p>
+              ))}
+            </div>
           ))}
         </div>
         <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-[#141414] via-transparent to-[#141414]" />
