@@ -26,11 +26,11 @@ export default function SearchParams({
       <Image
         alt="label"
         src={url}
-        className="h-16 w-max object-contain object-top pr-2"
+        className="h-10 sm:h-16 w-max object-contain object-top pr-1"
         height={55}
         width={110}
       />
-      <div className="flex flex-col items-end justify-end text-end w-40 sm:w-48">
+      <div className="flex flex-col items-end justify-end text-end w-32 sm:w-48">
         <p className="text-main">{label}</p>
         <div className="flex w-full flex-col items-end justify-end text-sm">
           <p>{price}zł</p>

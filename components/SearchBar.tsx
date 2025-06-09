@@ -68,7 +68,7 @@ export default function SearchBar() {
 
   return (
     <div className="relative w-full" ref={inputRef}>
-      <form className="relative w-48">
+      <form className="relative w-40">
         <input
           type="text"
           value={search}
@@ -94,12 +94,12 @@ export default function SearchBar() {
       </form>
       <Suspense fallback={null}>
         {isModalOpen && search.length >= 2 && (
-          <div className="bg-main/10 border-main absolute top-full left-1/2 z-10 mt-4 w-max -translate-x-1/2 rounded-lg border p-2 backdrop-blur-lg">
+          <div className="bg-main/10 border-main absolute top-full left-1/2 ml-4 sm:ml-0 w-max z-10 mt-4 -translate-x-1/2 rounded-lg border p-2 backdrop-blur-lg">
             <div className="anim-opacity w-full lg:p-3">
               {isSearching ? (
                 <SpinerLoading />
               ) : filteredProducts.length > 0 ? (
-                <div className="flex flex-col items-center justify-center space-y-4">
+                <div className="flex flex-col items-center justify-center w-full space-y-4">
                   {filteredProducts.slice(0, 4).map((item, index) => (
                     <SearchParams
                       item={item}

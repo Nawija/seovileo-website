@@ -10,7 +10,6 @@ import { BsMoonStarsFill } from "react-icons/bs";
 
 import { Logo } from "@/components/ui/Logo";
 import { Suspense } from "react";
-import SpinerLoading from "../SpinerLoading";
 import { SecondBtn } from "../ui/buttons/SecondBtn";
 
 const SearchBar = dynamic(() => import("@/components/SearchBar"));
