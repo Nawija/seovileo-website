@@ -5,7 +5,7 @@ export const NAV_LINKS = [
   },
   {
     href: "/szablony",
-    label: "Szablony",
+    label: "Realizacje",
   },
   {
     href: "/oferta",

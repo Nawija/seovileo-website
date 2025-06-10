@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 
 const Carousel = dynamic(() => import("@/components/home/Carousel"));
 
+import PageSpeedScores from "@/components/PageSpeedScores";
 import Promotion from "@/components/ui/buttons/Promotion";
 import { SecondBtn } from "@/components/ui/buttons/SecondBtn";
 import { SuccesBtn } from "@/components/ui/buttons/SuccessBtn";
@@ -210,6 +211,13 @@ const ProductDescription = ({
         <h2 className="text-main mb-3 text-2xl">Opis produktu</h2>
         <p>{portfolioItem.desc}</p>
       </div>
+
+      <PageSpeedScores
+        performance={87}
+        accessibility={95}
+        bestPractices={72}
+        seo={99}
+      />
 
       {sections.map((section) => (
         <div

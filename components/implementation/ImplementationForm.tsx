@@ -1,18 +1,33 @@
-// ./app/(routers)/zamowienie/szablony/[id]/ZamowienieForm.tsx
 "use client";
 
 import Breadcrumbs from "@/components/BreadCrumb";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { SuccesBtn } from "../ui/buttons/SuccessBtn";
-import Image from "next/image";
+
+type PortfolioItemType = {
+    id: string,
+    tech: {
+      label: string,
+      link: string,
+    },
+    href: string,
+    url: string | StaticImageData,
+    color: string,
+    label: string,
+    desc: string,
+    prevPrice: string,
+    price: string,
+    link: string,
+  }
 
 const breadcrumbs = [{ title: "szablony", href: "/szablony" }];
 
 export default function ImplementationForm({
   portfolioItem,
 }: {
-  portfolioItem: any;
+  portfolioItem: PortfolioItemType;
 }) {
   const [formData, setFormData] = useState({
     name: "",
