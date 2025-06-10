@@ -75,7 +75,7 @@ export default function ImplementationForm({
   return (
     <section className="anim-opacity mx-auto max-w-screen-2xl">
       <Toaster position="bottom-right" />
-      <Breadcrumbs breadcrumbs={breadcrumbs} />
+      <Breadcrumbs />
       <div className="flex items-center justify-center px-4 py-16 md:px-6 2xl:container 2xl:mx-auto 2xl:px-0">
         <div className="flex w-full flex-col items-start justify-start space-y-9">
           <div className="flex w-full flex-col justify-center space-y-6 xl:flex-row xl:justify-between xl:space-y-0 xl:space-x-6">
