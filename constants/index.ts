@@ -4,7 +4,7 @@ export const NAV_LINKS = [
     label: "Strona Główna",
   },
   {
-    href: "/szablony",
+    href: "/realizacje",
     label: "Realizacje",
   },
   {

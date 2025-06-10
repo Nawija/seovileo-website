@@ -1,0 +1,28 @@
+@keyframes multicolorText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-multicolor {
+  background: linear-gradient(
+    270deg,
+    #ff00c8,
+    #00ffff,
+    #ffdd00,
+    #00ff44,
+    #ff002f
+  );
+  background-size: 600% 600%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: multicolorText 5s ease infinite;
+}

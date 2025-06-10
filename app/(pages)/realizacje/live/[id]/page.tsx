@@ -14,5 +14,5 @@ export default async function SzablonyID({
     return <div>Obiekt nie znaleziony</div>;
   }
 
-  return <ClientWraper portfolioLink={portfolioItem.link} />;
+  return <ClientWraper portfolioLink={portfolioItem.link} portfolioID={portfolioItem.id} />;
 }

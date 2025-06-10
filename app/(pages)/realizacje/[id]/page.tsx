@@ -4,12 +4,12 @@ import dynamic from "next/dynamic";
 const Carousel = dynamic(() => import("@/components/home/Carousel"));
 
 import PageSpeedScores from "@/components/PageSpeedScores";
+import { MultiColorBtn } from "@/components/ui/buttons/MultiColorBtn";
 import Promotion from "@/components/ui/buttons/Promotion";
-import { SecondBtn } from "@/components/ui/buttons/SecondBtn";
 import { SuccesBtn } from "@/components/ui/buttons/SuccessBtn";
 import { PORTFOLIO } from "@/constants/portfolio";
 import { PortfolioItem } from "@/types";
-import { Truck } from "lucide-react";
+import { Eye, Truck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa";
@@ -27,21 +27,23 @@ const ProductCard = ({
 }: ProductCardProps) => {
   return (
     <div
-      className={`flex flex-col items-start justify-start rounded-lg bg-white/5 border border-main backdrop-blur-2xl p-10 text-white ${className}`}
+      className={`border-main flex flex-col items-start justify-start rounded-lg border bg-white/5 p-10 text-white backdrop-blur-2xl ${className}`}
     >
       <div className="flex-b w-full text-xs">
         <p className="font-medium">Technologia:</p>
         <Link
           href={portfolioItem.tech.link}
           target="_blank"
-          className="flex items-center justify-center rounded-lg border text-gray-700 border-gray-200 bg-white p-1.5 px-3 font-semibold transition-colors hover:bg-gray-200"
+          className="flex items-center justify-center rounded-lg border border-gray-200 bg-white p-1.5 px-3 font-semibold text-gray-700 transition-colors hover:bg-gray-200"
         >
           <FaLink className="mr-1.5 text-lg" />{" "}
           <p>{portfolioItem.tech.label}</p>
         </Link>
       </div>
       <div className="mb-6 md:mb-8">
-        <span className="mt-5 mb-0.5 inline-block text-gray-300 text-xs uppercase tracking-widest">Strona Internetowa</span>
+        <span className="mt-5 mb-0.5 inline-block text-xs tracking-widest text-gray-300 uppercase">
+          Strona Internetowa
+        </span>
 
         <h2 className="text-2xl font-bold lg:text-3xl">
           {portfolioItem.label}
@@ -87,10 +89,13 @@ const ProductCard = ({
       </div>
 
       <div className="flex w-full flex-col gap-2.5">
-        <Link href={`/szablony/live/${id}`}>
-          <SecondBtn className="w-full px-3 py-2">Zobacz Live</SecondBtn>
+        <Link href={`/realizacje/live/${id}`}>
+          <MultiColorBtn className="flex w-full items-center justify-center px-3 py-2">
+            <Eye className="mr-2" size={16} />
+            Zobacz strone
+          </MultiColorBtn>
         </Link>
-        <Link href={`/zamowienie/szablony/${id}`}>
+        <Link href={`/zamowienie/realizacje/${id}`}>
           <SuccesBtn className="w-full px-3 py-2">
             Zapytaj o podobną realizacje
           </SuccesBtn>
@@ -228,7 +233,7 @@ const ProductDescription = ({
 //   };
 // }
 
-export default async function SzablonyID({
+export default async function ImplementationID({
   params,
 }: {
   params: Promise<{ id: string }>;

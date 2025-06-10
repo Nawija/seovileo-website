@@ -1,10 +1,12 @@
+import { Monitor, Smartphone, Tablet, X } from "lucide-react";
 import Link from "next/link";
-import { Smartphone, Tablet, Monitor, X } from "lucide-react";
 
 export default function WidthLiveControls({
   handleIframeClassChange,
+  portfolioID,
 }: {
   handleIframeClassChange: (classChange: string) => void;
+  portfolioID: string;
 }) {
   return (
     <div className="flex-b bg-main border-second z-[99999] border-b p-2 px-4 text-sm">
@@ -38,7 +40,7 @@ export default function WidthLiveControls({
           <Monitor className="h-6 w-6" />
         </button>
       </div>
-      <Link href="/szablony">
+      <Link href={`/realizacje/${portfolioID}`} aria-label={portfolioID}>
         <X className="h-10 w-10 p-2" stroke="white" strokeWidth={1.8} />
       </Link>
     </div>

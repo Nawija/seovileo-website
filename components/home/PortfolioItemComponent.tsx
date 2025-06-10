@@ -22,8 +22,8 @@ const PortfolioItemComponent: React.FC<PortfolioItemComponentProps> = ({
   return (
     <Link
       key={label}
-      className="bg-main border-second rounded-lg border-2 transition duration-300 hover:scale-[1.02] hover:border-[#714e33]"
-      href={`/szablony/${id}`}
+      className="bg-main border-second rounded-lg border-2 transition duration-300 hover:scale-[1.02]"
+      href={`/realizacje/${id}`}
     >
       <div className="border-second relative overflow-hidden border-b bg-gradient-to-tr from-[#161616] to-transparent p-2 lg:p-4">
         {prevPrice !== "" && <Promotion />}
