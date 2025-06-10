@@ -49,7 +49,7 @@ export default function ZamowienieSzablonyId({
 
       toast.success("Wiadomość wysłana pomyślnie!");
       setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
+    } catch {
       toast.error("Wystąpił błąd. Spróbuj ponownie.");
     } finally {
       setLoading(false);
