@@ -83,9 +83,6 @@ export default function ImplementationForm({
                 <p className="text-xl text-gray-800 md:text-2xl">
                   {portfolioItem.label}
                 </p>
-                <p className="text-base text-gray-600 lg:text-lg">
-                  {portfolioItem.price} zł
-                </p>
               </div>
               <div className="mt-6 w-52 sm:mt-0 sm:w-96 xl:my-10 xl:w-full xl:px-20">
                 <Image
