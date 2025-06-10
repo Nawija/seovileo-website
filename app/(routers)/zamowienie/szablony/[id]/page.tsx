@@ -1,20 +1,21 @@
 "use client";
 
-import { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
-import Image from "next/image";
 import Breadcrumbs from "@/components/BreadCrumb";
 import { SuccesBtn } from "@/components/ui/buttons/SuccessBtn";
 import { PORTFOLIO } from "@/constants/portfolio";
+import Image from "next/image";
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const breadcrumbs = [{ title: "szablony", href: "/szablony" }];
 
-export default function ZamowienieSzablonyId({
+export default async function ZamowienieSzablonyId({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const { id } = params;
+  const awaitedParams = await Promise.resolve(params);
+  const { id } = awaitedParams;
   const portfolioItem = PORTFOLIO.find((item) => item.id === id);
 
   const [formData, setFormData] = useState({
@@ -24,7 +25,9 @@ export default function ZamowienieSzablonyId({
   });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -42,7 +45,10 @@ export default function ZamowienieSzablonyId({
       const res = await fetch("/api/send-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, templateName: portfolioItem?.label }),
+        body: JSON.stringify({
+          ...formData,
+          templateName: portfolioItem?.label,
+        }),
       });
 
       if (!res.ok) throw new Error("Błąd wysyłki");
@@ -57,7 +63,9 @@ export default function ZamowienieSzablonyId({
   };
 
   if (!portfolioItem) {
-    return <div className="text-center text-red-600">Obiekt nie znaleziony</div>;
+    return (
+      <div className="text-center text-red-600">Obiekt nie znaleziony</div>
+    );
   }
 
   return (
@@ -70,8 +78,12 @@ export default function ZamowienieSzablonyId({
             {/* Karta z szablonem */}
             <div className="flex flex-col items-center justify-center rounded-xl bg-gray-100 px-10 py-7 shadow-md sm:flex-row sm:py-0 xl:w-3/5 xl:flex-col xl:py-10">
               <div className="flex w-full flex-col items-start space-y-4 font-bold xl:px-20">
-                <p className="text-xl text-gray-800 md:text-2xl">{portfolioItem.label}</p>
-                <p className="text-base text-gray-600 lg:text-lg">{portfolioItem.price} zł</p>
+                <p className="text-xl text-gray-800 md:text-2xl">
+                  {portfolioItem.label}
+                </p>
+                <p className="text-base text-gray-600 lg:text-lg">
+                  {portfolioItem.price} zł
+                </p>
               </div>
               <div className="mt-6 w-52 sm:mt-0 sm:w-96 xl:my-10 xl:w-full xl:px-20">
                 <Image
@@ -89,10 +101,16 @@ export default function ZamowienieSzablonyId({
               onSubmit={handleSubmit}
               className="flex flex-col space-y-4 rounded-xl bg-white p-8 shadow-md ring-1 ring-gray-200 lg:w-full xl:w-3/5"
             >
-              <input type="hidden" name="templateName" value={portfolioItem.label} />
+              <input
+                type="hidden"
+                name="templateName"
+                value={portfolioItem.label}
+              />
 
               <div>
-                <label className="text-sm font-medium text-gray-700">Imię i nazwisko</label>
+                <label className="text-sm font-medium text-gray-700">
+                  Imię i nazwisko
+                </label>
                 <input
                   name="name"
                   value={formData.name}
@@ -104,7 +122,9 @@ export default function ZamowienieSzablonyId({
               </div>
 
               <div>
-                <label className="text-sm font-medium text-gray-700">Email</label>
+                <label className="text-sm font-medium text-gray-700">
+                  Email
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -117,7 +137,9 @@ export default function ZamowienieSzablonyId({
               </div>
 
               <div>
-                <label className="text-sm font-medium text-gray-700">Wiadomość</label>
+                <label className="text-sm font-medium text-gray-700">
+                  Wiadomość
+                </label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -132,9 +154,11 @@ export default function ZamowienieSzablonyId({
               <SuccesBtn
                 type="submit"
                 disabled={loading}
-                className={`mt-4 w-full py-4 text-base ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+                className={`mt-4 w-full py-4 text-base ${loading ? "cursor-not-allowed opacity-70" : ""}`}
               >
-                {loading ? "Wysyłanie..." : `Zamów szablon: ${portfolioItem.label}`}
+                {loading
+                  ? "Wysyłanie..."
+                  : `Zamów szablon: ${portfolioItem.label}`}
               </SuccesBtn>
             </form>
           </div>
