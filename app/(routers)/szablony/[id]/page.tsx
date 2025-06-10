@@ -184,10 +184,10 @@ const ProductDescription = ({
       </div>
 
       <PageSpeedScores
-        performance={87}
-        accessibility={95}
-        bestPractices={72}
-        seo={99}
+        performance={99}
+        accessibility={100}
+        bestPractices={100}
+        seo={100}
       />
 
       {sections.map((section) => (
