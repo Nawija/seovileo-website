@@ -14,12 +14,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa";
 
-const breadcrumbs = [
-  {
-    title: "Szablony",
-    href: "/szablony",
-  },
-];
 
 interface ProductCardProps {
   portfolioItem: PortfolioItem;
@@ -282,7 +276,7 @@ export default async function SzablonyID({
           className={`absolute top-0 left-1/2 -z-10 h-[25vh] w-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[160px] lg:blur-[300px]`}
         />
 
-        <Breadcrumbs breadcrumbs={breadcrumbs} />
+        <Breadcrumbs />
         <div className="mt-4 py-4 sm:py-8 lg:py-10">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="grid gap-6 lg:flex lg:items-start lg:justify-start">
