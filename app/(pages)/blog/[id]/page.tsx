@@ -1,5 +1,5 @@
 // [id]/page.tsx (strona pojedynczego posta)
-import "@/app/(routers)/blog/[id]/article.css";
+import "@/app/(pages)/blog/[id]/article.css";
 import Breadcrumbs from "@/components/BreadCrumb";
 import { getAllBlogSlugs, getBlogBySlug } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
