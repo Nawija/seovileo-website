@@ -1,5 +1,3 @@
-import { StaticImageData } from "next/image";
-
 export type BreadcrumbTypes = {
   title: string;
   href: string;
@@ -29,16 +27,36 @@ export type BlogItemTypes = {
 
 export type PortfolioItem = {
   id: string;
-  prevPrice: string;
-  price: string;
-  href: string;
-  url: StaticImageData | string;
   label: string;
+  titleH1: string;
   desc: string;
+  url: string;
+  link: string;
+  href: string;
+  color: string;
   tech: {
-    link: string;
     label: string;
+    link: string;
   };
+  pageSpeedScore: {
+    performance: number;
+    accessibility: number;
+    bestPractices: number;
+    seo: number;
+  };
+  effects: {
+    title: string;
+    desc: string;
+    images: {
+      img: string;
+    }[];
+  };
+  productDesc: {
+    title: string;
+    desc: string;
+  }[];
+  date: string;
+  content: string;
 };
 
 export type HeightWightTypes = {

@@ -3,16 +3,29 @@ import dynamic from "next/dynamic";
 
 const Carousel = dynamic(() => import("@/components/home/Carousel"));
 
+import CTA from "@/components/CTA";
+import EffectLightbox from "@/components/EffectLightbox";
 import PageSpeedScores from "@/components/PageSpeedScores";
 import { MultiColorBtn } from "@/components/ui/buttons/MultiColorBtn";
-import Promotion from "@/components/ui/buttons/Promotion";
 import { SuccesBtn } from "@/components/ui/buttons/SuccessBtn";
-import { PORTFOLIO } from "@/constants/portfolio";
+import { getPortfolioBySlug } from "@/lib/portfolio";
 import { PortfolioItem } from "@/types";
 import { Eye, Truck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa";
+
+function generateIdFromTitle(title: string): string {
+  if (typeof title !== "string") return "";
+  return title
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ł/g, "l")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
 
 interface ProductCardProps {
   portfolioItem: PortfolioItem;
@@ -56,30 +69,17 @@ const ProductCard = ({
         </span>
 
         <div className="flex flex-col gap-1 text-start text-sm text-gray-700">
-          <Link
-            href="#darmowa-konfiguracja"
-            className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors hover:bg-gray-200"
-          >
-            1. Panel AdminCMS
-          </Link>
-          <Link
-            href="#darmowe-edycje-tekstu"
-            className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors hover:bg-gray-200"
-          >
-            2. Wysyłanie maili
-          </Link>
-          <Link
-            href="#wsparcie-techniczne"
-            className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors hover:bg-gray-200"
-          >
-            3. Newsletter
-          </Link>
-          <Link
-            href="#darmowy-hosting"
-            className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors hover:bg-gray-200"
-          >
-            4. Strefa Klienta
-          </Link>
+          {portfolioItem.productDesc
+            ?.filter((item) => item?.title) // zostaw tylko te z tytułem
+            .map((item, idx) => (
+              <Link
+                key={idx}
+                href={`#${generateIdFromTitle(item.title)}`}
+                className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors hover:bg-gray-200"
+              >
+                {idx + 1}. {item.title}
+              </Link>
+            ))}
         </div>
       </div>
 
@@ -110,128 +110,60 @@ const ProductDescription = ({
 }: {
   portfolioItem: PortfolioItem;
 }) => {
-  const sections = [
-    {
-      id: "darmowa-konfiguracja",
-      title: "Darmowa configuracja",
-      content: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Adipisci dicta facere repudiandae iure culpa iste placeat
-        illum, tempore ipsa in ex consequatur aliquam porro fuga?
-        Aliquam aliquid soluta exercitationem reiciendis corrupti
-        ipsum explicabo dignissimos nostrum culpa, sequi mollitia!
-        Harum nihil voluptatibus dolores vel qui ipsa quas? Ex
-        beatae unde soluta, aliquid doloremque pariatur veniam ut
-        incidunt, quia atque iste. Atque enim consectetur,
-        officiis veritatis labore nisi. Est ab rerum blanditiis
-        maiores, reiciendis cupiditate velit accusamus similique
-        voluptatum?`,
-    },
-    {
-      id: "darmowe-edycje-tekstu",
-      title: "Darmowe edycje tekstu",
-      content: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Adipisci dicta facere repudiandae iure culpa iste placeat
-        illum, tempore ipsa in ex consequatur aliquam porro fuga?
-        Aliquam aliquid soluta exercitationem reiciendis corrupti
-        ipsum explicabo dignissimos nostrum culpa, sequi mollitia!
-        Harum nihil voluptatibus dolores vel qui ipsa quas? Ex
-        beatae unde soluta, aliquid doloremque pariatur veniam ut
-        incidunt, quia atque iste. Atque enim consectetur,
-        officiis veritatis labore nisi. Est ab rerum blanditiis
-        maiores, reiciendis cupiditate velit accusamus similique
-        voluptatum?`,
-    },
-    {
-      id: "wsparcie-techniczne",
-      title: "Wsparcie techniczne",
-      content: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Adipisci dicta facere repudiandae iure culpa iste placeat
-        i ipsa quas? Ex beatae unde soluta, aliquid dnditiis
-        maiores, reiciendis cupiditate velit accusamus similique
-        voluptatum?`,
-    },
-    {
-      id: "darmowy-hosting",
-      title: "Darmowy Hosting",
-      content: [
-        `Ipsum dolor sit amet consectetur adipisicing elit.
-        Adipisci dicta facere repudiandae iure culpa iste placeat
-        illum, tempore ipsa in ex consequatur aliquam porro fuga?
-        Aliquam aliquid soluta exercitationem reiciendis corrupti
-        ipsum explicabo dignissimos nostrum culpa, sequi mollitia!
-        Harum nihil vo doloremque pariatur veniam ut incidunt,
-        quia atque iste. Atque enim consectetur, officiis
-        veritatis labore nisi. Est ab rerum blanditiis maiores,
-        reiciendis cupiditate velit accusamus similique
-        voluptatum?`,
-        `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Adipisci dicta facere repudiandae iure culpa iste placeat
-        illm culpa, sequi mollitia! Harum nihil voluptatibus
-        dolores vel qui ipsa quas? Ex beatae unde soluta, aliquid
-        doloremque pariatur veniam ut incidunt, quia atque iste.
-        Atque enim consectetur, officiis veritatis labore nisi.
-        Est ab rerum blanditiis maiores, reiciendis cupiditate
-        velit accusamus similique voluptatum?`,
-      ],
-    },
-  ];
-
   return (
     <>
       <h1 className="pt-10 pr-2 pb-2 pl-4 text-3xl font-medium text-gray-200 lg:pl-0 lg:text-4xl">
-        Nowoczesna i szybka strona internetowa {portfolioItem.label} - od
-        projektanta i programisty seovileo
+        {portfolioItem.titleH1}
       </h1>
 
       <div className="mt-12 pl-2">
-        <h2 className="text-main mb-3 text-2xl">Opis produktu</h2>
+        <h2 className="text-main mb-3 text-2xl">{`Opis - ${portfolioItem.label} `}</h2>
         <p>{portfolioItem.desc}</p>
       </div>
 
-      <PageSpeedScores
-        performance={99}
-        accessibility={100}
-        bestPractices={100}
-        seo={100}
-      />
+      {portfolioItem.pageSpeedScore && (
+        <>
+          <PageSpeedScores
+            performance={portfolioItem.pageSpeedScore.performance}
+            accessibility={portfolioItem.pageSpeedScore.accessibility}
+            bestPractices={portfolioItem.pageSpeedScore.bestPractices}
+            seo={portfolioItem.pageSpeedScore.seo}
+          />
+        </>
+      )}
 
-      {sections.map((section) => (
+      <section className="mt-12 pl-2">
+        <h2 className="text-main mb-3 text-2xl tracking-widest uppercase">
+          {portfolioItem.effects.title}
+        </h2>
+        <p className="mb-6 max-w-screen-lg text-gray-300">
+          {portfolioItem.effects.desc}
+        </p>
+        <EffectLightbox images={portfolioItem.effects.images} />
+      </section>
+
+      {portfolioItem.productDesc.map((item, index) => (
         <div
-          key={section.id}
+          key={item.title}
           className="mt-12 scroll-m-12 pl-2"
-          id={section.id}
+          id={generateIdFromTitle(item.title)}
         >
-          <h2 className="text-main mb-3 text-2xl">{section.title}</h2>
-          {Array.isArray(section.content) ? (
-            section.content.map((paragraph, index) => (
-              <p
-                key={index}
-                className={`max-w-screen-lg ${index === 0 ? "mb-12" : ""}`}
-              >
-                {paragraph}
-              </p>
-            ))
-          ) : (
-            <p className="max-w-screen-lg">{section.content}</p>
+          <h2 className="text-main mb-3 text-2xl">{item.title}</h2>
+          <p className="max-w-screen-lg">{item.desc}</p>
+
+          {/* Wstaw CTA po pierwszym elemencie */}
+          {index === 1 && (
+            <CTA
+              title="Zamów podobna stronę"
+              titleBtn="Kliknij tutaj"
+              actionLink={`/zamowienie/realizacje/${portfolioItem.id}`}
+            />
           )}
         </div>
       ))}
     </>
   );
 };
-
-// export async function generateMetadata({ params }: Props): Promise<Metadata> {
-//   const id = params.id;
-//   const portfolioItem: PortfolioItem | undefined = PORTFOLIO.find(
-//     (item) => item.id === id,
-//   );
-
-//   return {
-//     title: `Szablon strony internetowej ${portfolioItem?.label} | Darmowa konfiguracja `,
-//     description: `Błyskawiczna strona internetowa wykonana w nowoczensej technolgoii. Kup szablon teraz za ${portfolioItem?.price}zł a my zajmiemy sie konfiguracja! `,
-//     metadataBase: new URL("https://seovileo.com"),
-//   };
-// }
 
 export default async function ImplementationID({
   params,
@@ -240,7 +172,7 @@ export default async function ImplementationID({
 }) {
   const awaitedParams = await Promise.resolve(params);
   const { id } = awaitedParams;
-  const portfolioItem = PORTFOLIO.find((item) => item.id === id);
+  const portfolioItem = await getPortfolioBySlug(id);
 
   if (!portfolioItem) {
     return (
@@ -272,7 +204,6 @@ export default async function ImplementationID({
                       width={900}
                       className="border-main h-full w-full rounded-lg border object-contain object-top"
                     />
-                    {portfolioItem.prevPrice !== "" && <Promotion />}
                   </div>
 
                   {/* Mobile version - widoczna tylko na mobile */}
