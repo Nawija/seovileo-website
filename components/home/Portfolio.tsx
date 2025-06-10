@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { PortfolioItemSkeleton } from "../ui/Skeletons";
+import { getAllPortfolioItems } from "@/lib/portfolio";
 
 const PortfolioItemComponent = dynamic(
   () => import("./PortfolioItemComponent"),
@@ -11,7 +12,8 @@ const PortfolioItemComponent = dynamic(
   },
 );
 
-export default function Portfolio() {
+export default async function Portfolio() {
+  const portfolioItems = await getAllPortfolioItems();
   return (
     <section className="mx-auto">
       <div className="flex items-center justify-between lg:px-1">
@@ -24,8 +26,8 @@ export default function Portfolio() {
           <ArrowRight size={15} />
         </Link>
       </div>
-      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
-        {PORTFOLIO?.slice(0, 8).map((item, index) => (
+      <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+        {portfolioItems?.slice(0, 8).map((item, index) => (
           <PortfolioItemComponent key={item.label + index} item={item} />
         ))}
       </div>
