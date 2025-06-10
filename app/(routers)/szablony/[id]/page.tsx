@@ -118,10 +118,10 @@ const ProductCard = ({
 
       <div className="flex gap-2.5">
         <Link href={`/zamowienie/szablony/${id}`}>
-          <SuccesBtn>Kup Teraz</SuccesBtn>
+          <SuccesBtn className="px-3 py-2">Zapytaj Teraz</SuccesBtn>
         </Link>
         <Link href={`/szablony/live/${id}`}>
-          <SecondBtn className="px-5 py-2">Zobacz Live</SecondBtn>
+          <SecondBtn className="px-3 py-2">Zobacz Live</SecondBtn>
         </Link>
       </div>
     </div>
