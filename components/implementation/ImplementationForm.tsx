@@ -22,8 +22,6 @@ type PortfolioItemType = {
     link: string,
   }
 
-const breadcrumbs = [{ title: "szablony", href: "/szablony" }];
-
 export default function ImplementationForm({
   portfolioItem,
 }: {
