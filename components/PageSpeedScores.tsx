@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 
 type ScoreProps = {
   label: string;
@@ -9,9 +9,9 @@ type ScoreProps = {
 };
 
 const getColor = (value: number) => {
-  if (value < 50) return "#FF4E42";       // czerwony
-  if (value < 90) return "#FFA400";       // żółty
-  return "#0CCE6B";                       // zielony
+  if (value < 50) return "#FF4E42"; // czerwony
+  if (value < 90) return "#FFA400"; // żółty
+  return "#00a63e"; // zielony
 };
 
 const CircleScore = ({ label, value }: ScoreProps) => {
@@ -30,7 +30,7 @@ const CircleScore = ({ label, value }: ScoreProps) => {
   const strokeColor = getColor(value);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-2 w-28 select-none">
+    <div className="flex w-28 flex-col items-center justify-center gap-2 select-none">
       <svg
         width="120"
         height="120"
@@ -39,12 +39,7 @@ const CircleScore = ({ label, value }: ScoreProps) => {
         aria-label={`${label} score: ${value}`}
       >
         {/* Tło - jasne pastelowe */}
-        <circle
-          cx="60"
-          cy="60"
-          r={radius + 8}
-          fill="rgba(200, 230, 255, 0.3)" // lekki błękitny pastelowy kolor w tle
-        />
+        <circle cx="60" cy="60" r={radius + 8} fill="none" />
         {/* Szary okrąg tła */}
         <circle
           cx="60"
@@ -67,12 +62,11 @@ const CircleScore = ({ label, value }: ScoreProps) => {
           strokeDashoffset={circumference}
           initial={{ strokeDashoffset: circumference }}
           animate={controls}
-          style={{ filter: `drop-shadow(0 0 6px ${strokeColor})` }}
         />
         {/* Wartość liczby w środku */}
         <text
           x="60"
-          y="68"
+          y="72"
           textAnchor="middle"
           fontWeight="700"
           fontSize="38"
@@ -85,7 +79,7 @@ const CircleScore = ({ label, value }: ScoreProps) => {
       </svg>
       {/* Etykieta pod wykresem */}
       <span
-        className="text-gray-700 font-medium text-sm tracking-wide"
+        className="text-sm font-medium tracking-wide text-white"
         style={{ fontFamily: "Poppins, Roboto, Arial, sans-serif" }}
       >
         {label}
@@ -106,7 +100,7 @@ export default function PageSpeedScores({
   seo: number;
 }) {
   return (
-    <section className="max-w-5xl mx-auto p-6 bg-white rounded-2xl shadow-xl flex flex-wrap justify-center gap-12">
+    <section className="border-main my-6 flex flex-wrap justify-center gap-12 rounded-2xl border bg-white/5 p-6 shadow-xl">
       <CircleScore label="Wydajność" value={performance} />
       <CircleScore label="Dostępność" value={accessibility} />
       <CircleScore label="Metody" value={bestPractices} />

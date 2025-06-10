@@ -26,20 +26,10 @@ export default async function BlogPost({
     notFound();
   }
 
-  const breadcrumbs = [
-    {
-      title: "Blog",
-      href: "/blog",
-    },
-    {
-      title: post.title.slice(0, 30),
-      href: "#",
-    },
-  ];
 
   return (
     <>
-      <Breadcrumbs breadcrumbs={breadcrumbs} />
+      <Breadcrumbs />
       {post.img && (
         <div className="absolute top-0 left-0 -z-10 h-full w-full rounded-2xl opacity-15">
           <Image

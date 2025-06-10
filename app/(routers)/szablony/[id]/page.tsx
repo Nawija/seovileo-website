@@ -9,11 +9,10 @@ import { SecondBtn } from "@/components/ui/buttons/SecondBtn";
 import { SuccesBtn } from "@/components/ui/buttons/SuccessBtn";
 import { PORTFOLIO } from "@/constants/portfolio";
 import { PortfolioItem } from "@/types";
-import { Star, Truck } from "lucide-react";
+import { Truck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa";
-
 
 interface ProductCardProps {
   portfolioItem: PortfolioItem;
@@ -28,82 +27,58 @@ const ProductCard = ({
 }: ProductCardProps) => {
   return (
     <div
-      className={`flex flex-col items-start justify-start rounded-lg bg-gray-100 p-10 text-black ${className}`}
+      className={`flex flex-col items-start justify-start rounded-lg bg-white/5 border border-main backdrop-blur-2xl p-10 text-white ${className}`}
     >
       <div className="flex-b w-full text-xs">
         <p className="font-medium">Technologia:</p>
         <Link
           href={portfolioItem.tech.link}
           target="_blank"
-          className="flex items-center justify-center rounded-lg border border-gray-200 bg-white p-1.5 px-3 font-semibold transition-colors duration-300 hover:bg-gray-200"
+          className="flex items-center justify-center rounded-lg border text-gray-700 border-gray-200 bg-white p-1.5 px-3 font-semibold transition-colors hover:bg-gray-200"
         >
           <FaLink className="mr-1.5 text-lg" />{" "}
           <p>{portfolioItem.tech.label}</p>
         </Link>
       </div>
-      <div className="mb-2 md:mb-3">
-        <span className="mt-3 mb-0.5 inline-block">Strona Internetowa</span>
+      <div className="mb-6 md:mb-8">
+        <span className="mt-5 mb-0.5 inline-block text-gray-300 text-xs uppercase tracking-widest">Strona Internetowa</span>
 
         <h2 className="text-2xl font-bold lg:text-3xl">
           {portfolioItem.label}
         </h2>
       </div>
 
-      <div className="mb-6 flex items-center gap-3 md:mb-10">
-        <div className="flex h-7 items-center gap-1 rounded-full bg-yellow-500 px-2 text-black/80">
-          <span className="text-sm font-medium">4.9</span>
-          <Star size={15} fill="currentColor" />
-        </div>
-
-        <span className="text-sm transition duration-100">56 ocen</span>
-      </div>
-
       <div className="mb-8 md:mb-10">
         <span className="mb-3 inline-block text-sm font-semibold md:text-base">
-          Zakup obejmuje:
+          Co zawiera:
         </span>
 
-        <div className="flex flex-col gap-1 text-start text-sm">
+        <div className="flex flex-col gap-1 text-start text-sm text-gray-700">
           <Link
             href="#darmowa-konfiguracja"
-            className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors duration-300 hover:bg-gray-200"
+            className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors hover:bg-gray-200"
           >
-            1. Darmowa konfiguracja
+            1. Panel AdminCMS
           </Link>
           <Link
             href="#darmowe-edycje-tekstu"
-            className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors duration-300 hover:bg-gray-200"
+            className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors hover:bg-gray-200"
           >
-            2. Darmowe edycje tekstu
+            2. Wysyłanie maili
           </Link>
           <Link
             href="#wsparcie-techniczne"
-            className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors duration-300 hover:bg-gray-200"
+            className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors hover:bg-gray-200"
           >
-            3. Wsparcie techniczne
+            3. Newsletter
           </Link>
           <Link
             href="#darmowy-hosting"
-            className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors duration-300 hover:bg-gray-200"
+            className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors hover:bg-gray-200"
           >
-            4. Darmowy hosting
+            4. Strefa Klienta
           </Link>
         </div>
-      </div>
-
-      <div className="mb-4">
-        <div className="flex items-end gap-2">
-          <span className="text-xl font-bold text-emerald-700 md:text-2xl">
-            {portfolioItem.price}zł
-          </span>
-          {portfolioItem.prevPrice !== "" && (
-            <span className="mb-0.5 text-red-500 line-through">
-              {portfolioItem.prevPrice}zł
-            </span>
-          )}
-        </div>
-
-        <span className="text-sm">brutto</span>
       </div>
 
       <div className="mb-6 flex items-center gap-2">
@@ -111,12 +86,14 @@ const ProductCard = ({
         <span className="text-sm">2-4 tygodni czas oczekiwania</span>
       </div>
 
-      <div className="flex gap-2.5">
-        <Link href={`/zamowienie/szablony/${id}`}>
-          <SuccesBtn className="px-3 py-2">Zapytaj Teraz</SuccesBtn>
-        </Link>
+      <div className="flex w-full flex-col gap-2.5">
         <Link href={`/szablony/live/${id}`}>
-          <SecondBtn className="px-3 py-2">Zobacz Live</SecondBtn>
+          <SecondBtn className="w-full px-3 py-2">Zobacz Live</SecondBtn>
+        </Link>
+        <Link href={`/zamowienie/szablony/${id}`}>
+          <SuccesBtn className="w-full px-3 py-2">
+            Zapytaj o podobną realizacje
+          </SuccesBtn>
         </Link>
       </div>
     </div>
