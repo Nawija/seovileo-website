@@ -5,7 +5,6 @@ import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { IoClose, IoSearch } from "react-icons/io5";
 
-import { PORTFOLIO } from "../constants/portfolio";
 import { PortfolioItem } from "../types";
 import SpinerLoading from "./SpinerLoading";
 
@@ -16,14 +15,27 @@ export default function SearchBar() {
   const [search, setSearch] = useState(searchParams.get("szukaj") || "");
   const [isSearching, setIsSearching] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState<PortfolioItem[]>([]);
+  const [allPortfolio, setAllPortfolio] = useState<PortfolioItem[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const inputRef = useRef<HTMLDivElement>(null);
+
+  // Fetch portfolio once on mount
+  useEffect(() => {
+    async function fetchPortfolio() {
+      const res = await fetch("/api/search-bar");
+      if (res.ok) {
+        const data: PortfolioItem[] = await res.json();
+        setAllPortfolio(data);
+      }
+    }
+    fetchPortfolio();
+  }, []);
 
   useEffect(() => {
     if (search.length >= 2) {
       setIsSearching(true);
       const timer = setTimeout(() => {
-        const filtered = PORTFOLIO.filter((product: PortfolioItem) =>
+        const filtered = allPortfolio.filter((product) =>
           product.label.toLowerCase().includes(search.toLowerCase()),
         );
         setFilteredProducts(filtered);
@@ -35,7 +47,7 @@ export default function SearchBar() {
       setFilteredProducts([]);
       setIsSearching(false);
     }
-  }, [search]);
+  }, [search, allPortfolio]);
 
   function modelOp() {
     setIsModalOpen(true);
@@ -75,7 +87,7 @@ export default function SearchBar() {
           onChange={handleSearchChange}
           onFocus={modelOp}
           placeholder="Szukaj"
-          className="border-mian w-full text-[16px] rounded-md border bg-white px-2 py-1 outline-0 placeholder:text-zinc-500 lg:flex"
+          className="border-mian w-full rounded-md border bg-white px-2 py-1 text-[16px] outline-0 placeholder:text-zinc-500 lg:flex"
         />
         {search.length > 0 ? (
           <IoClose
@@ -94,12 +106,12 @@ export default function SearchBar() {
       </form>
       <Suspense fallback={null}>
         {isModalOpen && search.length >= 2 && (
-          <div className="bg-main/10 border-main absolute top-full left-1/2 ml-4 sm:ml-0 w-max z-10 mt-4 -translate-x-1/2 rounded-lg border p-2 backdrop-blur-lg">
+          <div className="bg-main/10 border-main absolute top-full left-1/2 z-10 mt-4 ml-4 w-max -translate-x-1/2 rounded-lg border p-2 backdrop-blur-lg sm:ml-0">
             <div className="anim-opacity w-full lg:p-3">
               {isSearching ? (
                 <SpinerLoading />
               ) : filteredProducts.length > 0 ? (
-                <div className="flex flex-col items-center justify-center w-full space-y-4">
+                <div className="flex w-full flex-col items-center justify-center space-y-4">
                   {filteredProducts.slice(0, 4).map((item, index) => (
                     <SearchParams
                       item={item}
