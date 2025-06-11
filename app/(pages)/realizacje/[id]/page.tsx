@@ -144,9 +144,11 @@ export default async function ImplementationID({
                       width={900}
                       className="border-main h-full w-full rounded-lg border object-contain object-top"
                     />
-                    <h1 className="pt-10 pr-2 pb-2 pl-4 text-3xl font-medium text-gray-200 lg:pl-0 lg:text-4xl">
-                      {portfolioItem.titleH1}
-                    </h1>
+                    {portfolioItem.titleH1 && (
+                      <h1 className="pt-10 pr-2 pb-2 pl-4 text-3xl font-medium text-gray-200 lg:pl-0 lg:text-4xl">
+                        {portfolioItem.titleH1}
+                      </h1>
+                    )}
                     <section className="mt-12 pl-2">
                       <h2 className="text-main mb-3 text-2xl">
                         {portfolioItem.effects.title}
@@ -184,33 +186,30 @@ export default async function ImplementationID({
                       />
                     </>
                   )}
+                  <div className="relative">
+                    {portfolioItem.productDesc.map((item, index) => (
+                      <div
+                        key={index}
+                        className="mt-12 mb-6 scroll-m-12 pl-2"
+                        id={generateIdFromTitle(item.title)}
+                      >
+                        <div className="border-main relative rounded-lg border p-4 pt-8">
+                          <h2 className="text-main bg-body absolute -top-4 left-4 mb-3 px-2 text-2xl">
+                            {item.title}
+                          </h2>
+                          <p className="max-w-5xl pr-4">{item.desc}</p>
+                        </div>
 
-                  {portfolioItem.productDesc.map((item, index) => (
-                    <div
-                      key={index}
-                      className="mt-8 scroll-m-12 pl-2"
-                      id={generateIdFromTitle(item.title)}
-                    >
-                      <div className="relative">
-                        <h2 className="text-main mb-3 text-2xl">
-                          {item.title}
-                        </h2>
-                        {/* <div
-                          className="h-px w-full"
-                          style={{ backgroundColor: `${portfolioItem.color}` }}
-                        /> */}
+                        {index === 2 && (
+                          <CTA
+                            title="Zamów podobna stronę"
+                            titleBtn="Kliknij tutaj"
+                            actionLink={`/zamowienie/realizacje/${portfolioItem.id}`}
+                          />
+                        )}
                       </div>
-                      <p className="max-w-5xl pr-4">{item.desc}</p>
-
-                      {index === 3 && (
-                        <CTA
-                          title="Zamów podobna stronę"
-                          titleBtn="Kliknij tutaj"
-                          actionLink={`/zamowienie/realizacje/${portfolioItem.id}`}
-                        />
-                      )}
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
 

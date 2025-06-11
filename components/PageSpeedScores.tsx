@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 type ScoreProps = {
   label: string;
@@ -18,18 +18,25 @@ const CircleScore = ({ label, value }: ScoreProps) => {
   const radius = 54;
   const circumference = 2 * Math.PI * radius;
   const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
-    controls.start({
-      strokeDashoffset: circumference * (1 - value / 100),
-      transition: { duration: 1.6, ease: "easeOut" },
-    });
-  }, [value, circumference, controls]);
+    if (isInView) {
+      controls.start({
+        strokeDashoffset: circumference * (1 - value / 100),
+        transition: { duration: 1.6, ease: "easeOut" },
+      });
+    }
+  }, [isInView, value, circumference, controls]);
 
   const strokeColor = getColor(value);
 
   return (
-    <div className="flex w-32 flex-col items-center justify-center text-center select-none">
+    <div
+      ref={ref}
+      className="flex w-32 flex-col items-center justify-center text-center select-none"
+    >
       <div className="relative">
         <svg
           width="120"
@@ -95,7 +102,7 @@ export default function PageSpeedScores({
   seo: number;
 }) {
   return (
-    <section className="border-main my-12 py-12 flex flex-wrap justify-center gap-8 rounded-lg border bg-white/5 p-6">
+    <section className="border-main my-12 flex flex-wrap justify-center gap-8 rounded-lg border bg-white/5 p-6 py-12">
       <CircleScore label="Wydajność" value={performance} />
       <CircleScore label="Dostępność" value={accessibility} />
       <CircleScore label="Najlepsze praktyki" value={bestPractices} />
@@ -105,7 +112,7 @@ export default function PageSpeedScores({
         <h2 className="text-main mb-3 text-2xl font-semibold">
           Dlaczego wyniki Google Lighthouse są kluczowe?
         </h2>
-        <p className="leading-relaxed text-white/80 lg:text-start lg:ml-12">
+        <p className="leading-relaxed text-white/80 lg:ml-12 lg:text-start">
           Wysokie wyniki w Google Lighthouse mają bezpośredni wpływ na
           pozycjonowanie strony w wyszukiwarce. Parametry takie jak{" "}
           <strong>wydajność</strong>, <strong>dostępność</strong>,{" "}

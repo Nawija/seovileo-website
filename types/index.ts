@@ -53,10 +53,12 @@ export type PortfolioItem = {
       width: number;
     }[];
   };
-  productDesc: {
-    title: string;
-    desc: string;
-  }[];
+  productDesc: [
+    {
+      title: string;
+      desc: string;
+    },
+  ];
   date: string;
   content: string;
 };

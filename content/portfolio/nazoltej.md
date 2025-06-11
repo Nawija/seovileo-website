@@ -28,7 +28,7 @@ effects:
       height: 954
 productDesc:
   - title: "Darmowa konfiguracja"
-  - desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.
       Adipisci dicta facere repudiandae iure culpa iste placeat
       illum, tempore ipsa in ex consequatur aliquam porro fuga?
       Aliquam aliquid soluta exercitationem reiciendis corrupti
@@ -40,7 +40,7 @@ productDesc:
       maiores, reiciendis cupiditate velit accusamus similique
       voluptatum?"
   - title: "Darmowa konfiguracja22"
-  - desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.
       Adipsi. Est ab rerum blanditiis
       maiores, reiciendis cupiditate velit accusamus similique
       voluptatum?"
