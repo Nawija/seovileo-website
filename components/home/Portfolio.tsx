@@ -1,9 +1,8 @@
-import { PORTFOLIO } from "@/constants/portfolio";
+import { getAllPortfolioItems } from "@/lib/portfolio";
 import { ArrowRight } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { PortfolioItemSkeleton } from "../ui/Skeletons";
-import { getAllPortfolioItems } from "@/lib/portfolio";
 
 const PortfolioItemComponent = dynamic(
   () => import("./PortfolioItemComponent"),
@@ -27,9 +26,11 @@ export default async function Portfolio() {
         </Link>
       </div>
       <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
-        {portfolioItems?.slice(0, 8).map((item, index) => (
-          <PortfolioItemComponent key={item.label + index} item={item} />
-        ))}
+        {portfolioItems
+          ?.slice(0, 8)
+          .map((item, index) => (
+            <PortfolioItemComponent key={item.label + index} item={item} />
+          ))}
       </div>
     </section>
   );
