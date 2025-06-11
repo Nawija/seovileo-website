@@ -22,10 +22,9 @@ export default function EffectLightbox({ images }: EffectLightboxProps) {
   useEffect(() => {
     if (!galleryRef.current) return;
 
-    // Initialize PhotoSwipe Lightbox
     lightboxRef.current = new PhotoSwipeLightbox({
       gallery: galleryRef.current,
-      children: "a", // selector for gallery items
+      children: "a",
       pswpModule: () => import("photoswipe"),
       showHideAnimationType: "fade",
     });
@@ -39,7 +38,10 @@ export default function EffectLightbox({ images }: EffectLightboxProps) {
   }, []);
 
   return (
-    <div ref={galleryRef} className="flex flex-wrap gap-4">
+    <div
+      ref={galleryRef}
+      className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-2 pb-4"
+    >
       {images.map((image, idx) => (
         <a
           key={idx}
@@ -48,14 +50,14 @@ export default function EffectLightbox({ images }: EffectLightboxProps) {
           data-pswp-height={image.height}
           target="_blank"
           rel="noreferrer"
-          className="relative block h-40 w-60 overflow-hidden rounded-lg border border-main bg-white/5 shadow-lg"
+          className="border-main relative h-40 w-[80%] shrink-0 snap-center overflow-hidden rounded-lg border bg-white/5 shadow-lg sm:w-[33%] lg:w-[28%]"
         >
           <Image
             src={`/${image.img}`}
             alt={`seovileo ${idx + 1}`}
             fill
             className="object-contain"
-            sizes="(max-width: 768px) 100vw, 15rem"
+            sizes="(max-width: 768px) 100vw, 80vw"
             draggable={false}
           />
         </a>

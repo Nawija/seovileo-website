@@ -26,6 +26,18 @@ effects:
     - img: "images/realizacje/nazoltej/z2.png"
       width: 839
       height: 954
+    - img: "images/realizacje/nazoltej/z2.png"
+      width: 839
+      height: 954
+    - img: "images/realizacje/nazoltej/z2.png"
+      width: 839
+      height: 954
+    - img: "images/realizacje/nazoltej/z2.png"
+      width: 839
+      height: 954
+    - img: "images/realizacje/nazoltej/z2.png"
+      width: 839
+      height: 954
 productDesc:
   - title: "Darmowa konfiguracja"
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.
