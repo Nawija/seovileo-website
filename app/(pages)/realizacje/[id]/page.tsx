@@ -6,7 +6,7 @@ const Carousel = dynamic(() => import("@/components/home/Carousel"));
 import CTA from "@/components/CTA";
 import EffectLightbox from "@/components/EffectLightbox";
 import PageSpeedScores from "@/components/PageSpeedScores";
-import { MultiColorBtn } from "@/components/ui/buttons/MultiColorBtn";
+import { MainBtn } from "@/components/ui/buttons/MainBtn";
 import { SuccesBtn } from "@/components/ui/buttons/SuccessBtn";
 import { getPortfolioBySlug } from "@/lib/portfolio";
 import { PortfolioItem } from "@/types";
@@ -75,7 +75,7 @@ const ProductCard = ({
               <Link
                 key={idx}
                 href={`#${generateIdFromTitle(item.title)}`}
-                className="rounded-lg border border-gray-200 bg-white p-1.5 px-4 font-semibold transition-colors hover:bg-gray-200"
+                className="border-main rounded-lg border bg-white/5 p-1.5 px-4 font-semibold text-gray-300 transition-colors hover:bg-gray-300 hover:text-black"
               >
                 {idx + 1}. {item.title}
               </Link>
@@ -90,10 +90,10 @@ const ProductCard = ({
 
       <div className="flex w-full flex-col gap-2.5">
         <Link href={`/realizacje/live/${id}`}>
-          <MultiColorBtn className="flex w-full items-center justify-center px-3 py-2">
+          <MainBtn className="flex w-full items-center justify-center px-3 py-2">
             <Eye className="mr-2" size={16} />
             Zobacz strone
-          </MultiColorBtn>
+          </MainBtn>
         </Link>
         <Link href={`/zamowienie/realizacje/${id}`}>
           <SuccesBtn className="w-full px-3 py-2">
@@ -102,66 +102,6 @@ const ProductCard = ({
         </Link>
       </div>
     </div>
-  );
-};
-
-const ProductDescription = ({
-  portfolioItem,
-}: {
-  portfolioItem: PortfolioItem;
-}) => {
-  return (
-    <>
-      <h1 className="pt-10 pr-2 pb-2 pl-4 text-3xl font-medium text-gray-200 lg:pl-0 lg:text-4xl">
-        {portfolioItem.titleH1}
-      </h1>
-
-      <div className="mt-12 pl-2">
-        <h2 className="text-main mb-3 text-2xl">{`Opis - ${portfolioItem.label} `}</h2>
-        <p>{portfolioItem.desc}</p>
-      </div>
-
-      {portfolioItem.pageSpeedScore && (
-        <>
-          <PageSpeedScores
-            performance={portfolioItem.pageSpeedScore.performance}
-            accessibility={portfolioItem.pageSpeedScore.accessibility}
-            bestPractices={portfolioItem.pageSpeedScore.bestPractices}
-            seo={portfolioItem.pageSpeedScore.seo}
-          />
-        </>
-      )}
-
-      <section className="mt-12 pl-2">
-        <h2 className="text-main mb-3 text-2xl tracking-widest uppercase">
-          {portfolioItem.effects.title}
-        </h2>
-        <p className="mb-6 max-w-screen-lg text-gray-300">
-          {portfolioItem.effects.desc}
-        </p>
-        <EffectLightbox images={portfolioItem.effects.images} />
-      </section>
-
-      {portfolioItem.productDesc.map((item, index) => (
-        <div
-          key={item.title}
-          className="mt-12 scroll-m-12 pl-2"
-          id={generateIdFromTitle(item.title)}
-        >
-          <h2 className="text-main mb-3 text-2xl">{item.title}</h2>
-          <p className="max-w-screen-lg">{item.desc}</p>
-
-          {/* Wstaw CTA po pierwszym elemencie */}
-          {index === 1 && (
-            <CTA
-              title="Zamów podobna stronę"
-              titleBtn="Kliknij tutaj"
-              actionLink={`/zamowienie/realizacje/${portfolioItem.id}`}
-            />
-          )}
-        </div>
-      ))}
-    </>
   );
 };
 
@@ -191,7 +131,7 @@ export default async function ImplementationID({
         />
 
         <Breadcrumbs />
-        <div className="mt-4 py-4 sm:py-8 lg:py-10">
+        <div className="mt-4 py-4 sm:py-8 lg:py-2">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="grid gap-6 lg:flex lg:items-start lg:justify-start">
               <div className="grid gap-6 lg:w-3/4 lg:grid-cols-5">
@@ -204,6 +144,18 @@ export default async function ImplementationID({
                       width={900}
                       className="border-main h-full w-full rounded-lg border object-contain object-top"
                     />
+                    <h1 className="pt-10 pr-2 pb-2 pl-4 text-3xl font-medium text-gray-200 lg:pl-0 lg:text-4xl">
+                      {portfolioItem.titleH1}
+                    </h1>
+                    <section className="mt-12 pl-2">
+                      <h2 className="text-main mb-3 text-2xl">
+                        {portfolioItem.effects.title}
+                      </h2>
+                      <p className="mb-6 max-w-screen-lg text-gray-300">
+                        {portfolioItem.effects.desc}
+                      </p>
+                      <EffectLightbox images={portfolioItem.effects.images} />
+                    </section>
                   </div>
 
                   {/* Mobile version - widoczna tylko na mobile */}
@@ -213,8 +165,52 @@ export default async function ImplementationID({
                     className="order-2 mt-12 lg:order-last lg:hidden"
                   />
 
-                  {/* Opis produktu */}
-                  <ProductDescription portfolioItem={portfolioItem} />
+                  <div className="mt-12 pl-2">
+                    <h2 className="text-main mb-3 text-2xl">{`Opis - ${portfolioItem.label} `}</h2>
+                    <p className="max-w-5xl pr-4">{portfolioItem.desc}</p>
+                  </div>
+
+                  {portfolioItem.pageSpeedScore && (
+                    <>
+                      <PageSpeedScores
+                        performance={portfolioItem.pageSpeedScore.performance}
+                        accessibility={
+                          portfolioItem.pageSpeedScore.accessibility
+                        }
+                        bestPractices={
+                          portfolioItem.pageSpeedScore.bestPractices
+                        }
+                        seo={portfolioItem.pageSpeedScore.seo}
+                      />
+                    </>
+                  )}
+
+                  {portfolioItem.productDesc.map((item, index) => (
+                    <div
+                      key={index}
+                      className="mt-8 scroll-m-12 pl-2"
+                      id={generateIdFromTitle(item.title)}
+                    >
+                      <div className="relative">
+                        <h2 className="text-main mb-3 text-2xl">
+                          {item.title}
+                        </h2>
+                        {/* <div
+                          className="h-px w-full"
+                          style={{ backgroundColor: `${portfolioItem.color}` }}
+                        /> */}
+                      </div>
+                      <p className="max-w-5xl pr-4">{item.desc}</p>
+
+                      {index === 3 && (
+                        <CTA
+                          title="Zamów podobna stronę"
+                          titleBtn="Kliknij tutaj"
+                          actionLink={`/zamowienie/realizacje/${portfolioItem.id}`}
+                        />
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
 

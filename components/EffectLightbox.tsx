@@ -7,6 +7,8 @@ import { useEffect, useRef } from "react";
 
 interface EffectImage {
   img: string;
+  height: number;
+  width: number;
 }
 
 interface EffectLightboxProps {
@@ -42,11 +44,11 @@ export default function EffectLightbox({ images }: EffectLightboxProps) {
         <a
           key={idx}
           href={`/${image.img}`}
-          data-pswp-width={1300}
-          data-pswp-height={650}
+          data-pswp-width={image.width}
+          data-pswp-height={image.height}
           target="_blank"
           rel="noreferrer"
-          className="relative block h-40 w-60 overflow-hidden rounded-lg border border-gray-200 bg-white/10 shadow-lg"
+          className="relative block h-40 w-60 overflow-hidden rounded-lg border border-main bg-white/5 shadow-lg"
         >
           <Image
             src={`/${image.img}`}

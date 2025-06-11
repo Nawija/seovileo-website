@@ -49,6 +49,8 @@ export type PortfolioItem = {
     desc: string;
     images: {
       img: string;
+      height: number;
+      width: number;
     }[];
   };
   productDesc: {

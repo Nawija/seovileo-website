@@ -62,16 +62,16 @@ const Header = () => {
         )}
       </AnimatePresence>
       <header
-        className={`relative z-50 w-full px-6 py-4 text-sm font-medium transition-all duration-500 ease-in-out lg:py-3`}
+        className={`relative z-50 w-full py-4 text-sm font-medium transition-all duration-500 ease-in-out lg:py-3`}
       >
         <nav
-          className={`mx-auto flex w-full max-w-screen-2xl items-center justify-between`}
+          className={`mx-auto flex w-full max-w-screen-2xl px-4 md:px-8 items-center justify-between`}
         >
           <Link href="/" onClick={closeMenu} className="z-10 mr-12 text-white">
             <Logo h={27} w={27} />
           </Link>
           <div
-            className={`border-main bg-main absolute top-0 left-0 flex h-screen w-72 flex-col items-start justify-start border-r pt-24 pl-12 text-start backdrop-blur-sm transition-transform lg:absolute lg:top-1/2 lg:left-1/2 lg:h-auto lg:w-max lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center lg:justify-center lg:rounded-lg lg:border lg:bg-none lg:px-4 lg:py-2 lg:pl-0 lg:backdrop-blur-none ${
+            className={`border-main bg-white/5 backdrop-blur-lg absolute top-0 left-0 flex h-screen w-72 flex-col items-start justify-start border-r pt-24 pl-12 text-start transition-transform lg:absolute lg:top-1/2 lg:left-1/2 lg:h-auto lg:w-max lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center lg:justify-center lg:rounded-lg lg:border lg:bg-none lg:px-4 lg:py-2 lg:pl-0 lg:backdrop-blur-none ${
               isMenuOpen
                 ? "translate-x-0 duration-200"
                 : "-translate-x-full duration-500"
