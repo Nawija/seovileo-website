@@ -39,21 +39,15 @@ effects:
       width: 839
       height: 954
 productDesc:
-  - title: "Darmowa konfiguracja"
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Adipisci dicta facere repudiandae iure culpa iste placeat
-      illum, tempore ipsa in ex consequatur aliquam porro fuga?
-      Aliquam aliquid soluta exercitationem reiciendis corrupti
-      ipsum explicabo dignissimos nostrum culpa, sequi mollitia!
-      Harum nihil voluptatibus dolores vel qui ipsa quas? Ex
-      beatae unde soluta, aliquid doloremque pariatur veniam ut
-      incidunt, quia atque iste. Atque enim consectetur,
-      officiis veritatis labore nisi. Est ab rerum blanditiis
-      maiores, reiciendis cupiditate velit accusamus similique
-      voluptatum?"
-  - title: "Darmowa konfiguracja22"
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Adipsi. Est ab rerum blanditiis
-      maiores, reiciendis cupiditate velit accusamus similique
-      voluptatum?"
+  - title: "Statyczna Strona"
+    desc: "Statyczna strona to idealne rozwiązanie dla firm, które chcą zaprezentować swoją ofertę w sposób szybki, bezpieczny i niezwykle wydajny. Dzięki brakowi zależności od bazy danych, strony tego typu ładują się błyskawicznie, co znacząco wpływa na poprawę doświadczenia użytkownika (UX) i lepsze pozycje w Google. To również niższe koszty utrzymania i większa odporność na ataki hakerskie."
+
+  - title: "Formularz kontaktowy"
+    desc: "Profesjonalny formularz kontaktowy zwiększa liczbę zapytań od potencjalnych klientów i eliminuje barierę kontaktu. Dzięki integracji z Twoim systemem e-mail lub CRM, każde zapytanie trafia bezpośrednio do Ciebie, co pozwala na błyskawiczną reakcję. Użytkownicy chętniej nawiązują kontakt, gdy mają do dyspozycji prosty, przejrzysty i responsywny formularz."
+
+  - title: "Audyt SEO"
+    desc: "Audyt SEO to pierwszy krok do poprawy widoczności Twojej strony w wyszukiwarkach. Analizujemy strukturę strony, treści, szybkość ładowania i wiele innych czynników, które wpływają na pozycjonowanie. Otrzymasz szczegółowy raport z zaleceniami, które pozwolą Ci zdobywać więcej ruchu organicznego i zwiększyć konwersje."
+
+  - title: "Pozycjonowanie słów kluczowych"
+    desc: "Dobrze dobrane i skutecznie wypozycjonowane słowa kluczowe to fundament każdej strategii SEO. Przeprowadzamy analizę konkurencji i wyszukiwanych fraz, aby dobrać najlepsze słowa dla Twojej branży. Dzięki temu Twoja strona pojawi się tam, gdzie szukają Cię Twoi klienci – na pierwszej stronie wyników Google. To więcej odwiedzin, więcej klientów i większe zyski."
 ---
