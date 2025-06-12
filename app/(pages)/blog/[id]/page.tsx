@@ -5,43 +5,44 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-// export async function generateMetadata({
-//   params,
-// }: {
-//   params: Promise<{ id: string }>;
-// }) {
-//   const awaitedParams = await Promise.resolve(params);
-//   const { id } = awaitedParams;
-//   const blog = getBlogBySlug(id);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const awaitedParams = await Promise.resolve(params);
+  const { id } = awaitedParams;
+  const blog = getBlogBySlug(id);
+  console.log(blog);
 
-//   if (!blog) {
-//     notFound();
-//   }
+  if (!blog) {
+    notFound();
+  }
 
-//   return {
-//     title: `${blog.title} | Seovileo`,
-//     description: blog.desc?.substring(0, 160),
-//     openGraph: {
-//       title: `${blog.title} | Seovileo`,
-//       description: blog.desc?.substring(0, 160),
-//       images: [
-//         {
-//           url: blog.img,
-//           width: 1200,
-//           height: 630,
-//           alt: blog.title,
-//         },
-//       ],
-//       type: "website",
-//     },
-//     twitter: {
-//       card: "summary_large_image",
-//       title: `${blog.title} | Seovileo`,
-//       description: blog.desc?.substring(0, 160),
-//       images: [blog.img],
-//     },
-//   };
-// }
+  return {
+    title: `${blog.title} | Seovileo`,
+    description: blog.desc?.substring(0, 160),
+    openGraph: {
+      title: `${blog.title} | Seovileo`,
+      description: blog.desc?.substring(0, 160),
+      images: [
+        {
+          url: blog.img?.url,
+          width: 1200,
+          height: 630,
+          alt: blog.title,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${blog.title} | Seovileo`,
+      description: blog.desc?.substring(0, 160),
+      images: [blog.img?.url],
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const slugs = getAllBlogSlugs();
