@@ -1,11 +1,21 @@
 import "@/app/globals.css";
 import { inter } from "@/components/fonts";
+import { Metadata } from "next";
 import dynamic from "next/dynamic";
-
 import Providers from "../components/ProgressBarProvider";
 import Header from "../components/header/Header";
 const ScrollUp = dynamic(() => import("@/components/ui/buttons/ScrollUp"));
 const Footer = dynamic(() => import("@/components/footer/Footer"));
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://seovileo.pl"),
+  openGraph: {
+    url: "https://seovileo.pl/",
+    siteName: "Seovileo",
+    locale: "pl_PL",
+    type: "website",
+  },
+};
 
 export default function RootLayout({
   children,

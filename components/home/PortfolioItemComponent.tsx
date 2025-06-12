@@ -25,7 +25,7 @@ const PortfolioItemComponent: React.FC<PortfolioItemComponentProps> = ({
           alt={label}
           height={300}
           width={300}
-          className="h-36 w-full object-cover lg:h-52"
+          className="w-full object-contain"
         />
       </div>
       <div className="flex flex-col items-start justify-start space-y-1 p-3 pb-5 text-sm">

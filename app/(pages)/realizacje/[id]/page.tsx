@@ -9,7 +9,7 @@ import HeroImage from "@/components/HeroImage";
 import PageSpeedScores from "@/components/PageSpeedScores";
 import { MainBtn } from "@/components/ui/buttons/MainBtn";
 import { SuccesBtn } from "@/components/ui/buttons/SuccessBtn";
-import { getPortfolioBySlug } from "@/lib/portfolio";
+import { getAllPortfolioSlugs, getPortfolioBySlug } from "@/lib/portfolio";
 import { PortfolioItem } from "@/types";
 import { Eye, Truck } from "lucide-react";
 import Link from "next/link";
@@ -43,6 +43,9 @@ export async function generateMetadata({
   }
 
   return {
+    alternates: {
+      canonical: `https://seovileo.pl/realizacje/${id}`,
+    },
     title: `${portfolioItem.label} | Seovileo`,
     description: portfolioItem.desc?.substring(0, 160),
     openGraph: {
@@ -65,6 +68,14 @@ export async function generateMetadata({
       images: [portfolioItem.url],
     },
   };
+}
+
+export async function generateStaticParams() {
+  const slugs = getAllPortfolioSlugs();
+
+  return slugs.map((slug) => ({
+    id: slug,
+  }));
 }
 
 interface ProductCardProps {

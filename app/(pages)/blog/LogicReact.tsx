@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/BreadCrumb";
 import { PortfolioItemSkeleton } from "@/components/ui/Skeletons";
 import { BlogItemTypes, BlogType } from "@/types";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 const BlogPopularComponent = dynamic(
   () => import("@/components/blog/BlogPopularComponent"),
@@ -52,11 +53,13 @@ const LogicReact = ({ mergedData }: LogicReactProps) => {
   };
   return (
     <div>
-      <div className="flex-c bg-url relative h-56 w-full bg-fixed lg:h-60">
-        <img
-          src="https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-          alt=""
+      <div className="relative flex h-56 w-full items-center justify-center lg:h-60">
+        <Image
+          src="/strona-internetowa.avif"
+          className="object-cover -z-10 opacity-80"
+          alt="strona internetowa"
+          priority
+          fill
         />
 
         <div className="bg-body border-main w-3/4 rounded-lg border p-2 text-xs text-white sm:w-1/2 lg:w-1/3">

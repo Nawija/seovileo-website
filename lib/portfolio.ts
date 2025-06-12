@@ -1,9 +1,7 @@
-
 import { PortfolioItem } from "@/types";
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
-
 
 const portfolioDir = path.join(process.cwd(), "content/portfolio");
 
@@ -38,4 +36,10 @@ export async function getPortfolioBySlug(
     ...(data as Omit<PortfolioItem, "content">),
     content,
   };
+}
+export function getAllPortfolioSlugs(): string[] {
+  const files = fs.readdirSync(portfolioDir);
+  return files
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => file.replace(/\.md$/, ""));
 }

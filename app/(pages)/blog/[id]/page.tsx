@@ -19,6 +19,9 @@ export async function generateMetadata({
   }
 
   return {
+    alternates: {
+      canonical: `https://seovileo.pl/blog/${id}`,
+    },
     title: `${blog.title} | Seovileo`,
     description: blog.desc?.substring(0, 160),
     openGraph: {
@@ -65,9 +68,8 @@ export default async function BlogPost({
 
   return (
     <>
-      <div className="mx-auto max-w-screen-2xl">
-        <Breadcrumbs />
-      </div>
+      <Breadcrumbs />
+
       {post.img && (
         <div className="absolute top-0 left-0 -z-10 h-full w-full rounded-2xl opacity-15">
           <Image

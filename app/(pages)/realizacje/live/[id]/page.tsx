@@ -17,6 +17,9 @@ export async function generateMetadata({
   }
 
   return {
+    alternates: {
+      canonical: `https://seovileo.pl/realizacje/live/${id}`,
+    },
     title: `${portfolioItem.label} | Podgląd strony internetowej | Seovileo`,
     description: portfolioItem.desc?.substring(0, 160),
     openGraph: {

@@ -20,8 +20,8 @@ export default function Breadcrumbs() {
   });
 
   return (
-    <nav aria-label="Breadcrumb">
-      <div className="overflow-x-auto ">
+    <nav aria-label="Breadcrumb ">
+      <div className="overflow-x-auto max-w-screen-2xl mx-auto">
         <ol className="mt-2 flex w-max snap-x snap-mandatory items-center space-x-5 px-4 md:px-8 py-2 text-xs lg:text-sm">
           <li key="back" className={liClass}>
             <button

@@ -59,6 +59,7 @@
 :root {
   --bg-body: #141414;
   --bg-main: #1c1c1c;
+  --bg-brand: #37513e;
   --text-main: #ffffff;
   --text-p: #adadad;
   --border-main-color: #383737;
@@ -80,6 +81,9 @@ body {
 
 .bg-body {
   background-color: var(--bg-body);
+}
+.bg-brand {
+  background-color: var(--bg-brand);
 }
 .bg-hidden {
   height: 100vh;

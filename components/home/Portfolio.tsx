@@ -16,9 +16,9 @@ export default async function Portfolio() {
   return (
     <section className="mx-auto">
       <div className="flex items-center justify-between lg:px-1">
-        <h2 className="text-main text-lg lg:text-xl">Populane szablony</h2>
+        <h2 className="text-main text-lg lg:text-xl">Realizacje - strony internetowe</h2>
         <Link
-          href="/szablony"
+          href="/realizacje"
           className="flex items-center justify-center transition-colors duration-300 hover:text-white"
         >
           <p className="text-xs lg:text-sm">Więcej</p>
