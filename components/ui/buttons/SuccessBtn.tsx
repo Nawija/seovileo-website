@@ -10,7 +10,7 @@ export function SuccesBtn({ children, className, ...rest }: ButtonProps) {
     <button
       {...rest}
       className={clsx(
-        "border-main relative rounded-lg cursor-pointer bg-green-600 px-5 py-2 text-sm font-semibold text-white/90 transition-colors duration-300 hover:bg-green-700 hover:text-white",
+        "border-main relative rounded-lg cursor-pointer bg-green-700 px-5 py-2 text-sm font-semibold text-white/90 transition-colors duration-300 hover:bg-green-800 hover:text-white",
         className,
       )}
     >

@@ -5,13 +5,13 @@ const Carousel = dynamic(() => import("@/components/home/Carousel"));
 
 import CTA from "@/components/CTA";
 import EffectLightbox from "@/components/EffectLightbox";
+import HeroImage from "@/components/HeroImage";
 import PageSpeedScores from "@/components/PageSpeedScores";
 import { MainBtn } from "@/components/ui/buttons/MainBtn";
 import { SuccesBtn } from "@/components/ui/buttons/SuccessBtn";
 import { getPortfolioBySlug } from "@/lib/portfolio";
 import { PortfolioItem } from "@/types";
 import { Eye, Truck } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa";
 
@@ -136,24 +136,26 @@ export default async function ImplementationID({
             <div className="grid gap-6 lg:flex lg:items-start lg:justify-start">
               <div className="grid gap-6 lg:w-3/4 lg:grid-cols-5">
                 <div className="relative w-full lg:col-span-5">
-                  <div className="relative order-first h-max w-full">
-                    <Image
-                      src={portfolioItem.url}
-                      alt="Photo by Himanshu Dewangan"
-                      height={600}
-                      width={900}
-                      className="border-main h-full w-full rounded-lg border object-contain object-top"
-                    />
+                  <div className="relative h-max w-full">
                     {portfolioItem.titleH1 && (
-                      <h1 className="pt-10 pr-2 pb-2 pl-4 text-3xl font-medium text-gray-200 lg:pl-0 lg:text-4xl">
-                        {portfolioItem.titleH1}
-                      </h1>
+                      <div className="border-main mb-6 rounded-lg border bg-white/5 p-4">
+                        <h1 className="max-w-2xl pr-2 pl-4 text-lg font-bold text-white/90 lg:pl-0 lg:text-2xl">
+                          {portfolioItem.titleH1}
+                        </h1>
+                      </div>
                     )}
-                    <section className="mt-12 pl-2">
-                      <h2 className="text-main mb-3 text-2xl">
+                    <div className="border-main relative aspect-video w-full overflow-hidden rounded-lg border">
+                      <HeroImage
+                        src={portfolioItem.url}
+                        alt={portfolioItem.titleH1}
+                      />
+                    </div>
+
+                    <section className="border-main relative mt-10 rounded-lg border p-6 pt-8 pl-2">
+                      <h2 className="bg-body absolute -top-4 left-4 mb-3 px-2 text-lg text-green-400 lg:text-xl">
                         {portfolioItem.effects.title}
                       </h2>
-                      <p className="mb-6 max-w-screen-lg text-gray-300">
+                      <p className="mb-6 max-w-screen-lg text-sm text-gray-300">
                         {portfolioItem.effects.desc}
                       </p>
                       <EffectLightbox images={portfolioItem.effects.images} />
