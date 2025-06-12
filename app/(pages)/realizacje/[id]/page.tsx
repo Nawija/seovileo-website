@@ -13,6 +13,7 @@ import { getPortfolioBySlug } from "@/lib/portfolio";
 import { PortfolioItem } from "@/types";
 import { Eye, Truck } from "lucide-react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { FaLink } from "react-icons/fa";
 
 function generateIdFromTitle(title: string): string {
@@ -25,6 +26,45 @@ function generateIdFromTitle(title: string): string {
     .replace(/[^a-z0-9\s-]/g, "")
     .trim()
     .replace(/\s+/g, "-");
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const awaitedParams = await Promise.resolve(params);
+  const { id } = awaitedParams;
+  const portfolioItem = await getPortfolioBySlug(id);
+  console.log(portfolioItem);
+
+  if (!portfolioItem) {
+    notFound();
+  }
+
+  return {
+    title: `${portfolioItem.label} | Seovileo`,
+    description: portfolioItem.desc?.substring(0, 160),
+    openGraph: {
+      title: `${portfolioItem.label} | Seovileo`,
+      description: portfolioItem.desc?.substring(0, 160) || "",
+      images: [
+        {
+          url: portfolioItem.url,
+          width: 1200,
+          height: 630,
+          alt: portfolioItem.titleH1 || portfolioItem.label,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${portfolioItem.label} | Seovileo`,
+      description: portfolioItem.desc?.substring(0, 160) || "",
+      images: [portfolioItem.url],
+    },
+  };
 }
 
 interface ProductCardProps {

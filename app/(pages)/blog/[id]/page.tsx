@@ -1,10 +1,47 @@
-// [id]/page.tsx (strona pojedynczego posta)
 import "@/app/(pages)/blog/[id]/article.css";
 import Breadcrumbs from "@/components/BreadCrumb";
 import { getAllBlogSlugs, getBlogBySlug } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const awaitedParams = await Promise.resolve(params);
+  const { id } = awaitedParams;
+  const blog = getBlogBySlug(id);
+
+  if (!blog) {
+    notFound();
+  }
+
+  return {
+    title: `${blog.title} | Seovileo`,
+    description: blog.desc?.substring(0, 160),
+    openGraph: {
+      title: `${blog.title} | Seovileo`,
+      description: blog.desc?.substring(0, 160),
+      images: [
+        {
+          url: blog.img,
+          width: 1200,
+          height: 630,
+          alt: blog.title,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${blog.title} | Seovileo`,
+      description: blog.desc?.substring(0, 160),
+      images: [blog.img],
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const slugs = getAllBlogSlugs();
@@ -42,7 +79,7 @@ export default async function BlogPost({
           <div className="from-main absolute inset-0 h-full w-full bg-gradient-to-t to-transparent" />
         </div>
       )}
-      <div className="anim-opacity mx-auto flex h-full w-full flex-grow flex-col items-center justify-start px-6 pt-20 text-center">
+      <div className="anim-opacity mx-auto flex h-full w-full flex-grow flex-col items-center justify-start pt-20 text-center">
         <h1 className="text-main max-w-5xl text-4xl sm:px-2 lg:text-6xl">
           {post.title}
         </h1>
@@ -62,8 +99,8 @@ export default async function BlogPost({
           </div>
         )}
 
-        <div className="w-full flex items-center justify-center border-main bg-main rounded-lg">
-          <article className=" article-content max-w-screen-lg p-3 text-start transition-colors duration-300 sm:p-4 lg:p-6">
+        <div className="border-main bg-main pt-8 flex w-full items-center justify-center rounded-lg">
+          <article className="article-content max-w-screen-lg p-1 text-start transition-colors duration-300 sm:p-4 lg:p-6">
             <MDXRemote source={post.content || ""} />
           </article>
         </div>
