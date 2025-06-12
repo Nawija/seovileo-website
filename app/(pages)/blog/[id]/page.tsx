@@ -13,7 +13,6 @@ export async function generateMetadata({
   const awaitedParams = await Promise.resolve(params);
   const { id } = awaitedParams;
   const blog = getBlogBySlug(id);
-  console.log(blog);
 
   if (!blog) {
     notFound();
