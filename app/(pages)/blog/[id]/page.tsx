@@ -26,10 +26,11 @@ export default async function BlogPost({
     notFound();
   }
 
-
   return (
     <>
-      <Breadcrumbs />
+      <div className="mx-auto max-w-screen-2xl">
+        <Breadcrumbs />
+      </div>
       {post.img && (
         <div className="absolute top-0 left-0 -z-10 h-full w-full rounded-2xl opacity-15">
           <Image
@@ -41,8 +42,8 @@ export default async function BlogPost({
           <div className="from-main absolute inset-0 h-full w-full bg-gradient-to-t to-transparent" />
         </div>
       )}
-      <div className="anim-opacity mx-auto flex h-full w-full flex-grow flex-col items-center justify-start px-6 py-20 text-center">
-        <h1 className="text-main max-w-screen-xl text-4xl sm:px-2 lg:text-6xl">
+      <div className="anim-opacity mx-auto flex h-full w-full flex-grow flex-col items-center justify-start px-6 pt-20 text-center">
+        <h1 className="text-main max-w-5xl text-4xl sm:px-2 lg:text-6xl">
           {post.title}
         </h1>
         <div className="flex-c mt-2 mb-12 space-x-4">
@@ -61,9 +62,13 @@ export default async function BlogPost({
           </div>
         )}
 
-        <article className="border-main bg-main article-content max-w-screen-lg rounded-xl border p-3 text-start transition-colors duration-300 sm:p-4 lg:p-6">
-          <MDXRemote source={post.content || ""} />
-        </article>
+        <div className="w-full flex items-center justify-center border-main bg-main rounded-lg">
+          <article className=" article-content max-w-screen-lg p-3 text-start transition-colors duration-300 sm:p-4 lg:p-6">
+            <MDXRemote source={post.content || ""} />
+          </article>
+        </div>
+
+        <p className="mt-20">Odzwiedz nas na FB i Ingtagram</p>
       </div>
     </>
   );

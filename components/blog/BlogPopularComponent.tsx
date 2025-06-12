@@ -37,26 +37,31 @@ export default function BlogPopularComponent({
           <small className="text-main">wiecej</small>
         </p>
       </div>
-      <div className="absolute bottom-3 flex gap-2">
-        {tags.map((tag) => (
-          <p
-            key={tag}
-            className={clsx("w-max rounded-full px-2 py-1 text-xs text-white", {
-              "bg-red-500": tag === "strony",
-              "bg-pink-400": tag === "marketing",
-              "bg-blue-400": tag === "technologia",
-              "bg-violet-500": tag === "popularne",
-              "bg-gray-500": ![
-                "strony",
-                "marketing",
-                "technologia",
-                "popularne",
-              ].includes(tag), // domyślna szarość
-            })}
-          >
-            {tag}
-          </p>
-        ))}
+      <div className="absolute bottom-3 w-full overflow-x-auto hide-scrollbar">
+        <div className="flex w-max snap-x snap-mandatory gap-2 ">
+          {tags.map((tag) => (
+            <p
+              key={tag}
+              className={clsx(
+                "w-max shrink-0 snap-start rounded-full px-3 py-1 text-xs text-white",
+                {
+                  "bg-red-500": tag === "strony",
+                  "bg-pink-400": tag === "marketing",
+                  "bg-blue-400": tag === "technologia",
+                  "bg-violet-500": tag === "popularne",
+                  "bg-gray-500": ![
+                    "strony",
+                    "marketing",
+                    "technologia",
+                    "popularne",
+                  ].includes(tag),
+                },
+              )}
+            >
+              {tag}
+            </p>
+          ))}
+        </div>
       </div>
     </Link>
   );
