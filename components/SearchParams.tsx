@@ -20,7 +20,7 @@ export default function SearchParams({
         clearFilterProducts();
         closeModal();
       }}
-      href={`/szablony/${id}`}
+      href={`/realizacje/${id}`}
       className="bg-main/30 hover:bg-main border-main flex w-full items-start justify-between rounded-lg border p-2 backdrop-blur-lg transition-colors"
     >
       <Image

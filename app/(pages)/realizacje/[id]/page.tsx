@@ -137,13 +137,6 @@ export default async function ImplementationID({
               <div className="grid gap-6 lg:w-3/4 lg:grid-cols-5">
                 <div className="relative w-full lg:col-span-5">
                   <div className="relative h-max w-full">
-                    {portfolioItem.titleH1 && (
-                      <div className="border-main mb-6 rounded-lg border bg-white/5 p-4">
-                        <h1 className="max-w-2xl pr-2 pl-4 text-lg font-bold text-white/90 lg:pl-0 lg:text-2xl">
-                          {portfolioItem.titleH1}
-                        </h1>
-                      </div>
-                    )}
                     <div className="border-main relative aspect-video w-full overflow-hidden rounded-lg border">
                       <HeroImage
                         src={portfolioItem.url}
@@ -169,7 +162,15 @@ export default async function ImplementationID({
                     className="order-2 mt-12 lg:order-last lg:hidden"
                   />
 
-                  <div className="mt-12 pl-2">
+                  {portfolioItem.titleH1 && (
+                    <div className="border-main my-6 rounded-lg border bg-white/5 p-4">
+                      <h1 className="max-w-2xl pr-2 pl-4 text-lg font-bold text-white/90 lg:pl-0 lg:text-2xl">
+                        {portfolioItem.titleH1}
+                      </h1>
+                    </div>
+                  )}
+
+                  <div className="mt-6 pl-2">
                     <h2 className="text-main mb-3 text-2xl">{`Opis - ${portfolioItem.label} `}</h2>
                     <p className="max-w-5xl pr-4">{portfolioItem.desc}</p>
                   </div>
