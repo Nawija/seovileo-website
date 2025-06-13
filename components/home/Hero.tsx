@@ -36,10 +36,10 @@ export default function Hero() {
         </p>
         <div className="flex items-center justify-center space-x-5 py-6">
           <Link href="/darmowa-wycena">
-            <MainBtn>Indywidualna</MainBtn>
+            <MainBtn>Darmowa Wycena</MainBtn>
           </Link>
-          <Link href="/szablony">
-            <SecondBtn className="px-5 py-2">Gotowa</SecondBtn>
+          <Link href="/kontakt">
+            <SecondBtn className="px-5 py-2">Kontakt</SecondBtn>
           </Link>
         </div>
       </div>
