@@ -121,7 +121,7 @@ export default function OfertaPage() {
                   </svg>
                 </button>
                 <p className="mt-3 text-xs text-gray-400">
-                  Literally you probably haven't heard of them jean shorts.
+                  Literally you probably havent heard of them jean shorts.
                 </p>
               </div>
             </div>
@@ -178,7 +178,7 @@ export default function OfertaPage() {
                   </svg>
                 </button>
                 <p className="mt-3 text-xs text-gray-400">
-                  Literally you probably haven't heard of them jean shorts.
+                  Literally you probably havent heard of them jean shorts.
                 </p>
               </div>
             </div>
@@ -238,7 +238,7 @@ export default function OfertaPage() {
                   </svg>
                 </button>
                 <p className="mt-3 text-xs text-gray-400">
-                  Literally you probably haven't heard of them jean shorts.
+                  Literally you probably havent heard of them jean shorts.
                 </p>
               </div>
             </div>
@@ -295,7 +295,7 @@ export default function OfertaPage() {
                   </svg>
                 </button>
                 <p className="mt-3 text-xs text-gray-400">
-                  Literally you probably haven't heard of them jean shorts.
+                  Literally you probably havent heard of them jean shorts.
                 </p>
               </div>
             </div>
