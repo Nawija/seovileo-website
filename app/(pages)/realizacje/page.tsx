@@ -62,7 +62,7 @@ export default async function ImplementationPage() {
       </h1>
       <section className="relative mx-auto py-2 lg:pb-12">
         <section className="mx-auto">
-          <div className="mx-auto grid max-w-screen-2xl grid-cols-2 gap-3 px-3 pt-20 sm:grid-cols-3 lg:grid-cols-4 lg:gap-4">
+          <div className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-3 px-3 pt-20 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
             {portfolioItems.map((item, i) => (
               <PortfolioItemComponent item={item} key={i} />
             ))}

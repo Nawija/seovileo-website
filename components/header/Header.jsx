@@ -57,7 +57,7 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-40 bg-black/60 lg:hidden"
           />
         )}
       </AnimatePresence>
@@ -71,7 +71,7 @@ const Header = () => {
             <Logo h={27} w={27} />
           </Link>
           <div
-            className={`border-main bg-white/5 backdrop-blur-lg absolute top-0 left-0 flex h-screen w-72 flex-col items-start justify-start border-r pt-24 pl-12 text-start transition-transform lg:absolute lg:top-1/2 lg:left-1/2 lg:h-auto lg:w-max lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center lg:justify-center lg:rounded-lg lg:border lg:bg-none lg:px-4 lg:py-2 lg:pl-0 lg:backdrop-blur-none ${
+            className={`border-main bg-main absolute top-0 left-0 flex h-screen w-72 flex-col items-start justify-start border-r pt-24 pl-12 text-start transition-transform lg:absolute lg:top-1/2 lg:left-1/2 lg:h-auto lg:w-max lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center lg:justify-center lg:rounded-lg lg:border lg:bg-none lg:px-4 lg:py-2 lg:pl-0 lg:backdrop-blur-none ${
               isMenuOpen
                 ? "translate-x-0 duration-200"
                 : "-translate-x-full duration-500"

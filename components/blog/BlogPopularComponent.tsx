@@ -18,7 +18,7 @@ export default function BlogPopularComponent({
       href={`/blog/${slug}`}
       className="bg-main anim-opacity border-main relative overflow-hidden rounded-lg border p-4 pb-12"
     >
-      <div className="relative h-20 w-full lg:h-32">
+      <div className="relative h-32 w-full">
         <Image
           className="h-full w-full rounded-sm object-cover transition-all duration-300"
           src={imgUrl}
@@ -39,21 +39,25 @@ export default function BlogPopularComponent({
       </div>
       <div className="absolute bottom-3 w-full overflow-x-auto hide-scrollbar">
         <div className="flex w-max snap-x snap-mandatory gap-2 ">
-          {tags.map((tag) => (
+          {tags.slice(0, 3).map((tag) => (
             <p
               key={tag}
               className={clsx(
                 "w-max shrink-0 snap-start rounded-full px-3 py-1 text-xs text-white",
                 {
-                  "bg-red-500": tag === "strony",
+                  "bg-violet-500": tag === "strona",
                   "bg-pink-400": tag === "marketing",
+                  "bg-sky-400": tag === "landing",
+                  "bg-green-400": tag === "seo",
                   "bg-blue-400": tag === "technologia",
-                  "bg-violet-500": tag === "popularne",
+                  "bg-red-500": tag === "hot",
                   "bg-gray-500": ![
-                    "strony",
+                    "strona",
                     "marketing",
+                    "landing",
+                    "seo",
                     "technologia",
-                    "popularne",
+                    "hot",
                   ].includes(tag),
                 },
               )}

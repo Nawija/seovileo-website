@@ -36,8 +36,6 @@ const LogicReact = ({ mergedData }: LogicReactProps) => {
       );
 
       const combined = [...byTag, ...byTitle];
-
-      // Jeśli `product.title` jest unikalne, możemy go użyć do filtrowania duplikatów:
       const unique = Array.from(
         new Map(combined.map((item) => [item.title, item])).values(),
       );
@@ -56,7 +54,7 @@ const LogicReact = ({ mergedData }: LogicReactProps) => {
       <div className="relative flex h-56 w-full items-center justify-center lg:h-60">
         <Image
           src="/strona-internetowa.avif"
-          className="object-cover -z-10 opacity-80"
+          className="-z-10 object-cover opacity-80"
           alt="strona internetowa"
           priority
           fill
@@ -75,7 +73,7 @@ const LogicReact = ({ mergedData }: LogicReactProps) => {
         </div>
       </div>
       <Breadcrumbs />
-      <div className="mx-auto mt-6 grid max-w-screen-2xl grid-cols-2 gap-4 px-2 sm:grid-cols-3 lg:mt-24 lg:grid-cols-5">
+      <div className="mx-auto mt-6 grid max-w-screen-2xl grid-cols-1 gap-4 px-2 sm:grid-cols-2 lg:mt-24 lg:grid-cols-5">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((item: BlogItemTypes, i: number) => (
             <BlogPopularComponent item={item} key={i} />
