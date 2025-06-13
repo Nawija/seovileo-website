@@ -6,6 +6,7 @@ const Carousel = dynamic(() => import("@/components/home/Carousel"));
 import CTA from "@/components/CTA";
 import EffectLightbox from "@/components/EffectLightbox";
 import HeroImage from "@/components/HeroImage";
+import HeroImageBG from "@/components/HeroImageBG";
 import PageSpeedScores from "@/components/PageSpeedScores";
 import { MainBtn } from "@/components/ui/buttons/MainBtn";
 import { SuccesBtn } from "@/components/ui/buttons/SuccessBtn";
@@ -36,7 +37,6 @@ export async function generateMetadata({
   const awaitedParams = await Promise.resolve(params);
   const { id } = awaitedParams;
   const portfolioItem = await getPortfolioBySlug(id);
-  console.log(portfolioItem);
 
   if (!portfolioItem) {
     notFound();
@@ -91,7 +91,7 @@ const ProductCard = ({
 }: ProductCardProps) => {
   return (
     <div
-      className={`border-main flex flex-col items-start justify-start rounded-lg border bg-white/5 p-10 text-white backdrop-blur-2xl ${className}`}
+      className={`border-main flex flex-col items-start justify-start rounded-lg border bg-white/5 p-10 text-white ${className}`}
     >
       <div className="flex-b w-full text-xs">
         <p className="font-medium">Technologia:</p>
@@ -177,9 +177,10 @@ export default async function ImplementationID({
     <>
       <div className="anim-opacity mx-auto max-w-screen-2xl">
         <div
-          style={{ backgroundColor: `${portfolioItem.color}` }}
-          className={`absolute top-0 left-1/2 -z-10 h-[25vh] w-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[160px] lg:blur-[300px]`}
-        />
+          className={`absolute top-0 opacity-20 left-0 -z-10 h-[50vh] w-full`}
+        >
+          <HeroImageBG src={portfolioItem.url} alt={portfolioItem.titleH1} />
+        </div>
 
         <Breadcrumbs />
         <div className="mt-4 py-4 sm:py-8 lg:py-2">
@@ -195,8 +196,8 @@ export default async function ImplementationID({
                       />
                     </div>
 
-                    <section className="border-main relative mt-10 rounded-lg border p-6 pt-8 pl-2">
-                      <h2 className="bg-body absolute -top-4 left-4 mb-3 px-2 text-lg text-green-400 lg:text-xl">
+                    <section className="border-main rounded-lg relative mt-10 border p-6 pt-8 pl-2">
+                      <h2 className="bg-body rounded-xl absolute -top-4 left-4 mb-3 px-4 text-lg text-green-400 lg:text-xl">
                         {portfolioItem.effects.title}
                       </h2>
                       <p className="mb-6 max-w-screen-lg text-sm text-gray-300">

@@ -62,7 +62,7 @@ export default function EffectLightbox({ images }: EffectLightboxProps) {
           data-pswp-height={image.height}
           target="_blank"
           rel="noreferrer"
-          className="border-main relative h-40 w-[80%] shrink-0 snap-center overflow-hidden rounded-lg border bg-white/5 shadow-lg sm:w-[33%] lg:w-[28%]"
+          className="border-main relative h-40 w-[80%] shrink-0 snap-center overflow-hidden rounded-lg border bg-white/5 sm:w-[33%] lg:w-[28%]"
         >
           {!loadedImages[idx] && <ShimmerLoader />}
           <Image
