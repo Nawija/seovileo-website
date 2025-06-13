@@ -177,7 +177,7 @@ export default async function ImplementationID({
     <>
       <div className="anim-opacity mx-auto max-w-screen-2xl">
         <div
-          className={`absolute top-0 opacity-20 left-0 -z-10 h-[50vh] w-full`}
+          className={`absolute top-0 left-0 -z-10 h-[70vh] w-full opacity-20`}
         >
           <HeroImageBG src={portfolioItem.url} alt={portfolioItem.titleH1} />
         </div>
@@ -195,9 +195,15 @@ export default async function ImplementationID({
                         alt={portfolioItem.titleH1}
                       />
                     </div>
+                    {/* Mobile version - widoczna tylko na mobile */}
+                    <ProductCard
+                      portfolioItem={portfolioItem}
+                      id={id}
+                      className="order-1 mt-12 lg:hidden"
+                    />
 
-                    <section className="border-main rounded-lg relative mt-10 border p-6 pt-8 pl-2">
-                      <h2 className="bg-body rounded-xl absolute -top-4 left-4 mb-3 px-4 text-lg text-green-400 lg:text-xl">
+                    <section className="border-main relative mt-10 rounded-lg border p-6 pt-8 pl-2">
+                      <h2 className="bg-body absolute -top-4 left-4 mb-3 rounded-xl px-4 text-lg text-green-400 lg:text-xl">
                         {portfolioItem.effects.title}
                       </h2>
                       <p className="mb-6 max-w-screen-lg text-sm text-gray-300">
@@ -206,13 +212,6 @@ export default async function ImplementationID({
                       <EffectLightbox images={portfolioItem.effects.images} />
                     </section>
                   </div>
-
-                  {/* Mobile version - widoczna tylko na mobile */}
-                  <ProductCard
-                    portfolioItem={portfolioItem}
-                    id={id}
-                    className="order-2 mt-12 lg:order-last lg:hidden"
-                  />
 
                   {portfolioItem.titleH1 && (
                     <div className="border-main my-6 rounded-lg border bg-white/5 p-4">

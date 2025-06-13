@@ -9,7 +9,7 @@ export default function WidthLiveControls({
   portfolioID: string;
 }) {
   return (
-    <div className="flex-b bg-main border-second z-[99999] border-b p-2 px-4 text-sm">
+    <div className="flex items-center justify-between h-[3rem] bg-main border-second z-[99999] border-b p-2 px-4 text-sm">
       <p className="flex lg:hidden">Więcej opcji na PC</p>
       <div className="hidden md:flex" />
       <div className="hidden items-center justify-center space-x-5 md:flex">
