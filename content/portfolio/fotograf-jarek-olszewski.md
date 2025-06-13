@@ -19,12 +19,18 @@ effects:
   title: "Efekty wyszukiwania w Google"
   desc: "Jak wazne jest aby Twoja strona internetowa byla widoczna i przyciagała organiczny ruch z wyszukiwarek"
   images:
-    - img: "images/realizacje/nazoltej/z1.png"
-      width: 800
-      height: 600
-    - img: "images/realizacje/nazoltej/z2.png"
-      width: 800
-      height: 600
+    - img: "images/realizacje/fotograf-jarek-olszewski/z1.png"
+      width: 1018
+      height: 943
+    - img: "images/realizacje/fotograf-jarek-olszewski/z2.png"
+      width: 1010
+      height: 940
+    - img: "images/realizacje/fotograf-jarek-olszewski/z2.png"
+      width: 1022
+      height: 935
+    - img: "images/realizacje/fotograf-jarek-olszewski/z2.png"
+      width: 1012
+      height: 938
 productDesc:
   - title: "Panel AdminCMS"
     desc: "Intuicyjny i nowoczesny panel administracyjny pozwala Jarkowi w prosty sposób edytować treści na stronie – bez potrzeby znajomości kodu. Dzięki temu oszczędza czas i może w pełni skupić się na swojej pasji – fotografii. Panel umożliwia zarządzanie zdjęciami, treściami SEO, ofertą oraz blogiem, co przekłada się na lepszą widoczność w Google."
