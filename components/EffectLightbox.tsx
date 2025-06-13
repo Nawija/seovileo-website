@@ -3,7 +3,8 @@
 import Image from "next/image";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import ShimmerLoader from "./loader/ShimmerLoader";
 
 interface EffectImage {
   img: string;
@@ -18,6 +19,9 @@ interface EffectLightboxProps {
 export default function EffectLightbox({ images }: EffectLightboxProps) {
   const lightboxRef = useRef<PhotoSwipeLightbox | null>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
+  const [loadedImages, setLoadedImages] = useState<boolean[]>(
+    Array(images.length).fill(false)
+  );
 
   useEffect(() => {
     if (!galleryRef.current) return;
@@ -37,6 +41,14 @@ export default function EffectLightbox({ images }: EffectLightboxProps) {
     };
   }, []);
 
+  const handleImageLoad = (index: number) => {
+    setLoadedImages((prev) => {
+      const updated = [...prev];
+      updated[index] = true;
+      return updated;
+    });
+  };
+
   return (
     <div
       ref={galleryRef}
@@ -52,11 +64,13 @@ export default function EffectLightbox({ images }: EffectLightboxProps) {
           rel="noreferrer"
           className="border-main relative h-40 w-[80%] shrink-0 snap-center overflow-hidden rounded-lg border bg-white/5 shadow-lg sm:w-[33%] lg:w-[28%]"
         >
+          {!loadedImages[idx] && <ShimmerLoader />}
           <Image
             src={`/${image.img}`}
             alt={`seovileo ${idx + 1}`}
             fill
-            className="object-contain"
+            className={`object-contain transition-opacity duration-500 ${loadedImages[idx] ? "opacity-100" : "opacity-0"}`}
+            onLoadingComplete={() => handleImageLoad(idx)}
             sizes="(max-width: 768px) 100vw, 80vw"
             draggable={false}
           />

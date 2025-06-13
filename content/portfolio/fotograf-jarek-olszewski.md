@@ -25,10 +25,10 @@ effects:
     - img: "images/realizacje/fotograf-jarek-olszewski/z2.png"
       width: 1010
       height: 940
-    - img: "images/realizacje/fotograf-jarek-olszewski/z2.png"
+    - img: "images/realizacje/fotograf-jarek-olszewski/z3.png"
       width: 1022
       height: 935
-    - img: "images/realizacje/fotograf-jarek-olszewski/z2.png"
+    - img: "images/realizacje/fotograf-jarek-olszewski/z4.png"
       width: 1012
       height: 938
 productDesc:
