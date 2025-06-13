@@ -82,7 +82,7 @@ export default function Carousel() {
   }, [isDragging, startX, scrollLeft]);
 
   return (
-    <section className="flex w-full flex-col items-center justify-start overflow-hidden py-24 lg:flex-row lg:py-48">
+    <section className="flex w-full flex-col items-center justify-start overflow-hidden py-24 lg:flex-row lg:pt-42">
       <div className="mb-12 flex flex-col items-center justify-center space-y-3 px-3 text-center lg:ml-24 lg:w-96 lg:text-start">
         <h2 className="text-main text-2xl font-semibold lg:text-3xl">
           Lorem ipsum dolor sit amet consectetur

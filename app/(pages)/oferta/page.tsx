@@ -1,3 +1,4 @@
+import CTA from "@/components/CTA";
 import Opinions from "@/components/Opinions";
 import ServicesSection from "@/components/ServicesSection";
 import { MainBtn } from "@/components/ui/buttons/MainBtn";
@@ -303,6 +304,7 @@ export default function OfertaPage() {
       </section>
 
       <Opinions />
+      <CTA actionLink="/kontakt" />
     </div>
   );
 }

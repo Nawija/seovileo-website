@@ -2,6 +2,8 @@ import dynamic from "next/dynamic";
 
 import { Metadata } from "next";
 import Hero from "../components/home/Hero";
+import Opinions from "@/components/Opinions";
+import CTA from "@/components/CTA";
 const Portfolio = dynamic(() => import("../components/home/Portfolio"));
 const Carousel = dynamic(() => import("../components/home/Carousel"), {
   loading: () => <div className="text-white">Ładowanie...</div>,
@@ -47,6 +49,8 @@ export default function Home() {
         <Portfolio />
         <Carousel />
       </div>
+      <Opinions />
+      <CTA actionLink="/kontakt" />
     </div>
   );
 }
