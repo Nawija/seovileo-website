@@ -12,25 +12,24 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative mx-auto py-12 lg:py-36">
-      <div className="absolute top-0 left-0 -z-10 h-96 w-full opacity-30 lg:opacity-25">
+    <section className="relative mx-auto py-20 lg:py-36 -mt-12">
+      <div className="absolute -top-12 left-0 -z-10 h-[60vh] w-full opacity-40 lg:opacity-25">
         <Image
           className="-z-10 h-full w-full object-cover"
-          src="/fale-czastek-3d-futurystyczne-tlo-technologii.webp"
-          alt="fale-czastek-3d-futurystyczne-tlo-technologii"
+          src="/laptop-na-stole.jpg"
+          alt="laptop-na-stole.jpg"
           fill
           quality={10}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#141414] via-transparent via-40% to-[#141414]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent via-40% to-transparent" />
       </div>
       <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center space-y-5 px-2 text-center">
-        <h1 className="text-main relative text-4xl font-semibold sm:px-4 md:text-4xl lg:text-6xl">
+        <h1 className="text-main relative text-4xl font-semibold sm:px-4 md:text-5xl lg:text-7xl max-w-4xl">
           Nowoczesne Rozwiązania Webowe
         </h1>
         <p className="max-w-screen-md px-3 py-4 font-medium">
-          Jako doświadczony programista, specjalizuję się w tworzeniu
-          responsywnych i wydajnych stron internetowych, wykorzystując najnowsze
-          technologie, takie jak Gatsby i Next.js. Moja pasja do ciągłego
+          Jako doświadczony programista, specjalizuję się w tworzeniu wydajnych stron internetowych, wykorzystując najnowsze
+          technologie przyjazne dla Google. Moja pasja do ciągłego
           doskonalenia i zamiłowanie do nowoczesnych rozwiązań pozwalają mi
           oferować usługi na najwyższym poziomie!
         </p>

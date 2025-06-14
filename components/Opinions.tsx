@@ -45,7 +45,7 @@ export default function Opinions() {
   };
 
   return (
-    <section className="mx-auto py-24">
+    <section className="mx-auto py-12 lg:py-24">
       <h2 className="mb-6 text-center text-2xl font-semibold">
         Co mówią klienci:
       </h2>
@@ -56,9 +56,9 @@ export default function Opinions() {
         onMouseMove={onMouseMove}
         onMouseUp={endDrag}
         onMouseLeave={endDrag}
-        className="flex cursor-grab snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4 pb-6 select-none active:cursor-grabbing"
+        className="hide-scrollbar flex cursor-grab snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4 pb-6 select-none active:cursor-grabbing"
       >
-        <div className="w-0 shrink-0 lg:w-[10%]" aria-hidden />
+        <div className="w-0 shrink-0 lg:w-[16%]" aria-hidden />
         {OPINIONS.map((opinia, i) => {
           const fullStars = Math.floor(opinia.rating);
           const bgColor = getRandomColor(opinia.name);

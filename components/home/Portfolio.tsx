@@ -14,9 +14,9 @@ const PortfolioItemComponent = dynamic(
 export default async function Portfolio() {
   const portfolioItems = await getAllPortfolioItems();
   return (
-    <section className="mx-auto">
-      <div className="flex items-center justify-between lg:px-1">
-        <h2 className="text-main text-lg lg:text-xl">Realizacje - strony internetowe</h2>
+    <section className="mx-auto pb-12 lg:pb-24 px-4">
+      <div className="flex items-center justify-between px-1 ">
+        <h2 className="text-main text-3xl sm:text-4xl font-medium">Realizacje</h2>
         <Link
           href="/realizacje"
           className="flex items-center justify-center transition-colors duration-300 hover:text-white"
@@ -27,7 +27,7 @@ export default async function Portfolio() {
       </div>
       <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
         {portfolioItems
-          ?.slice(0, 8)
+          ?.slice(0, 4)
           .map((item, index) => (
             <PortfolioItemComponent key={item.label + index} item={item} />
           ))}

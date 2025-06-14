@@ -62,7 +62,7 @@ const Header = () => {
         )}
       </AnimatePresence>
       <header
-        className={`relative z-50 w-full py-4 text-sm font-medium transition-all duration-500 ease-in-out lg:py-3`}
+        className={`relative bg-transparent z-50 w-full py-4 text-sm font-medium transition-all duration-500 ease-in-out lg:py-3`}
       >
         <nav
           className={`mx-auto flex w-full max-w-screen-2xl px-4 md:px-8 items-center justify-between`}
